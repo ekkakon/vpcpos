@@ -6,6 +6,33 @@ VoltPotCoin is an open source community-driven cryptocurrency.
 
 Latest releases can be found here: https://github.com/ekkakon/vpcpos/releases/latest
 
+## Compiling from source
+More info can be found in [doc folder](doc/README.md)
+```
+git clone https://github.com/ekkakon/vpcpos.git
+```
+
+#### Linux
+```
+cd vpcpos
+chmod +x ./scripts/linux-install.sh
+./scripts/linux-install.sh
+```
+
+#### Windows 64 cross-compiled with Linux (Ubuntu 18.04)
+```
+cd vpcpos
+chmod +x ./scripts/crosscompile-win64.sh
+./scripts/crosscompile-win64.sh
+```
+
+#### Windows 64 cross-compiled with Linux (Ubuntu 18.04)
+```
+cd vpcpos
+chmod +x ./scripts/crosscompile-win32.sh
+./scripts/crosscompile-win32.sh
+```
+
 ## License
 VoltPotCoin Core is released under the terms of the MIT license. See [COPYING](https://github.com/ekkakon/vpcpos/blob/main/COPYING) for more information or see https://opensource.org/licenses/MIT.
 
