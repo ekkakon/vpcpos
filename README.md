@@ -26,7 +26,7 @@ chmod +x ./scripts/crosscompile-win64.sh
 ./scripts/crosscompile-win64.sh
 ```
 
-#### Windows 64 cross-compiled with Linux (Ubuntu 18.04)
+#### Windows 32bit cross-compiled with Linux (Ubuntu 18.04)
 ```
 cd vpcpos
 chmod +x ./scripts/crosscompile-win32.sh
