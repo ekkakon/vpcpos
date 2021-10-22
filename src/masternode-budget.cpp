@@ -918,7 +918,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
      nSubsidy = 10 * COIN;
     }
 
-    return ((nSubsidy / 100) * 10) * 1440 * 7;
+    return ((nSubsidy / 100) * 10) * 288 * 30;
 
 }
 
