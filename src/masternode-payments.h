@@ -22,8 +22,8 @@ class CMasternodeBlockPayees;
 
 extern CMasternodePayments masternodePayments;
 
-#define MNPAYMENTS_SIGNATURES_REQUIRED 2
-#define MNPAYMENTS_SIGNATURES_TOTAL 3
+#define MNPAYMENTS_SIGNATURES_REQUIRED 6
+#define MNPAYMENTS_SIGNATURES_TOTAL 10
 
 void ProcessMessageMasternodePayments(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
 bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight);
