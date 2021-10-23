@@ -1,6 +1,0 @@
-usr/local/bin/voltpotcoin-qt usr/bin
-share/pixmaps/voltpotcoin32.xpm usr/share/pixmaps
-share/pixmaps/voltpotcoin16.xpm usr/share/pixmaps
-share/pixmaps/voltpotcoin128.png usr/share/pixmaps
-debian/voltpotcoin-qt.desktop usr/share/applications
-debian/voltpotcoin-qt.protocol usr/share/kde4/services/
