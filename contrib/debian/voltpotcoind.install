@@ -1,0 +1,3 @@
+usr/local/bin/voltpotcoind usr/bin
+usr/local/bin/voltpotcoin-cli usr/bin
+debian/examples/voltpotcoin.conf etc/voltpotcoin

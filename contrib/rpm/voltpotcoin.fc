@@ -1,0 +1,8 @@
+/usr/bin/voltpotcoin-cli		--	gen_context(system_u:object_r:voltpotcoin_exec_t,s0)
+/usr/sbin/voltpotcoind		--	gen_context(system_u:object_r:voltpotcoin_exec_t,s0)
+/usr/lib(64)?/voltpotcoin/voltpotcoind		--	gen_context(system_u:object_r:voltpotcoin_exec_t,s0)
+
+/etc/voltpotcoin(/.*)?		gen_context(system_u:object_r:voltpotcoin_conf_t,s0)
+/var/lib/voltpotcoin(/.*)?		gen_context(system_u:object_r:voltpotcoin_var_lib_t,s0)
+
+(/var)?/run/voltpotcoind(/.*)?   gen_context(system_u:object_r:voltpotcoin_var_run_t,s0)
