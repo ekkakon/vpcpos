@@ -2,7 +2,10 @@ VoltPotCoin Core integration/staging repository
 ===============================================
 
 ## What is VoltPotCoin?
-VoltPotCoin is an open source community-driven cryptocurrency.
+VoltPotCoin is an open source community-driven cryptocurrency initiated by VOLTPOT® ltd. in 2020.
+VoltPotCoin (VPC) is intented to be used mainly in the renewable enrgy and electric mobility sectors as an alternative payment method for services and products.
+The White Paper can be found here: https://voltpot.org/white-paper
+VOLTPOT® platform and the available marketplace where VoltPotCoin (VPC) can be used for trading products/services are to be found here: https://voltpot.com
 
 Latest releases can be found here: https://github.com/ekkakon/vpcpos/releases/latest
 
