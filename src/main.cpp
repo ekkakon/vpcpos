@@ -2252,9 +2252,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
-        //When zPIV is staked, masternode only gets 2 PIV
+        //When zVPC is staked, masternode only gets 2 PIV
         ret = 3 * COIN;
-        if (isZPIVStake)
+        if (isZVPCStake)
             ret = 2 * COIN;
     }
 
@@ -3343,7 +3343,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zPivSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zVPCSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -4856,8 +4856,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
             // Now that this loop if completed. Check if we have zVPC inputs.
             if(hasZVPCInputs){
-                for (const CTxIn& zPivInput : zVPCInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zPivInput);
+                for (const CTxIn& zVPCInput : zVPCInputs) {
+                    CoinSpend spend = TxInToZerocoinSpend(zVPCInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4919,8 +4919,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zPivInput : zVPCInputs) {
-                        CoinSpend spend = TxInToZerocoinSpend(zPivInput);
+                for (const CTxIn& zVPCInput : zVPCInputs) {
+                        CoinSpend spend = TxInToZerocoinSpend(zVPCInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, &spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                     stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zvpc");
