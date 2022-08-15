@@ -351,7 +351,7 @@ UniValue spork(const UniValue& params, bool fHelp)
 UniValue validateaddress(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
-        throw runtime_error(
+        throw std::runtime_error(
             "validateaddress \"voltpotcoinaddress\"\n"
             "\nReturn information about the given voltpotcoin address.\n"
 
