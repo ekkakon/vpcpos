@@ -87,7 +87,7 @@ public:
 class searchMintHeightException : public std::exception {
 public:
     std::string message;
-    searchMintHeightException(const string &message) : message(message) {}
+    searchMintHeightException(const std::string &message) : message(message) {}
 };
 
 #endif //VoltPotCoin_ACCUMULATORS_H
