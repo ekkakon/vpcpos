@@ -1205,7 +1205,7 @@ bool CWalletDB::ReadZerocoinSpendSerialEntry(const CBigNum& bnSerial)
 bool CWalletDB::WriteDeterministicMint(const CDeterministicMint& dMint)
 {
     uint256 hash = dMint.GetPubcoinHash();
-    return Write(std::make_pair(string("dzvpc"), hash), dMint, true);
+    return Write(std::make_pair(std::string("dzvpc"), hash), dMint, true);
 }
 
 bool CWalletDB::ReadDeterministicMint(const uint256& hashPubcoin, CDeterministicMint& dMint)
@@ -1444,7 +1444,7 @@ void CWalletDB::LoadPrecomputes(std::set<uint256> setHashes)
         }
 
         // Unserialize
-        string strType;
+        std::string strType;
         ssKey >> strType;
         if (strType != "precompute")
             break;
