@@ -155,7 +155,7 @@ public:
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
-        nBlockStakeModifierlV2 = 800000;
+        nBlockStakeModifierlV2 = 0;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -219,7 +219,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        nBudgetCycleBlocks = 43200;
+        nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkKey = "04c87d37f6c03db160ead6cf2c0655ba56cbd381c0b08f04cb26d2b9b1ef88050320dab18a96fb1ef33877c667e66fa0ca5c23219188c8cefea37e427a7f91efb0";
         strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "VC5naySWDkt9WdHgqXPx1zYgBQuyziCeWf";
@@ -288,10 +288,10 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 800000; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 0; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1522454400;
-        nBlockStakeModifierlV2 = 800000;
+        nBlockStakeModifierlV2 = 0;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -375,7 +375,7 @@ public:
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
         nZerocoinStartHeight = 300;
-        nBlockZerocoinV2 = 300;
+        nBlockZerocoinV2 = 0;
         nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -383,7 +383,7 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
         // Public coin spend enforcement
-        nPublicZCSpends = 350;
+        nPublicZCSpends = 0;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
