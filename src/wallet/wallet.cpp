@@ -4370,7 +4370,7 @@ std::string CWallet::ResetMintZerocoin()
 
     NotifyzVPCReset();
 
-    string strResult = _("ResetMintZerocoin finished: ") + to_string(updates) + _(" mints updated, ") + to_string(deletions) + _(" mints deleted\n");
+    std::string strResult = _("ResetMintZerocoin finished: ") + std::to_string(updates) + _(" mints updated, ") + std::to_string(deletions) + _(" mints deleted\n");
     return strResult;
 }
 
