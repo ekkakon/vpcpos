@@ -687,7 +687,7 @@ void RPCConsole::setNumConnections(int count)
 void RPCConsole::setNumBlocks(int count)
 {
     ui->numberOfBlocks->setText(QString::number(count));
-    if (clientModel)
+    if (clientModel) {
         ui->lastBlockTime->setText(clientModel->getLastBlockDate().toString());
         ui->lastBlockHash->setText(clientModel->getLastBlockHash());
     }
