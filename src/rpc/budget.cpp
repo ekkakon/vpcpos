@@ -888,7 +888,7 @@ UniValue mnfinalbudget(const UniValue& params, bool fHelp)
 
     if (strCommand == "getvotes") {
         if (params.size() != 2)
-            throw runtime_error("Correct usage is 'mnbudget getvotes budget-hash'");
+            throw std::runtime_error("Correct usage is 'mnbudget getvotes budget-hash'");
 
         std::string strHash = params[1].get_str();
         uint256 hash(strHash);
