@@ -142,8 +142,8 @@ public:
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
-        nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 0;
+        nModifierUpdateBlock = 1000;
+        nZerocoinStartHeight = 1000;
         nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -151,11 +151,11 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999;
+        nBlockZerocoinV2 = 1623799585;
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
-        nBlockStakeModifierlV2 = 0;
+        nBlockStakeModifierlV2 = 1000;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
