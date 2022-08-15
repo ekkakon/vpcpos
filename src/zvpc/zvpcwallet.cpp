@@ -413,7 +413,7 @@ void CzVPCWallet::UpdateCount()
     walletdb.WriteZVPCCount(nCountLastUsed);
 }
 
-void CzVPCWallet::GenerateDeterministicZVPC(CoinDenomination denom, libzerocoin::PrivateCoin& coin, CDeterministicMint& dMint, bool fGenerateOnly)
+void CzVPCWallet::GenerateDeterministicZVPC(libzerocoin::CoinDenomination denom, libzerocoin::PrivateCoin& coin, CDeterministicMint& dMint, bool fGenerateOnly)
 {
     GenerateMint(nCountLastUsed + 1, denom, coin, dMint);
     if (fGenerateOnly)
