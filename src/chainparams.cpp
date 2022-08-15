@@ -14,9 +14,8 @@
 #include <assert.h>
 
 #include <boost/assign/list_of.hpp>
+#include <limits>
 
-using namespace std;
-using namespace boost::assign;
 
 struct SeedSpec6 {
     uint8_t addr[16];
@@ -97,6 +96,17 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     return &ZCParamsDec;
 }
 
+bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
+        const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
+{
+    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
+    if (!IsStakeModifierV2(contextHeight))
+        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
+
+    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
+    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -122,11 +132,13 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 0;
-        nTargetTimespan = 9 * 60;
-        nTargetSpacing = 90;
+        nTargetSpacing = 1 * 60;        // 1 minute
         nMaturity = 20;
+        nStakeMinDepth = 600;
+        nFutureTimeDriftPoW = 7200;
+        nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 9999999999 * COIN;
+        nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -143,7 +155,7 @@ public:
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
-
+        nBlockStakeModifierlV2 = 800000;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -237,6 +249,7 @@ public:
     {
         return data;
     }
+
 };
 static CMainParams mainParams;
 
@@ -260,10 +273,10 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 0;
-        nTargetTimespan = 10 * 60;
-        nTargetSpacing = 5 * 60;
+        nTargetSpacing = 1 * 60;  // PIVX: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
+        nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 43199500 * COIN;
@@ -275,10 +288,10 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 800000; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1522454400;
-
+        nBlockStakeModifierlV2 = 800000;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -353,11 +366,11 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // VoltPotCoin: 1 day
         nTargetSpacing = 1 * 60;        // VoltPotCoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 20;
+        nStakeMinDepth = 0;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
@@ -368,7 +381,7 @@ public:
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
-
+        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
         // Public coin spend enforcement
         nPublicZCSpends = 350;
 
@@ -437,7 +450,6 @@ public:
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 static CUnitTestParams unitTestParams;
-
 
 static CChainParams* pCurrentParams = 0;
 
