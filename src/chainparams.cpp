@@ -132,13 +132,14 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 0;
-        nTargetSpacing = 1 * 60;        // 1 minute
+        nTargetTimespan = 9 * 60;
+        nTargetSpacing = 90;
         nMaturity = 20;
         nStakeMinDepth = 600;
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 21000000 * COIN;
+        nMaxMoneyOut = 9999999999 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -151,11 +152,11 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 1623799585;
+        nBlockZerocoinV2 = 999999999;
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
-        nBlockStakeModifierlV2 = 1000;
+        nBlockStakeModifierlV2 = 999999999;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -273,7 +274,8 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 0;
-        nTargetSpacing = 1 * 60;  // PIVX: 1 minute
+        nTargetTimespan = 10 * 60;
+        nTargetSpacing = 5 * 60;
         nLastPOWBlock = 200;
         nMaturity = 15;
         nStakeMinDepth = 100;
@@ -288,10 +290,10 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 0; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1522454400;
-        nBlockStakeModifierlV2 = 0;
+        nBlockStakeModifierlV2 = 999999999;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -366,6 +368,7 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 1;
+        nTargetTimespan = 24 * 60 * 60; // VoltPotCoin: 1 day
         nTargetSpacing = 1 * 60;        // VoltPotCoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;

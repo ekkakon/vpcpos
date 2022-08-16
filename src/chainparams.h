@@ -72,7 +72,9 @@ public:
     bool SkipProofOfWorkCheck() const { return fSkipProofOfWorkCheck; }
     /** Make standard checks */
     bool RequireStandard() const { return fRequireStandard; }
+    int64_t TargetTimespan() const { return nTargetTimespan; }
     int64_t TargetSpacing() const { return nTargetSpacing; }
+    int64_t Interval() const { return nTargetTimespan / nTargetSpacing; }
 
     /** returns the coinbase maturity **/
     int COINBASE_MATURITY() const { return nMaturity; }
@@ -162,6 +164,7 @@ protected:
     int nEnforceBlockUpgradeMajority;
     int nRejectBlockOutdatedMajority;
     int nToCheckBlockUpgradeMajority;
+    int64_t nTargetTimespan;
     int64_t nTargetSpacing;
     int nLastPOWBlock;
     int nMasternodeCountDrift;
