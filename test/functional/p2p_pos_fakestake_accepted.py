@@ -28,7 +28,7 @@ class PoSFakeStakeAccepted(VoltPotCoin_FakeStakeTest):
 
         # 2) Collect the possible prevouts
         self.log.info("Collecting all unspent coins which we generated from mining...")
-        staking_utxo_list = self.node.listunspent()
+        staking_utxo_list = self.node.listunspent(100 - FORK_DEPTH + 1)
         sleep(2)
 
         # 3) Mine more blocks
