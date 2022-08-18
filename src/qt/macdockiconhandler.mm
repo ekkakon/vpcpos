@@ -30,15 +30,12 @@ bool dockClickHandler(id self,SEL _cmd,...) {
 
 void setupDockClickHandler() {
     Class cls = objc_getClass("NSApplication");
-
-    if (appInst.isNull()) {
         Class delClass = (Class)[[[NSApplication sharedApplication] delegate] class];
         SEL shouldHandle = sel_registerName("applicationShouldHandleReopen:hasVisibleWindows:");
         if (class_getInstanceMethod(delClass, shouldHandle))
             class_replaceMethod(delClass, shouldHandle, (IMP)dockClickHandler, "B@:");
         else
             class_addMethod(delClass, shouldHandle, (IMP)dockClickHandler,"B@:");
-    }
 }
 
 
