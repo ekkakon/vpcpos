@@ -4,6 +4,8 @@
 
 #include "macdockiconhandler.h"
 
+#include <AppKit/AppKit.h>
+#include <objc/runtime.h>
 #include <QImageWriter>
 #include <QMenu>
 #include <QBuffer>
@@ -116,6 +118,12 @@ void MacDockIconHandler::cleanup()
     delete s_instance;
 }
 
+/**
+  * Force application activation on macOS. With Qt 5.5.1 this is required when
+  * an action in the Dock menu is triggered.
+  * TODO: Define a Qt version where it's no-longer necessary.
+  */
+void ForceActivation()
 void MacDockIconHandler::handleDockIconClickEvent()
 {
     if (this->mainWindow)
