@@ -45,7 +45,7 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("Pivx Core voltpotcoin-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("VoltPotCoin Core voltpotcoin-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
                                "  voltpotcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded voltpotcoin transaction") + "\n" +
                                "  voltpotcoin-tx [options] -create [commands]   " + _("Create hex-encoded voltpotcoin transaction") + "\n" +
