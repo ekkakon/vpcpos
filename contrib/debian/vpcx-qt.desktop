@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=VoltPotCoin Core
+Comment=VoltPotCoin P2P Cryptocurrency
+Comment[fr]=VoltPotCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=VoltPotCoin, eşten eşe kriptografik sanal para birimi
+Exec=voltpotcoin-qt %u
+Terminal=false
+Type=Application
+Icon=voltpotcoin128
+MimeType=x-scheme-handler/voltpotcoin;
+Categories=Office;Finance;
+StartupWMClass=Pivx-qt

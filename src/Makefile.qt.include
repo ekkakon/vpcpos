@@ -1,0 +1,860 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/voltpotcoin-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# voltpotcoin qt core #
+QT_TS = \
+  qt/locale/voltpotcoin_bg.ts \
+  qt/locale/voltpotcoin_ca.ts \
+  qt/locale/voltpotcoin_cs.ts \
+  qt/locale/voltpotcoin_da.ts \
+  qt/locale/voltpotcoin_de.ts \
+  qt/locale/voltpotcoin_en.ts \
+  qt/locale/voltpotcoin_en_GB.ts \
+  qt/locale/voltpotcoin_en_US.ts \
+  qt/locale/voltpotcoin_eo.ts \
+  qt/locale/voltpotcoin_es.ts \
+  qt/locale/voltpotcoin_es_ES.ts \
+  qt/locale/voltpotcoin_fi.ts \
+  qt/locale/voltpotcoin_fr_FR.ts \
+  qt/locale/voltpotcoin_hi_IN.ts \
+  qt/locale/voltpotcoin_hr.ts \
+  qt/locale/voltpotcoin_hr_HR.ts \
+  qt/locale/voltpotcoin_it.ts \
+  qt/locale/voltpotcoin_ja.ts \
+  qt/locale/voltpotcoin_ko_KR.ts \
+  qt/locale/voltpotcoin_lt_LT.ts \
+  qt/locale/voltpotcoin_nl.ts \
+  qt/locale/voltpotcoin_pl.ts \
+  qt/locale/voltpotcoin_pt.ts \
+  qt/locale/voltpotcoin_pt_BR.ts \
+  qt/locale/voltpotcoin_ro_RO.ts \
+  qt/locale/voltpotcoin_ru.ts \
+  qt/locale/voltpotcoin_sk.ts \
+  qt/locale/voltpotcoin_sv.ts \
+  qt/locale/voltpotcoin_tr.ts \
+  qt/locale/voltpotcoin_uk.ts \
+  qt/locale/voltpotcoin_vi.ts \
+  qt/locale/voltpotcoin_zh_CN.ts \
+  qt/locale/voltpotcoin_zh_TW.ts
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/blockexplorer.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/governancepage.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/voltpotcoin/forms/loadingdialog.ui \
+  qt/forms/zvpccontroldialog.ui \
+  qt/voltpotcoin/forms/snackbar.ui \
+  qt/voltpotcoin/forms/navmenuwidget.ui \
+  qt/voltpotcoin/forms/lockunlock.ui \
+  qt/voltpotcoin/forms/expandablebutton.ui \
+  qt/voltpotcoin/forms/receivedialog.ui \
+  qt/voltpotcoin/forms/walletpassworddialog.ui \
+  qt/voltpotcoin/forms/topbar.ui \
+  qt/voltpotcoin/forms/txrow.ui \
+  qt/voltpotcoin/forms/dashboardwidget.ui \
+  qt/voltpotcoin/forms/coincontrolvpcwidget.ui \
+  qt/voltpotcoin/forms/addresslabelrow.ui \
+  qt/voltpotcoin/forms/contactdropdownrow.ui \
+  qt/voltpotcoin/forms/mninfodialog.ui \
+  qt/voltpotcoin/forms/optionbutton.ui \
+  qt/voltpotcoin/forms/masternodewizarddialog.ui \
+  qt/voltpotcoin/forms/mnrow.ui \
+  qt/voltpotcoin/forms/masternodeswidget.ui \
+  qt/voltpotcoin/forms/myaddressrow.ui \
+  qt/voltpotcoin/forms/csrow.ui \
+  qt/voltpotcoin/forms/sendchangeaddressdialog.ui \
+  qt/voltpotcoin/forms/sendconfirmdialog.ui \
+  qt/voltpotcoin/forms/sendcustomfeedialog.ui \
+  qt/voltpotcoin/forms/sendchangeaddressdialog.ui \
+  qt/voltpotcoin/forms/sendmultirow.ui \
+  qt/voltpotcoin/forms/send.ui \
+  qt/voltpotcoin/forms/addnewaddressdialog.ui \
+  qt/voltpotcoin/forms/addnewcontactdialog.ui \
+  qt/voltpotcoin/forms/requestdialog.ui \
+  qt/voltpotcoin/forms/receivewidget.ui \
+  qt/voltpotcoin/forms/tooltipmenu.ui \
+  qt/voltpotcoin/forms/addresseswidget.ui \
+  qt/voltpotcoin/forms/defaultdialog.ui \
+  qt/voltpotcoin/forms/denomgenerationdialog.ui \
+  qt/voltpotcoin/forms/privacywidget.ui \
+  qt/voltpotcoin/forms/coldstakingwidget.ui \
+  qt/voltpotcoin/settings/forms/settingsbackupwallet.ui \
+  qt/voltpotcoin/settings/forms/settingsbittoolwidget.ui \
+  qt/voltpotcoin/settings/forms/settingsconsolewidget.ui \
+  qt/voltpotcoin/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/voltpotcoin/settings/forms/settingsfaqwidget.ui \
+  qt/voltpotcoin/settings/forms/settingsinformationwidget.ui \
+  qt/voltpotcoin/settings/forms/settingsmainoptionswidget.ui \
+  qt/voltpotcoin/settings/forms/settingsmultisenddialog.ui \
+  qt/voltpotcoin/settings/forms/settingsmultisendwidget.ui \
+  qt/voltpotcoin/settings/forms/settingssignmessagewidgets.ui \
+  qt/voltpotcoin/settings/forms/settingswalletoptionswidget.ui \
+  qt/voltpotcoin/settings/forms/settingswalletrepairwidget.ui \
+  qt/voltpotcoin/settings/forms/settingswidget.ui \
+  qt/voltpotcoin/forms/welcomecontentwidget.ui \
+  qt/voltpotcoin/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/moc_bitcoinamountfield.cpp \
+  qt/voltpotcoin/moc_voltpotcoingui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_blockexplorer.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_governancepage.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_proposalframe.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_splashscreen.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactiondesc.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/voltpotcoin/moc_loadingdialog.cpp \
+  qt/moc_zvpccontroldialog.cpp \
+  qt/voltpotcoin/moc_pwidget.cpp \
+  qt/voltpotcoin/moc_snackbar.cpp \
+  qt/voltpotcoin/moc_navmenuwidget.cpp \
+  qt/voltpotcoin/moc_lockunlock.cpp \
+  qt/voltpotcoin/moc_expandablebutton.cpp \
+  qt/voltpotcoin/moc_furabstractlistitemdelegate.cpp \
+  qt/voltpotcoin/moc_receivedialog.cpp \
+  qt/voltpotcoin/moc_walletpassworddialog.cpp \
+  qt/voltpotcoin/moc_pfborderimage.cpp \
+  qt/voltpotcoin/moc_topbar.cpp \
+  qt/voltpotcoin/moc_txrow.cpp \
+  qt/voltpotcoin/moc_dashboardwidget.cpp \
+  qt/voltpotcoin/moc_coincontrolvpcwidget.cpp \
+  qt/voltpotcoin/moc_addresslabelrow.cpp \
+  qt/voltpotcoin/moc_contactdropdownrow.cpp \
+  qt/voltpotcoin/moc_mninfodialog.cpp \
+  qt/voltpotcoin/moc_optionbutton.cpp \
+  qt/voltpotcoin/moc_coldstakingmodel.cpp \
+  qt/voltpotcoin/moc_mnmodel.cpp \
+  qt/voltpotcoin/moc_masternodewizarddialog.cpp \
+  qt/voltpotcoin/moc_mnrow.cpp \
+  qt/voltpotcoin/moc_masternodeswidget.cpp \
+  qt/voltpotcoin/moc_myaddressrow.cpp \
+  qt/voltpotcoin/moc_csrow.cpp \
+  qt/voltpotcoin/moc_contactsdropdown.cpp \
+  qt/voltpotcoin/moc_sendchangeaddressdialog.cpp \
+  qt/voltpotcoin/moc_sendconfirmdialog.cpp \
+  qt/voltpotcoin/moc_sendcustomfeedialog.cpp \
+  qt/voltpotcoin/moc_sendchangeaddressdialog.cpp \
+  qt/voltpotcoin/moc_sendmultirow.cpp \
+  qt/voltpotcoin/moc_send.cpp \
+  qt/voltpotcoin/moc_addnewaddressdialog.cpp \
+  qt/voltpotcoin/moc_addnewcontactdialog.cpp \
+  qt/voltpotcoin/moc_requestdialog.cpp \
+  qt/voltpotcoin/moc_receivewidget.cpp \
+  qt/voltpotcoin/moc_tooltipmenu.cpp \
+  qt/voltpotcoin/moc_addresseswidget.cpp \
+  qt/voltpotcoin/moc_defaultdialog.cpp \
+  qt/voltpotcoin/moc_denomgenerationdialog.cpp \
+  qt/voltpotcoin/moc_privacywidget.cpp \
+  qt/voltpotcoin/moc_coldstakingwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsbackupwallet.cpp \
+  qt/voltpotcoin/settings/moc_settingsbittoolwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsconsolewidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsfaqwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsinformationwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsmainoptionswidget.cpp \
+  qt/voltpotcoin/settings/moc_settingsmultisenddialog.cpp \
+  qt/voltpotcoin/settings/moc_settingsmultisendwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingssignmessagewidgets.cpp \
+  qt/voltpotcoin/settings/moc_settingswalletoptionswidget.cpp \
+  qt/voltpotcoin/settings/moc_settingswalletrepairwidget.cpp \
+  qt/voltpotcoin/settings/moc_settingswidget.cpp \
+  qt/voltpotcoin/moc_welcomecontentwidget.cpp \
+  qt/voltpotcoin/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/voltpotcoin.moc \
+  qt/bitcoinamountfield.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/voltpotcoin/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_voltpotcoin.cpp
+QT_QRC = qt/voltpotcoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_voltpotcoin_locale.cpp
+QT_QRC_LOCALE = qt/voltpotcoin_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/bitcoinamountfield.h \
+  qt/voltpotcoin/voltpotcoingui.h \
+  qt/bitcoinunits.h \
+  qt/blockexplorer.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/governancepage.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/proposalframe.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/splashscreen.h \
+  qt/trafficgraphwidget.h \
+  qt/transactiondesc.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/voltpotcoin/prunnable.h \
+  qt/voltpotcoin/pfborderimage.h \
+  qt/voltpotcoin/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/zvpccontroldialog.h \
+  qt/voltpotcoin/pwidget.h \
+  qt/voltpotcoin/guitransactionsutils.h \
+  qt/voltpotcoin/snackbar.h \
+  qt/voltpotcoin/navmenuwidget.h \
+  qt/voltpotcoin/lockunlock.h \
+  qt/voltpotcoin/receivedialog.h \
+  qt/voltpotcoin/furlistrow.h \
+  qt/voltpotcoin/furabstractlistitemdelegate.h \
+  qt/voltpotcoin/txviewholder.h \
+  qt/voltpotcoin/qtutils.h \
+  qt/voltpotcoin/expandablebutton.h \
+  qt/voltpotcoin/walletpassworddialog.h \
+  qt/voltpotcoin/topbar.h \
+  qt/voltpotcoin/txrow.h \
+  qt/voltpotcoin/addressholder.h \
+  qt/voltpotcoin/addressfilterproxymodel.h \
+  qt/voltpotcoin/dashboardwidget.h \
+  qt/voltpotcoin/coincontrolvpcwidget.h \
+  qt/voltpotcoin/addresslabelrow.h \
+  qt/voltpotcoin/contactdropdownrow.h \
+  qt/voltpotcoin/mninfodialog.h \
+  qt/voltpotcoin/optionbutton.h \
+  qt/voltpotcoin/coldstakingmodel.h \
+  qt/voltpotcoin/mnmodel.h \
+  qt/voltpotcoin/masternodewizarddialog.h \
+  qt/voltpotcoin/mnrow.h \
+  qt/voltpotcoin/masternodeswidget.h \
+  qt/voltpotcoin/myaddressrow.h \
+  qt/voltpotcoin/csrow.h \
+  qt/voltpotcoin/contactsdropdown.h \
+  qt/voltpotcoin/sendchangeaddressdialog.h \
+  qt/voltpotcoin/sendconfirmdialog.h \
+  qt/voltpotcoin/sendcustomfeedialog.h \
+  qt/voltpotcoin/sendchangeaddressdialog.h \
+  qt/voltpotcoin/sendmultirow.h \
+  qt/voltpotcoin/send.h \
+  qt/voltpotcoin/addnewaddressdialog.h \
+  qt/voltpotcoin/addnewcontactdialog.h \
+  qt/voltpotcoin/requestdialog.h \
+  qt/voltpotcoin/receivewidget.h \
+  qt/voltpotcoin/tooltipmenu.h \
+  qt/voltpotcoin/addresseswidget.h \
+  qt/voltpotcoin/defaultdialog.h \
+  qt/voltpotcoin/denomgenerationdialog.h \
+  qt/voltpotcoin/privacywidget.h \
+  qt/voltpotcoin/coldstakingwidget.h \
+  qt/voltpotcoin/settings/settingsbackupwallet.h \
+  qt/voltpotcoin/settings/settingsbittoolwidget.h \
+  qt/voltpotcoin/settings/settingsconsolewidget.h \
+  qt/voltpotcoin/settings/settingsdisplayoptionswidget.h \
+  qt/voltpotcoin/settings/settingsfaqwidget.h \
+  qt/voltpotcoin/settings/settingsinformationwidget.h \
+  qt/voltpotcoin/settings/settingsmainoptionswidget.h \
+  qt/voltpotcoin/settings/settingsmultisenddialog.h \
+  qt/voltpotcoin/settings/settingsmultisendwidget.h \
+  qt/voltpotcoin/settings/settingssignmessagewidgets.h \
+  qt/voltpotcoin/settings/settingswalletoptionswidget.h \
+  qt/voltpotcoin/settings/settingswalletrepairwidget.h \
+  qt/voltpotcoin/settings/settingswidget.h \
+  qt/voltpotcoin/welcomecontentwidget.h \
+  qt/voltpotcoin/splash.h
+
+RES_ICONS = \
+  qt/res/icons/add.png \
+  qt/res/icons/address-book.png \
+  qt/res/icons/automint_active.png \
+  qt/res/icons/automint_inactive.png \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/browse.png \
+  qt/res/icons/clock1.png \
+  qt/res/icons/clock2.png \
+  qt/res/icons/clock3.png \
+  qt/res/icons/clock4.png \
+  qt/res/icons/clock5.png \
+  qt/res/icons/configure.png \
+  qt/res/icons/connect0_16.png \
+  qt/res/icons/connect1_16.png \
+  qt/res/icons/connect2_16.png \
+  qt/res/icons/connect3_16.png \
+  qt/res/icons/connect4_16.png \
+  qt/res/icons/debugwindow.png \
+  qt/res/icons/edit.png \
+  qt/res/icons/editcopy.png \
+  qt/res/icons/editpaste.png \
+  qt/res/icons/explorer.png \
+  qt/res/icons/export.png \
+  qt/res/icons/eye.png \
+  qt/res/icons/eye_minus.png \
+  qt/res/icons/eye_plus.png \
+  qt/res/icons/filesave.png \
+  qt/res/icons/history.png \
+  qt/res/icons/key.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/masternodes.png \
+  qt/res/icons/onion.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/qrcode.png \
+  qt/res/icons/quit.png \
+  qt/res/icons/receive.png \
+  qt/res/icons/receive_dark.png \
+  qt/res/icons/privacy.png \
+  qt/res/icons/remove.png \
+  qt/res/icons/send.png \
+  qt/res/icons/send_dark.png \
+  qt/res/icons/governance.png \
+  qt/res/icons/governance_dark.png \
+  qt/res/icons/staking_active.png \
+  qt/res/icons/staking_inactive.png \
+  qt/res/icons/synced.png \
+  qt/res/icons/trade.png \
+  qt/res/icons/transaction0.png \
+  qt/res/icons/transaction2.png \
+  qt/res/icons/transaction_conflicted.png \
+  qt/res/icons/tx_inout.png \
+  qt/res/icons/tx_input.png \
+  qt/res/icons/tx_output.png \
+  qt/res/icons/tx_mined.png \
+  qt/res/icons/ic-transaction-received.svg \
+  qt/res/icons/ic-transaction-mint.svg \
+  qt/res/icons/ic-transaction-sent.svg \
+  qt/res/icons/ic-transaction-staked.svg \
+  qt/res/icons/unit_voltpotcoin.png \
+  qt/res/icons/unit_mvoltpotcoin.png \
+  qt/res/icons/unit_uvoltpotcoin.png \
+  qt/res/icons/unit_tvoltpotcoin.png \
+  qt/res/icons/unit_tmvoltpotcoin.png \
+  qt/res/icons/unit_tuvoltpotcoin.png \
+  qt/res/icons/yesvote.png \
+  qt/res/icons/novote.png \
+  qt/res/icons/abstainvote.png \
+  qt/voltpotcoin/res/img/bg-dashboard-banner.png \
+  qt/voltpotcoin/res/img/bg-multi-number-dark.svg \
+  qt/voltpotcoin/res/img/ic-check-locked.svg \
+  qt/voltpotcoin/res/img/ic-nav-address.svg \
+  qt/voltpotcoin/res/img/ic-update.svg \
+  qt/voltpotcoin/res/img/bg-multi-number.svg \
+  qt/voltpotcoin/res/img/ic-check-mint-off.svg \
+  qt/voltpotcoin/res/img/ic-nav-cold-staking.svg \
+  qt/voltpotcoin/res/img/ic-nav-cold-staking-active.svg \
+  qt/voltpotcoin/res/img/ic-nav-dashboard-active.svg \
+  qt/voltpotcoin/res/img/ic-wallet-status-locked.svg \
+  qt/voltpotcoin/res/img/bg-splash.svg \
+  qt/voltpotcoin/res/img/bg-splash.png \
+  qt/voltpotcoin/res/img/ic-check-mint.svg \
+  qt/voltpotcoin/res/img/ic-nav-dashboard-hover.svg \
+  qt/voltpotcoin/res/img/ic-wallet-status-staking.svg \
+  qt/voltpotcoin/res/img/ic-check-peers-off.svg \
+  qt/voltpotcoin/res/img/ic-nav-dashboard.svg \
+  qt/voltpotcoin/res/img/ic-wallet-status-unlocked.svg \
+  qt/voltpotcoin/res/img/ic-check-peers.svg \
+  qt/voltpotcoin/res/img/ic-nav-master-active.svg \
+  qt/voltpotcoin/res/img/ic-watch-password-white.svg \
+  qt/voltpotcoin/res/img/bg-welcome-container.jpg \
+  qt/voltpotcoin/res/img/bg-welcome-container.png \
+  qt/voltpotcoin/res/img/bg-welcome-container.svg \
+  qt/voltpotcoin/res/img/bg-welcome-container@2x.png \
+  qt/voltpotcoin/res/img/bg-welcome-container@3x.png \
+  qt/voltpotcoin/res/img/ic-check-staking-off.svg \
+  qt/voltpotcoin/res/img/ic-nav-master-hover.svg \
+  qt/voltpotcoin/res/img/ic-watch-password.svg \
+  qt/voltpotcoin/res/img/bg-welcome.jpg \
+  qt/voltpotcoin/res/img/bg-welcome.svg \
+  qt/voltpotcoin/res/img/bg-welcome@2x.jpg \
+  qt/voltpotcoin/res/img/bg-welcome@3x.jpg \
+  qt/voltpotcoin/res/img/bg-welcome.png \
+  qt/voltpotcoin/res/img/ic-check-staking.svg \
+  qt/voltpotcoin/res/img/ic-nav-master.svg \
+  qt/voltpotcoin/res/img/img-dashboard-banner.jpg \
+  qt/voltpotcoin/res/img/btn-radio-active.svg \
+  qt/voltpotcoin/res/img/ic-check-sync-off.svg \
+  qt/voltpotcoin/res/img/ic-nav-privacy-active.svg \
+  qt/voltpotcoin/res/img/img-empty-contacts.svg \
+  qt/voltpotcoin/res/img/btn-radio-off.svg \
+  qt/voltpotcoin/res/img/ic-check-sync.png \
+  qt/voltpotcoin/res/img/ic-nav-privacy-hover.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-contacts.svg \
+  qt/voltpotcoin/res/img/ic-contact-arrow-down.svg \
+  qt/voltpotcoin/res/img/ic-contact-arrow-down-white.svg \
+  qt/voltpotcoin/res/img/ic-check-sync.svg \
+  qt/voltpotcoin/res/img/ic-check-faq.svg \
+  qt/voltpotcoin/res/img/ic-nav-privacy.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-error.svg \
+  qt/voltpotcoin/res/img/ic-add-label.svg \
+  qt/voltpotcoin/res/img/ic-pending.svg \
+  qt/voltpotcoin/res/img/ic-check-theme-dark.svg \
+  qt/voltpotcoin/res/img/ic-nav-receive-active.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-masternode.svg \
+  qt/voltpotcoin/res/img/ic-add-liliac.svg \
+  qt/voltpotcoin/res/img/ic-check-theme-light.svg \
+  qt/voltpotcoin/res/img/ic-nav-receive-hover.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-multisend.svg \
+  qt/voltpotcoin/res/img/ic-add-purple.svg \
+  qt/voltpotcoin/res/img/ic-check-white.svg \
+  qt/voltpotcoin/res/img/ic-nav-receive.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-peers.svg \
+  qt/voltpotcoin/res/img/ic-add.svg \
+  qt/voltpotcoin/res/img/ic-check.svg \
+  qt/voltpotcoin/res/img/ic-nav-send-active.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-staking-off.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-staking-on.svg \
+  qt/voltpotcoin/res/img/ic-address-book-grey.svg \
+  qt/voltpotcoin/res/img/ic-chevron-left.svg \
+  qt/voltpotcoin/res/img/ic-nav-send-hover.svg \
+  qt/voltpotcoin/res/img/img-empty-dark-transactions.svg \
+  qt/voltpotcoin/res/img/ic-address-book-white.svg \
+  qt/voltpotcoin/res/img/ic-chevron-right.svg \
+  qt/voltpotcoin/res/img/ic-nav-send.svg \
+  qt/voltpotcoin/res/img/img-empty-error.svg \
+  qt/voltpotcoin/res/img/ic-address-book.svg \
+  qt/voltpotcoin/res/img/ic-clear-liliac.svg \
+  qt/voltpotcoin/res/img/ic-nav-settings-active.svg \
+  qt/voltpotcoin/res/img/img-empty-masternode.svg \
+  qt/voltpotcoin/res/img/ic-address-send-white.svg \
+  qt/voltpotcoin/res/img/ic-clear-purple.svg \
+  qt/voltpotcoin/res/img/ic-nav-settings-hover.svg \
+  qt/voltpotcoin/res/img/img-empty-multisend.svg \
+  qt/voltpotcoin/res/img/ic-address-send.svg \
+  qt/voltpotcoin/res/img/ic-close-white.svg \
+  qt/voltpotcoin/res/img/ic-nav-settings.svg \
+  qt/voltpotcoin/res/img/img-empty-peers.svg \
+  qt/voltpotcoin/res/img/img-empty-privacy.svg \
+  qt/voltpotcoin/res/img/img-empty-privacy-dark.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-down-white.svg \
+  qt/voltpotcoin/res/img/ic-close.svg \
+  qt/voltpotcoin/res/img/ic-radio-liliac-on.svg \
+  qt/voltpotcoin/res/img/img-empty-staking-off.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-down.svg \
+  qt/voltpotcoin/res/img/ic-coin-vpc.svg \
+  qt/voltpotcoin/res/img/ic-receive-off.svg \
+  qt/voltpotcoin/res/img/img-empty-staking-on.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-up-white.svg \
+  qt/voltpotcoin/res/img/ic-coin-zvpc.png \
+  qt/voltpotcoin/res/img/ic-receive-on.svg \
+  qt/voltpotcoin/res/img/img-empty-transactions.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-up.svg \
+  qt/voltpotcoin/res/img/ic-coin-zvpc.svg \
+  qt/voltpotcoin/res/img/ic-received.svg \
+  qt/voltpotcoin/res/img/img-logo-voltpotcoin.png \
+  qt/voltpotcoin/res/img/ic-arrow-drop-white-down.svg \
+  qt/voltpotcoin/res/img/ic-combo-box.svg \
+  qt/voltpotcoin/res/img/ic-send.svg \
+  qt/voltpotcoin/res/img/img-logo-voltpotcoin@2x.png \
+  qt/voltpotcoin/res/img/ic-arrow-purple-down.svg \
+  qt/voltpotcoin/res/img/ic-connect.svg \
+  qt/voltpotcoin/res/img/ic-submenu-lock.svg \
+  qt/voltpotcoin/res/img/img-logo-voltpotcoin@3x.png \
+  qt/voltpotcoin/res/img/img-logo-voltpotcoin.svg \
+  qt/voltpotcoin/res/img/ic-arrow-right-white.svg \
+  qt/voltpotcoin/res/img/ic-arrow-left-white.svg \
+  qt/voltpotcoin/res/img/ic-arrow-left.svg \
+  qt/voltpotcoin/res/img/ic-copy-liliac.svg \
+  qt/voltpotcoin/res/img/ic-submenu-staking.svg \
+  qt/voltpotcoin/res/img/img-nav-logo-voltpotcoin.png \
+  qt/voltpotcoin/res/img/ic-arrow-right.svg \
+  qt/voltpotcoin/res/img/ic-copy.svg \
+  qt/voltpotcoin/res/img/ic-copy-big.svg \
+  qt/voltpotcoin/res/img/ic-copy-big-white.svg \
+  qt/voltpotcoin/res/img/ic-submenu-unlock.svg \
+  qt/voltpotcoin/res/img/img-nav-logo.png \
+  qt/voltpotcoin/res/img/ic-arrow-white-left.svg \
+  qt/voltpotcoin/res/img/ic-exit.svg \
+  qt/voltpotcoin/res/img/ic-switch-liliac-on.svg \
+  qt/voltpotcoin/res/img/img-nav-logo.svg \
+  qt/voltpotcoin/res/img/ic-arrow-white-right.svg \
+  qt/voltpotcoin/res/img/ic-expand.svg \
+  qt/voltpotcoin/res/img/ic-switch-off.svg \
+  qt/voltpotcoin/res/img/img-qr-test-big.png \
+  qt/voltpotcoin/res/img/ic-check-active.svg \
+  qt/voltpotcoin/res/img/ic-folder.svg \
+  qt/voltpotcoin/res/img/ic-switch-on.svg \
+  qt/voltpotcoin/res/img/img-qr-test.png \
+  qt/voltpotcoin/res/img/ic-check-box.svg \
+  qt/voltpotcoin/res/img/ic-check-box-dark-active.svg \
+  qt/voltpotcoin/res/img/ic-check-box-indeterminate.svg \
+  qt/voltpotcoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/voltpotcoin/res/img/ic-label-liliac.svg \
+  qt/voltpotcoin/res/img/ic-transaction-warning.svg \
+  qt/voltpotcoin/res/img/ic-transaction-mint.svg \
+  qt/voltpotcoin/res/img/ic-transaction-mint-inactive.svg \
+  qt/voltpotcoin/res/img/ic-check-cold-staking.svg \
+  qt/voltpotcoin/res/img/ic-check-cold-staking-off.svg \
+  qt/voltpotcoin/res/img/ic-check-cold-staking-enabled.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-cs-contract.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-cs-contract-inactive.svg \
+  qt/voltpotcoin/res/img/img-qr.svg \
+  qt/voltpotcoin/res/img/ic-check-connect-off.svg \
+  qt/voltpotcoin/res/img/ic-label.svg \
+  qt/voltpotcoin/res/img/ic-transaction-received.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-received.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-warning.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-mint.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-mint-inactive.svg \
+  qt/voltpotcoin/res/img/ic-transaction-received-inactive.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-received-inactive.svg \
+  qt/voltpotcoin/res/img/img-welcome-step1.png \
+  qt/voltpotcoin/res/img/ic-check-connect.svg \
+  qt/voltpotcoin/res/img/ic-menu-hover.svg \
+  qt/voltpotcoin/res/img/ic-transaction-sent.svg \
+  qt/voltpotcoin/res/img/ic-transaction-sent-inactive.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-sent.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-sent-inactive.svg \
+  qt/voltpotcoin/res/img/img-welcome-step2.png \
+  qt/voltpotcoin/res/img/ic-check-dark.svg \
+  qt/voltpotcoin/res/img/ic-mint.svg \
+  qt/voltpotcoin/res/img/ic-transaction-staked.svg \
+  qt/voltpotcoin/res/img/ic-transaction-staked-inactive.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-staked.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-staked-inactive.svg \
+  qt/voltpotcoin/res/img/img-welcome-step3.png \
+  qt/voltpotcoin/res/img/ic-check-liliac-on.svg \
+  qt/voltpotcoin/res/img/ic-nav-address-active.svg \
+  qt/voltpotcoin/res/img/ic-unlock-staking.svg \
+  qt/voltpotcoin/res/img/img-welcome-step4.png \
+  qt/voltpotcoin/res/img/ic-check-locked-off.svg \
+  qt/voltpotcoin/res/img/ic-nav-address-hover.svg \
+  qt/voltpotcoin/res/img/ic-update-liliac.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-down-purple.svg \
+  qt/voltpotcoin/res/img/ic-arrow-drop-up-purple.svg \
+  qt/voltpotcoin/res/img/ic-check-liliac-indeterminate.svg \
+  qt/voltpotcoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/voltpotcoin/res/img/ic-transaction-stake-delegated.svg \
+  qt/voltpotcoin/res/img/ic-transaction-stake-delegated-inactive.svg \
+  qt/voltpotcoin/res/img/ic-transaction-stake-hot.svg \
+  qt/voltpotcoin/res/img/ic-transaction-stake-hot-inactive.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-stake-hot.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-stake-hot-inactive.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-stake-delegated.svg \
+  qt/voltpotcoin/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
+  qt/voltpotcoin/res/img/ic-transaction-cs-contract.svg \
+  qt/voltpotcoin/res/img/ic-transaction-cs-contract-inactive.svg \
+  qt/voltpotcoin/res/img/ic-check-box-indeterminate.svg \
+  qt/voltpotcoin/res/img/ani-loading-dark.gif \
+  qt/voltpotcoin/res/img/ani-loading.gif
+
+
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/bitcoinamountfield.cpp \
+  qt/voltpotcoin/voltpotcoingui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/blockexplorer.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/splashscreen.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/blockexplorer.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/governancepage.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/proposalframe.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactiondesc.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/voltpotcoin/loadingdialog.cpp \
+  qt/zvpccontroldialog.cpp \
+  qt/voltpotcoin/pwidget.cpp \
+  qt/voltpotcoin/guitransactionsutils.cpp \
+  qt/voltpotcoin/snackbar.cpp \
+  qt/voltpotcoin/navmenuwidget.cpp \
+  qt/voltpotcoin/lockunlock.cpp \
+  qt/voltpotcoin/receivedialog.cpp \
+  qt/voltpotcoin/furabstractlistitemdelegate.cpp \
+  qt/voltpotcoin/txviewholder.cpp \
+  qt/voltpotcoin/qtutils.cpp \
+  qt/voltpotcoin/expandablebutton.cpp \
+  qt/voltpotcoin/walletpassworddialog.cpp \
+  qt/voltpotcoin/topbar.cpp \
+  qt/voltpotcoin/txrow.cpp \
+  qt/voltpotcoin/addressholder.cpp \
+  qt/voltpotcoin/addressfilterproxymodel.cpp \
+  qt/voltpotcoin/dashboardwidget.cpp \
+  qt/voltpotcoin/coincontrolvpcwidget.cpp \
+  qt/voltpotcoin/addresslabelrow.cpp \
+  qt/voltpotcoin/contactdropdownrow.cpp \
+  qt/voltpotcoin/contactsdropdown.cpp \
+  qt/voltpotcoin/optionbutton.cpp \
+  qt/voltpotcoin/mninfodialog.cpp \
+  qt/voltpotcoin/coldstakingmodel.cpp \
+  qt/voltpotcoin/mnmodel.cpp \
+  qt/voltpotcoin/masternodewizarddialog.cpp \
+  qt/voltpotcoin/mnrow.cpp \
+  qt/voltpotcoin/masternodeswidget.cpp \
+  qt/voltpotcoin/myaddressrow.cpp \
+  qt/voltpotcoin/csrow.cpp \
+  qt/voltpotcoin/sendchangeaddressdialog.cpp \
+  qt/voltpotcoin/sendconfirmdialog.cpp \
+  qt/voltpotcoin/sendcustomfeedialog.cpp \
+  qt/voltpotcoin/sendchangeaddressdialog.cpp \
+  qt/voltpotcoin/sendmultirow.cpp \
+  qt/voltpotcoin/send.cpp \
+  qt/voltpotcoin/addnewaddressdialog.cpp \
+  qt/voltpotcoin/addnewcontactdialog.cpp \
+  qt/voltpotcoin/requestdialog.cpp \
+  qt/voltpotcoin/receivewidget.cpp \
+  qt/voltpotcoin/tooltipmenu.cpp \
+  qt/voltpotcoin/addresseswidget.cpp \
+  qt/voltpotcoin/defaultdialog.cpp \
+  qt/voltpotcoin/denomgenerationdialog.cpp \
+  qt/voltpotcoin/privacywidget.cpp \
+  qt/voltpotcoin/coldstakingwidget.cpp \
+  qt/voltpotcoin/settings/settingsbackupwallet.cpp \
+  qt/voltpotcoin/settings/settingsbittoolwidget.cpp \
+  qt/voltpotcoin/settings/settingsconsolewidget.cpp \
+  qt/voltpotcoin/settings/settingsdisplayoptionswidget.cpp \
+  qt/voltpotcoin/settings/settingsfaqwidget.cpp \
+  qt/voltpotcoin/settings/settingsinformationwidget.cpp \
+  qt/voltpotcoin/settings/settingsmainoptionswidget.cpp \
+  qt/voltpotcoin/settings/settingsmultisenddialog.cpp \
+  qt/voltpotcoin/settings/settingsmultisendwidget.cpp \
+  qt/voltpotcoin/settings/settingssignmessagewidgets.cpp \
+  qt/voltpotcoin/settings/settingswalletoptionswidget.cpp \
+  qt/voltpotcoin/settings/settingswalletrepairwidget.cpp \
+  qt/voltpotcoin/settings/settingswidget.cpp \
+  qt/voltpotcoin/welcomecontentwidget.cpp \
+  qt/voltpotcoin/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png \
+  qt/res/images/splash.png \
+  qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png \
+  qt/res/images/voltpotcoin_logo_horizontal.png \
+  qt/res/images/downArrow_dark.png \
+  qt/res/images/downArrow_small_dark.png \
+  qt/res/images/downArrow_small.png \
+  qt/res/images/upArrow_small_dark.png \
+  qt/res/images/upArrow_small.png \
+  qt/res/images/leftArrow_small_dark.png \
+  qt/res/images/rightArrow_small_dark.png \
+  qt/res/images/qtreeview_selected.png
+
+RES_CSS = \
+  qt/res/css/default.css \
+  qt/voltpotcoin/res/css/style_dark.css \
+  qt/voltpotcoin/res/css/style_light.css
+
+RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
+
+BITCOIN_RC = qt/res/voltpotcoin-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_voltpotcoin_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# voltpotcoin-qt binary #
+qt_voltpotcoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_voltpotcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_voltpotcoin_qt_SOURCES = qt/voltpotcoin.cpp
+if TARGET_DARWIN
+  qt_voltpotcoin_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_voltpotcoin_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_voltpotcoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_voltpotcoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_voltpotcoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_voltpotcoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_voltpotcoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_voltpotcoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/voltpotcoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/voltpotcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/voltpotcoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/voltpotcoin_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name voltpotcoin_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name voltpotcoin $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_voltpotcoin_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+voltpotcoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_voltpotcoin_qt_OBJECTS) qt/voltpotcoin-qt$(EXEEXT) $(LIBBITCOINQT)
+
+voltpotcoin_qt : qt/voltpotcoin-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
