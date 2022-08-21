@@ -27,10 +27,10 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev,
  dh-systemd
-Standards-Version: 3.9.2
+Standards-Version: 2.0.0
 Homepage: http://www.voltpotcoin.org
-Vcs-Git: git://github.com/VoltPotCoin-Project/VoltPotCoin.git
-Vcs-Browser: http://github.com/VoltPotCoin-Project/VoltPotCoin
+Vcs-Git: git://github.com/ekkakon/vpcpos.git
+Vcs-Browser: http://github.com/ekkakon/vpcpos
 
 Package: voltpotcoind
 Architecture: any
@@ -61,4 +61,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 10+ GB of space, slowly growing.
  .
- This package provides Pivx-Qt, a GUI for VoltPotCoin based on Qt.
+ This package provides VoltPotCoin-Qt, a GUI for VoltPotCoin based on Qt.
