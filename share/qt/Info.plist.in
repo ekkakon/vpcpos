@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.voltpotcoin.Pivx-Qt</string>
+  <string>io.voltpotcoin.VoltPotCoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>io.voltpotcoin.PivxPayment</string>
+      <string>io.voltpotcoin.VoltPotCoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>voltpotcoin</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>io.voltpotcoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Pivx payment request</string>
+      <string>VoltPotCoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

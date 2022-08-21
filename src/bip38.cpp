@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2019 The VoltPotCoin developers
+// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2020-2022 The VoltPotCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

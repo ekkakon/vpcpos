@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2015-2019 The VoltPotCoin developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2020-2022 The VoltPotCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +14,7 @@
 #include "spork.h"
 
 //
-// Bootup the Masternode, look for a 10000 VoltPotCoin input and register on the network
+// Bootup the Masternode, look for a 20000 VoltPotCoin input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {
@@ -468,7 +469,7 @@ std::vector<COutput> CActiveMasternode::SelectCoinsMasternode()
 
     // Filter
     for (const COutput& out : vCoins) {
-        if (out.tx->vout[out.i].nValue == 10000 * COIN) { //exactly
+        if (out.tx->vout[out.i].nValue == 20000 * COIN) { //exactly
             filteredCoins.push_back(out);
         }
     }
