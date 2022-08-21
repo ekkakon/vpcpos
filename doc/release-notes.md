@@ -1,14 +1,14 @@
-VoltPotCoin Core version *v4.0.2* is now available from:  <https://github.com/voltpotcoin-project/voltpotcoin/releases>
+VoltPotCoin Core version *v2.0.1* is now available from:  <https://github.com/ekkakon/vpcpos/releases>
 
 This is a new revision version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/voltpotcoin-project/voltpotcoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/ekkakon/vpcpos/issues>
 
 
 Recommended Update
 ==============
 
-VoltPotCoin Core v4.0.2 is NOT a mandatory update, and user can choose to stay with v4.0.0/v4.0.1 if they wish. However, v4.0.2 does contain minor bug fixes and performance improvements to address feedback from the v4.0.0/v4.0.1 versions.
+VoltPotCoin Core v2.0.1 is NOT a mandatory update, and user can choose to stay with v2.0.0/v2.0.1 if they wish. However, v2.0.2 does contain minor bug fixes and performance improvements to address feedback from the v1.3.0/v1.3.1 versions.
 
 How to Upgrade
 ==============
@@ -57,38 +57,24 @@ The top bar's sync status button now shows the latest block height (number) when
 
 The coin control screen now allows for copying the various values to the OS clipboard
 
-*v4.0.2* Change log
+*v2.0.1* Change log
 ==============
 
 Detailed release notes follow. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
 ### Core
-- #1273 `d114eda990` [Core] Update checkpoints for first v7 block (Fuzzbawls)
 
 ### GUI
-- #1261 `c02cc4acdd` [Bug][GUI] Double counted delegated balance. (furszy)
-- #1267 `350184044d` [Qt][Bug] Load the most recent instead of the first transactions (Fuzzbawls)
-- #1263 `1d0c1bb81c` [GUI] P2CS transaction divided in two types for visual accuracy. (furszy)
-- #1266 `f659cbf1ef` [GUI] Quick minor GUI startup useful changes. (furszy)
-- #1269 `0771075668` [GUI] CoinControlDialog, every copy to clipboard action implemented. (furszy)
-- #1265 `da7c50eca1` [GUI] Connect P2CSUnlockOwner and P2CSUnlockStaker records to the model (random-zebra)
-- #1268 `912cf67847` [GUI] Display latest block number in the top bar (random-zebra)
-- #1279 `c09cd0d40f` [GUI] Transaction record cold staking fixes. (furszy)
 
 ### Wallet Code
-- #1264 `1a12735df5` [Wallet] Don't add P2CS automatically to GetLockedCredit (random-zebra)
 
 ### Documentation
-- #1272 `d4a9475e40` [Trivial] Update copyright headers for 4.0.2 (Fuzzbawls)
 
 ### RPC Interface
-- #1274 `f5c3552c96` [RPC] Remove extra PoW rounds in 'generate' (random-zebra)
 
 ## Credits
 
 Thanks to everyone who directly contributed to this release:
-- Fuzzbawls
-- furszy
-- random-zebra
+
 
 As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/voltpotcoin-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
