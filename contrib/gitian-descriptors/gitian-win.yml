@@ -1,5 +1,5 @@
 ---
-name: "voltpotcoin-win-4.0"
+name: "voltpotcoin-win-2.0"
 enable_cache: true
 distro: "ubuntu"
 suites:
