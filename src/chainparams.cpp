@@ -195,6 +195,8 @@ public:
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
+        nPivxBadBlockTime = 1625302044; // Skip nBit validation of Block 1001 per PR #915
+        nPivxBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 1001 per PR #915
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585; // October 17, 2017 4:30:00 AM
