@@ -58,7 +58,7 @@ Other implementations of the zerocoin protocol only allow for spending of one de
 The VoltPotCoin zerocoin implementation is structured in such a way that denominations aren't needed to be known by the average user.
 
 ### Fees
-zPiv transactions require more computation and disk space than typical VoltPotCoin transactions, and as such require a higher transaction fee in order to prevent network spam. Fees are only charged when minting zPiv, each minted denomination is charged a flat rate of 0.01 Piv. zPiv spends are not charged a transaction fee unless the change is minted into zPiv, see the *Minting Change* section for details on fees for zPiv spends with minted change.
+zVpc transactions require more computation and disk space than typical VoltPotCoin transactions, and as such require a higher transaction fee in order to prevent network spam. Fees are only charged when minting zVpc, each minted denomination is charged a flat rate of 0.01 Vpc. zVpc spends are not charged a transaction fee unless the change is minted into zVpc, see the *Minting Change* section for details on fees for zVpc spends with minted change.
 
 ### Converting VPC to zVPC (*zVPC Mint*)
 **GUI** - Conversion from VPC to zVPC can be done using the `Privacy Dialog` in the QT wallet. Enter the amount of VPC you would like to convert and click `Mint Zerocoin`.

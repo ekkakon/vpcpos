@@ -756,7 +756,7 @@ para staking</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Diálogo</translation>
@@ -5744,7 +5744,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Selecciona zVPC para Gastar</translation>
@@ -5758,8 +5758,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Presionar el botón</translation>
     </message>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>0.00 </source>

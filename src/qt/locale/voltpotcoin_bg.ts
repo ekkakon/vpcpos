@@ -528,7 +528,7 @@
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>VPC:</source>
         <translation>VPC:</translation>
@@ -2888,7 +2888,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Изберете zVPC за Изпращане</translation>
@@ -2898,7 +2898,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Монетен контрол...</translation>
     </message>
     <message>
-        <source>zPiv</source>
+        <source>zVpc</source>
         <translation>zVPC</translation>
     </message>
     <message>

@@ -735,7 +735,7 @@ para 'Staking'</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Diálogo</translation>
@@ -3428,13 +3428,13 @@ Endereço: %4
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>PushButton</source>
         <translation>Aperte o Botão</translation>
     </message>
     <message>
-        <source>zPiv</source>
+        <source>zVpc</source>
         <translation>zVPC</translation>
     </message>
     <message>

@@ -5,9 +5,9 @@
 #include "qt/voltpotcoin/coincontrolvpcwidget.h"
 #include "qt/voltpotcoin/forms/ui_coincontrolvpcwidget.h"
 
-CoinControlPivWidget::CoinControlPivWidget(QWidget *parent) :
+CoinControlVpcWidget::CoinControlVpcWidget(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CoinControlPivWidget)
+    ui(new Ui::CoinControlVpcWidget)
 {
     ui->setupUi(this);
 
@@ -83,7 +83,7 @@ CoinControlPivWidget::CoinControlPivWidget(QWidget *parent) :
 
 }
 
-CoinControlPivWidget::~CoinControlPivWidget()
+CoinControlVpcWidget::~CoinControlVpcWidget()
 {
     delete ui;
 }

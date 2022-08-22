@@ -108,7 +108,7 @@
              <number>0</number>
             </property>
             <item alignment="Qt::AlignTop">
-             <widget class="QLabel" name="labelAmountTopPiv">
+             <widget class="QLabel" name="labelAmountTopVpc">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -180,7 +180,7 @@ border:none;</string>
              </spacer>
             </item>
             <item alignment="Qt::AlignTop">
-             <widget class="QLabel" name="labelAmountTopzPiv">
+             <widget class="QLabel" name="labelAmountTopzVpc">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -396,7 +396,7 @@ border:none;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelAmountPiv">
+                <widget class="QLabel" name="labelAmountVpc">
                  <property name="text">
                   <string>480.0685 VPC</string>
                  </property>
@@ -419,7 +419,7 @@ border:none;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="labelPendingPiv">
+                  <widget class="QLabel" name="labelPendingVpc">
                    <property name="text">
                     <string>6.943 VPC</string>
                    </property>
@@ -453,7 +453,7 @@ border:none;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="labelImmaturePiv">
+                  <widget class="QLabel" name="labelImmatureVpc">
                    <property name="text">
                     <string>10 VPC</string>
                    </property>
@@ -507,7 +507,7 @@ border:none;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelAmountzPiv">
+                <widget class="QLabel" name="labelAmountzVpc">
                  <property name="text">
                   <string>1,000 zVPC</string>
                  </property>
@@ -530,7 +530,7 @@ border:none;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="labelPendingzPiv">
+                  <widget class="QLabel" name="labelPendingzVpc">
                    <property name="text">
                     <string>60 zVPC</string>
                    </property>
@@ -564,7 +564,7 @@ border:none;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="labelImmaturezPiv">
+                  <widget class="QLabel" name="labelImmaturezVpc">
                    <property name="text">
                     <string>10 zVPC</string>
                    </property>

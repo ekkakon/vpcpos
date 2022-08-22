@@ -715,7 +715,7 @@ For Staking</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Dialog</translation>
@@ -3283,11 +3283,11 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Spent zVPC</source>
-        <translation>Brugt zPiv</translation>
+        <translation>Brugt zVpc</translation>
     </message>
     <message>
         <source>Received VPC from zVPC</source>
-        <translation>Modtaget Piv fra zPiv</translation>
+        <translation>Modtaget Vpc fra zVpc</translation>
     </message>
     <message>
         <source>Minted Change as zVPC from zVPC Spend</source>
@@ -3442,7 +3442,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Vælg zVPC for at bruge</translation>
@@ -3456,8 +3456,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Tryk på Knappen</translation>
     </message>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -3533,7 +3533,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Enable automatic wallet backups triggered after each zVPC minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zPiv-mintning (0-1, standard: %u)</translation>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zVpc-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for VPC inputs (0-1, default: %u)</source>

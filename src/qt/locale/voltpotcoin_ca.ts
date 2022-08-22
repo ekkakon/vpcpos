@@ -660,7 +660,7 @@ for staking</source>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Diàleg</translation>
@@ -2026,10 +2026,10 @@ for staking</source>
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>Quantity:</source>

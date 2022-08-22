@@ -520,7 +520,7 @@
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>VPC:</source>
         <translation>VPC:</translation>
@@ -2060,7 +2060,7 @@ Adresas: %4
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Coin Control</source>
         <translation>Monetų Kontrolė</translation>

@@ -1786,8 +1786,8 @@ bool AppInit2()
 
         pwalletMain->InitAutoConvertAddresses();
 
-        bool fEnableZPivBackups = GetBoolArg("-backupzvpc", true);
-        pwalletMain->setZPivAutoBackups(fEnableZPivBackups);
+        bool fEnableZVpcBackups = GetBoolArg("-backupzvpc", true);
+        pwalletMain->setZVpcAutoBackups(fEnableZVpcBackups);
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zvpcTracker->Init();

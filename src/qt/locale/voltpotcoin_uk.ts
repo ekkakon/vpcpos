@@ -208,7 +208,7 @@
     </message>
     </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Label</source>
         <translation>Мітка</translation>
@@ -442,7 +442,7 @@
     <name>WelcomeContentWidget</name>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     </context>
 <context>
     <name>voltpotcoin-core</name>

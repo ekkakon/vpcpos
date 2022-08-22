@@ -756,7 +756,7 @@ per lo staking</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Finestra di dialogo</translation>
@@ -5810,7 +5810,7 @@ Portafoglio VoltPotCoin Core.</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Seleziona zVPC da spendere</translation>
@@ -5824,8 +5824,8 @@ Portafoglio VoltPotCoin Core.</translation>
         <translation>Premi il bottone</translation>
     </message>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>0.00 </source>

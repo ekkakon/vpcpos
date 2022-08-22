@@ -57,9 +57,9 @@ DashboardWidget::DashboardWidget(VoltPotCoinGUI* parent) :
     // Staking Information
     ui->labelMessage->setText(tr("Amount of VPC and zVPC staked."));
     setCssSubtitleScreen(ui->labelMessage);
-    setCssProperty(ui->labelSquarePiv, "square-chart-vpc");
-    setCssProperty(ui->labelSquarezPiv, "square-chart-zvpc");
-    setCssProperty(ui->labelPiv, "text-chart-vpc");
+    setCssProperty(ui->labelSquareVpc, "square-chart-vpc");
+    setCssProperty(ui->labelSquarezVpc, "square-chart-zvpc");
+    setCssProperty(ui->labelVpc, "text-chart-vpc");
     setCssProperty(ui->labelZvpc, "text-chart-zvpc");
 
     // Staking Amount
@@ -69,8 +69,8 @@ DashboardWidget::DashboardWidget(VoltPotCoinGUI* parent) :
     setCssProperty(ui->labelChart, "legend-chart");
 
     ui->labelAmountZvpc->setText("0 zVPC");
-    ui->labelAmountPiv->setText("0 VPC");
-    setCssProperty(ui->labelAmountPiv, "text-stake-vpc-disable");
+    ui->labelAmountVpc->setText("0 VPC");
+    setCssProperty(ui->labelAmountVpc, "text-stake-vpc-disable");
     setCssProperty(ui->labelAmountZvpc, "text-stake-zvpc-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
@@ -508,7 +508,7 @@ const QMap<int, std::pair<qint64, qint64>> DashboardWidget::getAmountBy() {
         QModelIndex modelIndex = stakesFilter->index(i, TransactionTableModel::ToAddress);
         qint64 amount = llabs(modelIndex.data(TransactionTableModel::AmountRole).toLongLong());
         QDate date = modelIndex.data(TransactionTableModel::DateRole).toDateTime().date();
-        bool isPiv = modelIndex.data(TransactionTableModel::TypeRole).toInt() != TransactionRecord::StakeZVPC;
+        bool isVpc = modelIndex.data(TransactionTableModel::TypeRole).toInt() != TransactionRecord::StakeZVPC;
 
         int time = 0;
         switch (chartShow) {
@@ -529,12 +529,12 @@ const QMap<int, std::pair<qint64, qint64>> DashboardWidget::getAmountBy() {
                 return amountBy;
         }
         if (amountBy.contains(time)) {
-            if (isPiv) {
+            if (isVpc) {
                 amountBy[time].first += amount;
             } else
                 amountBy[time].second += amount;
         } else {
-            if (isPiv) {
+            if (isVpc) {
                 amountBy[time] = std::make_pair(amount, 0);
             } else {
                 amountBy[time] = std::make_pair(0, amount);
@@ -572,14 +572,14 @@ bool DashboardWidget::loadChartData(bool withMonthNames) {
             std::pair <qint64, qint64> pair = chartData->amountsByCache[num];
             vpc = (pair.first != 0) ? pair.first / 100000000 : 0;
             zvpc = (pair.second != 0) ? pair.second / 100000000 : 0;
-            chartData->totalPiv += pair.first;
+            chartData->totalVpc += pair.first;
             chartData->totalZvpc += pair.second;
         }
 
         chartData->xLabels << ((withMonthNames) ? monthsNames[num - 1] : QString::number(num));
 
-        chartData->valuesPiv.append(vpc);
-        chartData->valueszPiv.append(zvpc);
+        chartData->valuesVpc.append(vpc);
+        chartData->valueszVpc.append(zvpc);
 
         int max = std::max(vpc, zvpc);
         if (max > chartData->maxValue) {
@@ -646,20 +646,20 @@ void DashboardWidget::onChartRefreshed() {
     series->attachAxis(axisX);
     series->attachAxis(axisY);
 
-    set0->append(chartData->valuesPiv);
-    set1->append(chartData->valueszPiv);
+    set0->append(chartData->valuesVpc);
+    set1->append(chartData->valueszVpc);
 
     // Total
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
-    if (chartData->totalPiv > 0 || chartData->totalZvpc > 0) {
-        setCssProperty(ui->labelAmountPiv, "text-stake-vpc");
+    if (chartData->totalVpc > 0 || chartData->totalZvpc > 0) {
+        setCssProperty(ui->labelAmountVpc, "text-stake-vpc");
         setCssProperty(ui->labelAmountZvpc, "text-stake-zvpc");
     } else {
-        setCssProperty(ui->labelAmountPiv, "text-stake-vpc-disable");
+        setCssProperty(ui->labelAmountVpc, "text-stake-vpc-disable");
         setCssProperty(ui->labelAmountZvpc, "text-stake-zvpc-disable");
     }
-    forceUpdateStyle({ui->labelAmountPiv, ui->labelAmountZvpc});
-    ui->labelAmountPiv->setText(GUIUtil::formatBalance(chartData->totalPiv, nDisplayUnit));
+    forceUpdateStyle({ui->labelAmountVpc, ui->labelAmountZvpc});
+    ui->labelAmountVpc->setText(GUIUtil::formatBalance(chartData->totalVpc, nDisplayUnit));
     ui->labelAmountZvpc->setText(GUIUtil::formatBalance(chartData->totalZvpc, nDisplayUnit, true));
 
     series->append(set0);

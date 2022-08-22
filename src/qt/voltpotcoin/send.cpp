@@ -319,19 +319,19 @@ void SendWidget::onSendClicked(){
         return;
     }
 
-    bool sendPiv = ui->pushLeft->isChecked();
+    bool sendVpc = ui->pushLeft->isChecked();
 
     // request unlock only if was locked or unlocked for mixing:
     // this way we let users unlock by walletpassphrase or by menu
     // and make many transactions while unlocking through this dialog
     // will call relock
-    if(!GUIUtil::requestUnlock(walletModel, sendPiv ? AskPassphraseDialog::Context::Send_VPC : AskPassphraseDialog::Context::Send_zVPC, true)){
+    if(!GUIUtil::requestUnlock(walletModel, sendVpc ? AskPassphraseDialog::Context::Send_VPC : AskPassphraseDialog::Context::Send_zVPC, true)){
         // Unlock wallet was cancelled
         inform(tr("Cannot send, wallet locked"));
         return;
     }
 
-    if((sendPiv) ? send(recipients) : sendZvpc(recipients)) {
+    if((sendVpc) ? send(recipients) : sendZvpc(recipients)) {
         updateEntryLabels(recipients);
     }
 }
@@ -410,8 +410,8 @@ bool SendWidget::sendZvpc(QList<SendCoinsRecipient> recipients){
     // use mints from zVPC selector if applicable
     std::vector<CMintMeta> vMintsToFetch;
     std::vector<CZerocoinMint> vMintsSelected;
-    if (!ZPivControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZPivControlDialog::GetSelectedMints();
+    if (!ZVpcControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZVpcControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             CZerocoinMint mint;
@@ -460,7 +460,7 @@ bool SendWidget::sendZvpc(QList<SendCoinsRecipient> recipients){
     )
             ) {
         inform(tr("zVPC transaction sent!"));
-        ZPivControlDialog::setSelectedMints.clear();
+        ZVpcControlDialog::setSelectedMints.clear();
         clearAll();
         return true;
     } else {
@@ -604,11 +604,11 @@ void SendWidget::onCoinControlClicked(){
         }
     }else{
         if (walletModel->getZerocoinBalance() > 0) {
-            ZPivControlDialog *zPivControl = new ZPivControlDialog(this);
-            zPivControl->setModel(walletModel);
-            zPivControl->exec();
-            ui->btnCoinControl->setActive(!ZPivControlDialog::setSelectedMints.empty());
-            zPivControl->deleteLater();
+            ZVpcControlDialog *zVpcControl = new ZVpcControlDialog(this);
+            zVpcControl->setModel(walletModel);
+            zVpcControl->exec();
+            ui->btnCoinControl->setActive(!ZVpcControlDialog::setSelectedMints.empty());
+            zVpcControl->deleteLater();
         } else {
             inform(tr("You don't have any zVPC in your balance to select."));
         }

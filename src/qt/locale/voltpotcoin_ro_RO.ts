@@ -88,7 +88,7 @@
     <name>CoinControlDialog</name>
     </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     </context>
 <context>
     <name>ColdStakingWidget</name>
@@ -286,7 +286,7 @@
     <name>WelcomeContentWidget</name>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     </context>
 <context>
     <name>voltpotcoin-core</name>

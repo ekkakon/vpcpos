@@ -745,7 +745,7 @@ do stakingu</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Dialog</translation>
@@ -3661,7 +3661,7 @@ Sprawdź adres i spróbuj ponownie.</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Wybierz zVPC do wydania</translation>

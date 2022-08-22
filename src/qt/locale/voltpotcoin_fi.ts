@@ -392,7 +392,7 @@
     </message>
     </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>TextLabel</source>
         <translation>TekstiNimike</translation>
@@ -1814,7 +1814,7 @@
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Quantity:</source>
         <translation>Määrä:</translation>

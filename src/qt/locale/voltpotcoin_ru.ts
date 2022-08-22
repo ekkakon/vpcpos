@@ -755,7 +755,7 @@ for staking</source>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Dialog</source>
         <translation>Диалоговое окно</translation>
@@ -5749,7 +5749,7 @@ VoltPotCoin Core Wallet</source>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Выберите zVPC чтобы потратить</translation>
@@ -5763,8 +5763,8 @@ VoltPotCoin Core Wallet</source>
         <translation>Нажать кнопку</translation>
     </message>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>0.00 </source>
@@ -7063,7 +7063,7 @@ VoltPotCoin Core Wallet</source>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zVPC</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zPiv</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zVpc</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>ZPivControlDialog</class>
-    <widget class="QDialog" name="ZPivControlDialog">
+    <class>ZVpcControlDialog</class>
+    <widget class="QDialog" name="ZVpcControlDialog">
         <property name="geometry">
             <rect>
                 <x>0</x>
@@ -160,14 +160,14 @@
                                     <widget class="QWidget" name="layoutAmount" native="true">
                                         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1">
                                             <item>
-                                                <widget class="QLabel" name="labelZPiv">
+                                                <widget class="QLabel" name="labelZVpc">
                                                     <property name="text">
-                                                        <string>zPiv</string>
+                                                        <string>zVpc</string>
                                                     </property>
                                                 </widget>
                                             </item>
                                             <item>
-                                                <widget class="QLabel" name="labelZPiv_int">
+                                                <widget class="QLabel" name="labelZVpc_int">
                                                     <property name="text">
                                                         <string>0.00 </string>
                                                     </property>
@@ -398,7 +398,7 @@
         <connection>
             <sender>buttonBox</sender>
             <signal>accepted()</signal>
-            <receiver>ZPivControlDialog</receiver>
+            <receiver>ZVpcControlDialog</receiver>
             <slot>accept()</slot>
             <hints>
                 <hint type="sourcelabel">
@@ -414,7 +414,7 @@
         <connection>
             <sender>buttonBox</sender>
             <signal>rejected()</signal>
-            <receiver>ZPivControlDialog</receiver>
+            <receiver>ZVpcControlDialog</receiver>
             <slot>reject()</slot>
             <hints>
                 <hint type="sourcelabel">

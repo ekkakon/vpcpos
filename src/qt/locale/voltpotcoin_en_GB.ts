@@ -528,7 +528,7 @@
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>TextLabel</source>
         <translation>TextLabel</translation>
@@ -2934,7 +2934,7 @@ Please check the address and try again.</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Select zVPC to Spend</translation>

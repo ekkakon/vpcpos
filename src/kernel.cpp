@@ -421,7 +421,7 @@ bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
     if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s : zVPC stake block is less than allowed start height", __func__);
 
-    if (CZPivStake* zVPC = dynamic_cast<CZPivStake*>(stake)) {
+    if (CZVpcStake* zVPC = dynamic_cast<CZVpcStake*>(stake)) {
         CBlockIndex* pindexFrom = zVPC->GetIndexFrom();
         if (!pindexFrom)
             return error("%s : failed to get index associated with zVPC stake checksum", __func__);
@@ -457,7 +457,7 @@ bool initStakeInput(const CBlock& block, std::unique_ptr<CStakeInput>& stake, in
         if (spend.getSpendType() != libzerocoin::SpendType::STAKE)
             return error("%s : spend is using the wrong SpendType (%d)", __func__, (int)spend.getSpendType());
 
-        stake = std::unique_ptr<CStakeInput>(new CZPivStake(spend));
+        stake = std::unique_ptr<CStakeInput>(new CZVpcStake(spend));
 
         if (!ContextualCheckZerocoinStake(nPreviousBlockHeight, stake.get()))
             return error("%s : staked zVPC fails context checks", __func__);
@@ -478,7 +478,7 @@ bool initStakeInput(const CBlock& block, std::unique_ptr<CStakeInput>& stake, in
             return error("%s : VerifyScript failed on coinstake %s %s", __func__, tx.GetHash().ToString(), strErr);
         }
 
-        CPivStake* vpcInput = new CPivStake();
+        CVpcStake* vpcInput = new CVpcStake();
         vpcInput->SetInput(txPrev, txin.prevout.n);
         stake = std::unique_ptr<CStakeInput>(vpcInput);
     }

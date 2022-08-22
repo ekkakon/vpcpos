@@ -255,7 +255,7 @@ public:
     std::string ResetMintZerocoin();
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
-    void ZPivBackupWallet();
+    void ZVpcBackupWallet();
     bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
     bool CreateZVPCOutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
     bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
@@ -323,7 +323,7 @@ public:
     void setZWallet(CzVPCWallet* zwallet);
     CzVPCWallet* getZWallet();
     bool isZeromintEnabled();
-    void setZPivAutoBackups(bool fEnabled);
+    void setZVpcAutoBackups(bool fEnabled);
     bool isMultiSendEnabled();
     void setMultiSendDisabled();
 

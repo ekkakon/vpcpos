@@ -704,7 +704,7 @@ for staking</source>
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>Transaction Details</source>
         <translation>전송 상세내역</translation>
@@ -3514,7 +3514,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>사용할 zVPC 선택</translation>
@@ -3528,8 +3528,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>누르기</translation>
     </message>
     <message>
-        <source>zPiv</source>
-        <translation>zPiv</translation>
+        <source>zVpc</source>
+        <translation>zVpc</translation>
     </message>
     <message>
         <source>Quantity:</source>

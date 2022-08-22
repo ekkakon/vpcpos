@@ -516,7 +516,7 @@
     </message>
 </context>
 <context>
-    <name>CoinControlPivWidget</name>
+    <name>CoinControlVpcWidget</name>
     <message>
         <source>TextLabel</source>
         <translation>Tekstetikedo</translation>
@@ -1820,7 +1820,7 @@ Adreso: %4
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Coin Control</source>
         <translation>Mono kontrolo</translation>
