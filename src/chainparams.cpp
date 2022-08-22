@@ -180,8 +180,8 @@ public:
         nRejectBlockOutdatedMajority = 0; // 95%
         nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetSpacing = 90;                        // 1 minute
-        nTargetTimespan = 9 * 60;                      // 40 minutes
+        nTargetSpacing = 60;                        // 1 minute
+        nTargetTimespan = 40 * 60;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 20;
@@ -197,8 +197,8 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302057; // Skip nBit validation of Block 1001 per PR #915
         nVoltpotcoinBadBlocknBits = 0x1e00b841; // Skip nBit validation of Block 1001 per PR #915
-        nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 0;
+        nModifierUpdateBlock = 1000;
+        nZerocoinStartHeight = 1000;
         nZerocoinStartTime = 1623799585; // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -436,7 +436,7 @@ public:
         pchMessageStart[1] = 0xec;
         pchMessageStart[2] = 0xbe;
         pchMessageStart[3] = 0x1b;
-        nDefaultPort = 51476;
+        nDefaultPort = 57572;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 0;
         nRejectBlockOutdatedMajority = 0;
