@@ -73,7 +73,7 @@ TEST_EXIT_SKIPPED = 77
 TMPDIR_PREFIX = "voltpotcoin_func_test_"
 
 
-class PivxTestFramework():
+class VoltpotcoinTestFramework():
     """Base class for a voltpotcoin test script.
 
     Individual voltpotcoin test scripts should subclass this class and override the set_test_params() and run_test() methods.
@@ -1080,7 +1080,7 @@ class PivxTestFramework():
 
 ### ------------------------------------------------------
 
-class ComparisonTestFramework(PivxTestFramework):
+class ComparisonTestFramework(VoltpotcoinTestFramework):
     """Test framework for doing p2p comparison testing
 
     Sets up some voltpotcoind binaries:

@@ -211,8 +211,8 @@ void OptionsModel::setDisplayDefaultOptions(QSettings& settings, bool reset){
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom") || reset)
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizePivxAmount") || reset)
-        SoftSetArg("-anonymizevoltpotcoinamount", settings.value("nAnonymizePivxAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeVoltpotcoinAmount") || reset)
+        SoftSetArg("-anonymizevoltpotcoinamount", settings.value("nAnonymizeVoltpotcoinAmount").toString().toStdString());
 
     if (!settings.contains("strThirdPartyTxUrls") || reset)
         settings.setValue("strThirdPartyTxUrls", "");

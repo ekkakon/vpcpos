@@ -1545,7 +1545,7 @@ in die Zwischenablage zu kopieren.
 
 
 SIe müssen lediglich die Daten in das voltpotcoin.conf-File ihres externen Servers einfügen,
-die Pivx-wallet starten, um dann von der Kontrollwallet aus 
+die Voltpotcoin-wallet starten, um dann von der Kontrollwallet aus
 ihren Masternode zu starten.
 </translation>
     </message>

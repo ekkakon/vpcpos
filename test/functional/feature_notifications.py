@@ -5,10 +5,10 @@
 """Test the -alertnotify, -blocknotify and -walletnotify options."""
 import os
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import VoltpotcoinTestFramework
 from test_framework.util import assert_equal, wait_until, connect_nodes_bi
 
-class NotificationsTest(PivxTestFramework):
+class NotificationsTest(VoltpotcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True

@@ -195,8 +195,8 @@ public:
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
-        nPivxBadBlockTime = 1625302044; // Skip nBit validation of Block 1001 per PR #915
-        nPivxBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 1001 per PR #915
+        nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 1001 per PR #915
+        nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 1001 per PR #915
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585; // October 17, 2017 4:30:00 AM
@@ -341,8 +341,8 @@ public:
         nToCheckBlockUpgradeMajority = 0; // 4 days
         nMinerThreads = 0;
         nLastPOWBlock = 200;
-        nPivxBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915
-        nPivxBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
+        nVoltpotcoinBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915
+        nVoltpotcoinBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
         nMaturity = 15;
         nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;

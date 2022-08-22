@@ -10,7 +10,7 @@ Covers the 'Wrapped Serials Attack' scenario for Zerocoin Spends
 import random
 from time import sleep
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import VoltpotcoinTestFramework
 from test_framework.util import (
     sync_blocks,
     assert_equal,
@@ -19,7 +19,7 @@ from test_framework.util import (
     DecimalAmt
 )
 
-class zVPCwrappedSerialsTest(PivxTestFramework):
+class zVPCwrappedSerialsTest(VoltpotcoinTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 3

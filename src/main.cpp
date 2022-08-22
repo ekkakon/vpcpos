@@ -4560,8 +4560,8 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     }
 
     if (block.nBits != nBitsRequired) {
-        // Pivx Specific reference to the block with the wrong threshold was used.
-        if ((block.nTime == (uint32_t) Params().PivxBadBlockTime()) && (block.nBits == (uint32_t) Params().PivxBadBlocknBits())) {
+        // Voltpotcoin Specific reference to the block with the wrong threshold was used.
+        if ((block.nTime == (uint32_t) Params().VoltpotcoinBadBlockTime()) && (block.nBits == (uint32_t) Params().VoltpotcoinBadBlocknBits())) {
             // accept PIVX block minted with incorrect proof of work threshold
             return true;
         }

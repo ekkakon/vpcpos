@@ -11,14 +11,14 @@ Node1 imports and rescans. The test checks that cold utxos and staking balance i
 
 from time import sleep
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import VoltpotcoinTestFramework
 from test_framework.util import (
     assert_equal,
     DecimalAmt,
     sync_blocks,
 )
 
-class ImportStakingTest(PivxTestFramework):
+class ImportStakingTest(VoltpotcoinTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 2

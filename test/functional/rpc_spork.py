@@ -6,11 +6,11 @@
 
 from time import sleep
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import VoltpotcoinTestFramework
 from test_framework.util import set_node_times, assert_equal
 
 
-class VoltPotCoin_RPCSporkTest(PivxTestFramework):
+class VoltPotCoin_RPCSporkTest(VoltpotcoinTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
