@@ -57,7 +57,7 @@ HH       NAVIGATION
 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
 *[cssClass="container-nav"] {
-    background-color: qlineargradient(y1:0, y2: 1, stop: 0 #314433, stop: 1 #4f3c74);
+    background-color: qlineargradient(y1:0, y2: 1, stop: 0 #314433, stop: 1 #1C7723);
 }
 
 QPushButton[cssClass="img-nav-logo"] {
@@ -71,7 +71,7 @@ QPushButton[cssClass="img-nav-logo"] {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-receive"]:checked {
@@ -87,7 +87,7 @@ QPushButton[cssClass="img-nav-logo"] {
 
 *[cssClass="btn-nav-receive"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-receive-active"] {
@@ -108,7 +108,7 @@ QPushButton[cssClass="img-nav-logo"] {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-cold-staking"]:checked {
@@ -126,7 +126,7 @@ QPushButton[cssClass="img-nav-logo"] {
     qproperty-icon: url("://ic-nav-cold-staking-hover");
     qproperty-iconSize: 24px 40px;
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-cold-staking-active"] {
@@ -199,7 +199,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-settings"]:checked {
@@ -215,7 +215,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-settings"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-settings-active"] {
@@ -232,7 +232,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-dash"]:checked {
@@ -249,7 +249,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-dash"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-dash-active"] {
@@ -266,7 +266,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-send"]:checked {
@@ -282,7 +282,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-send"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-send-active"] {
@@ -299,7 +299,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-address"]:checked {
@@ -315,7 +315,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-address"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 
@@ -333,7 +333,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 40px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-privacy"]:checked {
@@ -349,7 +349,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-privacy"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-privacy-active"] {
@@ -366,7 +366,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
     qproperty-iconSize: 24px 30px;
     background-color:transparent;
     font-size:14px;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-master"]:checked {
@@ -383,7 +383,7 @@ QPushButton[cssClass="btn-check-cold-staking"]:checked {
 
 *[cssClass="btn-nav-master"]:hover {
     background-color: #1A000000;
-    color: #938da5;
+    color: #A3D1A7;
 }
 
 *[cssClass="btn-nav-master-active"] {
