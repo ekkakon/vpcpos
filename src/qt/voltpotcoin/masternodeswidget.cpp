@@ -428,7 +428,7 @@ void MasterNodesWidget::onDeleteMNClicked(){
 void MasterNodesWidget::onCreateMNClicked(){
     if(verifyWalletUnlocked()) {
         if(walletModel->getBalance() <= (COIN * 10000)){
-            inform(tr("Not enough balance to create a masternode, 10,000 VPC required."));
+            inform(tr("Not enough balance to create a masternode, 20,000 VPC required."));
             return;
         }
         showHideOp(true);

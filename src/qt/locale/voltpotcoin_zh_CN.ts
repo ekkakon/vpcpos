@@ -1619,8 +1619,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>确保你有这么多币</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行10,000 VPC的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 20,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行20,000 VPC的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1792,8 +1792,8 @@ Are you sure?</source>
         <translation>主节点配置文件不存在</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 10,000 VPC required.</source>
-        <translation>没有足够的余额创建主节点，需要10,000 VPC。</translation>
+        <source>Not enough balance to create a masternode, 20,000 VPC required.</source>
+        <translation>没有足够的余额创建主节点，需要20,000 VPC。</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -4143,7 +4143,7 @@ VoltPotCoin零币(zVPC)技术文件
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            A masternode is a computer running a full node VoltPotCoin core wallet with a
-                           requirement of 10,000 VPC secured collateral to provide extra services
+                           requirement of 20,000 VPC secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4175,7 +4175,7 @@ VoltPotCoin零币(zVPC)技术文件
                            Requirements:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;10,000 VPC per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;20,000 VPC per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -4185,7 +4185,7 @@ VoltPotCoin零币(zVPC)技术文件
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 主节点是运行完整节点VoltPotCoin核心钱包的计算机
-需要10,000个VPC作抵押以提供额外服务
+需要20,000个VPC作抵押以提供额外服务
 到网络，会收到一部分的区块奖励作为定期
 回报
 这些服务包括:
@@ -4217,7 +4217,7 @@ VoltPotCoin零币(zVPC)技术文件
 要求：
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;每个主节点实例有10,000 VPC&lt;/li&gt;
+&lt;li&gt;每个主节点实例有20,000 VPC&lt;/li&gt;
 &lt;li&gt;必须存储在核心钱包&lt;/li&gt;
 &lt;li&gt;需要专用IP地址&lt;/li&gt;
 主节点钱包保持在线&lt;li&gt;

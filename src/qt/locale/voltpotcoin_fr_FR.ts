@@ -1619,7 +1619,7 @@ Il commencera automatiquement dès que le portefeuille aura assez de confirmatio
         <translation>Assurez-vous d'avoir ce montant de pièces.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 20,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Une transaction de 10 000 VPC sera effectuée &lt;/p&gt;&lt;p&gt; vers une nouvelle adresse de votre partefeuille.&lt;/p&gt;&lt;p&gt; L'adresse est étiquettée avec le nom de masternode. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1789,7 +1789,7 @@ Confirmez-vous?</translation>
         <translation>Le fichier masternode.conf est absent</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 10,000 VPC required.</source>
+        <source>Not enough balance to create a masternode, 20,000 VPC required.</source>
         <translation>Fonds insuffisant pour créer un masternode, 10 000 VPC sont requis.</translation>
     </message>
     <message>
@@ -4172,7 +4172,7 @@ Si vous désirez obtenir plus de zVPC vous devez créer cette monnaie à partir 
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            A masternode is a computer running a full node VoltPotCoin core wallet with a
-                           requirement of 10,000 VPC secured collateral to provide extra services
+                           requirement of 20,000 VPC secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4204,7 +4204,7 @@ Si vous désirez obtenir plus de zVPC vous devez créer cette monnaie à partir 
                            Requirements:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;10,000 VPC per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;20,000 VPC per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
