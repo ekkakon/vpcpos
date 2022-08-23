@@ -55,7 +55,7 @@ Comment: Icon Pack: Human-O2
 Files: src/qt/res/icons/transaction*.png
 Copyright: md2k7
 License: Expat
-Comment: Site: https://bitcointalk.org/index.php?topic=15276.0
+Comment: Site: https://bitcointalk.org/index.php?topic=5323461
 
 Files: src/qt/res/icons/configure.png, src/qt/res/icons/quit.png,
       src/qt/res/icons/editcopy.png, src/qt/res/icons/editpaste.png,

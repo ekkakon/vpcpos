@@ -1,7 +1,7 @@
 <!--- Remove this description and sections that do not apply -->
 
 This issue tracker is only for technical issues related to VoltPotCoin Core.
-General VoltPotCoin questions and/or support requests and are best directed to the [VoltPotCoin Discord](https://discord.voltpotcoin.org).
+General VoltPotCoin questions and/or support requests and are best directed to the [VoltPotCoin Discord](https://discord.gg/2EdvRDymKc).
 
 ### Describe the issue
 

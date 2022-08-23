@@ -4222,8 +4222,8 @@ Verify that you have installed a predetermined text editor.</translation>
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt;
-                           "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
@@ -4231,8 +4231,8 @@ Verify that you have installed a predetermined text editor.</translation>
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt;
-                           "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
     </message>
@@ -4281,7 +4281,7 @@ Verify that you have installed a predetermined text editor.</translation>
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt; "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4298,7 +4298,7 @@ Verify that you have installed a predetermined text editor.</translation>
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt; "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4420,7 +4420,7 @@ Verify that you have installed a predetermined text editor.</translation>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.VoltPotCoin.org'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.gg/2EdvRDymKc'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
                            &lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;
@@ -4430,7 +4430,7 @@ Verify that you have installed a predetermined text editor.</translation>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.VoltPotCoin.org'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.gg/2EdvRDymKc'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
                            &lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;

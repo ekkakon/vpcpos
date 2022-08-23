@@ -28,8 +28,8 @@ Drag VoltPotCoin-Qt to your applications folder, and then run VoltPotCoin-Qt.
 
 * See the documentation at the [VoltPotCoin Wiki](https://github.com/VoltPotCoin-Project/VoltPotCoin/wiki)
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [VoltPotCoin Forum](http://forum.voltpotcoin.org/).
-* Join our Discord server [Discord Server](https://discord.voltpotcoin.org)
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=5323461) or on the [VoltPotCoin Forum](http://forum.voltpotcoin.org/).
+* Join our Discord server [Discord Server](https://discord.gg/2EdvRDymKc)
 
 Building
 ---------------------
@@ -56,8 +56,8 @@ The VoltPotCoin repo's [root README](/README.md) contains relevant information o
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [VoltPotCoin](http://forum.voltpotcoin.org/) forum.
-* Join the [VoltPotCoin Discord](https://discord.voltpotcoin.org).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=5323461) or the [VoltPotCoin](http://forum.voltpotcoin.org/) forum.
+* Join the [VoltPotCoin Discord](https://discord.gg/2EdvRDymKc).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
