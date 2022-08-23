@@ -4423,8 +4423,8 @@ Verify that you have installed a predetermined text editor.</translation>
                            &lt;a style='color: #b088ff' href='https://discord.gg/2EdvRDymKc'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.com/forums/forum/voltpotcoin/how-to-install-vpc-wallet/'&gt;
+                           our Forum&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
@@ -4433,8 +4433,8 @@ Verify that you have installed a predetermined text editor.</translation>
                            &lt;a style='color: #b088ff' href='https://discord.gg/2EdvRDymKc'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://voltpot.com/forums/forum/voltpotcoin/how-to-install-vpc-wallet/'&gt;
+                           our Forum&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
     </message>

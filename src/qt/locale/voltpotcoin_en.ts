@@ -5460,8 +5460,8 @@ Verify that you have installed a predetermined text editor.</source>
                            &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://discord.gg/2EdvRDymKc&apos;&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://VoltPotCoin.freshdesk.com&apos;&gt;
-                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://voltpot.com/forums/forum/voltpotcoin/how-to-install-vpc-wallet/&apos;&gt;
+                           our Forum&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation type="unfinished"></translation>
