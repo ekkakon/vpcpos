@@ -1913,7 +1913,7 @@ QPushButton[cssClass="btn-check-time"]:pressed {
     border-radius:2px;
     font-size:14px;
     padding:4px;
-    color: #b088ff;
+    color: #7DE085;
 }
 
 QPushButton[cssClass="btn-check-time"]:disabled {
@@ -2415,11 +2415,11 @@ QLineEdit[cssClass="edit-primary-dialog"] {
 }
 
 QLineEdit[cssClass="edit-primary-dialog"]:focus {
-    border: 1px solid #b088ff;
+    border: 1px solid #7DE085;
 }
 
 QLineEdit[cssClass="edit-primary-dialog"]:focus:hover {
-    border: 1px solid #b088ff;
+    border: 1px solid #7DE085;
 }
 
 QLineEdit[cssClass="edit-primary-dialog"]:hover {
@@ -2603,14 +2603,14 @@ HH        FAQ
 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
 *[cssClass="text-title-faq"] {
-    color:#b088ff;
+    color:#7DE085;
     font-size:26px;
 }
 
 
 *[cssClass="container-faq-buttons"] {
     background:transparent;
-    border:1px solid #b088ff;
+    border:1px solid #7DE085;
     border-radius: 5px;
 }
 
@@ -2649,7 +2649,7 @@ QPushButton[cssClass="btn-faq-web"] {
     background-color:transparent;
     border:none;
     font-size:16px;
-    color: #b088ff;
+    color: #7DE085;
     text-align:left;
 }
 
@@ -2775,7 +2775,7 @@ QPushButton[cssClass="ic-step-confirm-welcome"] {
     background-position:center;
     background-repeat:no-repeat;
     background-color: transparent;
-    border:  1px solid #b088ff;
+    border:  1px solid #7DE085;
     border-radius: 4px;
 }
 
@@ -2811,7 +2811,7 @@ QComboBox[cssClass="btn-combo-welcome"] {
     background-color:#171022;
     padding:10px 20px 10px 10px;
     font-size:16px;
-    border:1px solid #b088ff;
+    border:1px solid #7DE085;
     color: #FFFFFF;
 }
 
@@ -2849,8 +2849,8 @@ QPushButton[cssClass="btn-welcome-number-check"] {
 }
 
 QPushButton[cssClass="btn-welcome-number-check"]:checked {
-    border:  1px solid #b088ff;
-    background-color:#b088ff;
+    border:  1px solid #7DE085;
+    background-color:#7DE085;
     font-size:14px;
     border-radius:11px;
     color: #5c4b7d;
@@ -2867,7 +2867,7 @@ QPushButton[cssClass="btn-welcome-name-check"]:checked {
     background-color:transparent;
     border:none;
     font-size:20px;
-    color: #b088ff;
+    color: #7DE085;
 }
 
 
@@ -2878,7 +2878,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
 QToolTip {
     color: white;
-    background-color: #b088ff;
+    background-color: #7DE085;
     border: none;
     padding:4px;
     border-radius:3px;
@@ -3153,7 +3153,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 
 *[cssClass="container-snackbar"]{
     background-color:#382d4d;
-    border-top:2px solid #b088ff;
+    border-top:2px solid #7DE085;
 }
 
 *[cssClass="text-snackbar"]{
@@ -3188,8 +3188,8 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 }
 
 QPushButton[cssClass="btn-dots-welcome"] {
-    border:  1px solid #b088ff;
-    background-color:#b088ff;
+    border:  1px solid #7DE085;
+    background-color:#7DE085;
     font-size:18px;
     padding:8px;
     color: #FFFFFF;
@@ -3198,7 +3198,7 @@ QPushButton[cssClass="btn-dots-welcome"] {
 
 
 QPushButton[cssClass="btn-dots-welcome"]:hover {
-    border:  1px solid #b088ff;
+    border:  1px solid #7DE085;
     background-color:#125B17;
     font-size:18px;
     padding:8px;
@@ -3207,16 +3207,16 @@ QPushButton[cssClass="btn-dots-welcome"]:hover {
 }
 
 QPushButton[cssClass="btn-dots-welcome"]:pressed {
-    border:  1px solid #b088ff;
+    border:  1px solid #7DE085;
     background-color:#125B17;
     font-size:18px;
     padding:8px;
-    color: #b088ff;
+    color: #7DE085;
     border-radius: 2px;
 }
 
 *[cssClass="edit-primary-welcome"] {
-    border:1px solid #b088ff;
+    border:1px solid #7DE085;
     border-right: 0px;
     background-color:#171022;
     font-size:18px;
@@ -3226,17 +3226,17 @@ QPushButton[cssClass="btn-dots-welcome"]:pressed {
 }
 
 *[cssClass="edit-primary-welcome"]:focus {
-    border: 1px solid #b088ff;
+    border: 1px solid #7DE085;
     border-right: 0px;
 }
 
 *[cssClass="edit-primary-welcome"]:focus:hover {
-    border: 1px solid #b088ff;
+    border: 1px solid #7DE085;
     border-right: 0px;
 }
 
 *[cssClass="edit-primary-welcome"]:hover {
-    border: 1px solid #b088ff;
+    border: 1px solid #7DE085;
     border-right: 0px;
 }
 
@@ -3251,7 +3251,7 @@ QPushButton[cssClass="btn-dots-welcome"]:pressed {
 }
 
 QRadioButton[cssClass="radio-welcome"]:checked {
-    color: #b088ff;
+    color: #7DE085;
     font-size:20px;
 }
 
