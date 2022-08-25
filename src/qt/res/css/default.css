@@ -162,7 +162,7 @@ color:#333;
 }
 
 QToolTip {
-background-color:#dedbe5;
+background-color:#dce5df;
 color:#333;
 }
 
@@ -1690,7 +1690,7 @@ font-weight:bold;
 }
 
 QCalendarWidget QAbstractItemView { /* Calendar widget days */
-alternate-background-color:#dedbe5;
+alternate-background-color:#dce5df;
 background-color:#fff;
 }
 
