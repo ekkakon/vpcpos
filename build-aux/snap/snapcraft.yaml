@@ -68,7 +68,7 @@ apps:
     plugs: [home]
 parts:
   voltpotcoin-core:
-    source: https://github.com/VoltPotCoin-Project/VoltPotCoin
+    source: https://github.com/ekkakon/vpcpos
     source-type: git
     source-tag: master
     plugin: nil
