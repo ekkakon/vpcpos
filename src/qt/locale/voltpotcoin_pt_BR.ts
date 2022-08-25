@@ -1396,8 +1396,8 @@ Ele será iniciado automaticamente assim que a carteira tiver confirmações suf
         <translation>Endereço</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a VoltPotCoin Masternode you must dedicate 10.000 VPC (the unit of VoltPotCoin) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Para criar um Masternode VoltPotCoin, você deve dedicar 10.000 VPC (a unidade do VoltPotCoin) à rede (no entanto, essas moedas ainda são suas e nunca deixarão sua posse). Você pode desativar o nó e desbloquear as moedas a qualquer momento.</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a VoltPotCoin Masternode you must dedicate 20.000 VPC (the unit of VoltPotCoin) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Para criar um Masternode VoltPotCoin, você deve dedicar 20.000 VPC (a unidade do VoltPotCoin) à rede (no entanto, essas moedas ainda são suas e nunca deixarão sua posse). Você pode desativar o nó e desbloquear as moedas a qualquer momento.</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
