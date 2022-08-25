@@ -4046,7 +4046,7 @@ bu sayede VoltPotCoin sahipleri blok ödülü kazanımına katılabilmektedir
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4056,7 +4056,7 @@ bu sayede VoltPotCoin sahipleri blok ödülü kazanımına katılabilmektedir
 gizlilik-odaklı opsiyonel bir metoddur. Temel olarak işlemleriniz
  hiçbir tarayıcı tarafından takip edilemez. Teknik detayları
  hakkında daha çok bilgi almak için
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin Zerocoin (zVPC) Teknik Makalesi"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -4106,7 +4106,7 @@ gizlilik-odaklı opsiyonel bir metoddur. Temel olarak işlemleriniz
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4116,7 +4116,7 @@ gizlilik-odaklı opsiyonel bir metoddur. Temel olarak işlemleriniz
                            VoltPotCoin cüzdanınız ağa destek olmak için varsayılan olarak tüm VPC bakiyenizin 10% 'unu zVPC'e dönüştürecektir. Getirdiği gizlilik avantajını istemiyor veya zVPC stakelemek istemiyorsanız cüzdanınızın otomint özelliğini Ayarlar-&gt;Seçenekler içindeki “zVPC Otomint etkin” seçeneğini değiştirerek devredışı bırakabilirsiniz. VoltPotCoinQT veya GUI kullanmıyorsanız, voltpotcoin.conf dosyası içine  &lt;i&gt;enablezeromint=0&lt;/i&gt; ifadesini tırnak işareti olmadan girerek devredışı bırakabilirsiniz. &lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            Teknik detayları hakkında daha çok bilgi almak için
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin Zerocoin (zVPC) Teknik Makalesi"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin Zerocoin (zVPC) Teknik Makalesi"&lt;/a&gt;.
                            zVPC'lerinizi tutmak ve stakelemek istiyorsanız, lütfen SSS kısmındaki "Nasıl Stake yaparım" 
 kısmını okuyunuz. 
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;

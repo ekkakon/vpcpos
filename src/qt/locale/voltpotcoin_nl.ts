@@ -4046,7 +4046,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4055,7 +4055,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            zVPC is een optionele privacy-gerichte methode om munten te mengen op de
                            VoltPotCoin blockchain. In principe kunnen al uw transacties niet worden gevolgd
                            op enige block explorer. U kunt meer lezen over de technische gegevens in de
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin Zerocoin (zVPC) Technische Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -4105,7 +4105,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4122,7 +4122,7 @@ Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translatio
                            en je portemonnee herstarten om automuntering uit te schakelen.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            Je kan meer lezen over zVPC in de
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin Zerocoin (zVPC) Technische Paper"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin Zerocoin (zVPC) Technische Paper"&lt;/a&gt;.
                            Als u uw zVPC wilt behouden en staken, lees dan de "Hoe stake ik"
                            sectie in onderstaande FAQ.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;

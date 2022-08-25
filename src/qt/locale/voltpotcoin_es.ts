@@ -4030,14 +4030,14 @@ Tu cartera VoltPotCoin también necesita estar completamente sincronizada para q
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt; 
 zVPC es un método opcional centrado en la privacidad de monedas en la Blockchain VoltPotCoin. Básicamente, todas sus transacciones no pueden ser rastreadas en ningún explorador de bloques. Puedes leer más sobre los aspectos técnicos en el
- &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+ &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
 "Documentación Técnica de VoltPotCoin Zerocoin (zVPC) ". &lt;/a&gt;. 
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
@@ -4082,7 +4082,7 @@ zVPC es un método opcional centrado en la privacidad de monedas en la Blockchai
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4099,7 +4099,7 @@ tu archivo voltpotcoin.conf y agregar &lt;i&gt; enablezeromint=0&lt;/i&gt; Sin l
 luego reinicia tu billetera para deshabilitar la impresión automática.&lt;/p&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 Puedes leer más sobre zVPC en el
-&lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "Documentación Técnica de VoltPotCoin Zerocoin (zVPC)" &lt;/a&gt;.
+&lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "Documentación Técnica de VoltPotCoin Zerocoin (zVPC)" &lt;/a&gt;.
 Si deseas conservar y hacer stake tu zVPC, lee la sección "¿Cómo puedo hacer stake?"de las preguntas frecuentes a continuación.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>

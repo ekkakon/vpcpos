@@ -4042,7 +4042,7 @@ VoltPotCoin использует консенсус PoS (Proof of Stake), поз
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4051,7 +4051,7 @@ VoltPotCoin использует консенсус PoS (Proof of Stake), поз
 zVPC - это необязательная конфиденциальность, которая возможна при микшировании монет
 в блокчейне VoltPotCoin. По сути,ни одна транзакция не может быть отслежена
 ни в одном из обозревателей блоков. Вы можете прочитать больше о технических характеристиках в
-&lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+&lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
 "Техническом документе VoltPotCoin Zerocoin (zVPC)"&lt;/a&gt;.
  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
     </message>
@@ -4099,7 +4099,7 @@ zVPC - это необязательная конфиденциальность,
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -4114,7 +4114,7 @@ zVPC - это необязательная конфиденциальность,
 Если вы не используете VoltPotCoin-QT или GUI, вы можете просто открыть
 свой файл voltpotcoin.conf и добавить &lt;i&gt;enablezeromint=0&lt;/i&gt; без кавычек и
 перезапустите свой кошелек для отключения  автоматической чеканки. &lt;/p&gt; &lt;/p&gt;&lt;p align="justify"&gt; Вы можете прочитать больше о zVPC в
-&lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+&lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
  "Технический документ VoltPotCoin Zerocoin (zVPC)"&lt;/a&gt;.
 Если вы хотите продолжать стекинг zVPC, ознакомьтесь с разделом" Как осуществить стекинг"
 в разделе часто задаваемых вопросов ниже.

@@ -4047,7 +4047,7 @@ VoltPotCoin使用了一个股权证明(PoS)一致系统算法，
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
                            "VoltPotCoin project White Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4055,7 +4055,7 @@ VoltPotCoin使用了一个股权证明(PoS)一致系统算法，
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 zVPC是一种可选的以隐私为中心的隐私币
 它是VoltPotCoin区块链的一员，基本上在任何块资源管理器
-所有的交易都不能被跟踪&lt;a style='color: #b088ff' href='https://voltpot.org/white-paper/'&gt;
+所有的交易都不能被跟踪&lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
 
 你可以阅读更多关于技术方面的文章&lt;/a&gt;
 
