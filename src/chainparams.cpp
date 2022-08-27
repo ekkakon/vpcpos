@@ -149,13 +149,15 @@ public:
         vAlertPubKey = ParseHex("047e77c297991cff7d0ee1eaed3e50eb151c687104a775c0c766a135d76bb9b7dd2e73eb04c8b9bd92b9ac361469c659e22ea99bcf30ac2c3097d8582f46e335b3");
         nDefaultPort = 37572;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // VoltPotCoin starting difficulty is 1 / 2^12
+        bnProofOfStakeLimit = ~uint256(0) >> 24;
+        bnProofOfStakeLimit_V2 = ~uint256(0) >> 20; // 60/4 = 15 ==> use 2**4 higher limit
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 0; // 75%
         nRejectBlockOutdatedMajority = 0; // 95%
         nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetSpacing = 60;                        // 1 minute
+        nTargetSpacing = 1 * 60;                        // 1 minute
         nTargetTimespan = 40 * 60;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
