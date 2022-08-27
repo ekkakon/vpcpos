@@ -174,8 +174,8 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 1001 per PR #915
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 1001 per PR #915
-        nModifierUpdateBlock = 1000;
-        nZerocoinStartHeight = 1000;
+        nModifierUpdateBlock = 0;
+        nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585; // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
