@@ -6,7 +6,7 @@
 #include "wallet/wallet.h"
 #include "wallet/walletdb.h"
 
-#include "test/test_voltpotcoin.h"
+#include "wallet/test/wallet_test_fixture.h"
 
 #include <stdint.h>
 
