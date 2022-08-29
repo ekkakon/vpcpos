@@ -59,7 +59,7 @@ bool CVpcStake::GetTxOutFrom(CTxOut& out) const
     return true;
 }
 
-bool CVpctake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CVpcStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
