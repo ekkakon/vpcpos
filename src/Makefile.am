@@ -360,7 +360,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/CoinSpend.cpp \
   libzerocoin/Denominations.cpp \
   libzerocoin/ParamGeneration.cpp \
-  libzerocoin/Params.cpp \
+  libzerocoin/Params.cpp
 if USE_NUM_GMP
   libzerocoin_libbitcoin_zerocoin_a_SOURCES += libzerocoin/bignum_gmp.cpp
 endif
