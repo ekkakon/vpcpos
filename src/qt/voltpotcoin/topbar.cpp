@@ -53,7 +53,7 @@ TopBar::TopBar(VoltPotCoinGUI* _mainWindow, QWidget *parent) :
     // Amount information top
     ui->widgetTopAmount->setVisible(false);
     setCssProperty({ui->labelAmountTopVpc, ui->labelAmountTopzVpc}, "amount-small-topbar");
-    setCssProperty({ui->labelAmountVpc, ui->labelAmountzVpc}, "amount-topbar");
+    setCssProperty({ui->labelAmountVpc, ui->labelAvailablezVpc}, "amount-topbar");
     setCssProperty({ui->labelPendingVpc, ui->labelPendingzVpc, ui->labelImmatureVpc, ui->labelImmaturezVpc}, "amount-small-topbar");
 
     // Progress Sync

@@ -188,7 +188,7 @@ border:none;</string>
                </size>
               </property>
               <property name="text">
-               <string>1,000 zVPC</string>
+               <string notr="true">1,000 zVPC</string>
               </property>
              </widget>
             </item>
