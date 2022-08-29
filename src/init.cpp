@@ -1748,7 +1748,7 @@ bool AppInit2()
 
         LogPrintf("Init errors: %s\n", strErrors.str());
         LogPrintf("Wallet completed loading in %15dms\n", GetTimeMillis() - nWalletStartTime);
-        zwalletMain = new CzVPCWallet(pwalletMain->strWalletFile);
+        zwalletMain = new CzVPCWallet(pwalletMain);
         pwalletMain->setZWallet(zwalletMain);
 
         RegisterValidationInterface(pwalletMain);
