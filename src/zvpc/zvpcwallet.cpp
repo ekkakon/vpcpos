@@ -12,7 +12,7 @@
 #include "zvpcchain.h"
 
 
-CzVPCWallet::CzVPCWallet(std::string strWalletFile)
+CzVPCWallet::CzVPCWallet(CWallet* parent)
 {
     this->wallet = parent;
     CWalletDB walletdb(wallet->strWalletFile);
