@@ -23,7 +23,7 @@ private:
     std::map<uint256, uint256> mapPendingSpends; //serialhash, txid of spend
     bool UpdateStatusInternal(const std::set<uint256>& setMempool, CMintMeta& mint);
 public:
-    CzVPCTracker(std::string strWalletFile);
+    CzVPCTracker(CWallet* parent));
     ~CzVPCTracker();
     void Add(const CDeterministicMint& dMint, bool isNew = false, bool isArchived = false, CzVPCWallet* zVPCWallet = NULL);
     void Add(const CZerocoinMint& mint, bool isNew = false, bool isArchived = false);
