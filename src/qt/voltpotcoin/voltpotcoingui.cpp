@@ -176,7 +176,7 @@ void VoltPotCoinGUI::createActions(const NetworkStyle* networkStyle){
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
 
-    connect(toggleHideAction, &QAction::triggered, this, &PIVXGUI::toggleHidden);
+    connect(toggleHideAction, &QAction::triggered, this, &VoltPotCoinGUI::toggleHidden);
     connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 }
 
