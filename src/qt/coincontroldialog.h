@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2020 The VoltPotCoin developers
+// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2020-2022 The VoltPotCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -67,6 +68,7 @@ private:
     int sortColumn;
     Qt::SortOrder sortOrder;
     bool fMultisigEnabled;
+    bool fSelectAllToggled{true};     // false when pushButtonSelectAll text is "Unselect All"
 
     QMenu* contextMenu;
     QTreeWidgetItem* contextMenuItem;
@@ -89,7 +91,7 @@ private:
     };
     friend class CCoinControlWidgetItem;
 
-private slots:
+private Q_SLOTS:
     void showMenu(const QPoint&);
     void copyAmount();
     void copyLabel();

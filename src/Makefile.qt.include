@@ -6,48 +6,13 @@ bin_PROGRAMS += qt/voltpotcoin-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
 # voltpotcoin qt core #
-QT_TS = \
-  qt/locale/voltpotcoin_bg.ts \
-  qt/locale/voltpotcoin_ca.ts \
-  qt/locale/voltpotcoin_cs.ts \
-  qt/locale/voltpotcoin_da.ts \
-  qt/locale/voltpotcoin_de.ts \
-  qt/locale/voltpotcoin_en.ts \
-  qt/locale/voltpotcoin_en_GB.ts \
-  qt/locale/voltpotcoin_en_US.ts \
-  qt/locale/voltpotcoin_eo.ts \
-  qt/locale/voltpotcoin_es.ts \
-  qt/locale/voltpotcoin_es_ES.ts \
-  qt/locale/voltpotcoin_fi.ts \
-  qt/locale/voltpotcoin_fr_FR.ts \
-  qt/locale/voltpotcoin_hi_IN.ts \
-  qt/locale/voltpotcoin_hr.ts \
-  qt/locale/voltpotcoin_hr_HR.ts \
-  qt/locale/voltpotcoin_it.ts \
-  qt/locale/voltpotcoin_ja.ts \
-  qt/locale/voltpotcoin_ko_KR.ts \
-  qt/locale/voltpotcoin_lt_LT.ts \
-  qt/locale/voltpotcoin_nl.ts \
-  qt/locale/voltpotcoin_pl.ts \
-  qt/locale/voltpotcoin_pt.ts \
-  qt/locale/voltpotcoin_pt_BR.ts \
-  qt/locale/voltpotcoin_ro_RO.ts \
-  qt/locale/voltpotcoin_ru.ts \
-  qt/locale/voltpotcoin_sk.ts \
-  qt/locale/voltpotcoin_sv.ts \
-  qt/locale/voltpotcoin_tr.ts \
-  qt/locale/voltpotcoin_uk.ts \
-  qt/locale/voltpotcoin_vi.ts \
-  qt/locale/voltpotcoin_zh_CN.ts \
-  qt/locale/voltpotcoin_zh_TW.ts
+include Makefile.qt_locale.include
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
   qt/forms/askpassphrasedialog.ui \
   qt/forms/coincontroldialog.ui \
-  qt/forms/blockexplorer.ui \
   qt/forms/editaddressdialog.ui \
-  qt/forms/governancepage.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/openuridialog.ui \
@@ -60,11 +25,9 @@ QT_FORMS_UI = \
   qt/voltpotcoin/forms/lockunlock.ui \
   qt/voltpotcoin/forms/expandablebutton.ui \
   qt/voltpotcoin/forms/receivedialog.ui \
-  qt/voltpotcoin/forms/walletpassworddialog.ui \
   qt/voltpotcoin/forms/topbar.ui \
   qt/voltpotcoin/forms/txrow.ui \
   qt/voltpotcoin/forms/dashboardwidget.ui \
-  qt/voltpotcoin/forms/coincontrolvpcwidget.ui \
   qt/voltpotcoin/forms/addresslabelrow.ui \
   qt/voltpotcoin/forms/contactdropdownrow.ui \
   qt/voltpotcoin/forms/mninfodialog.ui \
@@ -87,10 +50,10 @@ QT_FORMS_UI = \
   qt/voltpotcoin/forms/tooltipmenu.ui \
   qt/voltpotcoin/forms/addresseswidget.ui \
   qt/voltpotcoin/forms/defaultdialog.ui \
-  qt/voltpotcoin/forms/denomgenerationdialog.ui \
   qt/voltpotcoin/forms/privacywidget.ui \
   qt/voltpotcoin/forms/coldstakingwidget.ui \
   qt/voltpotcoin/settings/forms/settingsbackupwallet.ui \
+  qt/voltpotcoin/settings/forms/settingsexportcsv.ui \
   qt/voltpotcoin/settings/forms/settingsbittoolwidget.ui \
   qt/voltpotcoin/settings/forms/settingsconsolewidget.ui \
   qt/voltpotcoin/settings/forms/settingsdisplayoptionswidget.ui \
@@ -115,13 +78,11 @@ QT_MOC_CPP = \
   qt/moc_bitcoinamountfield.cpp \
   qt/voltpotcoin/moc_voltpotcoingui.cpp \
   qt/moc_bitcoinunits.cpp \
-  qt/moc_blockexplorer.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
   qt/moc_coincontroltreewidget.cpp \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_editaddressdialog.cpp \
-  qt/moc_governancepage.cpp \
   qt/moc_guiutil.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
@@ -134,7 +95,6 @@ QT_MOC_CPP = \
   qt/moc_paymentserver.cpp \
   qt/moc_qvalidatedlineedit.cpp \
   qt/moc_qvaluecombobox.cpp \
-  qt/moc_proposalframe.cpp \
   qt/moc_recentrequeststablemodel.cpp \
   qt/moc_rpcconsole.cpp \
   qt/moc_splashscreen.cpp \
@@ -153,12 +113,10 @@ QT_MOC_CPP = \
   qt/voltpotcoin/moc_expandablebutton.cpp \
   qt/voltpotcoin/moc_furabstractlistitemdelegate.cpp \
   qt/voltpotcoin/moc_receivedialog.cpp \
-  qt/voltpotcoin/moc_walletpassworddialog.cpp \
   qt/voltpotcoin/moc_pfborderimage.cpp \
   qt/voltpotcoin/moc_topbar.cpp \
   qt/voltpotcoin/moc_txrow.cpp \
   qt/voltpotcoin/moc_dashboardwidget.cpp \
-  qt/voltpotcoin/moc_coincontrolvpcwidget.cpp \
   qt/voltpotcoin/moc_addresslabelrow.cpp \
   qt/voltpotcoin/moc_contactdropdownrow.cpp \
   qt/voltpotcoin/moc_mninfodialog.cpp \
@@ -184,10 +142,10 @@ QT_MOC_CPP = \
   qt/voltpotcoin/moc_tooltipmenu.cpp \
   qt/voltpotcoin/moc_addresseswidget.cpp \
   qt/voltpotcoin/moc_defaultdialog.cpp \
-  qt/voltpotcoin/moc_denomgenerationdialog.cpp \
   qt/voltpotcoin/moc_privacywidget.cpp \
   qt/voltpotcoin/moc_coldstakingwidget.cpp \
   qt/voltpotcoin/settings/moc_settingsbackupwallet.cpp \
+  qt/voltpotcoin/settings/moc_settingsexportcsv.cpp \
   qt/voltpotcoin/settings/moc_settingsbittoolwidget.cpp \
   qt/voltpotcoin/settings/moc_settingsconsolewidget.cpp \
   qt/voltpotcoin/settings/moc_settingsdisplayoptionswidget.cpp \
@@ -232,13 +190,11 @@ BITCOIN_QT_H = \
   qt/bitcoinamountfield.h \
   qt/voltpotcoin/voltpotcoingui.h \
   qt/bitcoinunits.h \
-  qt/blockexplorer.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
   qt/coincontroltreewidget.h \
   qt/csvmodelwriter.h \
   qt/editaddressdialog.h \
-  qt/governancepage.h \
   qt/guiconstants.h \
   qt/guiutil.h \
   qt/intro.h \
@@ -253,7 +209,6 @@ BITCOIN_QT_H = \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
-  qt/proposalframe.h \
   qt/qvalidatedlineedit.h \
   qt/qvaluecombobox.h \
   qt/recentrequeststablemodel.h \
@@ -283,13 +238,11 @@ BITCOIN_QT_H = \
   qt/voltpotcoin/txviewholder.h \
   qt/voltpotcoin/qtutils.h \
   qt/voltpotcoin/expandablebutton.h \
-  qt/voltpotcoin/walletpassworddialog.h \
   qt/voltpotcoin/topbar.h \
   qt/voltpotcoin/txrow.h \
   qt/voltpotcoin/addressholder.h \
   qt/voltpotcoin/addressfilterproxymodel.h \
   qt/voltpotcoin/dashboardwidget.h \
-  qt/voltpotcoin/coincontrolvpcwidget.h \
   qt/voltpotcoin/addresslabelrow.h \
   qt/voltpotcoin/contactdropdownrow.h \
   qt/voltpotcoin/mninfodialog.h \
@@ -337,8 +290,6 @@ BITCOIN_QT_H = \
 RES_ICONS = \
   qt/res/icons/add.png \
   qt/res/icons/address-book.png \
-  qt/res/icons/automint_active.png \
-  qt/res/icons/automint_inactive.png \
   qt/res/icons/bitcoin.ico \
   qt/res/icons/bitcoin.png \
   qt/res/icons/bitcoin_testnet.ico \
@@ -563,6 +514,8 @@ RES_ICONS = \
   qt/voltpotcoin/res/img/dark/ic-transaction-cs-contract-inactive.svg \
   qt/voltpotcoin/res/img/img-qr.svg \
   qt/voltpotcoin/res/img/ic-check-connect-off.svg \
+  qt/voltpotcoin/res/img/ic-check-tor-off.svg \
+  qt/voltpotcoin/res/img/ic-check-tor.svg \
   qt/voltpotcoin/res/img/ic-label.svg \
   qt/voltpotcoin/res/img/ic-transaction-received.svg \
   qt/voltpotcoin/res/img/dark/ic-transaction-received.svg \
@@ -619,7 +572,6 @@ BITCOIN_QT_BASE_CPP = \
   qt/bitcoinamountfield.cpp \
   qt/voltpotcoin/voltpotcoingui.cpp \
   qt/bitcoinunits.cpp \
-  qt/blockexplorer.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \
@@ -643,15 +595,12 @@ BITCOIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
-  qt/blockexplorer.cpp \
   qt/coincontroldialog.cpp \
   qt/coincontroltreewidget.cpp \
   qt/editaddressdialog.cpp \
-  qt/governancepage.cpp \
   qt/openuridialog.cpp \
   qt/paymentrequestplus.cpp \
   qt/paymentserver.cpp \
-  qt/proposalframe.cpp \
   qt/recentrequeststablemodel.cpp \
   qt/transactiondesc.cpp \
   qt/transactionfilterproxy.cpp \
@@ -671,13 +620,11 @@ BITCOIN_QT_WALLET_CPP = \
   qt/voltpotcoin/txviewholder.cpp \
   qt/voltpotcoin/qtutils.cpp \
   qt/voltpotcoin/expandablebutton.cpp \
-  qt/voltpotcoin/walletpassworddialog.cpp \
   qt/voltpotcoin/topbar.cpp \
   qt/voltpotcoin/txrow.cpp \
   qt/voltpotcoin/addressholder.cpp \
   qt/voltpotcoin/addressfilterproxymodel.cpp \
   qt/voltpotcoin/dashboardwidget.cpp \
-  qt/voltpotcoin/coincontrolvpcwidget.cpp \
   qt/voltpotcoin/addresslabelrow.cpp \
   qt/voltpotcoin/contactdropdownrow.cpp \
   qt/voltpotcoin/contactsdropdown.cpp \
@@ -703,10 +650,10 @@ BITCOIN_QT_WALLET_CPP = \
   qt/voltpotcoin/tooltipmenu.cpp \
   qt/voltpotcoin/addresseswidget.cpp \
   qt/voltpotcoin/defaultdialog.cpp \
-  qt/voltpotcoin/denomgenerationdialog.cpp \
   qt/voltpotcoin/privacywidget.cpp \
   qt/voltpotcoin/coldstakingwidget.cpp \
   qt/voltpotcoin/settings/settingsbackupwallet.cpp \
+  qt/voltpotcoin/settings/settingsexportcsv.cpp \
   qt/voltpotcoin/settings/settingsbittoolwidget.cpp \
   qt/voltpotcoin/settings/settingsconsolewidget.cpp \
   qt/voltpotcoin/settings/settingsdisplayoptionswidget.cpp \
@@ -756,7 +703,7 @@ RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 BITCOIN_RC = qt/res/voltpotcoin-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
-  -I$(builddir)/qt/forms
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
 qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)

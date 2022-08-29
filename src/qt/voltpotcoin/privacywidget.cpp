@@ -6,13 +6,11 @@
 #include "qt/voltpotcoin/forms/ui_privacywidget.h"
 #include "qt/voltpotcoin/qtutils.h"
 #include "guiutil.h"
-#include "qt/voltpotcoin/denomgenerationdialog.h"
 #include "qt/voltpotcoin/txviewholder.h"
 #include "walletmodel.h"
 #include "optionsmodel.h"
 #include "coincontroldialog.h"
 #include "coincontrol.h"
-#include "zvpc/accumulators.h"
 
 #define DECORATION_SIZE 65
 #define NUM_ITEMS 3
@@ -124,21 +122,16 @@ PrivacyWidget::PrivacyWidget(VoltPotCoinGUI* parent) :
     ui->btnCoinControl->setTitleClassAndText("btn-title-grey", "Coin Control");
     ui->btnCoinControl->setSubTitleClassAndText("text-subtitle", "Select VPC outputs to mint into zVPC.");
 
-    ui->btnDenomGeneration->setTitleClassAndText("btn-title-grey", "Denom Generation");
-    ui->btnDenomGeneration->setSubTitleClassAndText("text-subtitle", "Select the denomination of the coins.");
-    ui->btnDenomGeneration->setVisible(false);
-
     ui->btnRescanMints->setTitleClassAndText("btn-title-grey", "Rescan Mints");
     ui->btnRescanMints->setSubTitleClassAndText("text-subtitle", "Find mints in the blockchain.");
 
     ui->btnResetZerocoin->setTitleClassAndText("btn-title-grey", "Reset Spent zVPC");
     ui->btnResetZerocoin->setSubTitleClassAndText("text-subtitle", "Reset zerocoin database.");
 
-    connect(ui->btnTotalzVPC, SIGNAL(clicked()), this, SLOT(onTotalZvpcClicked()));
-    connect(ui->btnCoinControl, SIGNAL(clicked()), this, SLOT(onCoinControlClicked()));
-    connect(ui->btnDenomGeneration, SIGNAL(clicked()), this, SLOT(onDenomClicked()));
-    connect(ui->btnRescanMints, SIGNAL(clicked()), this, SLOT(onRescanMintsClicked()));
-    connect(ui->btnResetZerocoin, SIGNAL(clicked()), this, SLOT(onResetZeroClicked()));
+    connect(ui->btnTotalzVPC, &OptionButton::clicked, this, &PrivacyWidget::onTotalZvpcClicked);
+    connect(ui->btnCoinControl, &OptionButton::clicked, this, &PrivacyWidget::onCoinControlClicked);
+    connect(ui->btnRescanMints, &OptionButton::clicked, this, &PrivacyWidget::onRescanMintsClicked);
+    connect(ui->btnResetZerocoin, &OptionButton::clicked, this, &PrivacyWidget::onResetZeroClicked);
 
     ui->pushRight->setChecked(true);
     connect(ui->pushLeft, &QPushButton::clicked, [this](){onMintSelected(false);});
@@ -163,8 +156,9 @@ PrivacyWidget::PrivacyWidget(VoltPotCoinGUI* parent) :
     ui->listView->setUniformItemSizes(true);
 }
 
-void PrivacyWidget::loadWalletModel(){
-    if(walletModel) {
+void PrivacyWidget::loadWalletModel()
+{
+    if (walletModel) {
         txModel = walletModel->getTransactionTableModel();
         // Set up transaction list
         filter = new TransactionFilterProxy();
@@ -185,16 +179,17 @@ void PrivacyWidget::loadWalletModel(){
         if (!txModel->hasZcTxes()) {
             ui->emptyContainer->setVisible(true);
             ui->listView->setVisible(false);
-        }else{
+        } else {
             showList();
         }
 
-        connect(ui->pushButtonSave, SIGNAL(clicked()), this, SLOT(onSendClicked()));
+        connect(ui->pushButtonSave, &QPushButton::clicked, this, &PrivacyWidget::onSendClicked);
     }
 
 }
 
-void PrivacyWidget::onMintSelected(bool isMint){
+void PrivacyWidget::onMintSelected(bool isMint)
+{
     QString btnText;
     if(isMint){
         btnText = tr("Mint zVPC");
@@ -208,7 +203,8 @@ void PrivacyWidget::onMintSelected(bool isMint){
     ui->pushButtonSave->setText(btnText);
 }
 
-void PrivacyWidget::updateDisplayUnit() {
+void PrivacyWidget::updateDisplayUnit()
+{
     if (walletModel && walletModel->getOptionsModel()) {
         nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
 
@@ -217,23 +213,26 @@ void PrivacyWidget::updateDisplayUnit() {
     }
 }
 
-void PrivacyWidget::showList(){
+void PrivacyWidget::showList()
+{
     ui->emptyContainer->setVisible(false);
     ui->listView->setVisible(true);
 }
 
-void PrivacyWidget::onTotalZvpcClicked(){
+void PrivacyWidget::onTotalZvpcClicked()
+{
     bool isVisible = ui->layoutDenom->isVisible();
-    if(!isVisible){
+    if (!isVisible) {
         ui->layoutDenom->setVisible(true);
         ui->btnTotalzVPC->setRightIconClass("btn-dropdown", true);
-    }else{
+    } else {
         ui->layoutDenom->setVisible(false);
         ui->btnTotalzVPC->setRightIconClass("ic-arrow", true);
     }
 }
 
-void PrivacyWidget::onSendClicked(){
+void PrivacyWidget::onSendClicked()
+{
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
@@ -245,7 +244,8 @@ void PrivacyWidget::onSendClicked(){
     // Only convert enabled.
     bool isConvert = true;// ui->pushLeft->isChecked();
 
-    if(!GUIUtil::requestUnlock(walletModel, AskPassphraseDialog::Context::Mint_zVPC, true)){
+    WalletModel::UnlockContext ctx(walletModel->requestUnlock());
+    if (!ctx.isValid()) {
         inform(tr("You need to unlock the wallet to be able to %1 zVPC").arg(isConvert ? tr("convert") : tr("mint")));
         return;
     }
@@ -264,18 +264,19 @@ void PrivacyWidget::onSendClicked(){
     }
 
     setCssEditLine(ui->lineEditAmount, true, true);
-    if(isConvert){
+    if (isConvert) {
         spend(value);
-    }else{
+    } else {
         mint(value);
     }
 }
 
-void PrivacyWidget::mint(CAmount value){
+void PrivacyWidget::mint(CAmount value)
+{
     std::string strError;
-    if(!walletModel->mintCoins(value, CoinControlDialog::coinControl, strError)){
+    if (!walletModel->mintCoins(value, CoinControlDialog::coinControl, strError)) {
         inform(tr(strError.data()));
-    }else{
+    } else {
         // Mint succeed
         inform(tr("zVPC minted successfully"));
         // clear
@@ -283,21 +284,18 @@ void PrivacyWidget::mint(CAmount value){
     }
 }
 
-void PrivacyWidget::spend(CAmount value){
+void PrivacyWidget::spend(CAmount value)
+{
     CZerocoinSpendReceipt receipt;
     std::vector<CZerocoinMint> selectedMints;
-    bool mintChange = false;
-    bool minimizeChange = false;
 
     if(!walletModel->convertBackZvpc(
             value,
             selectedMints,
-            mintChange,
-            minimizeChange,
             receipt
-    )){
+    )) {
         inform(receipt.GetStatusMessage().data());
-    }else{
+    } else {
         // Spend succeed
         inform(tr("zVPC converted back to VPC"));
         // clear
@@ -306,8 +304,9 @@ void PrivacyWidget::spend(CAmount value){
 }
 
 
-void PrivacyWidget::onCoinControlClicked(){
-    if(ui->pushRight->isChecked()) {
+void PrivacyWidget::onCoinControlClicked()
+{
+    if (ui->pushRight->isChecked()) {
         if (walletModel->getBalance() > 0) {
             if (!coinControlDialog) {
                 coinControlDialog = new CoinControlDialog();
@@ -323,35 +322,32 @@ void PrivacyWidget::onCoinControlClicked(){
     }
 }
 
-void PrivacyWidget::onDenomClicked(){
-    showHideOp(true);
-    DenomGenerationDialog* dialog = new DenomGenerationDialog(window);
-    openDialogWithOpaqueBackgroundY(dialog, window, 4.5, 5);
-}
-
-void PrivacyWidget::onRescanMintsClicked(){
+void PrivacyWidget::onRescanMintsClicked()
+{
     if (ask(tr("Rescan Mints"),
         tr("Your zerocoin mints are going to be scanned from the blockchain from scratch"))
-    ){
+    ) {
         std::string strResetMintResult = walletModel->resetMintZerocoin();
         inform(QString::fromStdString(strResetMintResult));
     }
 }
 
-void PrivacyWidget::onResetZeroClicked(){
+void PrivacyWidget::onResetZeroClicked()
+{
     if (ask(tr("Reset Spent zVPC"),
         tr("Your zerocoin spends are going to be scanned from the blockchain from scratch"))
-    ){
+    ) {
         std::string strResetMintResult = walletModel->resetSpentZerocoin();
         inform(QString::fromStdString(strResetMintResult));
     }
 }
 
-void PrivacyWidget::updateDenomsSupply(){
+void PrivacyWidget::updateDenomsSupply()
+{
     std::map<libzerocoin::CoinDenomination, CAmount> mapDenomBalances;
     std::map<libzerocoin::CoinDenomination, int> mapUnconfirmed;
     std::map<libzerocoin::CoinDenomination, int> mapImmature;
-    for (const auto& denom : libzerocoin::zerocoinDenomList){
+    for (const auto& denom : libzerocoin::zerocoinDenomList) {
         mapDenomBalances.insert(std::make_pair(denom, 0));
         mapUnconfirmed.insert(std::make_pair(denom, 0));
         mapImmature.insert(std::make_pair(denom, 0));
@@ -359,19 +355,17 @@ void PrivacyWidget::updateDenomsSupply(){
 
     std::set<CMintMeta> vMints;
     walletModel->listZerocoinMints(vMints, true, false, true, true);
+    const int nRequiredConfs = Params().GetConsensus().ZC_MinMintConfirmations;
 
-    std::map<libzerocoin::CoinDenomination, int> mapMaturityHeights = GetMintMaturityHeight();
-    for (auto& meta : vMints){
+    for (auto& meta : vMints) {
         // All denominations
         mapDenomBalances.at(meta.denom)++;
 
-        if (!meta.nHeight || chainActive.Height() - meta.nHeight <= Params().Zerocoin_MintRequiredConfirmations()) {
+        if (!meta.nHeight || chainActive.Height() - meta.nHeight <= nRequiredConfs) {
             // All unconfirmed denominations
             mapUnconfirmed.at(meta.denom)++;
         } else {
             if (meta.denom == libzerocoin::CoinDenomination::ZQ_ERROR) {
-                mapImmature.at(meta.denom)++;
-            } else if (meta.nHeight >= mapMaturityHeights.at(meta.denom)) {
                 mapImmature.at(meta.denom)++;
             }
         }
@@ -393,10 +387,10 @@ void PrivacyWidget::updateDenomsSupply(){
         if (nUnconfirmed) {
             strUnconfirmed += QString::number(nUnconfirmed) + QString(" unconf. ");
         }
-        if(nImmature) {
+        if (nImmature) {
             strUnconfirmed += QString::number(nImmature) + QString(" immature ");
         }
-        if(nImmature || nUnconfirmed) {
+        if (nImmature || nUnconfirmed) {
             strUnconfirmed = QString("( ") + strUnconfirmed + QString(") ");
         }
 
@@ -439,11 +433,13 @@ void PrivacyWidget::updateDenomsSupply(){
     ui->btnTotalzVPC->setTitleText(tr("Total %1").arg(GUIUtil::formatBalance(matureZerocoinBalance, nDisplayUnit, true)));
 }
 
-void PrivacyWidget::changeTheme(bool isLightTheme, QString& theme){
+void PrivacyWidget::changeTheme(bool isLightTheme, QString& theme)
+{
     static_cast<TxViewHolder*>(this->delegate->getRowFactory())->isLightTheme = isLightTheme;
     ui->listView->update();
 }
 
-PrivacyWidget::~PrivacyWidget(){
+PrivacyWidget::~PrivacyWidget()
+{
     delete ui;
 }

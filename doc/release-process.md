@@ -229,7 +229,6 @@ Create (and optionally verify) the signed Windows binaries:
     ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../voltpotcoin/contrib/gitian-descriptors/gitian-win-signer.yml
     ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../voltpotcoin/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/voltpotcoin-*win64-setup.exe ../voltpotcoin-${VERSION}-win64-setup.exe
-    mv build/out/voltpotcoin-*win32-setup.exe ../voltpotcoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed macOS/Windows binaries:
@@ -259,8 +258,6 @@ voltpotcoin-${VERSION}-x86_64-linux-gnu.tar.gz
 voltpotcoin-${VERSION}-osx64.tar.gz
 voltpotcoin-${VERSION}-osx.dmg
 voltpotcoin-${VERSION}.tar.gz
-voltpotcoin-${VERSION}-win32-setup.exe
-voltpotcoin-${VERSION}-win32.zip
 voltpotcoin-${VERSION}-win64-setup.exe
 voltpotcoin-${VERSION}-win64.zip
 ```

@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Copyright (c) 2020-2022 The VoltPotCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -33,11 +33,7 @@ static const char* ppszTypeName[] =
         "mn budget finalized vote",
         "mn quorum",
         "mn announce",
-        "mn ping",
-        "dstx",
-        "pubcoins",
-        "genwit",
-        "accvalue"
+        "mn ping"
     };
 
 CMessageHeader::CMessageHeader()
@@ -109,7 +105,7 @@ void CAddress::Init()
 CInv::CInv()
 {
     type = 0;
-    hash = 0;
+    hash.SetNull();
 }
 
 CInv::CInv(int typeIn, const uint256& hashIn)
@@ -128,7 +124,7 @@ CInv::CInv(const std::string& strType, const uint256& hashIn)
         }
     }
     if (i == ARRAYLEN(ppszTypeName))
-        LogPrint("net", "CInv::CInv(string, uint256) : unknown type '%s'", strType);
+        LogPrint(BCLog::NET, "CInv::CInv(string, uint256) : unknown type '%s'", strType);
     hash = hashIn;
 }
 
@@ -149,7 +145,7 @@ bool CInv::IsMasterNodeType() const{
 const char* CInv::GetCommand() const
 {
     if (!IsKnownType()) {
-        LogPrint("net", "CInv::GetCommand() : type=%d unknown type", type);
+        LogPrint(BCLog::NET, "CInv::GetCommand() : type=%d unknown type", type);
         return "UNKNOWN";
     }
 

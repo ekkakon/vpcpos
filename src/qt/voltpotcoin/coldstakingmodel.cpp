@@ -21,7 +21,7 @@ void ColdStakingModel::updateCSList() {
 }
 
 void ColdStakingModel::emitDataSetChanged() {
-    emit dataChanged(index(0, 0, QModelIndex()), index(cachedDelegations.size(), COLUMN_COUNT, QModelIndex()) );
+    Q_EMIT dataChanged(index(0, 0, QModelIndex()), index(cachedDelegations.size(), COLUMN_COUNT, QModelIndex()) );
 }
 
 void ColdStakingModel::refresh() {

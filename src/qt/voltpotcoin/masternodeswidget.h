@@ -5,13 +5,16 @@
 #ifndef MASTERNODESWIDGET_H
 #define MASTERNODESWIDGET_H
 
-#include <QWidget>
 #include "qt/voltpotcoin/pwidget.h"
 #include "qt/voltpotcoin/furabstractlistitemdelegate.h"
 #include "qt/voltpotcoin/mnmodel.h"
 #include "qt/voltpotcoin/tooltipmenu.h"
-#include <QTimer>
+#include "walletmodel.h"
+
 #include <atomic>
+
+#include <QTimer>
+#include <QWidget>
 
 class VoltPotCoinGUI;
 
@@ -40,7 +43,7 @@ public:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *event) override;
 
-private slots:
+private Q_SLOTS:
     void onCreateMNClicked();
     void onStartAllClicked(int type);
     void changeTheme(bool isLightTheme, QString &theme) override;

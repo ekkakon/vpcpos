@@ -18,6 +18,9 @@
 #include "qt/voltpotcoin/defaultdialog.h"
 #include "qt/voltpotcoin/settings/settingsfaqwidget.h"
 
+#include "init.h"
+#include "util.h"
+
 #include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -27,7 +30,6 @@
 #include <QKeySequence>
 #include <QWindowStateChangeEvent>
 
-#include "util.h"
 
 #define BASE_WINDOW_WIDTH 1200
 #define BASE_WINDOW_HEIGHT 740
@@ -63,20 +65,16 @@ VoltPotCoinGUI::VoltPotCoinGUI(const NetworkStyle* networkStyle, QWidget* parent
     enableWallet = false;
 #endif // ENABLE_WALLET
 
-    QString windowTitle = tr("VoltPotCoin Core") + " - ";
-    windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
+    QString windowTitle = QString::fromStdString(GetArg("-windowtitle", ""));
+    if (windowTitle.isEmpty()) {
+        windowTitle = tr("VoltPotCoin Core") + " - ";
+        windowTitle += ((enableWallet) ? tr("Wallet") : tr("Node"));
+    }
     windowTitle += " " + networkStyle->getTitleAddText();
     setWindowTitle(windowTitle);
 
-#ifndef Q_OS_MAC
     QApplication::setWindowIcon(networkStyle->getAppIcon());
     setWindowIcon(networkStyle->getAppIcon());
-#else
-    MacDockIconHandler::instance()->setIcon(networkStyle->getAppIcon());
-#endif
-
-
-
 
 #ifdef ENABLE_WALLET
     // Create wallet frame
@@ -128,7 +126,6 @@ VoltPotCoinGUI::VoltPotCoinGUI(const NetworkStyle* networkStyle, QWidget* parent
         sendWidget = new SendWidget(this);
         receiveWidget = new ReceiveWidget(this);
         addressesWidget = new AddressesWidget(this);
-        privacyWidget = new PrivacyWidget(this);
         masterNodesWidget = new MasterNodesWidget(this);
         coldStakingWidget = new ColdStakingWidget(this);
         settingsWidget = new SettingsWidget(this);
@@ -138,7 +135,6 @@ VoltPotCoinGUI::VoltPotCoinGUI(const NetworkStyle* networkStyle, QWidget* parent
         stackedContainer->addWidget(sendWidget);
         stackedContainer->addWidget(receiveWidget);
         stackedContainer->addWidget(addressesWidget);
-        stackedContainer->addWidget(privacyWidget);
         stackedContainer->addWidget(masterNodesWidget);
         stackedContainer->addWidget(coldStakingWidget);
         stackedContainer->addWidget(settingsWidget);
@@ -180,8 +176,8 @@ void VoltPotCoinGUI::createActions(const NetworkStyle* networkStyle){
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
 
-    connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
-    connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+    connect(toggleHideAction, &QAction::triggered, this, &PIVXGUI::toggleHidden);
+    connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 }
 
 /**
@@ -202,7 +198,6 @@ void VoltPotCoinGUI::connectActions() {
     connect(sendWidget, &SendWidget::showHide, this, &VoltPotCoinGUI::showHide);
     connect(receiveWidget, &ReceiveWidget::showHide, this, &VoltPotCoinGUI::showHide);
     connect(addressesWidget, &AddressesWidget::showHide, this, &VoltPotCoinGUI::showHide);
-    connect(privacyWidget, &PrivacyWidget::showHide, this, &VoltPotCoinGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::showHide, this, &VoltPotCoinGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::execDialog, this, &VoltPotCoinGUI::execDialog);
     connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &VoltPotCoinGUI::showHide);
@@ -239,7 +234,7 @@ VoltPotCoinGUI::~VoltPotCoinGUI() {
 /** Get restart command-line parameters and request restart */
 void VoltPotCoinGUI::handleRestart(QStringList args){
     if (!ShutdownRequested())
-        emit requestedRestart(args);
+        Q_EMIT requestedRestart(args);
 }
 
 
@@ -257,9 +252,9 @@ void VoltPotCoinGUI::setClientModel(ClientModel* clientModel) {
         settingsWidget->setClientModel(clientModel);
 
         // Receive and report messages from client model
-        connect(clientModel, SIGNAL(message(QString, QString, unsigned int)), this, SLOT(message(QString, QString, unsigned int)));
-        connect(topBar, SIGNAL(walletSynced(bool)), dashboard, SLOT(walletSynced(bool)));
-        connect(topBar, SIGNAL(walletSynced(bool)), coldStakingWidget, SLOT(walletSynced(bool)));
+        connect(clientModel, &ClientModel::message, this, &VoltPotCoinGUI::message);
+        connect(topBar, &TopBar::walletSynced, dashboard, &DashboardWidget::walletSynced);
+        connect(topBar, &TopBar::walletSynced, coldStakingWidget, &ColdStakingWidget::walletSynced);
 
         // Get restart command-line parameters and handle restart
         connect(settingsWidget, &SettingsWidget::handleRestart, [this](QStringList arg){handleRestart(arg);});
@@ -283,27 +278,28 @@ void VoltPotCoinGUI::setClientModel(ClientModel* clientModel) {
 
 void VoltPotCoinGUI::createTrayIconMenu() {
 #ifndef Q_OS_MAC
-    // return if trayIcon is unset (only on non-Mac OSes)
+    // return if trayIcon is unset (only on non-macOSes)
     if (!trayIcon)
         return;
 
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
 
-    connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-            this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
+    connect(trayIcon, &QSystemTrayIcon::activated, this, &VoltPotCoinGUI::trayIconActivated);
 #else
-    // Note: On Mac, the dock icon is used to provide the tray's functionality.
+    // Note: On macOS, the Dock icon is used to provide the tray's functionality.
     MacDockIconHandler* dockIconHandler = MacDockIconHandler::instance();
-    dockIconHandler->setMainWindow((QMainWindow*)this);
-    trayIconMenu = dockIconHandler->dockMenu();
+    connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, this, &VoltPotCoinGUI::macosDockIconActivated);
+
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->setAsDockMenu();
 #endif
 
-    // Configuration of the tray icon (or dock icon) icon menu
+    // Configuration of the tray icon (or Dock icon) icon menu
     trayIconMenu->addAction(toggleHideAction);
     trayIconMenu->addSeparator();
 
-#ifndef Q_OS_MAC // This is built-in on Mac
+#ifndef Q_OS_MAC // This is built-in on macOS
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(quitAction);
 #endif
@@ -317,6 +313,12 @@ void VoltPotCoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
         toggleHidden();
     }
 }
+#else
+void VoltPotCoinGUI::macosDockIconActivated()
+ {
+     show();
+     activateWindow();
+ }
 #endif
 
 void VoltPotCoinGUI::changeEvent(QEvent* e)
@@ -327,7 +329,7 @@ void VoltPotCoinGUI::changeEvent(QEvent* e)
         if (clientModel && clientModel->getOptionsModel() && clientModel->getOptionsModel()->getMinimizeToTray()) {
             QWindowStateChangeEvent* wsevt = static_cast<QWindowStateChangeEvent*>(e);
             if (!(wsevt->oldState() & Qt::WindowMinimized) && isMinimized()) {
-                QTimer::singleShot(0, this, SLOT(hide()));
+                QTimer::singleShot(0, this, &VoltPotCoinGUI::hide);
                 e->ignore();
             }
         }
@@ -439,18 +441,11 @@ bool VoltPotCoinGUI::openStandardDialog(QString title, QString body, QString okB
 void VoltPotCoinGUI::showNormalIfMinimized(bool fToggleHidden) {
     if (!clientModel)
         return;
-    // activateWindow() (sometimes) helps with keyboard focus on Windows
-    if (isHidden()) {
-        show();
-        activateWindow();
-    } else if (isMinimized()) {
-        showNormal();
-        activateWindow();
-    } else if (GUIUtil::isObscured(this)) {
-        raise();
-        activateWindow();
-    } else if (fToggleHidden)
+    if (!isHidden() && !isMinimized() && !GUIUtil::isObscured(this) && fToggleHidden) {
         hide();
+    } else {
+        GUIUtil::bringToFront(this);
+    }
 }
 
 void VoltPotCoinGUI::toggleHidden() {
@@ -481,7 +476,7 @@ void VoltPotCoinGUI::goToAddresses(){
 }
 
 void VoltPotCoinGUI::goToPrivacy(){
-    showTop(privacyWidget);
+    if (privacyWidget) showTop(privacyWidget);
 }
 
 void VoltPotCoinGUI::goToMasterNodes(){
@@ -513,7 +508,7 @@ void VoltPotCoinGUI::changeTheme(bool isLightTheme){
     this->setStyleSheet(css);
 
     // Notify
-    emit themeChanged(isLightTheme, css);
+    Q_EMIT themeChanged(isLightTheme, css);
 
     // Update style
     updateStyle(this);
@@ -525,7 +520,7 @@ void VoltPotCoinGUI::resizeEvent(QResizeEvent* event){
     // background
     showHide(opEnabled);
     // Notify
-    emit windowResizeEvent(event);
+    Q_EMIT windowResizeEvent(event);
 }
 
 bool VoltPotCoinGUI::execDialog(QDialog *dialog, int xDiv, int yDiv){
@@ -586,15 +581,23 @@ bool VoltPotCoinGUI::addWallet(const QString& name, WalletModel* walletModel)
     receiveWidget->setWalletModel(walletModel);
     sendWidget->setWalletModel(walletModel);
     addressesWidget->setWalletModel(walletModel);
-    privacyWidget->setWalletModel(walletModel);
     masterNodesWidget->setWalletModel(walletModel);
     coldStakingWidget->setWalletModel(walletModel);
     settingsWidget->setWalletModel(walletModel);
 
+    // Privacy screen
+    if (walletModel->getZerocoinBalance() > 0) {
+        privacyWidget = new PrivacyWidget(this);
+        stackedContainer->addWidget(privacyWidget);
+
+        privacyWidget->setWalletModel(walletModel);
+        connect(privacyWidget, &PrivacyWidget::message, this, &VoltPotCoinGUI::message);
+        connect(privacyWidget, &PrivacyWidget::showHide, this, &VoltPotCoinGUI::showHide);
+    }
+
     // Connect actions..
-    connect(privacyWidget, &PrivacyWidget::message, this, &VoltPotCoinGUI::message);
     connect(masterNodesWidget, &MasterNodesWidget::message, this, &VoltPotCoinGUI::message);
-    connect(coldStakingWidget, &MasterNodesWidget::message, this, &VoltPotCoinGUI::message);
+    connect(coldStakingWidget, &ColdStakingWidget::message, this, &VoltPotCoinGUI::message);
     connect(topBar, &TopBar::message, this, &VoltPotCoinGUI::message);
     connect(sendWidget, &SendWidget::message,this, &VoltPotCoinGUI::message);
     connect(receiveWidget, &ReceiveWidget::message,this, &VoltPotCoinGUI::message);
@@ -602,7 +605,7 @@ bool VoltPotCoinGUI::addWallet(const QString& name, WalletModel* walletModel)
     connect(settingsWidget, &SettingsWidget::message, this, &VoltPotCoinGUI::message);
 
     // Pass through transaction notifications
-    connect(dashboard, SIGNAL(incomingTransaction(QString, int, CAmount, QString, QString)), this, SLOT(incomingTransaction(QString, int, CAmount, QString, QString)));
+    connect(dashboard, &DashboardWidget::incomingTransaction, this, &VoltPotCoinGUI::incomingTransaction);
 
     return true;
 }

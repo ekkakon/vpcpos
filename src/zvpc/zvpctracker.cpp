@@ -8,15 +8,14 @@
 #include "sync.h"
 #include "main.h"
 #include "txdb.h"
+#include "wallet/wallet.h"
 #include "wallet/walletdb.h"
-#include "zvpc/accumulators.h"
 #include "zvpc/zvpcwallet.h"
-#include "witness.h"
 
 
-CzVPCTracker::CzVPCTracker(std::string strWalletFile)
+CzVPCTracker::CzVPCTracker(CWallet* parent)
 {
-    this->strWalletFile = strWalletFile;
+    this->wallet = parent;
     mapSerialHashes.clear();
     mapPendingSpends.clear();
     fInitialized = false;
@@ -42,10 +41,10 @@ bool CzVPCTracker::Archive(CMintMeta& meta)
     if (mapSerialHashes.count(meta.hashSerial))
         mapSerialHashes.at(meta.hashSerial).isArchived = true;
 
-    CWalletDB walletdb(strWalletFile);
+    CWalletDB walletdb(wallet->strWalletFile);
     CZerocoinMint mint;
     if (walletdb.ReadZerocoinMint(meta.hashPubcoin, mint)) {
-        if (!CWalletDB(strWalletFile).ArchiveMintOrphan(mint))
+        if (!CWalletDB(wallet->strWalletFile).ArchiveMintOrphan(mint))
             return error("%s: failed to archive zerocoinmint", __func__);
     } else {
         //failed to read mint from DB, try reading deterministic
@@ -62,7 +61,7 @@ bool CzVPCTracker::Archive(CMintMeta& meta)
 
 bool CzVPCTracker::UnArchive(const uint256& hashPubcoin, bool isDeterministic)
 {
-    CWalletDB walletdb(strWalletFile);
+    CWalletDB walletdb(wallet->strWalletFile);
     if (isDeterministic) {
         CDeterministicMint dMint;
         if (!walletdb.UnarchiveDeterministicMint(hashPubcoin, dMint))
@@ -140,7 +139,7 @@ CAmount CzVPCTracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
             CMintMeta meta = it.second;
             if (meta.isUsed || meta.isArchived)
                 continue;
-            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations()) && !(meta.nHeight == 0));
+            bool fConfirmed = ((meta.nHeight < chainActive.Height() - Params().GetConsensus().ZC_MinMintConfirmations) && !(meta.nHeight == 0));
             if (fConfirmedOnly && !fConfirmed)
                 continue;
             if (fUnconfirmedOnly && fConfirmed)
@@ -168,7 +167,7 @@ std::vector<CMintMeta> CzVPCTracker::GetMints(bool fConfirmedOnly) const
         CMintMeta mint = it.second;
         if (mint.isArchived || mint.isUsed)
             continue;
-        bool fConfirmed = (mint.nHeight < chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations());
+        bool fConfirmed = (mint.nHeight < chainActive.Height() - Params().GetConsensus().ZC_MinMintConfirmations);
         if (fConfirmedOnly && !fConfirmed)
             continue;
         vMints.emplace_back(mint);
@@ -231,12 +230,12 @@ bool CzVPCTracker::UpdateZerocoinMint(const CZerocoinMint& mint)
     mapSerialHashes.at(hashSerial) = meta;
 
     //Write to db
-    return CWalletDB(strWalletFile).WriteZerocoinMint(mint);
+    return CWalletDB(wallet->strWalletFile).WriteZerocoinMint(mint);
 }
 
 bool CzVPCTracker::UpdateState(const CMintMeta& meta)
 {
-    CWalletDB walletdb(strWalletFile);
+    CWalletDB walletdb(wallet->strWalletFile);
 
     if (meta.isDeterministic) {
         CDeterministicMint dMint;
@@ -299,7 +298,7 @@ void CzVPCTracker::Add(const CDeterministicMint& dMint, bool isNew, bool isArchi
     mapSerialHashes[meta.hashSerial] = meta;
 
     if (isNew)
-        CWalletDB(strWalletFile).WriteDeterministicMint(dMint);
+        CWalletDB(wallet->strWalletFile).WriteDeterministicMint(dMint);
 }
 
 void CzVPCTracker::Add(const CZerocoinMint& mint, bool isNew, bool isArchived)
@@ -320,7 +319,7 @@ void CzVPCTracker::Add(const CZerocoinMint& mint, bool isNew, bool isArchived)
     mapSerialHashes[meta.hashSerial] = meta;
 
     if (isNew)
-        CWalletDB(strWalletFile).WriteZerocoinMint(mint);
+        CWalletDB(wallet->strWalletFile).WriteZerocoinMint(mint);
 }
 
 void CzVPCTracker::SetPubcoinUsed(const uint256& hashPubcoin, const uint256& txid)
@@ -356,7 +355,7 @@ void CzVPCTracker::RemovePending(const uint256& txid)
         }
     }
 
-    if (hashSerial > 0)
+    if (!hashSerial.IsNull())
         mapPendingSpends.erase(hashSerial);
 }
 
@@ -391,7 +390,7 @@ bool CzVPCTracker::UpdateStatusInternal(const std::set<uint256>& setMempool, CMi
         uint256 hashBlock;
 
         // Txid will be marked 0 if there is no knowledge of the final tx hash yet
-        if (mint.txid == 0) {
+        if (mint.txid.IsNull()) {
             if (!isMintInChain) {
                 LogPrintf("%s : Failed to find mint in zerocoinDB %s\n", __func__, mint.hashPubcoin.GetHex().substr(0, 6));
                 mint.isArchived = true;
@@ -438,23 +437,21 @@ bool CzVPCTracker::UpdateStatusInternal(const std::set<uint256>& setMempool, CMi
 
 std::set<CMintMeta> CzVPCTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed, bool fExcludeV1)
 {
-    CWalletDB walletdb(strWalletFile);
+    CWalletDB walletdb(wallet->strWalletFile);
     if (fUpdateStatus) {
         std::list<CZerocoinMint> listMintsDB = walletdb.ListMintedCoins();
         for (auto& mint : listMintsDB)
             Add(mint);
-        LogPrint("zero", "%s: added %d zerocoinmints from DB\n", __func__, listMintsDB.size());
+        LogPrint(BCLog::LEGACYZC, "%s: added %d zerocoinmints from DB\n", __func__, listMintsDB.size());
 
         std::list<CDeterministicMint> listDeterministicDB = walletdb.ListDeterministicMints();
 
-        CzVPCWallet* zVPCWallet = new CzVPCWallet(strWalletFile);
         for (auto& dMint : listDeterministicDB) {
             if (fExcludeV1 && dMint.GetVersion() < 2)
                 continue;
             Add(dMint, false, false, zVPCWallet);
         }
-        delete zVPCWallet;
-        LogPrint("zero", "%s: added %d dzvpc from DB\n", __func__, listDeterministicDB.size());
+        LogPrint(BCLog::LEGACYZC, "%s: added %d dzvpc from DB\n", __func__, listDeterministicDB.size());
     }
 
     std::vector<CMintMeta> vOverWrite;
@@ -465,7 +462,6 @@ std::set<CMintMeta> CzVPCTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
         mempool.getTransactions(setMempool);
     }
 
-    std::map<libzerocoin::CoinDenomination, int> mapMaturity = GetMintMaturityHeight();
     for (auto& it : mapSerialHashes) {
         CMintMeta mint = it.second;
 
@@ -487,9 +483,7 @@ std::set<CMintMeta> CzVPCTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
         if (fMatureOnly) {
             // Not confirmed
-            if (!mint.nHeight || mint.nHeight > chainActive.Height() - Params().Zerocoin_MintRequiredConfirmations())
-                continue;
-            if (mint.nHeight >= mapMaturity.at(mint.denom))
+            if (!mint.nHeight || mint.nHeight > chainActive.Height() - Params().GetConsensus().ZC_MinMintConfirmations)
                 continue;
         }
 

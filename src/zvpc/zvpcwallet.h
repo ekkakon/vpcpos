@@ -9,6 +9,7 @@
 #include "libzerocoin/Coin.h"
 #include "mintpool.h"
 #include "uint256.h"
+#include "wallet/wallet.h"
 #include "zerocoin.h"
 
 class CDeterministicMint;
@@ -43,6 +44,9 @@ public:
     bool CheckSeed(const CDeterministicMint& dMint);
 
 private:
+    /* Parent wallet */
+    CWallet* wallet{nullptr};
+
     uint512 GetZerocoinSeed(uint32_t n);
 };
 

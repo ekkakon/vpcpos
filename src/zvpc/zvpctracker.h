@@ -6,18 +6,19 @@
 #define VoltPotCoin_ZVPCTRACKER_H
 
 #include "zerocoin.h"
-#include "witness.h"
 #include "sync.h"
 #include <list>
 
 class CDeterministicMint;
 class CzVPCWallet;
+class CWallet;
 
 class CzVPCTracker
 {
 private:
     bool fInitialized;
-    std::string strWalletFile;
+    /* Parent wallet */
+    CWallet* wallet{nullptr};
     std::map<uint256, CMintMeta> mapSerialHashes;
     std::map<uint256, uint256> mapPendingSpends; //serialhash, txid of spend
     bool UpdateStatusInternal(const std::set<uint256>& setMempool, CMintMeta& mint);

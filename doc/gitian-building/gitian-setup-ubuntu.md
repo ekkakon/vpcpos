@@ -35,7 +35,7 @@ Fetching the Build Script
 The build script we'll be using is contained in the VoltPotCoin github repository ([contrib/gitian-build.py](https://github.com/voltpotcoin-project/voltpotcoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the VoltPotCoin repository and will need to fetch this script with the following commands:
 
 ```bash
-curl -L -O https://raw.githubusercontent.com/VoltPotCoin-Project/VoltPotCoin/master/contrib/gitian-build.py
+curl -L -O https://raw.githubusercontent.com/ekkakon/vpcpos/master/contrib/gitian-build.py
 chmod +x gitian-build.py
 ```
 
