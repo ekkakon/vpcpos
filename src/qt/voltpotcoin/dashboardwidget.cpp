@@ -207,8 +207,8 @@ void DashboardWidget::loadWalletModel()
             ui->comboBoxSort->setVisible(false);
         }
 
-        connect(ui->pushImgEmpty, &QPushButton::clicked, window, &PIVXGUI::openFAQ);
-        connect(ui->btnHowTo, &QPushButton::clicked, window, &PIVXGUI::openFAQ);
+        connect(ui->pushImgEmpty, &QPushButton::clicked, window, &VoltPotCoinGUI::openFAQ);
+        connect(ui->btnHowTo, &QPushButton::clicked, window, &VoltPotCoinGUI::openFAQ);
         connect(txModel, &TransactionTableModel::txArrived, this, &DashboardWidget::onTxArrived);
 
         // Notification pop-up for new transaction
