@@ -449,7 +449,7 @@ std::set<CMintMeta> CzVPCTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
         for (auto& dMint : listDeterministicDB) {
             if (fExcludeV1 && dMint.GetVersion() < 2)
                 continue;
-            Add(dMint, false, false, zVPCWallet);
+            Add(dMint, false, false, wallet->zwalletMain);
         }
         LogPrint(BCLog::LEGACYZC, "%s: added %d dzvpc from DB\n", __func__, listDeterministicDB.size());
     }
