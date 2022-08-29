@@ -291,7 +291,7 @@ void CzVPCTracker::Add(const CDeterministicMint& dMint, bool isNew, bool isArchi
     meta.isArchived = isArchived;
     meta.isDeterministic = true;
     if (! iszVPCWalletInitialized)
-        zVPCWallet = new CzVPCWallet(strWalletFile);
+        zVPCWallet = new CzVPCWallet(wallet);
     meta.isSeedCorrect = zVPCWallet->CheckSeed(dMint);
     if (! iszVPCWalletInitialized)
         delete zVPCWallet;
