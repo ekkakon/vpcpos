@@ -917,6 +917,8 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 
     //get block value and calculate from that
     CAmount nSubsidy = 0;
+    const int last_pow_block = Params().GetConsensus().height_last_PoW;
+
     if (nHeight == 0) {
      nSubsidy = 746910 * COIN;
     }
