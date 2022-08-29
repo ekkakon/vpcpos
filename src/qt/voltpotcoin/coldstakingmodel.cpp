@@ -178,6 +178,6 @@ void ColdStakingModel::removeRowAndEmitDataChanged(const int idx)
 {
     beginRemoveRows(QModelIndex(), idx, idx);
     endRemoveRows();
-    emit dataChanged(index(idx, 0, QModelIndex()), index(idx, COLUMN_COUNT, QModelIndex()) );
+    Q_EMIT dataChanged(index(idx, 0, QModelIndex()), index(idx, COLUMN_COUNT, QModelIndex()) );
 }
 

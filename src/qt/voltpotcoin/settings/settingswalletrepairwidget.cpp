@@ -157,7 +157,7 @@ void SettingsWalletRepairWidget::buildParameterlist(QString arg)
     args.append(arg);
 
     // Send command-line arguments to VoltPotCoinGUI::handleRestart()
-    emit handleRestart(args);
+    Q_EMIThandleRestart(args);
 }
 
 SettingsWalletRepairWidget::~SettingsWalletRepairWidget()
