@@ -1733,7 +1733,7 @@ bool AppInit2()
                 }
                 // Create legacy wallet
                 LogPrintf("Creating Pre-HD Wallet\n");
-                pwalletMain->SetMaxVersion(FEATURE_PRE_PIVX);
+                pwalletMain->SetMaxVersion(FEATURE_PRE_VoltPotCoin);
             }
 
             // Top up the keypool
