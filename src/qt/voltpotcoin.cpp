@@ -363,7 +363,7 @@ void BitcoinApplication::createWindow(const NetworkStyle* networkStyle)
     window = new VoltPotCoinGUI(networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
-    connect(pollShutdownTimer, &QTimer::timeout, window, &VPCGUI::detectShutdown);
+    connect(pollShutdownTimer, &QTimer::timeout, window, &VoltPotCoinGUI::detectShutdown);
     pollShutdownTimer->start(200);
 }
 
