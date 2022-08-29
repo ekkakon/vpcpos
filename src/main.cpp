@@ -1848,7 +1848,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     if (nHeight <= 250000) {
         ret = blockValue * 0.4;
-    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
+    } else if (nHeight < 900000) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
         //When zVPC is staked, masternode only gets 2 VPC
