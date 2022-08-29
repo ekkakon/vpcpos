@@ -2,80 +2,130 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PWIDGET_H
-#define PWIDGET_H
+#include "qt/voltpotcoin/pwidget.h"
+#include "qt/voltpotcoin/qtutils.h"
+#include "qt/voltpotcoin/loadingdialog.h"
+#include <QRunnable>
+#include <QThreadPool>
 
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include "qt/voltpotcoin/prunnable.h"
-#include "walletmodel.h"
+PWidget::PWidget(VoltPotCoinGUI* _window, QWidget *parent) : QWidget((parent) ? parent : _window), window(_window) { init(); }
+PWidget::PWidget(PWidget* parent) : QWidget(parent), window(parent->getWindow()) { init(); }
 
-class VoltPotCoinGUI;
-class ClientModel;
-class WalletModel;
-class WorkerTask;
-
-namespace Ui {
-class PWidget;
+void PWidget::init()
+{
+    if (window)
+        connect(window, &VoltPotCoinGUI::themeChanged, this, &PWidget::onChangeTheme);
 }
 
-class Translator
+void PWidget::setClientModel(ClientModel* model)
+{
+    this->clientModel = model;
+    loadClientModel();
+}
+
+void PWidget::setWalletModel(WalletModel* model)
+{
+    this->walletModel = model;
+    loadWalletModel();
+}
+
+void PWidget::onChangeTheme(bool isLightTheme, QString& theme)
+{
+    this->setStyleSheet(theme);
+    changeTheme(isLightTheme, theme);
+    updateStyle(this);
+}
+
+void PWidget::showHideOp(bool show)
+{
+    Q_EMIT showHide(show);
+}
+
+void PWidget::inform(const QString& message)
+{
+    emitMessage("", message, CClientUIInterface::MSG_INFORMATION_SNACK);
+}
+
+void PWidget::warn(const QString& title, const QString& message)
+{
+    emitMessage(title, message, CClientUIInterface::MSG_ERROR);
+}
+
+bool PWidget::ask(const QString& title, const QString& message)
+{
+    bool ret = false;
+    emitMessage(title, message, CClientUIInterface::MSG_INFORMATION | CClientUIInterface::BTN_MASK | CClientUIInterface::MODAL, &ret);
+    return ret;
+}
+
+void PWidget::showDialog(QDialog *dlg, int xDiv, int yDiv)
+{
+    Q_EMIT execDialog(dlg, xDiv, yDiv);
+}
+
+void PWidget::emitMessage(const QString& title, const QString& body, unsigned int style, bool* ret)
+{
+    Q_EMIT message(title, body, style, ret);
+}
+
+class WorkerTask : public QRunnable
 {
 public:
-    virtual QString translate(const char *msg) = 0;
+    WorkerTask(QPointer<Worker> worker) {
+        this->worker = worker;
+    }
+
+    ~WorkerTask() {
+        if (!worker.isNull()) worker.clear();
+    }
+
+    void run() override {
+        if (!worker.isNull()) {
+            Worker* _worker = worker.data();
+            _worker->process();
+            _worker->clean();
+        }
+    }
+
+    QPointer<Worker> worker;
 };
 
-class PWidget : public QWidget, public Runnable, public Translator
+bool PWidget::execute(int type, std::unique_ptr<WalletModel::UnlockContext> pctx)
 {
-    Q_OBJECT
-public:
-    explicit PWidget(VoltPotCoinGUI* _window = nullptr, QWidget *parent = nullptr);
-    explicit PWidget(PWidget *parent = nullptr);
+    if (task.isNull()) {
+        Worker* worker = (!pctx) ? new Worker(this, type) : new WalletWorker(this, type, std::move(pctx));
+        connect(worker, &Worker::error, this, &PWidget::errorString);
 
-    void setClientModel(ClientModel* model);
-    void setWalletModel(WalletModel* model);
+        WorkerTask* workerTask = new WorkerTask(QPointer<Worker>(worker));
+        workerTask->setAutoDelete(false);
+        task = QSharedPointer<WorkerTask>(workerTask);
+    } else if (pctx){
+        if (task->worker.isNull() || !task->worker.data()) // Must never happen
+            throw std::runtime_error("Worker task null");
 
-    VoltPotCoinGUI* getWindow() { return this->window; }
+        // Update context
+        if (dynamic_cast<WalletWorker*>(task->worker.data()) != nullptr) {
+            WalletWorker* _worker = static_cast<WalletWorker*>(task->worker.data());
+            _worker->setContext(std::move(pctx));
+        }
+    }
+    QThreadPool::globalInstance()->start(task.data());
+    return true;
+}
 
-    void run(int type) override;
-    void onError(QString error, int type) override;
+void PWidget::errorString(QString error, int type)
+{
+    onError(error, type);
+}
 
-    void inform(const QString& message);
-    void emitMessage(const QString& title, const QString& message, unsigned int style, bool* ret = nullptr);
 
-    QString translate(const char *msg) override { return tr(msg); }
+////////////////////////////////////////////////////////////////
+//////////////////Override methods//////////////////////////////
+////////////////////////////////////////////////////////////////
 
-Q_SIGNALS:
-    void message(const QString& title, const QString& body, unsigned int style, bool* ret = nullptr);
-    void showHide(bool show);
-    bool execDialog(QDialog *dialog, int xDiv = 3, int yDiv = 5);
 
-protected Q_SLOTS:
-    virtual void changeTheme(bool isLightTheme, QString &theme);
-    void onChangeTheme(bool isLightTheme, QString &theme);
-
-protected:
-    VoltPotCoinGUI* window = nullptr;
-    ClientModel* clientModel = nullptr;
-    WalletModel* walletModel = nullptr;
-
-    virtual void loadClientModel();
-    virtual void loadWalletModel();
-
-    void showHideOp(bool show);
-    bool execute(int type, std::unique_ptr<WalletModel::UnlockContext> pctx = nullptr);
-    void warn(const QString& title, const QString& message);
-    bool ask(const QString& title, const QString& message);
-    void showDialog(QDialog *dialog, int xDiv = 3, int yDiv = 5);
-
-private:
-    QSharedPointer<WorkerTask> task;
-
-    void init();
-private Q_SLOTS:
-    void errorString(QString, int);
-
-};
-
-#endif // PWIDGET_H
+void PWidget::loadClientModel() { /* override*/ }
+void PWidget::loadWalletModel() { /* override*/ }
+void PWidget::changeTheme(bool isLightTheme, QString& theme) { /* override*/ }
+void PWidget::run(int type) { /* override*/ }
+void PWidget::onError(QString error, int type) { /* override*/ }
