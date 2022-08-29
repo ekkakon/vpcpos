@@ -1612,7 +1612,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
             nMasternodeCount = mnodeman.size();
     }
 
-    int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+    int64_t nMoneySupply = nMoneySupply;
     int64_t mNodeCoins = nMasternodeCount * 20000 * COIN;
 
     // Use this log to compare the masternode count for different clients
