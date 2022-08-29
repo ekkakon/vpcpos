@@ -41,7 +41,7 @@ private:
     unsigned int nPosition{0};
 
 public:
-    CVpcStake(){}
+    CVpcStake() {}
 
     bool InitFromTxIn(const CTxIn& txin) override;
     bool SetPrevout(CTransaction txPrev, unsigned int n);
