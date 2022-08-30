@@ -268,10 +268,10 @@ BITCOIN_QT_H = \
   qt/voltpotcoin/tooltipmenu.h \
   qt/voltpotcoin/addresseswidget.h \
   qt/voltpotcoin/defaultdialog.h \
-  qt/voltpotcoin/denomgenerationdialog.h \
   qt/voltpotcoin/privacywidget.h \
   qt/voltpotcoin/coldstakingwidget.h \
   qt/voltpotcoin/settings/settingsbackupwallet.h \
+  qt/voltpotcoin/settings/settingsexportcsv.h \
   qt/voltpotcoin/settings/settingsbittoolwidget.h \
   qt/voltpotcoin/settings/settingsconsolewidget.h \
   qt/voltpotcoin/settings/settingsdisplayoptionswidget.h \

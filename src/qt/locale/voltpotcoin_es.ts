@@ -196,6 +196,10 @@
         <translation>Fecha</translation>
     </message>
     <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(sin etiqueta)</translation>
     </message>
@@ -245,6 +249,10 @@
     <message>
         <source>e.g. John Doe</source>
         <translation>p.ej. John Doe</translation>
+    </message>
+    <message>
+        <source>Enter VoltPotCoin address</source>
+        <translation>Introduzca una dirección VoltPotCoin</translation>
     </message>
     <message>
         <source>SAVE</source>
@@ -323,33 +331,33 @@ Are you sure?</source>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Escriba la nueva contraseña para el monedero. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
+        <translation>Escriba la nueva contraseña para la wallet. &lt;br/&gt;Por favor utilice una contraseña de &lt;b&gt;10 o más caracteres aleatorios&lt;/b&gt;, u &lt;b&gt; ocho o más palabras&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
-        <translation>Cifrar monedero</translation>
+        <translation>Encriptar wallet</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Esta operación requiere su contraseña para desbloquear el monedero</translation>
+        <translation>Esta operación requiere su contraseña para desbloquear la wallet.</translation>
     </message>
     <message>
         <source>Unlock wallet
 for staking</source>
-        <translation>Desbloquear billetera
+        <translation>Desbloquear wallet
 para staking</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Desbloquear monedero</translation>
+        <translation>Desbloquear wallet</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Esta operación requiere su contraseña para descifrar el monedero</translation>
+        <translation>Esta operación requiere su contraseña para desencriptar la wallet.</translation>
     </message>
     <message>
         <source>Decrypt wallet</source>
-        <translation>Descifrar monedero</translation>
+        <translation>Desencriptar wallet</translation>
     </message>
     <message>
         <source>Change passphrase</source>
@@ -357,11 +365,23 @@ para staking</translation>
     </message>
     <message>
         <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Ingrese la antigua y la nueva contraseña para el monedero</translation>
+        <translation>Ingrese la antigua y la nueva contraseña de la wallet.</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
-        <translation>Confirme el cifrado del monedero</translation>
+        <translation>Confirma el encriptado de la wallet</translation>
+    </message>
+    <message>
+        <source>WARNING</source>
+        <translation>ADVERTENCIA</translation>
+    </message>
+    <message>
+        <source>If you encrypt your wallet and lose your passphrase, you will</source>
+        <translation>Si encriptas tu wallet y pierdes tu contraseña, tu</translation>
+    </message>
+    <message>
+        <source>LOSE ALL OF YOUR VPC</source>
+        <translation>PERDERÁS TODOS TUS VPC</translation>
     </message>
     <message>
         <source>ENCRYPT</source>
@@ -372,28 +392,28 @@ para staking</translation>
         <translation>CANCELAR</translation>
     </message>
     <message>
+        <source>WARNING: The Caps Lock key is on!</source>
+        <translation>ADVERTENCIA: ¡La tecla Bloq Mayús está activada!</translation>
+    </message>
+    <message>
         <source>VoltPotCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your VPCs from being stolen by malware infecting your computer.</source>
-        <translation>VoltPotCoin se cerrará para finalizar el proceso de cifrado. Recuerde que cifrar su monedero no garantiza que sus VPCs no sean robados mediante malware de su ordenador.</translation>
+        <translation>VoltPotCoin se cerrará para finalizar el proceso de encriptación. Recuerda que encriptar tu wallet no garantiza que sus VPCs no sean robados mediante malware de tu computadora.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>¿Está seguro de que desea cifrar su monedero?</translation>
-    </message>
-    <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR VPC&lt;/b&gt;!</source>
-        <translation>Atención: Si cifra su monedero y pierde su contraseña, perderá &lt;b&gt; TODOS SUS VPC&lt;/b&gt;!</translation>
+        <translation>¿Está seguro de que desea encriptar tu wallet?</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
-        <translation>Monedero cifrado</translation>
+        <translation>Wallet encriptado</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>IMPORTANTE: Cualquier copia de seguridad anterior que haya realizado de su monedero debe ser reemplazada por la nueva copia de seguridad cifrada. Por razones de seguridad, las copias de seguridad anteriores del monedero sin cifrar pasarán a ser obsoletas tan pronto empiece a utilizar el nuevo monedero cifrado.</translation>
+        <translation>IMPORTANTE: Cualquier copia de seguridad anterior que hayas realizado de tu wallet debe ser reemplazada por la nueva copia de seguridad encriptada. Por razones de seguridad, las copias de seguridad anteriores de la wallet sin encriptar pasarán a ser obsoletas tan pronto empiece a utilizar la nueva wallet encriptada.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
-        <translation>El cifrado del monedero ha fallado</translation>
+        <translation>El encriptado de la wallet ha fallado</translation>
     </message>
     <message>
         <source>OK</source>
@@ -401,7 +421,7 @@ para staking</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>El cifrado del monedero ha fallado debido a un error interno. Su monedero no ha sido cifrado.</translation>
+        <translation>La encriptación de la El cifrado fallado debido a un error interno. Tu El cifrado  no ha sido encriptado.</translation>
     </message>
     <message>
         <source>The supplied passphrases do not match.</source>
@@ -409,23 +429,19 @@ para staking</translation>
     </message>
     <message>
         <source>Wallet unlock failed</source>
-        <translation>Desbloqueo del monedero fallido</translation>
+        <translation>El desbloqueo de la wallet ha fallido</translation>
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>La contraseña introducida para el descifrado del monedero es incorrecta.</translation>
+        <translation>La contraseña introducida para desencriptar la wallet es incorrecta.</translation>
     </message>
     <message>
         <source>Wallet decryption failed</source>
-        <translation>Descifrado del monedero fallido</translation>
+        <translation>Desencriptado de la wallet ha fallado</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
         <translation>Se cambió la contraseña con éxito.</translation>
-    </message>
-    <message>
-        <source>Warning: The Caps Lock key is on!</source>
-        <translation>Aviso: La tecla Mayúsculas está encendida!</translation>
     </message>
 </context>
 <context>
@@ -437,37 +453,6 @@ para staking</translation>
     <message>
         <source>Banned Until</source>
         <translation>Suspendido hasta</translation>
-    </message>
-</context>
-<context>
-    <name>BlockExplorer</name>
-    <message>
-        <source>Blockchain Explorer</source>
-        <translation>Explorador del blockchain</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Atrás</translation>
-    </message>
-    <message>
-        <source>Forward</source>
-        <translation>Adelante</translation>
-    </message>
-    <message>
-        <source>Address / Block / Transaction</source>
-        <translation>Dirección / Bloque / Transacción</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Buscar</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>EtiquetaDeTexto</translation>
-    </message>
-    <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (voltpotcoin.conf).</source>
-        <translation>No se muestran todas las transacciones. Para ver todas las transacciones introduzca la línea "txindex=1" en el archivo de configuración (voltpotcoin.conf).</translation>
     </message>
 </context>
 <context>
@@ -503,10 +488,6 @@ para staking</translation>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Desconocido: %5)</translation>
     </message>
-    <message>
-        <source>Network Alert</source>
-        <translation>Alerta de Red</translation>
-    </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
@@ -525,6 +506,10 @@ para staking</translation>
     <message>
         <source>Coin Selection</source>
         <translation>Selección de Moneda</translation>
+    </message>
+    <message>
+        <source>Select VPC Outputs to Spend</source>
+        <translation>Seleccionar Salidas VPC para Gastar</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -549,14 +534,6 @@ para staking</translation>
     <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Detalles de Transacción</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Presionar el botón</translation>
     </message>
     <message>
         <source>0.00 VPC</source>
@@ -627,40 +604,40 @@ para staking</translation>
         <translation>Desbloquear no gastado</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Copiar cantidad</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Copiar comisión</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Copiar después de comisión</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Copiar octetos</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Copiar prioridad</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Copiar calderilla</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Copiar cambio</translation>
-    </message>
-    <message>
         <source>Unselect all</source>
         <translation>Deseleccionar todo</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
         <translation>Por favor cambie a "Modo de Lista" para utilizar esta función.</translation>
+    </message>
+    <message>
+        <source>Quantity Copied</source>
+        <translation>Cantidad Copiada</translation>
+    </message>
+    <message>
+        <source>Amount Copied</source>
+        <translation>Monto Copiado</translation>
+    </message>
+    <message>
+        <source>Fee Copied</source>
+        <translation>Comisión Copiada</translation>
+    </message>
+    <message>
+        <source>After Fee Copied</source>
+        <translation>Después de la Comisión Copiada</translation>
+    </message>
+    <message>
+        <source>Bytes Copied</source>
+        <translation>Bytes Copiados</translation>
+    </message>
+    <message>
+        <source>Dust Copied</source>
+        <translation>Dust Copiado</translation>
+    </message>
+    <message>
+        <source>Change Copied</source>
+        <translation>Cambio Copiado</translation>
     </message>
     <message>
         <source>highest</source>
@@ -711,6 +688,10 @@ para staking</translation>
         <translation>sí</translation>
     </message>
     <message>
+        <source>delegated to %1 for cold staking</source>
+        <translation>delegar a %1 para hacer cold staking</translation>
+    </message>
+    <message>
         <source>no</source>
         <translation>no</translation>
     </message>
@@ -756,89 +737,6 @@ para staking</translation>
     </message>
 </context>
 <context>
-    <name>CoinControlVpcWidget</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Diálogo</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Detalles de Transacción</translation>
-    </message>
-    <message>
-        <source>PushButton</source>
-        <translation>Presionar el botón</translation>
-    </message>
-    <message>
-        <source>VPC:</source>
-        <translation>VPC:</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>EtiquetaDeTexto</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Cantidad:</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Comisión:</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Cantidad</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Etiqueta</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Dirección</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Fecha</translation>
-    </message>
-    <message>
-        <source>Confirmations</source>
-        <translation>Confirmaciones</translation>
-    </message>
-    <message>
-        <source>CheckBox</source>
-        <translation>CheckBox</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Bytes:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation>Calderilla:</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Cambio:</translation>
-    </message>
-    <message>
-        <source>After Fee: </source>
-        <translation>Después de Comisión:</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>CANCELAR</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-</context>
-<context>
     <name>ColdStakingWidget</name>
     <message>
         <source>Form</source>
@@ -851,6 +749,14 @@ para staking</translation>
     <message>
         <source>TextLabel</source>
         <translation>EtiquetaDeTexto</translation>
+    </message>
+    <message>
+        <source>Owner address (optional, if empty a new address will be created)</source>
+        <translation>Dirección del propietario (opcional, si está vacía se creará una nueva dirección)</translation>
+    </message>
+    <message>
+        <source>Total Staking:</source>
+        <translation>Staking Total:</translation>
     </message>
     <message>
         <source>List of delegated balance by address</source>
@@ -897,8 +803,34 @@ para staking</translation>
         <translation>Error al cargar las delegaciones:%1</translation>
     </message>
     <message>
+        <source>You can delegate your VPCs, letting a hot node (24/7 online node)
+stake on your behalf, while you keep the keys securely offline.</source>
+        <translation>Puedes delegar tus VPC, dejando un nodo activo (nodo en línea 24/7)
+Haga Stake en tu nombre, manteniendo las llaves en un lugar seguro fuera de línea.</translation>
+    </message>
+    <message>
+        <source>Enter owner address</source>
+        <translation>Ingresa la dirección del propietario</translation>
+    </message>
+    <message>
+        <source>Accept VPC delegation / Delegate VPC</source>
+        <translation>Aceptar delegación de VPC / VPC Delegados</translation>
+    </message>
+    <message>
+        <source>Cold Staking address</source>
+        <translation>Dirección de Cold Staking</translation>
+    </message>
+    <message>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation>No hay direcciones de recepción disponibles, puedes ir a la pantalla de recepción y añadir algunas allí!</translation>
+    </message>
+    <message>
         <source>No contacts available, you can go to the contacts screen and add some there!</source>
         <translation>Sin contactos disponibles, ¡puedes ir a la pantalla de contactos y añadir alguno allí!</translation>
+    </message>
+    <message>
+        <source>Cannot send delegation, wallet locked</source>
+        <translation>No se puede enviar delegación, la wallet está bloqueada</translation>
     </message>
     <message>
         <source>Cold staking is networkely disabled</source>
@@ -909,12 +841,16 @@ para staking</translation>
         <translation>Entrada inválida</translation>
     </message>
     <message>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation>Entrada no válida, la cantidad mínima para delegar es de</translation>
+    </message>
+    <message>
         <source>Owner address invalid</source>
         <translation>Dirección del propietario inválida</translation>
     </message>
     <message>
         <source>ALERT!</source>
-        <translation>ALERTA!</translation>
+        <translation>¡ALERTA!</translation>
     </message>
     <message>
         <source>Delegating to an external owner address!
@@ -926,15 +862,15 @@ device containing the owner address.
 Do you wish to proceed?</source>
         <translation>¡Delegar en una dirección de propietario externa!
 
-Las monedas delegadas NO se podrán gastar en esta billetera.
-El gasto de estas monedas tendrá que hacerse desde la billetera o
+Las monedas delegadas NO se podrán gastar en esta wallet.
+El gasto de estas monedas tendrá que hacerse desde la wallet o
 el dispositivo que contiene la dirección del propietario.
 
 ¿Deseas continuar?</translation>
     </message>
     <message>
         <source>Staking address corresponds to this wallet, change it to an external node</source>
-        <translation>La dirección de Stake corresponde a esta cartera, cámbiala a un nodo externo.</translation>
+        <translation>La dirección de Stake corresponde a esta wallet, cámbiala a un nodo externo.</translation>
     </message>
     <message>
         <source>Cannot create transaction.</source>
@@ -947,6 +883,10 @@ el dispositivo que contiene la dirección del propietario.
     <message>
         <source>You don't have any VPC to select.</source>
         <translation>Tú no tienes ningún VPC para seleccionar</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>No se puede realizar la operación, la wallet está bloqueada</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -979,7 +919,7 @@ el dispositivo que contiene la dirección del propietario.
     <message>
         <source>Copy owner
 address</source>
-        <translation>Copiar dirección 
+        <translation>Copiar dirección
 del propietario </translation>
     </message>
     <message>
@@ -1113,52 +1053,8 @@ del propietario </translation>
         <translation>Cantidad de VPC y zVPC por stake.</translation>
     </message>
     <message>
-        <source>All</source>
-        <translation>Todos</translation>
-    </message>
-    <message>
-        <source>Received</source>
-        <translation>Recibidos</translation>
-    </message>
-    <message>
-        <source>Sent</source>
-        <translation>Enviados</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>Minado</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Creación de moneda</translation>
-    </message>
-    <message>
-        <source>MN reward</source>
-        <translation>Recompensa de MN</translation>
-    </message>
-    <message>
-        <source>To yourself</source>
-        <translation>A usted mismo</translation>
-    </message>
-    <message>
-        <source>Cold stakes</source>
-        <translation>Stake en frío</translation>
-    </message>
-    <message>
-        <source>Hot stakes</source>
-        <translation>Stake en caliente</translation>
-    </message>
-    <message>
-        <source>Delegated</source>
-        <translation>Delegado </translation>
-    </message>
-    <message>
-        <source>Delegations</source>
-        <translation>Delegaciones </translation>
-    </message>
-    <message>
         <source>Please wait until the wallet is fully synced to see your correct balance</source>
-        <translation>Espere hasta que la billetera esté completamente sincronizada para ver su saldo correcto</translation>
+        <translation>Espere hasta que la wallet esté completamente sincronizada para ver su saldo correcto</translation>
     </message>
     <message>
         <source>No transactions yet</source>
@@ -1171,7 +1067,7 @@ del propietario </translation>
     <message>
         <source>You can verify the staking activity in the status bar at the top right of the wallet.
 It will start automatically as soon as the wallet has enough confirmations on any unspent balances, and the wallet has synced.</source>
-        <translation>Puedes verificar la actividad de tu Stake en la barra de estado en la parte superior derecha de la billetera. Se iniciará automáticamente tan pronto como la billetera se haya sincronizado y  tenga suficientes confirmaciones sobre cualquier saldo disponible. </translation>
+        <translation>Puedes verificar la actividad de tu Stake en la barra de estado en la parte superior derecha de la wallet. Se iniciará automáticamente tan pronto como la wallet se haya sincronizado y  tenga suficientes confirmaciones sobre cualquier saldo disponible. </translation>
     </message>
     <message>
         <source>You have no staking rewards</source>
@@ -1211,65 +1107,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Text Label</source>
         <translation>Text Label</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>CANCELAR</translation>
-    </message>
-    <message>
-        <source>SAVE</source>
-        <translation>GUARDAR</translation>
-    </message>
-</context>
-<context>
-    <name>DenomGenerationDialog</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulario</translation>
-    </message>
-    <message>
-        <source>Transaction Details</source>
-        <translation>Detalles de Transacción</translation>
-    </message>
-    <message>
-        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
-        <translation>Esto desbloqueará su billetera completamente, para que cualquier persona con acceso a ella pueda utilizarla hasta que la billetera esté cerrada o bloqueada de nuevo.</translation>
-    </message>
-    <message>
-        <source>5000</source>
-        <translation>5000</translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation>100</translation>
-    </message>
-    <message>
-        <source>10</source>
-        <translation>10</translation>
-    </message>
-    <message>
-        <source>1000</source>
-        <translation>1000</translation>
-    </message>
-    <message>
-        <source>50</source>
-        <translation>50</translation>
-    </message>
-    <message>
-        <source>500</source>
-        <translation>500</translation>
-    </message>
-    <message>
-        <source>5</source>
-        <translation>5</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Deseleccionar Todo</translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -1328,7 +1165,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation>No se pudo desbloquear el monedero.</translation>
+        <translation>No se pudo desbloquear la wallet</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
@@ -1363,49 +1200,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Cannot create data directory here.</source>
         <translation>No se puede crear un directorio de datos aquí.</translation>
-    </message>
-</context>
-<context>
-    <name>GovernancePage</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulario</translation>
-    </message>
-    <message>
-        <source>GOVERNANCE</source>
-        <translation>GOBERNANZA</translation>
-    </message>
-    <message>
-        <source>Update Proposals</source>
-        <translation>Actualizar Propuestas</translation>
-    </message>
-    <message>
-        <source>Next super block:</source>
-        <translation>Próximo superbloque:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Blocks to next super block:</source>
-        <translation>Bloques para el próximo superbloque:</translation>
-    </message>
-    <message>
-        <source>Days to budget payout (estimate):</source>
-        <translation>Días para el pago del presupuesto (estimado):</translation>
-    </message>
-    <message>
-        <source>Allotted budget:</source>
-        <translation>Presupuesto asignado:</translation>
-    </message>
-    <message>
-        <source>Budget left:</source>
-        <translation>Presupuesto restante:</translation>
-    </message>
-    <message>
-        <source>Masternodes count:</source>
-        <translation>Conteo de Masternodes:</translation>
     </message>
 </context>
 <context>
@@ -1451,6 +1245,10 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Mostrar pantalla de bienvenida al arrancar (por defecto: %u)</translation>
     </message>
     <message>
+        <source>Hide QT staking charts on startup (default: %u)</source>
+        <translation>Ocultar gráficas de staking QT al inicio (predeterminado: %u)</translation>
+    </message>
+    <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
         <translation>Seleccionar el idioma, por ejemplo "es_ES" (por defecto: idioma del sistema)</translation>
     </message>
@@ -1483,7 +1281,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>VoltPotCoin Core will download and store a copy of the VoltPotCoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>VoltPotCoin Core descargará y guardará una copia de la cadena de bloques VoltPotCoin. Por lo menos %1GB de datos serán guardados en esta carpeta, y crecerá con el tiempo. El monedero también se guardará en esta carpeta.</translation>
+        <translation>VoltPotCoin Core descargará y guardará una copia de la cadena de bloques VoltPotCoin. Por lo menos %1GB de datos serán guardados en esta carpeta, y crecerá con el tiempo. La wallet también se guardará en esta carpeta.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1549,11 +1347,11 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <source>Unlock Wallet</source>
-        <translation>Desbloquear monedero</translation>
+        <translation>Desbloquear wallet</translation>
     </message>
     <message>
         <source>Lock Wallet</source>
-        <translation>Bloquear monedero</translation>
+        <translation>Bloquear wallet</translation>
     </message>
     <message>
         <source>Staking Only</source>
@@ -1565,18 +1363,6 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>Form</source>
         <translation>Formulario</translation>
-    </message>
-    <message>
-        <source>user_masternode</source>
-        <translation>usuario_masternode</translation>
-    </message>
-    <message>
-        <source>Address: 88.26.164.88:47572</source>
-        <translation>Dirección: 88.26.164.88:47572</translation>
-    </message>
-    <message>
-        <source>Jan. 19, 2019</source>
-        <translation>19 de enero, 2019</translation>
     </message>
 </context>
 <context>
@@ -1610,16 +1396,32 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>Dirección</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a VoltPotCoin Masternode you must dedicate 20.000 VPC (the unit of VoltPotCoin) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Para crear un Masternode de VoltPotCoin debes desponer 20.000 VoltPotCoin (la unidad de VoltPotCoin) a la red (sin embargo, estas monedas siguen siendo tuyas y nunca saldrán de tu posesión). Puedes desactivar el nodo y desbloquear las monedas en cualquier momento.</translation>
+        <source>Create New Masternode Controller</source>
+        <translation>Crear Nuevo Controlador de Masternode</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a VoltPotCoin Masternode you must dedicate 10,000 VPC (the unit of VoltPotCoin) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Para crear un Masternode de VoltPotCoin debes desponer 10.000 VPC (la unidad de VoltPotCoin) a la red (sin embargo, estas monedas siguen siendo tuyas y nunca saldrán de tu posesión). Puedes desactivar el nodo y desbloquear las monedas en cualquier momento.</translation>
+    </message>
+    <message>
+        <source>Set Masternode Name</source>
+        <translation>Configurar el Nombre del Masternode</translation>
+    </message>
+    <message>
+        <source>Set Masternode IP and Port</source>
+        <translation>Configurar la IP y el puerto del Masternode</translation>
+    </message>
+    <message>
+        <source>Enter port</source>
+        <translation>Ingresa el puerto</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
         <translation>Asegúrate de tener esta cantidad de monedas.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 20,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Una transacción de 20,000 VPC se hará a una nueva dirección vacía en tu billetera.  La dirección está etiquetada bajo el nombre de masternode. </translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 VPC will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Una transacción de 10,000 VPC se hará a una nueva dirección vacía en tu wallet.  La dirección está etiquetada bajo el nombre de masternode. </translation>
     </message>
     <message>
         <source>Address of the node that must always be online running the actual master node.</source>
@@ -1658,20 +1460,42 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>IP o puerto no puede quedar vacío</translation>
     </message>
     <message>
-        <source>Invalid port number</source>
-        <translation>Número de puerto inválido</translation>
+        <source>Invalid IP address</source>
+        <translation>Dirección IP Inválida</translation>
+    </message>
+    <message>
+        <source>Prepare master node failed.
+
+%1
+</source>
+        <translation>Preparar el masternode fallido.
+
+%1
+</translation>
+    </message>
+    <message>
+        <source>Invalid collateral output index</source>
+        <translation>Índice de salida de colaterales no válido</translation>
+    </message>
+    <message>
+        <source>Master node created! Wait %1 confirmations before starting it.</source>
+        <translation>¡Masternode creado! Espere %1 confirmaciones antes de arrancarlos.</translation>
+    </message>
+    <message>
+        <source>Cannot send collateral transaction.
+
+%1</source>
+        <translation>No se pueden enviar transacciones colaterales.
+
+%1</translation>
     </message>
     <message>
         <source>Invalid masternode.conf file</source>
-        <translation>Archivo masternode.conf no válido</translation>
+        <translation>Archivo masternode.conf inválido </translation>
     </message>
     <message>
         <source>Error parsing masternode.conf file</source>
-        <translation>Error al analizar el archivo masternode.conf</translation>
-    </message>
-    <message>
-        <source>Master node created!</source>
-        <translation>¡Masternodo creado!</translation>
+        <translation>Error al analizar el archivo masternode.conf </translation>
     </message>
     <message>
         <source>masternode.conf file doesn't exists</source>
@@ -1691,6 +1515,14 @@ It will start automatically as soon as the wallet has enough confirmations on an
     <message>
         <source>N/A</source>
         <translation>N/A</translation>
+    </message>
+    <message>
+        <source>Start All</source>
+        <translation>Iniciar Todo</translation>
+    </message>
+    <message>
+        <source>Start Inactive/s</source>
+        <translation>Iniciar Inactivo/s</translation>
     </message>
     <message>
         <source>Masternodes</source>
@@ -1722,6 +1554,10 @@ and vote on the treasury system receiving a periodic reward.</source>
         <translation>Información</translation>
     </message>
     <message>
+        <source>Please wait until the node is fully synced</source>
+        <translation>Espera hasta que el nodo esté completamente sincronizado</translation>
+    </message>
+    <message>
         <source>Start Masternode</source>
         <translation>Iniciar Masternode </translation>
     </message>
@@ -1732,10 +1568,46 @@ and vote on the treasury system receiving a periodic reward.</source>
 </translation>
     </message>
     <message>
-        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
-Please wait few more minutes.</source>
-        <translation>No se puede iniciar el masternode, la operación de garantía no ha sido aceptada por la red.
-Por favor, espera unos minutos más. </translation>
+        <source>Cannot edit masternode, wallet locked</source>
+        <translation>No se puede editar el Masternode, la wallet está bloqueada</translation>
+    </message>
+    <message>
+        <source>Cannot start masternode, the collateral transaction has not been confirmed by the network yet.
+Please wait few more minutes (masternode collaterals require %1 confirmations).</source>
+        <translation>No se puede arrancar masternode, la transacción del colateral aún no ha sido confirmada por la red.
+Espere unos minutos más (las garantías de masternode requieren %1 confirmaciones).</translation>
+    </message>
+    <message>
+        <source>Background task is being executed, please wait</source>
+        <translation>La tarea se está ejecutando en segundo plano, por favor espere</translation>
+    </message>
+    <message>
+        <source>Start ALL masternodes failed</source>
+        <translation>Arrancar TODOS los Masternodes ha fallado!</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Desbloqueo de la wallet cancelado.</translation>
+    </message>
+    <message>
+        <source>Cannot perform Masternodes start</source>
+        <translation>No se puede realizar el arranque de Masternodes</translation>
+    </message>
+    <message>
+        <source>%1 Masternodes failed to start, %2 started</source>
+        <translation>%1 Masternodes han fallado, %2 han arrancado</translation>
+    </message>
+    <message>
+        <source>All Masternodes started!</source>
+        <translation>¡Todos los Masternodes han arrancado!</translation>
+    </message>
+    <message>
+        <source>Cannot show Masternode information, wallet locked</source>
+        <translation>No se puede mostrar la información del Masternode, la wallet está bloqueada</translation>
+    </message>
+    <message>
+        <source>Masternode data copied to the clipboard.</source>
+        <translation>Datos de Masternode copiados al portapapeles.</translation>
     </message>
     <message>
         <source>Remote Masternode Data</source>
@@ -1753,12 +1625,8 @@ this controller wallet (select the Masternode in the list and press "start").
         <translation>Estás a punto de exportar los datos necesarios para ejecutar un Masternode de un servidor remoto a tu portapapeles.
 
 
-Sólo tendrás que pegar los datos en el archivo voltpotcoin.conf de tu servidor remoto e iniciarlo, luego inicia el Masternode usando esta cartera de controladores (selecciona el Masternode en la lista y presione "start").
+Sólo tendrás que pegar los datos en el archivo voltpotcoin.conf de tu servidor remoto e iniciarlo, luego inicia el Masternode usando esta wallet de controladores (selecciona el Masternode en la lista y presione "start").
 </translation>
-    </message>
-    <message>
-        <source>Masternode exported!, check your clipboard</source>
-        <translation>Masternode exportado, comprueba tu portapapeles</translation>
     </message>
     <message>
         <source>Delete Masternode</source>
@@ -1787,7 +1655,11 @@ Are you sure?</source>
         <translation>El archivo masternode.conf no existe</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 20,000 VPC required.</source>
+        <source>Cannot create Masternode controller, wallet locked</source>
+        <translation>No se puede crear controlador de Masternode, la wallet está bloqueada</translation>
+    </message>
+    <message>
+        <source>Not enough balance to create a masternode, 10,000 VPC required.</source>
         <translation>No hay suficiente saldo para crear un masternode, se necesitan 10.000 VPC.</translation>
     </message>
     <message>
@@ -1800,6 +1672,10 @@ Are you sure?</source>
     <message>
         <source>Form</source>
         <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Masternode Information</source>
+        <translation>Información de Masternodes</translation>
     </message>
     <message>
         <source>Public Key:</source>
@@ -1837,7 +1713,11 @@ Are you sure?</source>
         <source>MISSING</source>
         <translation>FALTAN</translation>
     </message>
-    </context>
+    <message>
+        <source>Export data to run the Masternode on a remote server</source>
+        <translation>Exportar datos para ejecutar el Masternode en un servidor remoto</translation>
+    </message>
+</context>
 <context>
     <name>MyAddressRow</name>
     <message>
@@ -1850,7 +1730,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>Jan. 19, 2019</source>
-        <translation>19 de enero de 2019</translation>
+        <translation>19 de enero, 2019</translation>
     </message>
     <message>
         <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
@@ -1954,7 +1834,7 @@ Are you sure?</source>
     </message>
     <message>
         <source>W&amp;allet</source>
-        <translation>M&amp;onedero</translation>
+        <translation>W&amp;allet</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -2028,7 +1908,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Enable automatic minting of VPC units to zVPC</source>
-        <translation>Activar el minting automática de unidades VPC a zVPC</translation>
+        <translation>Activar la conversión automática de unidades VPC a zVPC</translation>
     </message>
     <message>
         <source>Enable zVPC Automint</source>
@@ -2036,7 +1916,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Enable automatic zVPC minting from specific addresses</source>
-        <translation>Habilita el acuñado automático de zVPC desde direcciones específicas</translation>
+        <translation>Habilita la conversión automática de zVPC desde direcciones específicas</translation>
     </message>
     <message>
         <source>Enable Automint Addresses</source>
@@ -2052,7 +1932,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough VPC for this denomination is available</source>
-        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes VPC disponibles para este tamaño de billete</translation>
+        <translation>Esperar con la conversión automática a Zerocoin hasta que hayan suficientes VPC disponibles para este tamaño de esa denominación</translation>
     </message>
     <message>
         <source>Preferred Automint zVPC Denomination</source>
@@ -2060,7 +1940,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Stake split threshold:</source>
-        <translation>Parte limite de stake:</translation>
+        <translation>Límite de división de los stake:</translation>
     </message>
     <message>
         <source>Connect to the VoltPotCoin network through a SOCKS5 proxy.</source>
@@ -2136,7 +2016,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Hide orphan stakes</source>
-        <translation>Ocultar los Stakes en estado de huérfanos</translation>
+        <translation>Ocultar los Stakes en estado huérfanos</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2215,7 +2095,7 @@ https://www.transifex.com/voltpotcoin-project/voltpotcoin-project-translations</
     </message>
     <message>
         <source>Wallet</source>
-        <translation>Monedero</translation>
+        <translation>Wallet</translation>
     </message>
     <message>
         <source>Node</source>
@@ -2284,13 +2164,6 @@ Dirección: %4
     <message>
         <source>A fatal error occurred. VoltPotCoin can no longer continue safely and will quit.</source>
         <translation>Se produjo un error fatal. VoltPotCoin ya no puede continuar de forma segura y dejará de funcionar.   </translation>
-    </message>
-</context>
-<context>
-    <name>PWidget</name>
-    <message>
-        <source>Wallet locked, you need to unlock it to perform this action</source>
-        <translation>Billetera bloqueada, es necesario desbloquearla para realizar esta acción</translation>
     </message>
 </context>
 <context>
@@ -2436,11 +2309,15 @@ Dirección: %4
     <message>
         <source>Minting zVPC anonymizes your VPC by removing any
 transaction history, making transactions untraceable </source>
-        <translation>Acuñando zVPC, haz anónimo tu VPC removiendo cualquier historial de transacción, haciendo transacciones imposibles de rastrear.</translation>
+        <translation>Conversión zVPC, haz anónimo tu VPC removiendo cualquier historial de transacción, haciendo transacciones imposibles de rastrear.</translation>
     </message>
     <message>
         <source>Mint new zVPC or convert back to VPC</source>
         <translation>Acuñar nuevo zVPC o convertir de nuevo a VPC</translation>
+    </message>
+    <message>
+        <source>Last zVPC Movements</source>
+        <translation>Últimos movimientos de zVPC</translation>
     </message>
     <message>
         <source>No transactions yet</source>
@@ -2472,7 +2349,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>You need to unlock the wallet to be able to %1 zVPC</source>
-        <translation>Necesitas desbloquear la billetera para poder alcanzar el %1 zVPC</translation>
+        <translation>Necesitas desbloquear la wallet para poder alcanzar el %1 zVPC</translation>
     </message>
     <message>
         <source>convert</source>
@@ -2507,6 +2384,10 @@ transaction history, making transactions untraceable </source>
         <translation>Tus acuñamientos de zerocoins van a ser escaneados desde cero en la blockchain</translation>
     </message>
     <message>
+        <source>Reset Spent zVPC</source>
+        <translation>Restablecer los zVPC usados</translation>
+    </message>
+    <message>
         <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
         <translation>Tus zerocoins usados van a ser escaneados desde cero en la blockchain</translation>
     </message>
@@ -2516,79 +2397,14 @@ transaction history, making transactions untraceable </source>
     </message>
 </context>
 <context>
-    <name>ProposalFrame</name>
-    <message>
-        <source>Open proposal page in browser</source>
-        <translation>Abrir la página de propuesta en el navegador</translation>
-    </message>
-    <message>
-        <source> remaining payment(s).</source>
-        <translation>Pago(s) pendiente(s).</translation>
-    </message>
-    <message>
-        <source>Yes:</source>
-        <translation>Si:</translation>
-    </message>
-    <message>
-        <source>Abstain:</source>
-        <translation>Abstenciones:</translation>
-    </message>
-    <message>
-        <source>No:</source>
-        <translation>No:</translation>
-    </message>
-    <message>
-        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
-</source>
-        <translation>Una dirección URL propuesta puede ser usada para suplantación de identidad, estafas y virus informáticos. Abre este enlace solo si confías en la siguiente URL. 
-</translation>
-    </message>
-    <message>
-        <source>Open link</source>
-        <translation>Abrir enlace</translation>
-    </message>
-    <message>
-        <source>Copy link</source>
-        <translation>Copiar enlace</translation>
-    </message>
-    <message>
-        <source>Wallet Locked</source>
-        <translation>Billetera desbloqueada</translation>
-    </message>
-    <message>
-        <source>You must unlock your wallet to vote.</source>
-        <translation>Debes desbloquear tu billetera para votar. </translation>
-    </message>
-    <message>
-        <source>Do you want to vote %1 on</source>
-        <translation>Quieres votar %1 en </translation>
-    </message>
-    <message>
-        <source>using all your masternodes?</source>
-        <translation>usando todos tus masternodes?</translation>
-    </message>
-    <message>
-        <source>Proposal Hash:</source>
-        <translation>Propuesta de Hash:</translation>
-    </message>
-    <message>
-        <source>Proposal URL:</source>
-        <translation>Propuesta de URL:</translation>
-    </message>
-    <message>
-        <source>Confirm Vote</source>
-        <translation>Confirmar Voto</translation>
-    </message>
-    <message>
-        <source>Vote Results</source>
-        <translation>Resultados de la Votación</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
+    </message>
+    <message>
+        <source>Enter VoltPotCoin address (e.g. %1)</source>
+        <translation>Introduzca una dirección VoltPotCoin (p.e. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2613,10 +2429,6 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>BLOOM</source>
         <translation>BLOOM</translation>
-    </message>
-    <message>
-        <source>ZK_BLOOM</source>
-        <translation>ZK_BLOOM</translation>
     </message>
     <message>
         <source>UNKNOWN</source>
@@ -2657,6 +2469,118 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>VoltPotCoin Core didn't yet exit safely...</source>
         <translation>El núcleo VoltPotCoin aún no ha salido de forma segura...</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation>Contacto</translation>
+    </message>
+    <message>
+        <source>Receiving</source>
+        <translation>Recibiendo</translation>
+    </message>
+    <message>
+        <source>Delegator</source>
+        <translation>Delegador</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
+    </message>
+    <message>
+        <source>Cold Staking Contact</source>
+        <translation>Contacto de Cold Staking</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Oculto</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Desconocido</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todos</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Contactos</translation>
+    </message>
+    <message>
+        <source>Delegators</source>
+        <translation>Delegadores</translation>
+    </message>
+    <message>
+        <source>Staking Contacts</source>
+        <translation>Contactos de Staking</translation>
+    </message>
+    <message>
+        <source>Date desc</source>
+        <translation>Fecha desc</translation>
+    </message>
+    <message>
+        <source>Date asc</source>
+        <translation>Fecha asc</translation>
+    </message>
+    <message>
+        <source>Amount desc</source>
+        <translation>Cantidad desc</translation>
+    </message>
+    <message>
+        <source>Amount asc</source>
+        <translation>Cantidad asc</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Recibidos</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Enviados</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Minado</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Creación de moneda</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>Recompensa de MN</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>A usted mismo</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>Stake en frío</translation>
+    </message>
+    <message>
+        <source>Hot stakes</source>
+        <translation>Stake en caliente</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>Delegado </translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>Delegaciones </translation>
+    </message>
+    <message>
+        <source>by Label</source>
+        <translation>por Etiqueta</translation>
+    </message>
+    <message>
+        <source>by Address</source>
+        <translation>por Dirección</translation>
+    </message>
+    <message>
+        <source>by Date</source>
+        <translation>por Fecha</translation>
     </message>
 </context>
 <context>
@@ -2735,7 +2659,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Number of Masternodes</source>
-        <translation>Número de masternodes</translation>
+        <translation>Número de Masternodes</translation>
     </message>
     <message>
         <source>Data Directory</source>
@@ -2779,15 +2703,15 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Banned peers</source>
-        <translation>Peers proibidos</translation>
+        <translation>Peers prohibidos</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>Seleccione un peer conectado para ver información detallada.</translation>
+        <translation>Selecciona un peer conectado para ver información detallada.</translation>
     </message>
     <message>
         <source>Whitelisted</source>
-        <translation>En lista blance</translation>
+        <translation>Lista blanca</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -2835,7 +2759,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>&amp;Wallet Repair</source>
-        <translation>Reparar &amp;Monedero</translation>
+        <translation>Reparar &amp;Wallet</translation>
     </message>
     <message>
         <source>Delete local Blockchain Folders</source>
@@ -2843,15 +2767,15 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Wallet In Use:</source>
-        <translation>Monedero En Uso:</translation>
+        <translation>Wallet En Uso:</translation>
     </message>
     <message>
         <source>Starting Block</source>
-        <translation>Bloque de empiezo</translation>
+        <translation>Bloque Inicial</translation>
     </message>
     <message>
         <source>Synced Headers</source>
-        <translation>Encabezados sincronizados</translation>
+        <translation>Encabezados Sincronizados</translation>
     </message>
     <message>
         <source>Synced Blocks</source>
@@ -2867,7 +2791,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Time Offset</source>
-        <translation>Desplazamiento de tiempo</translation>
+        <translation>Intervalo de Tiempo</translation>
     </message>
     <message>
         <source>Custom Backup Path:</source>
@@ -2883,7 +2807,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Salvage wallet</source>
-        <translation>Salvar monedero</translation>
+        <translation>Wallet de salvamento</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
@@ -2895,7 +2819,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Rescan the block chain for missing wallet transactions.</source>
-        <translation>Reescanear el blockchain buscando transacciones que faltan en el monedero.</translation>
+        <translation>Reescanear el blockchain buscando transacciones que faltan en la wallet.</translation>
     </message>
     <message>
         <source>Recover transactions 1</source>
@@ -2915,7 +2839,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Upgrade wallet format</source>
-        <translation>Actualizar formato del monedero</translation>
+        <translation>Actualizar formato de la wallet</translation>
     </message>
     <message>
         <source>Rebuild block chain index from current blk000??.dat files.</source>
@@ -2927,19 +2851,19 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>Eliminar todos los directorios locales del blockchain y sincronizar el monedero desde el principio</translation>
+        <translation>Eliminar todos los directorios locales del blockchain y sincronizar la wallet desde el principio.</translation>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair the wallet, fix issues with corrupt blockhain files or missing/obsolete transactions.</source>
-        <translation>Los botones de más abajo reiniciarán el programa con comandos especiales para reparar el monedero, solucionar problemas con cadenas de bloques corruptas o buscar transacciones obsoletas o perdidas</translation>
+        <translation>Los botones de más abajo reiniciarán el programa con comandos especiales para reparar la wallet, solucionar problemas con cadenas de bloques corruptas o buscar transacciones obsoletas o perdidas</translation>
     </message>
     <message>
         <source>Wallet repair options.</source>
-        <translation>Opciones de reparación de monedero.</translation>
+        <translation>Opciones de reparación de la wallet</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself!)</source>
-        <translation>Actualizar el monedero al último formato en el arranque. (Nota: esto NO es una actualización del monedero como tal!)</translation>
+        <translation>Actualizar la wallet al último formato en el arranque. (Nota: esto NO es una actualización de la wallet como tal!)</translation>
     </message>
     <message>
         <source>Rebuild index</source>
@@ -2987,7 +2911,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Esto eliminará las carpetas de blockchain locales y el monedero sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
+        <translation>Esto eliminará las carpetas de blockchain locales y la wallet sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3015,7 +2939,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
-        <translation>ADVERTENCIA: Los estafadores han estado activos, diciendo a los usuarios que escriban comandos aquí, robando el contenido de su billetera. No uses esta consola sin entender completamente las consecuencias de un comando.</translation>
+        <translation>ADVERTENCIA: Los estafadores han estado muy activos, diciéndole a los usuarios que escriban comandos aquí, robando el contenido de su wallet. No uses esta consola sin entender completamente las consecuencias de un comando.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3129,7 +3053,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>No available address, try unlocking the wallet</source>
-        <translation>Sin dirección disponible, intenta desbloquear la billetera</translation>
+        <translation>Sin dirección disponible, intenta desbloquear la wallet</translation>
     </message>
     <message>
         <source>Error generating address</source>
@@ -3152,12 +3076,20 @@ transaction history, making transactions untraceable </source>
         <translation>Error al almacenar la etiqueta de dirección</translation>
     </message>
     <message>
+        <source>Cannot create new address, wallet locked</source>
+        <translation>No se puede crear una nueva dirección, la wallet está bloqueada</translation>
+    </message>
+    <message>
         <source>New address created</source>
         <translation>Nueva dirección creada</translation>
     </message>
     <message>
         <source>Address copied</source>
         <translation>Dirección copiada</translation>
+    </message>
+    <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>No se puede realizar la operación, la wallet está bloqueada</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -3258,6 +3190,22 @@ transaction history, making transactions untraceable </source>
         <translation>Descripción (opcional)</translation>
     </message>
     <message>
+        <source>New Payment Request</source>
+        <translation>Nueva Solicitud de Pago</translation>
+    </message>
+    <message>
+        <source>Instead of sharing only a VoltPotCoin address, you can create a payment request, bundling up more information.</source>
+        <translation>En lugar de compartir solo una dirección VoltPotCoin, puedes crear una solicitud de pago, agrupando más información.</translation>
+    </message>
+    <message>
+        <source>Enter a label for the address</source>
+        <translation>Introduce una etiqueta para la dirección</translation>
+    </message>
+    <message>
+        <source>Enter description</source>
+        <translation>Ingrese una descripción</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -3273,7 +3221,11 @@ transaction history, making transactions untraceable </source>
         <source>New Cold Staking Address</source>
         <translation>Nueva dirección de Cold Staking</translation>
     </message>
-    </context>
+    <message>
+        <source>Amount (optional)</source>
+        <translation>Cantidad (opcional)</translation>
+    </message>
+</context>
 <context>
     <name>SendChangeAddressDialog</name>
     <message>
@@ -3304,6 +3256,18 @@ transaction history, making transactions untraceable </source>
         <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" VoltPotCoin address</source>
         <translation>El resto del valor resultante de las entradas menos el valor de las salidas va al "cambio" de dirección de VoltPotCoin</translation>
     </message>
+    <message>
+        <source>SAVE</source>
+        <translation>GUARDAR</translation>
+    </message>
+    <message>
+        <source>RESET</source>
+        <translation>REINICIAR</translation>
+    </message>
+    <message>
+        <source>Invalid address</source>
+        <translation>Dirección inválida</translation>
+    </message>
 </context>
 <context>
     <name>SendCustomFeeDialog</name>
@@ -3320,8 +3284,12 @@ transaction history, making transactions untraceable </source>
         <translation>Personaliza la tarifa de transacción a tu gusto, dependiendo del valor de la tarifa, tu transacción será incluida o no en la blockchain.</translation>
     </message>
     <message>
-        <source>Recomended</source>
-        <translation>Recomendado</translation>
+        <source>Recommended</source>
+        <translation>Recomendada</translation>
+    </message>
+    <message>
+        <source>VPC/kilobyte</source>
+        <translation>VPC/kilobyte</translation>
     </message>
     <message>
         <source>0.00 KB</source>
@@ -3330,10 +3298,6 @@ transaction history, making transactions untraceable </source>
     <message>
         <source>Custom</source>
         <translation>Personalizado:</translation>
-    </message>
-    <message>
-        <source>Per kilobyte</source>
-        <translation>Por kilobyte</translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -3345,11 +3309,11 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Customize Fee</source>
-        <translation>Tarifa Personalizada</translation>
+        <translation>Comisión Personalizada</translation>
     </message>
     <message>
-        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
-        <translation>Personaliza la comisión de la transacción, dependiendo del valor de la comisión tu transacción será incluida o no en la Blockchain. </translation>
+        <source>Customize the transaction fee, depending on the fee value your transaction might be included faster in the blockchain.</source>
+        <translation>Personalice la comisión de la transacción, dependiendo del valor de la comisión, su transacción podría incluirse más rápidamente en la cadena de bloques.</translation>
     </message>
     <message>
         <source>Normal</source>
@@ -3367,6 +3331,14 @@ transaction history, making transactions untraceable </source>
         <source>SAVE</source>
         <translation>GUARDAR</translation>
     </message>
+    <message>
+        <source>Fee too high. Must be below: %1</source>
+        <translation>Comisión es muy alta. Debe estar debajo: %1</translation>
+    </message>
+    <message>
+        <source>Fee too low. Must be at least: %1</source>
+        <translation>Comisión es muy baja. Debe ser de al menos: %1</translation>
+    </message>
 </context>
 <context>
     <name>SendMultiRow</name>
@@ -3382,7 +3354,11 @@ transaction history, making transactions untraceable </source>
         <source>Enter address</source>
         <translation>Ingresa la dirección</translation>
     </message>
-    </context>
+    <message>
+        <source>Enter label</source>
+        <translation>Introduce una etiqueta</translation>
+    </message>
+</context>
 <context>
     <name>SendWidget</name>
     <message>
@@ -3403,7 +3379,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Customize fee</source>
-        <translation>Tarifa personalizada</translation>
+        <translation>Comisión personalizada</translation>
     </message>
     <message>
         <source>Clear all</source>
@@ -3438,16 +3414,36 @@ transaction history, making transactions untraceable </source>
         <translation>Total restante</translation>
     </message>
     <message>
+        <source>Warning!</source>
+        <translation>Advertencia!</translation>
+    </message>
+    <message>
+        <source>The change address doesn't belong to this wallet.
+
+Do you want to continue?</source>
+        <translation>La dirección del cambio no pertenece a esta wallet.
+
+¿Deseas continuar?</translation>
+    </message>
+    <message>
         <source>Customize Fee</source>
-        <translation>Tarifa Personalizada</translation>
+        <translation>Comisión Personalizada</translation>
     </message>
     <message>
         <source>Maximum amount of outputs reached</source>
         <translation>Cantidad máxima de salidas alcanzadas</translation>
     </message>
     <message>
+        <source>VoltPotCoin address or contact label</source>
+        <translation>Dirección VoltPotCoin o etiqueta de contacto</translation>
+    </message>
+    <message>
         <source>Invalid entry, previous entries must be valid before add a new one</source>
         <translation>Entrada inválida, las entradas anteriores deben ser válidas antes de añadir una nueva</translation>
+    </message>
+    <message>
+        <source>Possibly spend coins delegated for cold-staking (currently available: %1</source>
+        <translation>Posiblemente gaste monedas delegadas en cold-staking (actualmente disponible: %1</translation>
     </message>
     <message>
         <source>Invalid entry</source>
@@ -3523,15 +3519,11 @@ Máximo permitido:</translation>
         <source>
 Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
         <translation>
-O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o reduzca la cantidad a gastar.</translation>
+Convierta denominaciones más altas (menos entradas) o reduzca la cantidad a gastar.</translation>
     </message>
     <message>
         <source>Address label update failed for address: %1</source>
         <translation>La actualización de la etiqueta de dirección ha fallado para la dirección: %1</translation>
-    </message>
-    <message>
-        <source>Invalid change address</source>
-        <translation>Cambio de dirección inválida</translation>
     </message>
     <message>
         <source>Invalid URI</source>
@@ -3543,7 +3535,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Custom Fee %1</source>
-        <translation>Tarifa personalizada %1</translation>
+        <translation>Comisión Personalizada %1</translation>
     </message>
     <message>
         <source>You don't have any VPC to select.</source>
@@ -3602,16 +3594,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Backup Wallet </source>
-        <translation>Billetera de Respaldo</translation>
+        <translation>Wallet de Respaldo</translation>
     </message>
     <message>
         <source>Change Wallet Passphrase</source>
-        <translation>Cambiar la Frase de la Contraseña de la Billetera</translation>
+        <translation>Cambiar la Frase de la Contraseña de la Wallet</translation>
     </message>
     <message>
         <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
 Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
-        <translation>Esto descifrará todos los datos de la billetera y los encriptará con la nueva frase de contraseña.
+        <translation>Esto desencriptará todos los datos de la wallet y los encriptará con la nueva frase de contraseña.
 Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder el acceso a tus fondos.</translation>
     </message>
     <message>
@@ -3619,8 +3611,14 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
         <translation>Donde</translation>
     </message>
     <message>
-        <source>Backup</source>
-        <translation>Respaldo</translation>
+        <source>Keep your wallet safe by doing regular backups and storing your backup file externally.
+This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) on another device.</source>
+        <translation>Mantén tu wallet segura haciendo copias de seguridad periódicas y almacenando el archivo de la copia de seguridad en un dispositivo externo.
+Esta opción crea un archivo wallet.dat que se puede utilizar para recuperar todo tu saldo (transacciones y direcciones) en otro dispositivo.</translation>
+    </message>
+    <message>
+        <source>Select folder...</source>
+        <translation>Selecciona un directorio...</translation>
     </message>
     <message>
         <source>Change Passphrase</source>
@@ -3628,11 +3626,11 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
     </message>
     <message>
         <source>Backup Wallet</source>
-        <translation>Copia del Monedero</translation>
+        <translation>Respaldo de la Wallet</translation>
     </message>
     <message>
         <source>Wallet Data (*.dat)</source>
-        <translation>Datos del Monedero (*.dat)</translation>
+        <translation>Datos de la Wallet (*.dat)</translation>
     </message>
     <message>
         <source>Backup created</source>
@@ -3714,6 +3712,10 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
         <translation>CLAVE DESCIFRADA</translation>
     </message>
     <message>
+        <source>VoltPotCoin address</source>
+        <translation>Dirección VoltPotCoin</translation>
+    </message>
+    <message>
         <source>Enter address</source>
         <translation>Ingresa la dirección</translation>
     </message>
@@ -3759,7 +3761,7 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>El desbloqueo del monedero fue cancelado.</translation>
+        <translation>El desbloqueo de la wallet fue cancelado.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -3795,15 +3797,15 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
     </message>
     <message>
         <source>Cannot import address, key already held by the wallet</source>
-        <translation>No se puede importar la dirección, la clave ya está en la billetera </translation>
+        <translation>No se puede importar la dirección, la clave ya está en la wallet </translation>
     </message>
     <message>
         <source>Error adding key to the wallet</source>
-        <translation>Error al añadir la clave a la billetera</translation>
+        <translation>Error al añadir la llave a la wallet</translation>
     </message>
     <message>
-        <source>Successfully added vpcate key to the wallet</source>
-        <translation>La clave fue agregada éxitosamente a la billetera</translation>
+        <source>Successfully added private key to the wallet</source>
+        <translation>Llave privada agregada exitosamente a la wallet</translation>
     </message>
 </context>
 <context>
@@ -3833,6 +3835,10 @@ Recuerda anotarla y guardarla de forma segura, de lo contrario podrías perder e
         <translation>Abrir Archivo de Depuración</translation>
     </message>
     <message>
+        <source>Clear history</source>
+        <translation>Limpiar historial</translation>
+    </message>
+    <message>
         <source>Cannot open debug file.
 Verify that you have installed a predetermined text editor.</source>
         <translation>No se puede abrir el archivo de depuración
@@ -3852,7 +3858,7 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
-        <translation>ADVERTENCIA: Los estafadores han estado activos, diciendo a los usuarios que escriban comandos aquí, robando el contenido de su billetera. No uses esta consola sin entender completamente las consecuencias de un comando.</translation>
+        <translation>ADVERTENCIA: Los estafadores han estado muy activos, diciéndole a los usuarios que escriban comandos aquí, robando el contenido de su wallet. No uses esta consola sin entender completamente las consecuencias de un comando.</translation>
     </message>
 </context>
 <context>
@@ -3866,8 +3872,12 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
         <translation>EtiquetaDeTexto</translation>
     </message>
     <message>
+        <source>Hide stake charts in the dashboard</source>
+        <translation>Ocultar las gráficas de stake del tablero</translation>
+    </message>
+    <message>
         <source>Reset to default</source>
-        <translation>Reestablecer a valores predeterminados</translation>
+        <translation>Reestablecer los valores predeterminados</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -3915,6 +3925,109 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
     </message>
 </context>
 <context>
+    <name>SettingsExportCSV</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Export Accounting</source>
+        <translation>Exportar Contabilidad</translation>
+    </message>
+    <message>
+        <source>Export your wallet's accounting data to a csv file.</source>
+        <translation>Exporta los datos contables de tu wallet a un archivo csv.</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Donde</translation>
+    </message>
+    <message>
+        <source>Select folder...</source>
+        <translation>Selecciona un directorio...</translation>
+    </message>
+    <message>
+        <source>Export Address Book</source>
+        <translation>Exportar Libreta de Direcciones</translation>
+    </message>
+    <message>
+        <source>Export CSV</source>
+        <translation>Exportar CSV</translation>
+    </message>
+    <message>
+        <source>Export Address List</source>
+        <translation>Exportar lista de direcciones</translation>
+    </message>
+    <message>
+        <source>VoltPotCoin_tx_csv_export(*.csv)</source>
+        <translation>VoltPotCoin_tx_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>VoltPotCoin_addresses_csv_export(*.csv)</source>
+        <translation>VoltPotCoin_addresses_csv_export(*.csv)</translation>
+    </message>
+    <message>
+        <source>Please select a folder to export the csv file first.</source>
+        <translation>Por favor primero selecciona un directorio para exportar el archivo csv.</translation>
+    </message>
+    <message>
+        <source>Confirmed</source>
+        <translation>Confirmado</translation>
+    </message>
+    <message>
+        <source>Watch-only</source>
+        <translation>Sólo-lectura</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Fecha</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiqueta</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The transaction history was successfully saved to %1.</source>
+        <translation>La exportación fue exitosa
+El historial de transacciones se guardó correctamente en %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the transaction history to %1.</source>
+        <translation>La exportación falló
+Ha habido un error al tratar de guardar el historial de transacciones %1.</translation>
+    </message>
+    <message>
+        <source>No available addresses to export under the selected filter</source>
+        <translation>No hay direcciones disponibles para exportar bajo el filtro seleccionado</translation>
+    </message>
+    <message>
+        <source>Exporting Successful
+The address book was successfully saved to %1.</source>
+        <translation>La exportación fue exitosa
+La libreta de direcciones se guardó correctamente en %1.</translation>
+    </message>
+    <message>
+        <source>Exporting Failed
+There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>La exportación falló
+Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por favor intenta otra vez.</translation>
+    </message>
+</context>
+<context>
     <name>SettingsFaqWidget</name>
     <message>
         <source>Form</source>
@@ -3947,7 +4060,7 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
     <message>
         <source>5) Why did my wallet convert the balance
     into zVPC automatically?</source>
-        <translation>5) ¿Por qué mi billetera convirtió el saldo en zVPC automáticamente?</translation>
+        <translation>5) ¿Por qué mi wallet convirtió el saldo en zVPC automáticamente?</translation>
     </message>
     <message>
         <source>6) How do I receive VPC/zVPC?</source>
@@ -3960,6 +4073,14 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
     <message>
         <source>8) Where I should go if I need support?</source>
         <translation>8) ¿A dónde debo ir si necesito apoyo?</translation>
+    </message>
+    <message>
+        <source>9) What is a Masternode?</source>
+        <translation>9) ¿Qué es un Masternode?</translation>
+    </message>
+    <message>
+        <source>10) What is a Masternode Controller?</source>
+        <translation>10) ¿Qué es un controlador de Masternode?</translation>
     </message>
     <message>
         <source>1</source>
@@ -3986,9 +4107,9 @@ Verifica que tengas instalado un editor de texto predeterminado.</translation>
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-VoltPotCoin es una forma de dinero digital en línea que utiliza la tecnología blockchain que se puede transferir a nivel global, de forma instantánea  y con tarifas casi nulas. VoltPotCoin incorpora un sistema de seguridad y privacidad líder en el mercado y es también la primera criptomoneda PoS (Proof of Stake) que implementa el sistema de Stake de ZeroCoin(zVPC) y Zerocoin. 
+VoltPotCoin es una forma de dinero digital en línea que utiliza la tecnología blockchain que se puede transferir a nivel global, de forma instantánea  y con comisiones casi nulas. VoltPotCoin incorpora un sistema de seguridad y privacidad líder en el mercado y es también la primera criptomoneda PoS (Proof of Stake) que implementa el sistema de Stake de ZeroCoin(zVPC) y Zerocoin.
 &lt;/p&gt;&lt;p align="justify"&gt;
- VoltPotCoin utiliza un algoritmo de consenso de Prueba de Stake (PoS), que permite a todos los propietarios de VoltPotCoin participar en la obtención de recompensas de los nuevos bloques generados mientras aseguran la red con billeteras de nodo completo , así como también ejecutan Masternodos para crear y votar las propuestas.
+ VoltPotCoin utiliza un algoritmo de consenso de Prueba de Stake (PoS), que permite a todos los propietarios de VoltPotCoin participar en la obtención de recompensas de los nuevos bloques generados mientras aseguran la red con wallet de nodo completo , así como también ejecutan Masternodos para crear y votar las propuestas.
 . &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -4011,7 +4132,7 @@ VoltPotCoin es una forma de dinero digital en línea que utiliza la tecnología 
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Los VoltPotCoin recién recibidos requieren 6 confirmaciones en la red para ser elegibles para gastos que pueden tomar ~6 minutos.  
+Los VoltPotCoin recién recibidos requieren 6 confirmaciones en la red para ser elegibles para gastos que pueden tomar ~6 minutos.
 &lt;/p&gt;&lt;p align="justify"&gt;
 Tu cartera VoltPotCoin también necesita estar completamente sincronizada para que pueda  ver y gastar el saldos en la red.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
@@ -4030,15 +4151,15 @@ Tu cartera VoltPotCoin también necesita estar completamente sincronizada para q
                            zVPC is an optional privacy-centric method of coin mixing on the
                            VoltPotCoin blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
-                           "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt;
+                           "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt; 
 zVPC es un método opcional centrado en la privacidad de monedas en la Blockchain VoltPotCoin. Básicamente, todas sus transacciones no pueden ser rastreadas en ningún explorador de bloques. Puedes leer más sobre los aspectos técnicos en el
- &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt;
-"Documentación Técnica de VoltPotCoin Zerocoin (zVPC) ". &lt;/a&gt;. 
+ &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt;
+"Documentación Técnica de VoltPotCoin Zerocoin (zVPC) ". &lt;/a&gt;.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
     </message>
@@ -4067,7 +4188,7 @@ zVPC es un método opcional centrado en la privacidad de monedas en la Blockchai
     </message>
     <message>
         <source>Why did my wallet convert the balance into zVPC automatically?</source>
-        <translation>¿Por qué mi billetera convierte el balance automáticamente en zVPC?</translation>
+        <translation>¿Por qué mi wallet convierte el balance automáticamente en zVPC?</translation>
     </message>
     <message>
         <source>
@@ -4082,25 +4203,25 @@ zVPC es un método opcional centrado en la privacidad de monedas en la Blockchai
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            You can read more about zVPC in the
-                           &lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "VoltPotCoin project White Paper"&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt; "VoltPotCoin Zerocoin (zVPC) Technical Paper"&lt;/a&gt;.
                            If you would like to keep and stake your zVPC, please read the "How do I stake"
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Por defecto, la billetera VoltPotCoin convierte el 10% de tu saldo VPC completo
+Por defecto, la wallet de VoltPotCoin convierte el 10% de tu saldo VPC completo
 a zVPC para ayudar a la red. Si no deseas hacer
-stake por zVPC o aprovechar el beneficio de privacidad que te brinda,
-puedes desactivar la acuñación automática en tu billetera VoltPotCoin yendo
+stake de zVPC o aprovechar el beneficio de privacidad que te brinda,
+puedes desactivar la conversión automática en tu wallet VoltPotCoin yendo
 a Ajustes-&gt;Opciones y deseleccionando "Activar zVPC Automint".
 Si no estás haciendo uso de la VoltPotCoin-QT o GUI puedes simplemente abrir
 tu archivo voltpotcoin.conf y agregar &lt;i&gt; enablezeromint=0&lt;/i&gt; Sin las comillas
-luego reinicia tu billetera para deshabilitar la impresión automática.&lt;/p&gt;
+luego reinicia tu wallet para deshabilitar la impresión automática.&lt;/p&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 Puedes leer más sobre zVPC en el
-&lt;a style='color: #8affb1' href='https://voltpot.org/white-paper/'&gt; "Documentación Técnica de VoltPotCoin Zerocoin (zVPC)" &lt;/a&gt;.
-Si deseas conservar y hacer stake tu zVPC, lee la sección "¿Cómo puedo hacer stake?"de las preguntas frecuentes a continuación.
+&lt;a style='color: #b088ff' href='https://VoltPotCoin.org/zvpc/'&gt; "Documentación Técnica de VoltPotCoin Zerocoin (zVPC)" &lt;/a&gt;.
+Si deseas conservar y hacer stake tu zVPC, lee la sección "¿Cómo puedo hacer stake?" de las preguntas frecuentes a continuación.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -4137,12 +4258,103 @@ Si quieres más zVPC necesitarás acuñar tu saldo en la pestaña "Privacidad".
         <translation>¿Cómo hago stake VPC/zVPC?</translation>
     </message>
     <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           To Stake VoltPotCoin:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           You must have a balance of VoltPotCoin with a minimum of 600 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for staking purposes.
+                           &lt;li&gt;
+                           Once all those steps are followed staking should be enabled.
+                           &lt;li&gt;
+                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state "Staking Enabled" to indicate it is staking.  Using the command line interface (voltpotcoin-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           To Stake zVPC:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           Your newly minted or existing zVPC balance must have a minimum of 200 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
+                           Staking should now be enabled.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Para hacer Stake de VoltPotCoin:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Asegúrate de que tu wallet esté completamente sincronizada y que estás utilizando la última versión.
+                           &lt;li&gt;
+                           Debes tener un saldo en VoltPotCoin con un mínimo de 600 confirmaciones.
+                           &lt;li&gt;
+                           Tu wallet debe permanecer en línea y estar desbloqueada para fines de Staking.
+                           &lt;li&gt;
+                           Una vez que se siguen todos esos pasos, el staking debe estar habilitado.
+                           &lt;li&gt;
+                           Puedes ver el estatus del staking en la wallet al pasar el cursor sobre el icono en forma de paquete en la parte superior la interfaz de la wallet. El paquete se iluminará y mostrará "Staking Habilitado" para indicar que se está haciendo staking. Usando la interfaz de línea de comando (voltpotcoin-cli); el comando &lt;i&gt;getstakingstatus&lt;/i&gt; confirmará que el staking está activo.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Para hacer Stake de zVPC:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Asegúrate de que tu wallet esté completamente sincronizada y que estás utilizando la última versión.
+                           &lt;li&gt;
+                           Tu saldo de zVPC recién convertido o existente debe tener un mínimo de 200 confirmaciones.
+                           &lt;li&gt;
+                           Tu wallet debe permanecer en línea y estar desbloqueada para fines de anonimato y staking.
+                           El Staking debería estar habilitado..
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>Where should I go if I need support?</source>
+        <translation>¿A dónde debo ir si necesito apoyo?</translation>
+    </message>
+    <message>
         <source>What is a Masternode?</source>
         <translation>¿Qué es un Masternode?</translation>
     </message>
     <message>
+        <source>What is a Masternode Controller?</source>
+        <translation>¿Qué es un Controlador de Masternode?</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 10,000 VPC collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Una wallet del controlador Masternode es donde la garantía de 10,000 VPC puede almacenarse durante la configuración de un masternode controlador-remoto. Esta es una wallet que puede activar la wallet (s) del masternode remoto y te permite mantener tus monedas colaterales fuera de línea mientras el masternode remoto permanece en línea. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>8</source>
         <translation>8</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           We have support channels in most of our official chat groups, for example
+                           &lt;a style='color: #b088ff' href='https://discord.VoltPotCoin.org'&gt;
+                           #support in our Discord&lt;/a&gt;.
+                           If you prefer to submit a ticket, One can be
+                           &lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;
+                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+Tenemos canales de ayuda en la mayoría de nuestros grupos de chat oficiales, por ejemplo
+&lt;a style='color: #b088ff' href='https://discord.VoltPotCoin.org'&gt;
+#support en nuestro Discord&lt;/a&gt;.
+Si prefieres enviar una solicitud, una puede ser
+&lt;a style='color: #b088ff' href='https://VoltPotCoin.freshdesk.com'&gt;
+nuestro sitio de apoyo Freshdesk&lt;/a&gt;.
+&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; </translation>
     </message>
     <message>
         <source>9</source>
@@ -4152,7 +4364,7 @@ Si quieres más zVPC necesitarás acuñar tu saldo en la pestaña "Privacidad".
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            A masternode is a computer running a full node VoltPotCoin core wallet with a
-                           requirement of 20,000 VPC secured collateral to provide extra services
+                           requirement of 10,000 VPC secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4184,7 +4396,7 @@ Si quieres más zVPC necesitarás acuñar tu saldo en la pestaña "Privacidad".
                            Requirements:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;20,000 VPC per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;10,000 VPC per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -4193,7 +4405,7 @@ Si quieres más zVPC necesitarás acuñar tu saldo en la pestaña "Privacidad".
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-Un Masternode es un ordenador que ejecuta una billetera central VoltPotCoin de nodo
+Un Masternode es un ordenador que ejecuta una Core Wallet de VoltPotCoin de nodo
 completo con un requisito de 10.000 VPC de garantía asegurados para prestar servicios
 adicionales a la red y a cambio, recibir una parte de la recompensa del bloque
 regularmente. Estos servicios incluyen:
@@ -4212,7 +4424,7 @@ Por la prestación de estos servicios, a los Masternodes también se les paga un
 propietarios de Masternodes menos sus costes de funcionamiento.
 &lt;/p&gt;&lt;p align="justify"&gt;
 
-Ventajas de los Masternodes: 
+Ventajas de los Masternodes:
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
 &lt;li&gt;Participar en el gobierno de VoltPotCoin&lt;/li&gt;
@@ -4222,13 +4434,13 @@ Ventajas de los Masternodes:
 &lt;/ul&gt;
 &lt;/p&gt;&lt;p align="justify"&gt;
 
-Requisitos: 
+Requisitos:
 &lt;/p&gt;
 &lt;p align="justify"&gt;&lt;ul&gt;
 &lt;li&gt;10.000 VPC por cada instancia de Masternode&lt;/li&gt;
-&lt;li&gt;Debe guardarse en una billetera principal&lt;/li&gt;
+&lt;li&gt;Debe guardarse en una wallet principal&lt;/li&gt;
 &lt;li&gt;Necesita una dirección IP dedicada&lt;/li&gt;
-&lt;li&gt;La billetera Masternode permanecerá en línea&lt;/li&gt;
+&lt;li&gt;La wallet Masternode permanecerá en línea&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -4256,10 +4468,6 @@ Requisitos:
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>EtiquetaDeTexto</translation>
-    </message>
-    <message>
         <source>Network Monitor</source>
         <translation>Monitor de Red</translation>
     </message>
@@ -4272,16 +4480,48 @@ Requisitos:
         <translation>General</translation>
     </message>
     <message>
-        <source>Client Version: </source>
+        <source>Client Version:</source>
         <translation>Versión del Cliente:</translation>
+    </message>
+    <message>
+        <source>BerkeleyDB version:</source>
+        <translation>BerkeleyDB versión:</translation>
+    </message>
+    <message>
+        <source>Datadir:</source>
+        <translation>Datadir:</translation>
+    </message>
+    <message>
+        <source>Startup time:</source>
+        <translation>Tiempo de Inicio:</translation>
+    </message>
+    <message>
+        <source>Connections:</source>
+        <translation>Conexiones:</translation>
+    </message>
+    <message>
+        <source>Number of Masternodes:</source>
+        <translation>Número de Masternodes:</translation>
+    </message>
+    <message>
+        <source>Current number of blocks:</source>
+        <translation>Número actual de bloques:</translation>
+    </message>
+    <message>
+        <source>Last block time:</source>
+        <translation>Momento del último bloque:</translation>
+    </message>
+    <message>
+        <source>Last block hash:</source>
+        <translation> Hash del bloque pasado:</translation>
+    </message>
+    <message>
+        <source>Current number of transactions:</source>
+        <translation>Número Actual de Transacciones:</translation>
     </message>
     <message>
         <source>User Agent:</source>
         <translation>Agente de Usuario:</translation>
-    </message>
-    <message>
-        <source>Datadir: </source>
-        <translation>Datadir:</translation>
     </message>
     <message>
         <source>Network</source>
@@ -4305,7 +4545,7 @@ Requisitos:
     </message>
     <message>
         <source>Wallet Conf</source>
-        <translation>Configurar Billetera </translation>
+        <translation>Configurar Wallet </translation>
     </message>
     <message>
         <source>Backups</source>
@@ -4356,7 +4596,7 @@ Requisitos:
     </message>
     <message>
         <source>Reset to default</source>
-        <translation>Reestablecer a valores predeterminados</translation>
+        <translation>Reestablecer los valores predeterminados</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -4436,6 +4676,14 @@ Are you sure?
         <translation>Nuevo destinatario para multisend</translation>
     </message>
     <message>
+        <source>Address Label (optional)</source>
+        <translation>Etiqueta de Dirección (opcional)</translation>
+    </message>
+    <message>
+        <source>Enter label to be saved with this address</source>
+        <translation>Introduce una etiqueta para guardar esta dirección</translation>
+    </message>
+    <message>
         <source>Percentage</source>
         <translation>Porcentaje</translation>
     </message>
@@ -4491,12 +4739,20 @@ Are you sure?
         <translation>BORRAR TODO</translation>
     </message>
     <message>
+        <source>Cannot perform operation, wallet locked</source>
+        <translation>No se puede realizar la operación, la wallet está bloqueada</translation>
+    </message>
+    <message>
         <source>Clear succeed</source>
         <translation>Borrado con éxito</translation>
     </message>
     <message>
         <source>Clear all failed, could not locate address in wallet file</source>
-        <translation>Borrar todos los errores, no se pudo localizar la dirección en el archivo de la billetera</translation>
+        <translation>Borrar todos los errores, no se pudo localizar la dirección en el archivo de la wallet</translation>
+    </message>
+    <message>
+        <source>Cannot add multisend recipient, wallet locked</source>
+        <translation>No se puede agregar la destinatario de multisend, la wallet está bloqueada</translation>
     </message>
     <message>
         <source>The entered address: %1 is invalid.
@@ -4582,8 +4838,16 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
         <translation>Mensaje</translation>
     </message>
     <message>
+        <source>VoltPotCoin address or contact label</source>
+        <translation>Dirección VoltPotCoin o etiqueta de contacto</translation>
+    </message>
+    <message>
         <source>Enter address</source>
         <translation>Ingresa la dirección</translation>
+    </message>
+    <message>
+        <source>Write message</source>
+        <translation>Escribir mensaje</translation>
     </message>
     <message>
         <source>Signature</source>
@@ -4623,7 +4887,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>El desbloqueo del monedero fue cancelado.</translation>
+        <translation>El desbloqueo de la wallet fue cancelado.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -4682,7 +4946,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Reset to default</source>
-        <translation>Reestablecer a valores predeterminados</translation>
+        <translation>Reestablecer los valores predeterminados</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -4690,15 +4954,15 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Wallet</source>
-        <translation>Monedero</translation>
+        <translation>Wallet</translation>
     </message>
     <message>
         <source>Customize the internal wallet options</source>
-        <translation>Personaliza las opciones de la billetera interna</translation>
+        <translation>Personaliza las opciones de la wallet interna</translation>
     </message>
     <message>
         <source>Stake split threshold:</source>
-        <translation>Parte limite de stake:</translation>
+        <translation>Límite de división de los stake:</translation>
     </message>
     <message>
         <source>Spend unconfirmed change</source>
@@ -4757,11 +5021,11 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Wallet Repair</source>
-        <translation>Reparación de billeteras</translation>
+        <translation>Reparación de wallet </translation>
     </message>
     <message>
         <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
-        <translation>Los botones de abajo reiniciarán la billetera con opciones de línea de comandos para reparar esta billetera, solucionar problemas con archivos corruptos de blockchain o transacciones perdidas u obsoletas.</translation>
+        <translation>Los botones de abajo reiniciarán la wallet con opciones de línea de comandos para reparar esta wallet, solucionar problemas con archivos corruptos de blockchain o transacciones perdidas u obsoletas.</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
@@ -4769,7 +5033,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Rescan the blockchain for missing wallet transactions.</source>
-        <translation>Vuelve a escanear la blockchain en busca de transacciones de billetera perdidas.</translation>
+        <translation>Vuelve a escanear la blockchain en busca de transacciones de wallet perdidas.</translation>
     </message>
     <message>
         <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
@@ -4781,7 +5045,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
-        <translation>Actualiza tu billetera al último formato al iniciarse. (Nota: esto NO es una actualización de la billetera en sí)</translation>
+        <translation>Actualiza tu wallet al último formato al iniciarse. (Nota: esto NO es una actualización de la wallet en sí)</translation>
     </message>
     <message>
         <source>Rebuild blockchain index from current blk000???.dat files.</source>
@@ -4789,11 +5053,11 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
-        <translation>Eliminar todos los directorios locales del blockchain y sincronizar el monedero desde el principio</translation>
+        <translation>Eliminar todos los directorios locales del blockchain y sincronizar la wallet desde el principio.</translation>
     </message>
     <message>
         <source>Salvage wallet</source>
-        <translation>Salvar monedero</translation>
+        <translation>Salvar wallet</translation>
     </message>
     <message>
         <source>Rescan blockchain file</source>
@@ -4809,7 +5073,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Upgrade wallet format</source>
-        <translation>Actualizar formato del monedero</translation>
+        <translation>Actualizar formato de la wallet</translation>
     </message>
     <message>
         <source>Rebuild index</source>
@@ -4821,7 +5085,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Esto eliminará las carpetas de blockchain locales y el monedero sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
+        <translation>Esto eliminará las carpetas de blockchain locales y la wallet sincronizará la cadena de bloques completa desde cero.&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
@@ -4847,20 +5111,20 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation>EtiquetaDeTexto</translation>
-    </message>
-    <message>
         <source>Wallet Data</source>
-        <translation>Datos de la Billetera</translation>
+        <translation>Datos de la Wallet</translation>
     </message>
     <message>
         <source>Wallet</source>
-        <translation>Monedero</translation>
+        <translation>Wallet</translation>
     </message>
     <message>
         <source>Multisend</source>
         <translation>Multisend</translation>
+    </message>
+    <message>
+        <source>Export Accounting</source>
+        <translation>Exportar Contabilidad</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -4900,7 +5164,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Wallet Repair</source>
-        <translation>Reparación de billetera </translation>
+        <translation>Reparación de wallet </translation>
     </message>
     <message>
         <source>Help</source>
@@ -4937,7 +5201,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     <message>
         <source>Your wallet needs to be restarted to apply the changes
 </source>
-        <translation>Tu billetera necesita ser reiniciada para aplicar los cambios.
+        <translation>Tu wallet necesita ser reiniciada para aplicar los cambios.
 </translation>
     </message>
     <message>
@@ -4950,7 +5214,7 @@ Marque una o ambas casillas de verificación para enviar recompensas de stake y/
     </message>
     <message>
         <source>Options will be applied on next wallet restart</source>
-        <translation>Las opciones se aplicarán en el próximo reinicio de la billetera</translation>
+        <translation>Las opciones se aplicarán en el próximo reinicio de la wallet</translation>
     </message>
     <message>
         <source>Options stored</source>
@@ -5069,14 +5333,6 @@ Are you sure?
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>480.0685 VPC</source>
-        <translation>480.0685 VPC</translation>
-    </message>
-    <message>
-        <source>1,000 zVPC</source>
-        <translation>1,000 zVPC</translation>
-    </message>
-    <message>
         <source>Available</source>
         <translation>Disponible </translation>
     </message>
@@ -5085,28 +5341,12 @@ Are you sure?
         <translation>Pendiente</translation>
     </message>
     <message>
-        <source>6.943 VPC</source>
-        <translation>6.943 VPC</translation>
-    </message>
-    <message>
         <source>Immature</source>
         <translation>No está completamente desarrollado </translation>
     </message>
     <message>
-        <source>10 VPC</source>
-        <translation>10 VPC</translation>
-    </message>
-    <message>
-        <source>60 zVPC</source>
-        <translation>60 zVPC</translation>
-    </message>
-    <message>
-        <source>10 zVPC</source>
-        <translation>10 zVPC</translation>
-    </message>
-    <message>
         <source>Wallet Unlocked for staking</source>
-        <translation>Billetera desbloqueada para hacer Stake</translation>
+        <translation>Wallet desbloqueada para hacer Stake</translation>
     </message>
     <message>
         <source>Error generating address</source>
@@ -5117,14 +5357,6 @@ Are you sure?
         <translation>Dirección Copiada</translation>
     </message>
     <message>
-        <source>Automint enabled</source>
-        <translation>Auto-acuñamiento habilitado </translation>
-    </message>
-    <message>
-        <source>Automint disabled</source>
-        <translation>Auto-acuñamiento inválido </translation>
-    </message>
-    <message>
         <source>Staking active</source>
         <translation>Stake activo  </translation>
     </message>
@@ -5132,15 +5364,119 @@ Are you sure?
         <source>Staking not active</source>
         <translation>Stake inactivo </translation>
     </message>
+    <message numerus="yes">
+        <source>%n active connection(s)</source>
+        <translation><numerusform>%n conexión(es) activas</numerusform><numerusform>%n conexión(es) activas</numerusform></translation>
+    </message>
     <message>
-        <source>Synchronized</source>
-        <translation>Sincronizado</translation>
+        <source>Synchronized - Block: %1</source>
+        <translation>Sincronizado - Bloque: %1</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n hora</numerusform><numerusform>%n horas</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n día</numerusform><numerusform>%n días</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n semana</numerusform><numerusform>%n semanas</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 y %2</translation>
     </message>
-    </context>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n año</numerusform><numerusform>%n años</numerusform></translation>
+    </message>
+    <message>
+        <source>Wallet Upgrade</source>
+        <translation>Actualización de Wallet</translation>
+    </message>
+    <message>
+        <source>Upgrading to HD wallet will improve
+the wallet's reliability and security.
+
+
+NOTE: after the upgrade, a new
+backup will be created.
+</source>
+        <translation>La actualización a wallet HD mejorará
+la fiabilidad y seguridad de la wallet.
+
+
+NOTA: después de la actualización, se creará
+una nueva copia de seguridad.
+</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet</source>
+        <translation>Actualizar Wallet</translation>
+    </message>
+    <message>
+        <source>Wallet unlock cancelled</source>
+        <translation>Desbloqueo de la wallet cancelado.</translation>
+    </message>
+    <message>
+        <source>Tor Active: %1</source>
+        <translation>Tor Activo: %1</translation>
+    </message>
+    <message>
+        <source>Tor Disabled</source>
+        <translation>Tor Desactivado</translation>
+    </message>
+    <message>
+        <source>Available (Locked included)</source>
+        <translation>Disponible (Bloqueado incluido)</translation>
+    </message>
+    <message>
+        <source>The wallet has been successfully upgraded to HD.</source>
+        <translation>La wallet se ha actualizado con éxito a HD.</translation>
+    </message>
+    <message>
+        <source>It is advised to make a backup.</source>
+        <translation>Es recomendado hacer una copia de seguridad.</translation>
+    </message>
+    <message>
+        <source>Do you wish to backup now?</source>
+        <translation>¿Deseas hacer una copia de seguridad ahora?</translation>
+    </message>
+    <message>
+        <source>Backup Wallet</source>
+        <translation>Respaldo de la Wallet</translation>
+    </message>
+    <message>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Datos de la Wallet (*.dat)</translation>
+    </message>
+    <message>
+        <source>Backup created</source>
+        <translation>Respaldo creado</translation>
+    </message>
+    <message>
+        <source>Backup creation failed</source>
+        <translation>Creación de Respaldo fallida</translation>
+    </message>
+    <message>
+        <source>no file selected</source>
+        <translation>ningún archivo seleccionado</translation>
+    </message>
+    <message>
+        <source>Wallet upgraded successfully, but no backup created.</source>
+        <translation>La wallet se actualizó correctamente, pero no se creó ninguna copia de seguridad.</translation>
+    </message>
+    <message>
+        <source>WARNING: remember to make a copy of your wallet.dat file!</source>
+        <translation>ADVERTENCIA: ¡recuerda hacer una copia de tu archivo wallet.dat!</translation>
+    </message>
+    <message>
+        <source>Upgrade Wallet Error</source>
+        <translation>Error al Actualizar Wallet</translation>
+    </message>
+</context>
 <context>
     <name>TrafficGraphWidget</name>
     <message>
@@ -5150,6 +5486,10 @@ Are you sure?
 </context>
 <context>
     <name>TransactionDesc</name>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloque más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -5210,6 +5550,10 @@ Are you sure?
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
     </message>
+    <message numerus="yes">
+        <source>, broadcast through %n node(s)</source>
+        <translation><numerusform>, retransmitido a través de %n nodo</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
+    </message>
     <message>
         <source>Date</source>
         <translation>Fecha</translation>
@@ -5249,6 +5593,10 @@ Are you sure?
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
+    </message>
+    <message numerus="yes">
+        <source>matures in %n more block(s)</source>
+        <translation><numerusform>maduracíon en %n bloque más</numerusform><numerusform>maduracíon en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -5333,6 +5681,10 @@ Are you sure?
         <source>Address</source>
         <translation>Dirección</translation>
     </message>
+    <message numerus="yes">
+        <source>Open for %n more block(s)</source>
+        <translation><numerusform>Abierto para %n bloque más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
+    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -5378,10 +5730,6 @@ Are you sure?
         <translation>Recibido desde</translation>
     </message>
     <message>
-        <source>Received via Obfuscation</source>
-        <translation>Recibido por medio de Ofuscación</translation>
-    </message>
-    <message>
         <source>VPC Stake</source>
         <translation>Stake VPC</translation>
     </message>
@@ -5396,22 +5744,6 @@ Are you sure?
     <message>
         <source>Stake delegation</source>
         <translation>Delegación de Stake</translation>
-    </message>
-    <message>
-        <source>Obfuscation Denominate</source>
-        <translation>Ofuscación Denominada</translation>
-    </message>
-    <message>
-        <source>Obfuscation Collateral Payment</source>
-        <translation>Pago Colateral de Ofuscación</translation>
-    </message>
-    <message>
-        <source>Obfuscation Make Collateral Inputs</source>
-        <translation>La Ofuscación Crea Entradas Colaterales</translation>
-    </message>
-    <message>
-        <source>Obfuscation Create Denominations</source>
-        <translation>Ofuscación Crea Billetes</translation>
     </message>
     <message>
         <source>Converted VPC to zVPC</source>
@@ -5446,12 +5778,16 @@ Are you sure?
         <translation>Pago a usted mismo</translation>
     </message>
     <message>
-        <source>Mined</source>
-        <translation>Minado</translation>
+        <source>VPC Stake on behalf of</source>
+        <translation>VPC Stake en nombre de</translation>
     </message>
     <message>
-        <source>Obfuscated</source>
-        <translation>Ofuscado</translation>
+        <source>Stake delegation spent by</source>
+        <translation>Delegación de Stake gastada por</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Minado</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -5505,36 +5841,8 @@ Are you sure?
         <translation>Detalles de Transacción</translation>
     </message>
     <message>
-        <source>ID:</source>
-        <translation>ID:</translation>
-    </message>
-    <message>
-        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
-        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
-    </message>
-    <message>
-        <source>Sending to: </source>
-        <translation>Enviando a:</translation>
-    </message>
-    <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
         <source>Total amount</source>
         <translation>Monto total</translation>
-    </message>
-    <message>
-        <source>2 VPC</source>
-        <translation>2 VPC</translation>
-    </message>
-    <message>
-        <source>Coin inputs:</source>
-        <translation>Ingreso de monedas:</translation>
-    </message>
-    <message>
-        <source>1 Inputs</source>
-        <translation>1 Entrada</translation>
     </message>
     <message>
         <source>Previous Transaction</source>
@@ -5545,52 +5853,52 @@ Are you sure?
         <translation>Índice de Salida</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Comisión:</translation>
-    </message>
-    <message>
-        <source>0.0001 VPC</source>
-        <translation>0.0001 VPC</translation>
-    </message>
-    <message>
-        <source>Change address:</source>
-        <translation>Cambiar dirección:</translation>
-    </message>
-    <message>
         <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
         <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
-    </message>
-    <message>
-        <source>Confirmations:</source>
-        <translation>Confirmaciones:</translation>
-    </message>
-    <message>
-        <source>12</source>
-        <translation>12</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Tamaño:</translation>
-    </message>
-    <message>
-        <source>2 kB</source>
-        <translation>2 kB</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation>Fecha:</translation>
     </message>
     <message>
         <source>May 25, 2017</source>
         <translation>Mayo 25, 2017</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation>Estado:</translation>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Sending to</source>
+        <translation>Enviando a:</translation>
+    </message>
+    <message>
+        <source>Coin inputs</source>
+        <translation>Coin inputs</translation>
+    </message>
+    <message>
+        <source>Fee</source>
+        <translation>Comisión</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaño:</translation>
+    </message>
+    <message>
+        <source>Change address</source>
+        <translation>Cambiar dirección:</translation>
     </message>
     <message>
         <source>Spendable</source>
         <translation>Para gastar</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Confirmaciones</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Fecha</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -5649,29 +5957,6 @@ Are you sure?
     <message>
         <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 VPC.</source>
         <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 VPC.</translation>
-    </message>
-</context>
-<context>
-    <name>WalletPasswordDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Diálogo</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation>EtiquetaDeTexto</translation>
-    </message>
-    <message>
-        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
-        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation>CANCELAR</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -5809,10 +6094,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>Escuchar únicamente a la tarjeta de red indicada para conexiones JSON-RPC. Use la notación [host]:puerto para IPv6. Esta opción puede ser especificada varias veces (por defecto: escuchar en todas las tarjetas de red)</translation>
     </message>
     <message>
-        <source>Calculated accumulator checkpoint is not what is recorded by block index</source>
-        <translation>El punto de chequeo del acumulador que hemos calculado no coincide con lo guardado en el índice de bloques</translation>
-    </message>
-    <message>
         <source>Cannot obtain a lock on data directory %s. VoltPotCoin Core is probably already running.</source>
         <translation>No se puede obtener un bloqueo sobre el directorio de datos %s. VoltPotCoin Core esta probablemente en ejecución.</translation>
     </message>
@@ -5826,11 +6107,11 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
-        <translation>Crear nuevos archivos con el permiso predeterminado del sistema, en vez de umask 077 (solamente efectivo con la funcionalidad del monedero desabilitada)</translation>
+        <translation>Crear nuevos archivos con el permiso predeterminado del sistema, en vez de umask 077 (solamente efectivo con la funcionalidad de la wallet desabilitada)</translation>
     </message>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
-        <translation>Borrar todas las transacciones del monedero y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
+        <translation>Borrar todas las transacciones de la wallet y solo recuperar partes de la cadena de bloque a traves de -rescan al inicio.</translation>
     </message>
     <message>
         <source>Delete all zerocoin spends and mints that have been recorded to the blockchain database and reindex them (0-1, default: %u)</source>
@@ -5839,14 +6120,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
         <translation>Distribuido bajo licencia MIT software license, ver el archivo adjunto COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;</translation>
-    </message>
-    <message>
-        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
-        <translation>Habilitar acuñado automático de Zerocoin desde una dirección específica (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <source>Enable automatic wallet backups triggered after each zVPC minting (0-1, default: %u)</source>
-        <translation>Habilite copias de seguridad automáticas del monedero que se activan después de cada acuñación zVPC (0-1, predeterminado: %u)</translation>
     </message>
     <message>
         <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
@@ -5881,12 +6154,16 @@ VoltPotCoin Core Wallet</translation>
         <translation>Error: Argumento -socks no soportado. No se permite utilizar la versión SOCKS, solo proxies de SOCKS5 están soportados.</translation>
     </message>
     <message>
+        <source>Exclude debugging information for a category. Can be used in conjunction with -debug=1 to output debug logs for all categories except one or more specified categories.</source>
+        <translation>Excluir información de depuración para una categoría. Se puede usar junto con -debug=1 para generar registros de depuración para todas las categorías, excepto una o más categorías especificadas.</translation>
+    </message>
+    <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>Ejecutar un comando cuando una alerta relevante es recibida o estamos teniendo una realmente larga bifurcación (%s en cmd is reemplazado por el mensaje)</translation>
     </message>
     <message>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation>Ejecutar un comando cuando una transacción del monedero cambie (%s en cmd is reemplazado por TxID)</translation>
+        <translation>Ejecutar un comando cuando una transacción de la wallet cambie (%s en cmd is reemplazado por TxID)</translation>
     </message>
     <message>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
@@ -5946,15 +6223,11 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
-        <translation>Comisión máxima total para usar en una única transacción de monedero, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
+        <translation>Comisión máxima total para usar en una única transacción de la wallet, definirlo muy bajo puede abortar transacciones largas (predeterminado: %s)</translation>
     </message>
     <message>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
         <translation>Número de segundos a mantener pares con mal comportamiento de reconectarse (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Obfuscation uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>La ofuscación utiliza importes en denominaciones exactas para enviar fondos, puedes simplemente necesitar anonimizar algunas monedas mas. </translation>
     </message>
     <message>
         <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
@@ -6013,18 +6286,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>Imposible conectar a %s en esta computadora. Es probable que VoltPotCoin Core ya este corriendo.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation denominated funds for this transaction.</source>
-        <translation>Imposible localizar suficientes fondos denominados de Ofuscación para esta transacción.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 VPC.</source>
-        <translation>Imposible localizar suficientes fondos no-denominados de Ofuscación para esta transacción que no es igual a 10000 VPC.</translation>
-    </message>
-    <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 VPC.</source>
-        <translation>Imposible localizar fondos suficientes para esta transacción que no es igual a 10000 VPC.</translation>
-    </message>
-    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Utilizar un proxy SOCKS5 diferente para alcanzar pares vía el servicio oculto Tor (predefinido: %s)</translation>
     </message>
@@ -6035,10 +6296,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Advertencia: -paytxfee esta muy alta! Esta es la comisión de transacción que pagarás si envías una transacción.</translation>
-    </message>
-    <message>
-        <source>Warning: Peers are being disconnected due time differences. Please check that your computer's date and time are correct! If your clock is wrong VoltPotCoin Core will not work properly.</source>
-        <translation>Advertencia: Los pares están siendo desconectados debido a las diferencias horarias. Por favor, verifica que la fecha y la hora de tu computadora sean correctas! Si tu reloj está fuera de hora, VoltPotCoin Core no funcionará correctamente.</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong VoltPotCoin Core will not work properly.</source>
@@ -6073,8 +6330,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Debes especificar un masternodeprivkey en la configuración. Por favor mira la documentación por ayuda.</translation>
     </message>
     <message>
-        <source>(37572 could be used only on mainnet)</source>
-        <translation>(37572 puede ser utilizado solo en mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 puede ser utilizado solo en mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -6085,8 +6342,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>(predeterminado: 1)</translation>
     </message>
     <message>
-        <source>(must be 37572 for mainnet)</source>
-        <translation>(debe ser 37572 para un mainnet)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(debe ser 51472 para un mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -6103,10 +6360,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>Agregar un nodo a conectarse y intentar mantener abierta la conexión</translation>
-    </message>
-    <message>
-        <source>Adding Wrapped Serials supply...</source>
-        <translation>Añadiendo el suministro de Seriales Envueltos...</translation>
     </message>
     <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
@@ -6133,28 +6386,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Opciones de creación de bloque:</translation>
     </message>
     <message>
-        <source>Calculating missing accumulators...</source>
-        <translation>Calculando acumuladores pendientes...</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
-        <translation>No se puede volver a una versión anterior del monedero</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -bind address: '%s'</source>
-        <translation>No se puede resolver la dirección -bind: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -externalip address: '%s'</source>
-        <translation>No se puede resolver la dirección -externalip: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot resolve -whitebind address: '%s'</source>
-        <translation>No se puede resolver la dirección -whitebind: '%s'</translation>
-    </message>
-    <message>
-        <source>CoinSpend: failed check</source>
-        <translation>Gasto de Moneda: verificación fallida</translation>
+        <translation>No se puede volver a una versión anterior de la wallet</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -6193,10 +6426,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>No se pudo analizar el contenido de masternode.conf </translation>
     </message>
     <message>
-        <source>Couldn't generate the accumulator witness</source>
-        <translation>No se pudo generar el testigo del acumulador </translation>
-    </message>
-    <message>
         <source>Debugging/Testing options:</source>
         <translation>Opciones de Depuración/Pruebas:</translation>
     </message>
@@ -6218,7 +6447,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation>No cargar la monedero y desactivar las llamadas RPC del monedero</translation>
+        <translation>No cargar la wallet y desactivar las llamadas RPC de la wallet</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
@@ -6227,10 +6456,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Done loading</source>
         <translation>Realizando carga</translation>
-    </message>
-    <message>
-        <source>Enable automatic Zerocoin minting (0-1, default: %u)</source>
-        <translation>Habilitar creación automática de Zerocoin (0-1, por defecto: %u)</translation>
     </message>
     <message>
         <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
@@ -6250,7 +6475,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Error initializing wallet database environment %s!</source>
-        <translation>Error al inicializar ambiente %s de base de datos del monedero!</translation>
+        <translation>Error al inicializar ambiente %s de base de datos de la wallet!</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -6262,11 +6487,11 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error al cargar wallet.dat: Monedero dañado</translation>
+        <translation>Error al cargar wallet.dat: Wallet dañada</translation>
     </message>
     <message>
         <source>Error loading wallet.dat: Wallet requires newer version of VoltPotCoin Core</source>
-        <translation>Error al cargar wallet.dat: El monedero requiere una nueva versión del VoltPotCoin Core</translation>
+        <translation>Error al cargar wallet.dat: La wallet requiere una nueva versión del VoltPotCoin Core</translation>
     </message>
     <message>
         <source>Error opening block database</source>
@@ -6285,6 +6510,10 @@ VoltPotCoin Core Wallet</translation>
         <translation>Error</translation>
     </message>
     <message>
+        <source>Error: </source>
+        <translation>Error:</translation>
+    </message>
+    <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Error: Un error interno fatal a ocurrido, ver debug.log para mas detalles</translation>
     </message>
@@ -6298,11 +6527,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation>Error: ¡Monedero bloqueado, imposible crear transacción!</translation>
-    </message>
-    <message>
-        <source>Failed to calculate accumulator checkpoint</source>
-        <translation>Error al calcular el punto de control del acumulador</translation>
+        <translation>Error: ¡Wallet bloqueada, imposible crear transacción!</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
@@ -6373,28 +6598,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Dirección o nombre de equipo -onion inválido: '%s'</translation>
     </message>
     <message>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Importe inválido para -maxtxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Importe inválido para -minrelaytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Importe inválido para -mintxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Importe inválido para -paytxfee=&lt;amount&gt;: '%s' (debe ser al menos %s)</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s'</source>
-        <translation>Importe inválido para -paytxfee=&lt;amount&gt;: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -reservebalance=&lt;amount&gt;</source>
-        <translation>Importe inválido para -reservebalance=&lt;amount&gt;</translation>
     </message>
     <message>
         <source>Invalid amount</source>
@@ -6413,20 +6618,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Puerto inválido ha sido detectado en masternode.conf</translation>
     </message>
     <message>
-        <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
-        <translation>Porcentaje de Zerocoin creadas automáticamente (10-100, por defecto: %u)</translation>
-    </message>
-    <message>
         <source>Recalculating VPC supply...</source>
         <translation>Recalculando suministro VPC...</translation>
-    </message>
-    <message>
-        <source>Recalculating minted ZVPC...</source>
-        <translation>Recalculando acuñado ZVPC...</translation>
-    </message>
-    <message>
-        <source>Recalculating spent ZVPC...</source>
-        <translation>Recalculando gasto ZVPC...</translation>
     </message>
     <message>
         <source>Reindex the VPC and zVPC money supply statistics</source>
@@ -6443,10 +6636,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Selected coins value is less than payment target</source>
         <translation>El valor de las monedas seleccionadas es menor que el monto a pagar</translation>
-    </message>
-    <message>
-        <source>Support the zerocoin light node protocol (default: %u)</source>
-        <translation>Soporta el protocolo de nodo ligero zerocoin (default: %u)</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -6482,11 +6671,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>¡La transacción fue rechazada! Esto puede ocurrir si alguna de sus monedas ya se gastó con anterioridad, por ejemplo, si estuvo usted usando una copia de su monedero wallet.dat y gastó allí monedas pero no las marcó como gastadas aquí.</translation>
-    </message>
-    <message>
-        <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds!</source>
-        <translation>Error: ¡Esta transacción requiere una tasa de al menos %s debido a la cantidad enviada, su complejidad, o el uso de fondos recibidos recientemente!</translation>
+        <translation>¡La transacción fue rechazada! Esto puede ocurrir si alguna de sus monedas ya se gastó con anterioridad, por ejemplo, si estuvo usted usando una copia de su wallet wallet.dat y gastó allí monedas pero no las marcó como gastadas aquí.</translation>
     </message>
     <message>
         <source>Error: Unsupported argument -checklevel found. Checklevel must be level 4.</source>
@@ -6505,16 +6690,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>En casos excepcionales, un envío con más de 7 monedas excede el tamaño máximo de transacción permitidas, intente gastar 6 monedas o menos.</translation>
     </message>
     <message>
-        <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
-        <translation>Denominación preferida para acuñado automatico de Zerocoin (1/5/10/50/100/500/1000/5000), 0 para ninguna preferencia. predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Specify custom backup path to add a copy of any automatic zVPC backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
-        <translation>Especifique la ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad zVPC automática. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad. Si también se establece backuppath, se realizarán 4 copias de seguridad</translation>
-    </message>
-    <message>
         <source>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</source>
-        <translation>Especifique una ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad de monedero. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad generada.</translation>
+        <translation>Especifique una ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad de la wallet. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad generada.</translation>
     </message>
     <message>
         <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
@@ -6531,10 +6708,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Cannot create public spend input</source>
         <translation>No puede crear insumos para el gasto público</translation>
-    </message>
-    <message>
-        <source>CoinSpend: Accumulator witness does not verify</source>
-        <translation>CoinSpend: El testigo del acumulador no verifica</translation>
     </message>
     <message>
         <source>Display the stake modifier calculations in the debug.log file.</source>
@@ -6573,10 +6746,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>Error: ¡utxo no válido!</translation>
     </message>
     <message>
-        <source>Failed to create mint</source>
-        <translation>Error al acuñar</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Error al encontrar Zerocoins en wallet.dat</translation>
     </message>
@@ -6594,7 +6763,11 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Failed to write coin serial number into wallet</source>
-        <translation>Error al escribir el número de serie de la moneda en el monedero</translation>
+        <translation>Error al escribir el número de serie de la moneda en la wallet</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation>Importe inválido para -%s=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -6621,6 +6794,10 @@ VoltPotCoin Core Wallet</translation>
         <translation>Cargando direcciones...</translation>
     </message>
     <message>
+        <source>Loading banlist...</source>
+        <translation>Cargando lista de baneados...</translation>
+    </message>
+    <message>
         <source>Loading block index...</source>
         <translation>Cargando índice de bloque...</translation>
     </message>
@@ -6641,12 +6818,8 @@ VoltPotCoin Core Wallet</translation>
         <translation>Cargando sporks...</translation>
     </message>
     <message>
-        <source>Loading wallet... (%3.2f %%)</source>
-        <translation>Cargando monedero: (%3.2f %%)</translation>
-    </message>
-    <message>
         <source>Loading wallet...</source>
-        <translation>Cargando monedero...</translation>
+        <translation>Cargando wallet...</translation>
     </message>
     <message>
         <source>Location of the auth cookie (default: data dir)</source>
@@ -6659,6 +6832,10 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Lookup(): Invalid -proxy address or hostname: '%s'</source>
         <translation>Lookup(): Inválido -dirección proxy o nombre de host '%s'</translation>
+    </message>
+    <message>
+        <source>MNs synchronization pending...</source>
+        <translation>Sincronización de MNs pendiente...</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
@@ -6694,11 +6871,15 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
-        <translation>Número de Copias de seguridad automáticas de monedero (predeterminado: 10)</translation>
+        <translation>Número de Copias de seguridad automáticas de la wallet (predeterminado: 10)</translation>
     </message>
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Número de copias de seguridad personalizadas que se deben retener (predeterminado: %d)</translation>
+    </message>
+    <message>
+        <source>On first run, create a legacy wallet instead of a HD wallet</source>
+        <translation>En la primera ejecución, cree una wallet heredada en lugar de una wallet HD</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -6715,6 +6896,10 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Password for JSON-RPC connections</source>
         <translation>Contraseña para conexiones JSON-RPC</translation>
+    </message>
+    <message>
+        <source>Peers are being disconnected due time differences.</source>
+        <translation>Los peers se están desconectando debido a las diferencias en la hora.</translation>
     </message>
     <message>
         <source>Unable to find transaction containing mint %s</source>
@@ -6735,6 +6920,22 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Preparing for resync...</source>
         <translation>Preparando para resincronizar...</translation>
+    </message>
+    <message>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong VoltPotCoin Core will not work properly.</source>
+        <translation>Por favor verifique que la fecha y hora de su computadora sean correctas! Si su reloj esta fuera de hora VoltPotCoin Core no funcionará adecuadamente.</translation>
+    </message>
+    <message>
+        <source>Specify location of debug log file: this can be an absolute path or a path relative to the data directory (default: %s)</source>
+        <translation>Especifica la ubicación del archivo de registro de depuración: puede ser una ruta determinada o una ruta relativa al directorio de datos (predeterminado: %s)</translation>
+    </message>
+    <message>
+        <source>Cannot resolve -%s address: '%s'</source>
+        <translation>No se puede resolver la dirección -%s: '%s'</translation>
+    </message>
+    <message>
+        <source>Cannot upgrade to HD wallet (already running HD support). Version: %d</source>
+        <translation>No se puede actualizar a wallet HD (ya se está ejecutando el soporte HD). Versión: %d</translation>
     </message>
     <message>
         <source>Need destination or change address because change is not exact</source>
@@ -6769,14 +6970,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>Reconstruir el indice de la cadena de bloque desde el corriente archivo blk000??.dat</translation>
     </message>
     <message>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation>Recibir y mostrar alertas de red P2P (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Reindex the accumulator database</source>
-        <translation>Reindexar la base de datos del acumulador</translation>
-    </message>
-    <message>
         <source>Relay and mine data carrier transactions (default: %u)</source>
         <translation>Transmitir y minar datos de transacciones enviadas (predeterminado: %u)</translation>
     </message>
@@ -6786,7 +6979,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Rescan the block chain for missing wallet transactions</source>
-        <translation>Reescanear la cadena de bloques en busca de transacciones perdidas del monedero</translation>
+        <translation>Reescanear la cadena de bloques en busca de transacciones perdidas de la wallet</translation>
     </message>
     <message>
         <source>Rescanning...</source>
@@ -6802,7 +6995,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Run a thread to flush wallet periodically (default: %u)</source>
-        <translation>Ejecutar un hilo de ejecución para nivelar el monedero periódicamente (predeterminado: %u)</translation>
+        <translation>Ejecutar un hilo de ejecución para nivelar la wallet periódicamente (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Run in the background as a daemon and accept commands</source>
@@ -6811,10 +7004,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation>Enviar transacciones como transacciones cero-comisión si es posible (predeterminado: %u)</translation>
-    </message>
-    <message>
-        <source>Session timed out.</source>
-        <translation>La sesión expiró.</translation>
     </message>
     <message>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
@@ -6850,7 +7039,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation>Definir la bandera DB_PRIVATE en la db de la monedero del ambiente (predeterminado: %u)</translation>
+        <translation>Definir la bandera DB_PRIVATE en la db de la wallet del ambiente (predeterminado: %u)</translation>
     </message>
     <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
@@ -6859,10 +7048,6 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Encojer el archivo debug.log en el cliente al inicio (predeterminado: 1 cuando no hay -debug)</translation>
-    </message>
-    <message>
-        <source>Signing timed out.</source>
-        <translation>Se agotó el tiempo para la firma.</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
@@ -6890,7 +7075,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Specify wallet file (within data directory)</source>
-        <translation>Especifique el archivo del monedero (dentro del directorio de datos)</translation>
+        <translation>Especifique el archivo de la wallet (dentro del directorio de datos)</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
@@ -6921,10 +7106,6 @@ VoltPotCoin Core Wallet</translation>
         <translation>Sincronización finalizada!</translation>
     </message>
     <message>
-        <source>Synchronization pending...</source>
-        <translation>Sincronización pendiente...</translation>
-    </message>
-    <message>
         <source>Synchronizing budgets...</source>
         <translation>Sincronizando presupuestos...</translation>
     </message>
@@ -6942,15 +7123,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Syncing zVPC wallet...</source>
-        <translation>Sincronizando el monedero zVPC...</translation>
-    </message>
-    <message>
-        <source>The coin spend has been used</source>
-        <translation>El gasto de moneda se ha usado</translation>
-    </message>
-    <message>
-        <source>The transaction did not verify</source>
-        <translation>La transacción no se verificó</translation>
+        <translation>Sincronizando la wallet zVPC...</translation>
     </message>
     <message>
         <source>This help message</source>
@@ -7014,7 +7187,11 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Unable to generate initial key</source>
-        <translation>No se puede generar la clave inicial</translation>
+        <translation>No se puede generar las llaves iniciales</translation>
+    </message>
+    <message>
+        <source>Unable to generate keys</source>
+        <translation>No se puede generar las llaves</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -7029,8 +7206,12 @@ VoltPotCoin Core Wallet</translation>
         <translation>Red especificada desconocida en -onlynet: '%s'</translation>
     </message>
     <message>
+        <source>Unsupported logging category %s=%s.</source>
+        <translation>Categoría de registro no admitida %s =%s.</translation>
+    </message>
+    <message>
         <source>Upgrade wallet to latest format</source>
-        <translation>Actualizar el monedero al último formato</translation>
+        <translation>Actualizar la wallet al último formato</translation>
     </message>
     <message>
         <source>Use UPnP to map the listening port (default: %u)</source>
@@ -7066,23 +7247,23 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Verifying wallet...</source>
-        <translation>Verificando el monedero...</translation>
+        <translation>Verificando la wallet...</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
-        <translation>El monedero %s esta ubicada fuera del directorio de datos %s</translation>
+        <translation>La wallet %s esta ubicada fuera del directorio de datos %s</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart VoltPotCoin Core to complete</source>
-        <translation>El Monedero necesita ser reescrito: reinicie VoltPotCoin Core para completar</translation>
+        <translation>La wallet necesita reescribirse: reinicie la VoltPotCoin Core para completarlo</translation>
     </message>
     <message>
         <source>Wallet options:</source>
-        <translation>Opciones del Monedero:</translation>
+        <translation>Opciones de la wallet:</translation>
     </message>
     <message>
         <source>Wallet window title</source>
-        <translation>Monedero titulo de ventana</translation>
+        <translation>Título de la ventana de la wallet</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -7102,7 +7283,7 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>You don't have enough Zerocoins in your wallet</source>
-        <translation>No tienes suficientes Zerocoins en tu monedero</translation>
+        <translation>No tienes suficientes Zerocoins en tu wallet</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
@@ -7110,11 +7291,15 @@ VoltPotCoin Core Wallet</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>
-        <translation>Saltando todas las transacciones del monedero...</translation>
+        <translation>Saltando todas las transacciones de la wallet...</translation>
     </message>
     <message>
         <source>ZeroMQ notification options:</source>
         <translation>Opciones de notificación ZeroMQ:</translation>
+    </message>
+    <message>
+        <source>Zerocoin minting available only on regtest</source>
+        <translation>Minting de Zerocoin disponible solo en regtest</translation>
     </message>
     <message>
         <source>Zerocoin options:</source>
@@ -7142,6 +7327,10 @@ VoltPotCoin Core Wallet</translation>
     <message>
         <source>TextLabel</source>
         <translation>EtiquetaDeTexto</translation>
+    </message>
+    <message>
+        <source>Include delegated</source>
+        <translation>Incluir delegado</translation>
     </message>
     <message>
         <source>PushButton</source>
