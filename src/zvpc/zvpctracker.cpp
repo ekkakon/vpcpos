@@ -278,7 +278,7 @@ bool CzVPCTracker::UpdateState(const CMintMeta& meta)
 
 void CzVPCTracker::Add(const CDeterministicMint& dMint, bool isNew, bool isArchived, CzVPCWallet* zVPCWallet)
 {
-    bool iszVPCWalletInitialized = (NULL != zVPCWallet);
+    bool iszVPCWalletInitialized = (nullptr != zVPCWallet);
     CMintMeta meta;
     meta.hashPubcoin = dMint.GetPubcoinHash();
     meta.nHeight = dMint.GetHeight();
@@ -290,10 +290,10 @@ void CzVPCTracker::Add(const CDeterministicMint& dMint, bool isNew, bool isArchi
     meta.denom = dMint.GetDenomination();
     meta.isArchived = isArchived;
     meta.isDeterministic = true;
-    if (! iszVPCWalletInitialized)
+    if (!iszVPCWalletInitialized)
         zVPCWallet = new CzVPCWallet(wallet);
     meta.isSeedCorrect = zVPCWallet->CheckSeed(dMint);
-    if (! iszVPCWalletInitialized)
+    if (!iszVPCWalletInitialized)
         delete zVPCWallet;
     mapSerialHashes[meta.hashSerial] = meta;
 

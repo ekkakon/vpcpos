@@ -28,7 +28,7 @@ CzVPCWallet::CzVPCWallet(CWallet* parent)
             //Update to new format, erase old
             seedMaster = seed;
             hashSeed = Hash(seed.begin(), seed.end());
-            if (pwalletMain->AddDeterministicSeed(seed)) {
+            if (wallet->AddDeterministicSeed(seed)) {
                 if (walletdb.EraseZVPCSeed_deprecated()) {
                     LogPrintf("%s: Updated zVPC seed databasing\n", __func__);
                     fFirstRun = false;

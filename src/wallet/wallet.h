@@ -110,7 +110,7 @@ enum ZerocoinSpendStatus {
     ZVPC_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
     ZVPC_TRX_CREATE = 7,                            // Everything related to create the transaction
     ZVPC_TRX_CHANGE = 8,                            // Everything related to transaction change
-    ZVPC_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
+    ZVPC_TXMINT_GENERAL = 9,                        // General errors in MintsToInputVectorPublicSpend
     ZVPC_INVALID_COIN = 10,                         // Selected mint coin is not valid
     ZVPC_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
     ZVPC_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify

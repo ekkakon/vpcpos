@@ -105,7 +105,7 @@ SettingsWidget::SettingsWidget(VoltPotCoinGUI* parent) :
     ui->stackedWidgetContainer->addWidget(settingsWalletOptionsWidget);
     ui->stackedWidgetContainer->addWidget(settingsMainOptionsWidget);
     ui->stackedWidgetContainer->addWidget(settingsDisplayOptionsWidget);
-    ui->stackedWidgetContainer->addWidget(settingsMultisendWidget);
+    //ui->stackedWidgetContainer->addWidget(settingsMultisendWidget);
     ui->stackedWidgetContainer->addWidget(settingsInformationWidget);
     ui->stackedWidgetContainer->addWidget(settingsConsoleWidget);
     ui->stackedWidgetContainer->setCurrentWidget(settingsBackupWallet);

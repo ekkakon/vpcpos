@@ -389,7 +389,7 @@ void SendWidget::onSendClicked()
         return;
     }
 
-    if((sendVpc) ? send(recipients) : sendZvpc(recipients)) {
+    if ((sendVpc) ? send(recipients) : sendZvpc(recipients)) {
         updateEntryLabels(recipients);
     }
     setFocusOnLastEntry();
@@ -460,7 +460,7 @@ bool SendWidget::sendZvpc(QList<SendCoinsRecipient> recipients)
     if (!walletModel || !walletModel->getOptionsModel())
         return false;
 
-    if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if (sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         Q_EMIT message(tr("Spend Zerocoin"), tr("zVPC is currently undergoing maintenance."), CClientUIInterface::MSG_ERROR);
         return false;
     }
@@ -524,7 +524,7 @@ bool SendWidget::sendZvpc(QList<SendCoinsRecipient> recipients)
             ) {
         inform(tr("zVPC transaction sent!"));
         ZVpcControlDialog::setSelectedMints.clear();
-        clearAll();
+        clearAll(false);
         return true;
     } else {
         QString body;
@@ -653,7 +653,7 @@ void SendWidget::onChangeCustomFeeClicked()
 
 void SendWidget::onCoinControlClicked()
 {
-    if(isVPC){
+    if (isVPC) {
         if (walletModel->getBalance() > 0) {
             if (!coinControlDialog) {
                 coinControlDialog = new CoinControlDialog();

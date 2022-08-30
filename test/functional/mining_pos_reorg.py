@@ -9,7 +9,7 @@ from test_framework.util import (
     sync_blocks,
     assert_equal,
     assert_raises_rpc_error,
-    connect_nodes_bi,
+    connect_nodes,
     connect_nodes_clique,
     disconnect_nodes,
     set_node_times,

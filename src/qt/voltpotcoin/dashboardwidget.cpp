@@ -671,7 +671,7 @@ void DashboardWidget::onChartRefreshed()
     ui->labelAmountZvpc->setText(GUIUtil::formatBalance(chartData->totalZvpc, nDisplayUnit, true));
 
     series->append(set0);
-    if(hasZvpcStakes)
+    if (hasZvpcStakes)
         series->append(set1);
 
     // bar width

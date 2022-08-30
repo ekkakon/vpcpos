@@ -8,7 +8,7 @@
 #include "activemasternode.h"
 #include "optionsmodel.h"
 #include "pairresult.h"
-#include "qt/voltpotcoin/qtutils.h"
+#include "qt/voltpotcoin/mnmodel.h"
 #include "qt/voltpotcoin/guitransactionsutils.h"
 #include "qt/voltpotcoin/qtutils.h"
 

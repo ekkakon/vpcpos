@@ -15,7 +15,7 @@ import shutil
 from test_framework.test_framework import VoltpotcoinTestFramework
 from test_framework.util import (
     assert_equal,
-    connect_nodes_bi,
+    connect_nodes,
     sync_blocks,
 )
 

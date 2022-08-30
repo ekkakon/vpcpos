@@ -191,11 +191,11 @@ void PrivacyWidget::loadWalletModel()
 void PrivacyWidget::onMintSelected(bool isMint)
 {
     QString btnText;
-    if(isMint){
+    if (isMint) {
         btnText = tr("Mint zVPC");
         ui->btnCoinControl->setVisible(true);
         ui->labelSubtitleAmount->setText(tr("Enter amount of VPC to mint into zVPC"));
-    }else{
+    } else {
         btnText = tr("Convert back to VPC");
         ui->btnCoinControl->setVisible(false);
         ui->labelSubtitleAmount->setText(tr("Enter amount of zVPC to convert back into VPC"));
@@ -236,7 +236,7 @@ void PrivacyWidget::onSendClicked()
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if (sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         warn(tr("Zerocoin"), tr("zVPC is currently undergoing maintenance"));
         return;
     }
@@ -289,7 +289,7 @@ void PrivacyWidget::spend(CAmount value)
     CZerocoinSpendReceipt receipt;
     std::vector<CZerocoinMint> selectedMints;
 
-    if(!walletModel->convertBackZvpc(
+    if (!walletModel->convertBackZvpc(
             value,
             selectedMints,
             receipt

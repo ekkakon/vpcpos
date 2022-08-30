@@ -36,7 +36,7 @@ bool openDialog(QDialog* widget, QWidget* gui)
     return widget->exec();
 }
 
-void closeDialog(QDialog *widget, VoltPotCoinGUI *gui)
+void closeDialog(QDialog* widget, VoltPotCoinGUI* gui)
 {
     widget->setWindowFlags(Qt::CustomizeWindowHint);
     widget->setAttribute(Qt::WA_TranslucentBackground, true);
@@ -54,10 +54,10 @@ void openDialogFullScreen(QWidget* parent, QWidget* dialog)
     dialog->move(0, 0);
     dialog->show();
     dialog->activateWindow();
-    dialog->resize(parent->width(),parent->height());
+    dialog->resize(parent->width(), parent->height());
 }
 
-bool openDialogWithOpaqueBackgroundY(QDialog *widget, VoltPotCoinGUI *gui, double posX, int posY)
+bool openDialogWithOpaqueBackgroundY(QDialog* widget, VoltPotCoinGUI* gui, double posX, int posY)
 {
     widget->setWindowFlags(Qt::CustomizeWindowHint);
     widget->setAttribute(Qt::WA_TranslucentBackground, true);
@@ -74,12 +74,12 @@ bool openDialogWithOpaqueBackgroundY(QDialog *widget, VoltPotCoinGUI *gui, doubl
     return res;
 }
 
-bool openDialogWithOpaqueBackground(QDialog* widget, VoltPotCoinGUI *gui, double posX)
+bool openDialogWithOpaqueBackground(QDialog* widget, VoltPotCoinGUI* gui, double posX)
 {
     return openDialogWithOpaqueBackgroundY(widget, gui, posX, 5);
 }
 
-bool openDialogWithOpaqueBackgroundFullScreen(QDialog* widget, VoltPotCoinGUI *gui)
+bool openDialogWithOpaqueBackgroundFullScreen(QDialog* widget, VoltPotCoinGUI* gui)
 {
     widget->setWindowFlags(Qt::CustomizeWindowHint);
     widget->setAttribute(Qt::WA_TranslucentBackground, true);
