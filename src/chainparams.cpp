@@ -166,7 +166,7 @@ public:
         consensus.height_start_BIP65 = 0;             // Block v5: 82629b7a9978f5c7ea3f70a12db92633a7d2e436711500db28b97efd48b1e527
         consensus.height_start_InvalidUTXOsCheck = 999999999;
         consensus.height_start_MessSignaturesV2 = 999999999;  // height_start_TimeProtoV2
-        consensus.height_start_StakeModifierNewSelection = 0;
+        consensus.height_start_StakeModifierNewSelection = 1000;
         consensus.height_start_StakeModifierV2 = 999999999;   // Block v6: 0ef2556e40f3b9f6e02ce611b832e0bbfe7734a8ea751c7b555310ee49b61456
         consensus.height_start_TimeProtoV2 = 999999999;       // Block v7: 14e477e597d24549cac5e59d97d32155e6ec2861c1003b42d0566f9bf39b65d5
         consensus.height_start_ZC = 0;                 // Block v4: 5b2482eca24caf2a46bb22e0545db7b7037282733faa3a42ec20542509999a64
