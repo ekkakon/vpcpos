@@ -138,19 +138,19 @@ public:
         consensus.posLimitV1 = ~UINT256_ZERO >> 24;
         consensus.posLimitV2 = ~UINT256_ZERO >> 20;
         consensus.nBudgetCycleBlocks = 43200;       // approx. 1 every 30 days
-        consensus.nBudgetFeeConfirmations = 3;      // Number of confirmations for the finalization fee
+        consensus.nBudgetFeeConfirmations = 6;      // Number of confirmations for the finalization fee
         consensus.nCoinbaseMaturity = 20;
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMasternodeCountDrift = 20;       // num of MN we allow the see-saw payments to be off by
-        consensus.nMaxMoneyOut = 9999999999 * COIN;
+        consensus.nMaxMoneyOut = 21000000 * COIN;
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 600;
-        consensus.nTargetTimespan = 9 * 60;
+        consensus.nTargetTimespan = 40 * 60;
         consensus.nTargetTimespanV2 = 30 * 60;
-        consensus.nTargetSpacing = 90;
+        consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
 
         // spork keys
@@ -244,7 +244,8 @@ public:
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
 
-        genesis = CreateGenesisBlock(1623799585, 21208033, 0x1e0ffff0, 1, 10 * COIN);        consensus.hashGenesisBlock = genesis.GetHash();
+        genesis = CreateGenesisBlock(1623799585, 21208033, 0x1e0ffff0, 1, 10 * COIN);
+        consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
         assert(genesis.hashMerkleRoot == uint256S("0x17d4e3d9d8d8fb1d291fe8ca9b156e744f78227ac743b4f9e6b9efc60e955995"));
 
@@ -324,9 +325,9 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "voltpotcoin-testnet.seed.fuzzbawls.pw"));
-        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "voltpotcoin-testnet.seed2.fuzzbawls.pw"));
-        // vSeeds.push_back(CDNSSeedData("warrows.dev", "testnet.dnsseed.voltpotcoin.warrows.dev"));
+        // nodes with support for servicebits filtering should be at the top
+        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "voltpotcoin-testnet.seed.fuzzbawls.pw", true));
+        // vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "voltpotcoin-testnet.seed2.fuzzbawls.pw", true));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);
@@ -423,7 +424,7 @@ public:
         consensus.ZC_MaxSpendsPerTx = 7;            // Assume about 20kb each input
         consensus.ZC_MinMintConfirmations = 10;
         consensus.ZC_MinMintFee = 1 * CENT;
-        consensus.ZC_MinStakeDepth = 200;
+        consensus.ZC_MinStakeDepth = 10;
         consensus.ZC_TimeStart = 0;                 // not implemented on regtest
         consensus.ZC_WrappedSerialsSupply = 0;
 
