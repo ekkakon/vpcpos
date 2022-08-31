@@ -293,7 +293,7 @@ public:
         consensus.height_ZC_RecalcAccumulators = 999999999;
 
         // validation by-pass
-        consensus.nVoltpotcoinBadBlockTime = 1489001494; // Skip nBit validation of Block 201 per PR #915
+        consensus.nVoltpotcoinBadBlockTime = 4070908800; // Skip nBit validation of Block 201 per PR #915
         consensus.nVoltpotcoinBadBlockBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
 
         // Zerocoin-related params
