@@ -3098,7 +3098,6 @@ bool ActivateBestChain(CValidationState& state, CBlock* pblock, bool fAlreadyChe
         }
 
         // When we reach this point, we switched to a new tip (stored in pindexNewTip).
-
         // Notifications/callbacks that can run without cs_main
         // Always notify the UI if a new block tip was connected
         if (pindexFork != pindexNewTip) {
@@ -3654,12 +3653,13 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
 
         return true;
     }
+
     if (block.nBits != nBitsRequired) {
         // Voltpotcoin Specific reference to the block with the wrong threshold was used.
         const Consensus::Params& consensus = Params().GetConsensus();
         if ((block.nTime == (uint32_t) consensus.nVoltpotcoinBadBlockTime) &&
                 (block.nBits == (uint32_t) consensus.nVoltpotcoinBadBlockBits)) {
-            // accept VPC block minted with incorrect proof of work threshold
+            // accept VoltPotCoin block minted with incorrect proof of work threshold
             return true;
         }
 
@@ -3667,6 +3667,7 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     }
 
     return true;
+}
 
 bool CheckBlockTime(const CBlockHeader& block, CValidationState& state, CBlockIndex* const pindexPrev)
 {
