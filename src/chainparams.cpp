@@ -148,9 +148,9 @@ public:
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 600;
-        consensus.nTargetTimespan = 40 * 60;
-        consensus.nTargetTimespanV2 = 30 * 60;
-        consensus.nTargetSpacing = 1 * 60;
+        consensus.nTargetTimespan = 9 * 60;
+        consensus.nTargetTimespanV2 = 9 * 60;
+        consensus.nTargetSpacing = 90;
         consensus.nTimeSlotLength = 15;
 
         // spork keys
@@ -174,7 +174,7 @@ public:
         consensus.height_start_ZC_PublicSpends = 999999999;
         consensus.height_start_ZC_SerialRangeCheck = 1;
         consensus.height_start_ZC_SerialsV2 = 999999999;
-        consensus.height_ZC_RecalcAccumulators = 999999999;
+        consensus.height_ZC_RecalcAccumulators = 1;
 
         // validation by-pass
         consensus.nVoltpotcoinBadBlockTime = 1625302044;    // Skip nBit validation of Block 1001 per PR #915
