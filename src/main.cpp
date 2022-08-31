@@ -3654,12 +3654,19 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
 
         return true;
     }
-    if (block.nBits != nBitsRequired)
+    if (block.nBits != nBitsRequired) {
+        // Voltpotcoin Specific reference to the block with the wrong threshold was used.
+        const Consensus::Params& consensus = Params().GetConsensus();
+        if ((block.nTime == (uint32_t) consensus.nVoltpotcoinBadBlockTime) &&
+                (block.nBits == (uint32_t) consensus.nVoltpotcoinBadBlockBits)) {
+            // accept VPC block minted with incorrect proof of work threshold
+            return true;
+        }
+
         return error("%s : incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
+    }
 
     return true;
-
-}
 
 bool CheckBlockTime(const CBlockHeader& block, CValidationState& state, CBlockIndex* const pindexPrev)
 {
