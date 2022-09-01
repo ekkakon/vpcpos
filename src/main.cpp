@@ -2005,8 +2005,7 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
         nSubsidy = 10 * COIN;
     } else if (nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 10 * COIN;
-    }
+        nSubsidy =  * COIN;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         nSubsidy = 10 * COIN;
     } else {
