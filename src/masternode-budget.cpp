@@ -906,19 +906,24 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 {
     if (chainActive.Tip() == NULL) return 0;
 
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+        CAmount nSubsidy = 500 * COIN;
+        return ((nSubsidy / 100) * 10) * 146;
+    }
+
     //get block value and calculate from that
     CAmount nSubsidy = 0;
     if (nHeight == 0) {
      nSubsidy = 746910 * COIN;
-    }
-    else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
      nSubsidy = 10 * COIN;
-    }
-    else if (nHeight > Params().LAST_POW_BLOCK()) {
-     nSubsidy = 10 * COIN;
+    } else if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
+        nSubsidy = 10 * COIN;
+    } else {
+        nSubsidy = 10 * COIN;
     }
 
-    return ((nSubsidy / 100) * 10) * 288 * 30;
+    return ((nSubsidy / 100) * 10) * 1440 * 30;
 
 }
 

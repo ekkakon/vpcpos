@@ -298,19 +298,19 @@ void PrivacyDialog::on_pushButtonSpendzVPC_clicked()
     sendzVPC();
 }
 
-void PrivacyDialog::on_pushButtonZPivControl_clicked()
+void PrivacyDialog::on_pushButtonZVpcControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPivControlDialog* zPivControl = new ZPivControlDialog(this);
-    zPivControl->setModel(walletModel);
-    zPivControl->exec();
+    ZVpcControlDialog* zVpcControl = new ZVpcControlDialog(this);
+    zVpcControl->setModel(walletModel);
+    zVpcControl->exec();
 }
 
-void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZVpcControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzPivSelected_int->setText(QString::number(nAmount));
+    ui->labelzVpcSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -414,8 +414,8 @@ void PrivacyDialog::sendzVPC()
     // use mints from zVPC selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZPivControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZPivControlDialog::GetSelectedMints();
+    if (!ZVpcControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZVpcControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             CZerocoinMint mint;
@@ -473,8 +473,8 @@ void PrivacyDialog::sendzVPC()
     }
 
     // Clear zvpc selector in case it was used
-    ZPivControlDialog::setSelectedMints.clear();
-    ui->labelzPivSelected_int->setText(QString("0"));
+    ZVpcControlDialog::setSelectedMints.clear();
+    ui->labelzVpcSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -492,7 +492,7 @@ void PrivacyDialog::sendzVPC()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Piv, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Vpc, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");

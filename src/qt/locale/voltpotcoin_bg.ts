@@ -4601,7 +4601,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Изберете zVPC за Изпращане</translation>
@@ -4982,7 +4982,7 @@ Please be patient...</source>
         <translation>Всички права запазени (c) 2014-%i Dash Core разработчици</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
+        <source>Copyright (C) 2015-%i The VoltPotCoin Core Developers</source>
         <translation>Всички права запазени (c) 2015-%i VoltPotCoin Core разработчици</translation>
     </message>
     <message>

@@ -126,7 +126,7 @@ public:
         nTargetSpacing = 90;
         nMaturity = 20;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 9999999999 * COIN;
+        nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -139,10 +139,10 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999;
+        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 999999999;
-        nEnforceNewSporkKey = 1623799585;
-        nRejectOldSporkKey = 1527811200;
+        nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1527811200; /!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
 
         // Public coin spend enforcement
         nPublicZCSpends = 1;
@@ -207,7 +207,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        nBudgetCycleBlocks = 8640;
+        nBudgetCycleBlocks = 8640; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkKey = "04c87d37f6c03db160ead6cf2c0655ba56cbd381c0b08f04cb26d2b9b1ef88050320dab18a96fb1ef33877c667e66fa0ca5c23219188c8cefea37e427a7f91efb0";
         strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "VC5naySWDkt9WdHgqXPx1zYgBQuyziCeWf";
@@ -256,9 +256,9 @@ public:
         pchMessageStart[3] = 0x86;
         vAlertPubKey = ParseHex("042921e162d8c017b5591148afaaf2773c0052a47f57553465b0e64266f39e1e6f09e83e550678f6a5cc9fd7cadf9f3d2ebbc6f94f786f5afc6811e334681f4471");
         nDefaultPort = 47572;
-        nEnforceBlockUpgradeMajority = 0;
-        nRejectBlockOutdatedMajority = 0;
-        nToCheckBlockUpgradeMajority = 0;
+        nEnforceBlockUpgradeMajority = 0; // 75%
+        nRejectBlockOutdatedMajority = 0; // 95%
+        nToCheckBlockUpgradeMajority = 0; // 4 days
         nMinerThreads = 0;
         nTargetTimespan = 10 * 60;
         nTargetSpacing = 5 * 60;
@@ -276,8 +276,8 @@ public:
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
-        nEnforceNewSporkKey = 1623799585;
-        nRejectOldSporkKey = 1522454400;
+        nEnforceNewSporkKey = 1623799585; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
 
         // Public coin spend enforcement
         nPublicZCSpends = 1;
@@ -296,12 +296,12 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);  // Testnet voltpotcoin addresses start with
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);  // Testnet voltpotcoin script addresses start with
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);     // Testnet private keys start with
+        // Testnet voltpotcoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-
+        // Testnet voltpotcoin BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
         // Testnet voltpotcoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();

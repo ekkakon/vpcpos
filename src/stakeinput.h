@@ -35,7 +35,7 @@ public:
 // zVPCStake can take two forms
 // 1) the stake candidate, which is a zcmint that is attempted to be staked
 // 2) a staked zvpc, which is a zcspend that has successfully staked
-class CZPivStake : public CStakeInput
+class CZVpcStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -44,7 +44,7 @@ private:
     uint256 hashSerial;
 
 public:
-    explicit CZPivStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
+    explicit CZVpcStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
     {
         this->denom = denom;
         this->hashSerial = hashSerial;
@@ -52,7 +52,7 @@ public:
         fMint = true;
     }
 
-    explicit CZPivStake(const libzerocoin::CoinSpend& spend);
+    explicit CZVpcStake(const libzerocoin::CoinSpend& spend);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;
@@ -69,13 +69,13 @@ public:
     uint32_t GetChecksum();
 };
 
-class CPivStake : public CStakeInput
+class CVpcStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
     unsigned int nPosition;
 public:
-    CPivStake()
+    CVpcStake()
     {
         this->pindexFrom = nullptr;
     }
