@@ -200,8 +200,8 @@ void PrivacyDialog::on_pushButtonMintzVPC_clicked()
     int64_t nTime = GetTimeMillis();
 
     CWalletTx wtx;
-    std::vector<CDeterministicMint> vMints;
-    std::string strError = pwalletMain->MintZerocoin(nAmount, wtx, vMints, CoinControlDialog::coinControl);
+    vector<CDeterministicMint> vMints;
+    string strError = pwalletMain->MintZerocoin(nAmount, wtx, vMints, CoinControlDialog::coinControl);
 
     // Return if something went wrong during minting
     if (strError != ""){
@@ -246,7 +246,7 @@ void PrivacyDialog::on_pushButtonMintReset_clicked()
     ui->TEMintStatus->repaint ();
 
     int64_t nTime = GetTimeMillis();
-    std::string strResetMintResult = pwalletMain->ResetMintZerocoin();
+    string strResetMintResult = pwalletMain->ResetMintZerocoin();
     double fDuration = (double)(GetTimeMillis() - nTime)/1000.0;
     ui->TEMintStatus->setPlainText(QString::fromStdString(strResetMintResult) + tr("Duration: ") + QString::number(fDuration) + tr(" sec.\n"));
     ui->TEMintStatus->repaint ();
@@ -261,7 +261,7 @@ void PrivacyDialog::on_pushButtonSpentReset_clicked()
     ui->TEMintStatus->setPlainText(tr("Starting ResetSpentZerocoin: "));
     ui->TEMintStatus->repaint ();
     int64_t nTime = GetTimeMillis();
-    std::string strResetSpentResult = pwalletMain->ResetSpentZerocoin();
+    string strResetSpentResult = pwalletMain->ResetSpentZerocoin();
     double fDuration = (double)(GetTimeMillis() - nTime)/1000.0;
     ui->TEMintStatus->setPlainText(QString::fromStdString(strResetSpentResult) + tr("Duration: ") + QString::number(fDuration) + tr(" sec.\n"));
     ui->TEMintStatus->repaint ();
@@ -298,19 +298,19 @@ void PrivacyDialog::on_pushButtonSpendzVPC_clicked()
     sendzVPC();
 }
 
-void PrivacyDialog::on_pushButtonZPivControl_clicked()
+void PrivacyDialog::on_pushButtonZVpcControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPivControlDialog* zPivControl = new ZPivControlDialog(this);
-    zPivControl->setModel(walletModel);
-    zPivControl->exec();
+    ZVpcControlDialog* zVpcControl = new ZVpcControlDialog(this);
+    zVpcControl->setModel(walletModel);
+    zVpcControl->exec();
 }
 
-void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZVpcControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzPivSelected_int->setText(QString::number(nAmount));
+    ui->labelzVpcSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -412,10 +412,10 @@ void PrivacyDialog::sendzVPC()
     ui->TEMintStatus->repaint();
 
     // use mints from zVPC selector if applicable
-    std::vector<CMintMeta> vMintsToFetch;
-    std::vector<CZerocoinMint> vMintsSelected;
-    if (!ZPivControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZPivControlDialog::GetSelectedMints();
+    vector<CMintMeta> vMintsToFetch;
+    vector<CZerocoinMint> vMintsSelected;
+    if (!ZVpcControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZVpcControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             CZerocoinMint mint;
@@ -473,8 +473,8 @@ void PrivacyDialog::sendzVPC()
     }
 
     // Clear zvpc selector in case it was used
-    ZPivControlDialog::setSelectedMints.clear();
-    ui->labelzPivSelected_int->setText(QString("0"));
+    ZVpcControlDialog::setSelectedMints.clear();
+    ui->labelzVpcSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -492,7 +492,7 @@ void PrivacyDialog::sendzVPC()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Piv, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Vpc, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -625,13 +625,13 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
     std::map<libzerocoin::CoinDenomination, int> mapUnconfirmed;
     std::map<libzerocoin::CoinDenomination, int> mapImmature;
     for (const auto& denom : libzerocoin::zerocoinDenomList){
-        mapDenomBalances.insert(std::make_pair(denom, 0));
-        mapUnconfirmed.insert(std::make_pair(denom, 0));
-        mapImmature.insert(std::make_pair(denom, 0));
+        mapDenomBalances.insert(make_pair(denom, 0));
+        mapUnconfirmed.insert(make_pair(denom, 0));
+        mapImmature.insert(make_pair(denom, 0));
     }
 
     std::vector<CMintMeta> vMints = pwalletMain->zvpcTracker->GetMints(false);
-    std::map<libzerocoin::CoinDenomination, int> mapMaturityHeights = GetMintMaturityHeight();
+    map<libzerocoin::CoinDenomination, int> mapMaturityHeights = GetMintMaturityHeight();
     for (auto& meta : vMints){
         // All denominations
         mapDenomBalances.at(meta.denom)++;

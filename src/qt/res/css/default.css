@@ -63,8 +63,8 @@ background-color:#f2f0f0;
 color:#333;
 }
 
-QToolBar {/* #372f44 the original purple replaced by #14a800 */
-background-color: qlineargradient(y1:0, y2: 1, stop: 0 #14a800, stop: 0.75 #14a800, stop: 0.99 #ffffff, stop: 1 #ffffff);
+QToolBar {
+background-color: qlineargradient(y1:0, y2: 1, stop: 0 #372f44, stop: 0.75 #372f44, stop: 0.99 #ffffff, stop: 1 #ffffff);
 border:0px solid #333;
 padding:1;
 margin:0;
@@ -73,7 +73,7 @@ width: 70px;
 
 QToolBar > QToolButton {
 Alignment: left;
-background-color: #14a800;
+background-color: #372f44;
 selection-background-color:transparent;
 border:0.5px solid #888;
 border-left: 0px;
@@ -88,22 +88,22 @@ height: 60px;
 }
 
 QToolBar > QToolButton:checked {
-background-color: qlineargradient(x1:0, x2: 1, stop: 0 #ffffff, stop: 0.07 #ffffff, stop: 0.0701 #14a800, stop: 1 #14a800);
+background-color: qlineargradient(x1:0, x2: 1, stop: 0 #ffffff, stop: 0.07 #ffffff, stop: 0.0701 #372f44, stop: 1 #372f44);
 color:#fff;
 }
 
 /* QToolBar > QToolButton:hover:!selected { */
 QToolBar > QToolButton:hover {
-background-color: qlineargradient(x1:0, x2: 1, stop: 0 #ffffff, stop: 0.07 #ffffff, stop: 0.0701 #14a800, stop: 1 #14a800);
+background-color: qlineargradient(x1:0, x2: 1, stop: 0 #ffffff, stop: 0.07 #ffffff, stop: 0.0701 #372f44, stop: 1 #372f44);
 color:#fff;
 }
 
 QToolBar > QToolButton#ToolbarSpacer:hover:!selected {
-background-color: #14a800; /* Do not highlight placeholder on hover */
+background-color: #372f44; /* Do not highlight placeholder on hover */
 }
 
 QToolBar > QToolButton:pressed {
-background-color: qlineargradient(x1:0, x2: 1, stop: 0 #00a300, stop: 0.07 #00a300, stop: 0.0701 #14a800, stop: 1 #14a800);
+background-color: qlineargradient(x1:0, x2: 1, stop: 0 #00a300, stop: 0.07 #00a300, stop: 0.0701 #372f44, stop: 1 #372f44);
 color:#fff;
 }
 
@@ -882,7 +882,7 @@ border:0;
 }
 
 /* About VoltPotCoin Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About PIVX Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About VoltPotCoin Contents */
 margin-left:10px;
 }
 
@@ -901,7 +901,7 @@ padding-right:5px;
 /* Header design for ALL tabs/pages *****************************************************/
 /* Horizontal lines */
 QFrame[frameShape="4"] { /* QFrame::HLine == 0x0004 */
-border:1px solid #14a800;
+border:1px solid #372f44;
 }
 
 /* Headers */
@@ -996,7 +996,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelBalanceText { /* Available Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1020,7 +1020,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelPendingText { /* Pending Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1044,7 +1044,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelImmatureText { /* Immature Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1068,7 +1068,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelTotalText { /* Total Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1092,7 +1092,7 @@ margin-left:16px;
 QWidget .QFrame#frame_Balances .QLabel#labelLockedBalanceText { /* Available zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1129,7 +1129,7 @@ padding-right:5px;
 QWidget .QFrame#frame_ZerocoinBalances .QLabel#labelzBalanceText { /* Available zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1147,7 +1147,7 @@ margin-left:0px;
 QWidget .QFrame#frame_ZerocoinBalances .QLabel#labelzBalanceUnconfirmedText { /* Unconfirmed zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1165,7 +1165,7 @@ margin-left:0px;
 QWidget .QFrame#frame_ZerocoinBalances .QLabel#labelzBalanceMatureText { /* Mature zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1183,7 +1183,7 @@ margin-left:0px;
 QWidget .QFrame#frame_ZerocoinBalances .QLabel#labelzBalanceImmatureText { /* Immature zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1212,7 +1212,7 @@ padding-right:5px;
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz { /* Available VPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1223,13 +1223,13 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available VPC 
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:26px;
 font-weight:normal;
-color:#14a800;
+color:#372f44;
 }
 
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelzBalanceTextz { /* Available zVPC Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1247,7 +1247,7 @@ margin-left:0px;
 QWidget .QFrame#frame_CombinedBalances .QLabel#labelTotalTextz { /* Available total Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
-color:#14a800;
+color:#372f44;
 margin-right:5px;
 padding-right:5px;
 font-weight:bold;
@@ -1258,7 +1258,7 @@ QWidget .QFrame#frame_CombinedBalances .QLabel#labelTotalz { /* Available total 
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:26px;
 font-weight:normal;
-color:#14a800;
+color:#372f44;
 }
 
 /**************************** RECENT TRANSACTIONS ***************************************/
@@ -1556,7 +1556,7 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator { /* Coin
 
 }
 
-QDialog#ZPivControlDialog .QTreeWidget#treeWidget { /* zVPC Control Widget Container */
+QDialog#ZVpcControlDialog .QTreeWidget#treeWidget { /* zVPC Control Widget Container */
 outline:0;
 background-color:#ffffff;
 border:1px solid #333;
@@ -1651,7 +1651,7 @@ border:1px solid #d7d7d7;
 /* QWidget#PrivacyDialog */
 
 QWidget#PrivacyDialog .QFrame[frameShape="4"] { /* QFrame::HLine == 0x0004 */
-border:1px solid #14a800;
+border:1px solid #372f44;
 }
 
 QWidget#PrivacyDialog .QFrame#frame_Content {

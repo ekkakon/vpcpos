@@ -14,8 +14,9 @@
 #include <assert.h>
 
 #include <boost/assign/list_of.hpp>
-#include <limits>
 
+using namespace std;
+using namespace boost::assign;
 
 struct SeedSpec6 {
     uint8_t addr[16];
@@ -96,17 +97,6 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     return &ZCParamsDec;
 }
 
-bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
-        const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
-{
-    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
-    if (!IsStakeModifierV2(contextHeight))
-        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
-
-    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
-    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
-}
-
 class CMainParams : public CChainParams
 {
 public:
@@ -135,11 +125,8 @@ public:
         nTargetTimespan = 9 * 60;
         nTargetSpacing = 90;
         nMaturity = 20;
-        nStakeMinDepth = 600;
-        nFutureTimeDriftPoW = 7200;
-        nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 9999999999 * COIN;
+        nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -152,11 +139,11 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999;
+        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 999999999;
-        nEnforceNewSporkKey = 1623799585;
-        nRejectOldSporkKey = 1527811200;
-        nBlockStakeModifierlV2 = 999999999;
+        nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1527811200; /!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
+
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -178,7 +165,7 @@ public:
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+        txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 10 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04749f0b72d8208d9eb7e5cca30fbb10650646b801e2057d7f91b572310adef3799a049789b4b54694e223a2b937772b79f0f6931bfeaedf14b001fed11de0d6fa") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
@@ -220,7 +207,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
+        nBudgetCycleBlocks = 8640; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkKey = "04c87d37f6c03db160ead6cf2c0655ba56cbd381c0b08f04cb26d2b9b1ef88050320dab18a96fb1ef33877c667e66fa0ca5c23219188c8cefea37e427a7f91efb0";
         strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "VC5naySWDkt9WdHgqXPx1zYgBQuyziCeWf";
@@ -250,7 +237,6 @@ public:
     {
         return data;
     }
-
 };
 static CMainParams mainParams;
 
@@ -270,15 +256,14 @@ public:
         pchMessageStart[3] = 0x86;
         vAlertPubKey = ParseHex("042921e162d8c017b5591148afaaf2773c0052a47f57553465b0e64266f39e1e6f09e83e550678f6a5cc9fd7cadf9f3d2ebbc6f94f786f5afc6811e334681f4471");
         nDefaultPort = 47572;
-        nEnforceBlockUpgradeMajority = 0;
-        nRejectBlockOutdatedMajority = 0;
-        nToCheckBlockUpgradeMajority = 0;
+        nEnforceBlockUpgradeMajority = 0; // 75%
+        nRejectBlockOutdatedMajority = 0; // 95%
+        nToCheckBlockUpgradeMajority = 0; // 4 days
         nMinerThreads = 0;
         nTargetTimespan = 10 * 60;
         nTargetSpacing = 5 * 60;
         nLastPOWBlock = 200;
         nMaturity = 15;
-        nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 43199500 * COIN;
@@ -291,9 +276,9 @@ public:
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
-        nEnforceNewSporkKey = 1623799585;
-        nRejectOldSporkKey = 1522454400;
-        nBlockStakeModifierlV2 = 999999999;
+        nEnforceNewSporkKey = 1623799585; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
+
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -311,12 +296,12 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
-
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);  // Testnet voltpotcoin addresses start with
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);  // Testnet voltpotcoin script addresses start with
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);     // Testnet private keys start with
+        // Testnet voltpotcoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-
+        // Testnet voltpotcoin BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
         // Testnet voltpotcoin BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
@@ -373,20 +358,19 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 20;
-        nStakeMinDepth = 0;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
         nZerocoinStartHeight = 300;
-        nBlockZerocoinV2 = 0;
+        nBlockZerocoinV2 = 300;
         nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
-        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
+
         // Public coin spend enforcement
-        nPublicZCSpends = 0;
+        nPublicZCSpends = 350;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
@@ -453,6 +437,7 @@ public:
     virtual void setSkipProofOfWorkCheck(bool afSkipProofOfWorkCheck) { fSkipProofOfWorkCheck = afSkipProofOfWorkCheck; }
 };
 static CUnitTestParams unitTestParams;
+
 
 static CChainParams* pCurrentParams = 0;
 
