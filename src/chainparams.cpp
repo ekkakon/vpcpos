@@ -138,7 +138,7 @@ public:
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 21000000 * COIN;
+        nMaxMoneyOut = 9999999999 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -240,7 +240,7 @@ public:
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 5; //Block headers must be this version once zerocoin is active
+        nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
         nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zvpc to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
@@ -380,7 +380,7 @@ public:
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
         nZerocoinStartHeight = 300;
-        nBlockZerocoinV2 = 300;
+        nBlockZerocoinV2 = 0;
         nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
@@ -388,7 +388,7 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
         // Public coin spend enforcement
-        nPublicZCSpends = 350;
+        nPublicZCSpends = 0;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
