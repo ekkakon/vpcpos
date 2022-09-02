@@ -4608,7 +4608,7 @@ Bitte haben Sie etwas Geduld...</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZVpcControlDialog</name>
     <message>
         <source>Select zVPC to Spend</source>
         <translation>Wählen Sie die zVPC aus, die Sie ausgeben möchten</translation>
@@ -4989,8 +4989,8 @@ Bitte haben Sie etwas Geduld...</translation>
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The PIVX Core Developers</source>
-        <translation>Copyright (C) 2015-%i The PIVX Core Developers</translation>
+        <source>Copyright (C) 2015-%i The VoltPotCoin Core Developers</source>
+        <translation>Copyright (C) 2015-%i The VoltPotCoin Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
