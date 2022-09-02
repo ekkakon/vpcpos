@@ -529,11 +529,11 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 //Sign block with the zVPC key
                 if (!SignBlockWithKey(*pblock, key)) {
-                    LogPrintf("%s: Signing new block with zVPC key failed \n");
+                    LogPrintf("%s: Signing new block with zVPC key failed \n", __func__);
                     return NULL;
                 }
             } else if (!SignBlock(*pblock, *pwallet)) {
-                LogPrintf("%s: Signing new block with UTXO key failed \n");
+                LogPrintf("%s: Signing new block with UTXO key failed \n", __func__);
                 return NULL;
             }
         }
@@ -704,7 +704,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                           __func__, chainActive.Tip()->nHeight);
                 return;
             }
-        }
+       }
 
         //
         // Create new block
