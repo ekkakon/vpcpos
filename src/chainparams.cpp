@@ -145,8 +145,8 @@ public:
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 0;
-        nZerocoinStartTime = 1623799585;
+        nZerocoinStartHeight = 1;
+        nZerocoinStartTime = 1624830210;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
@@ -240,7 +240,7 @@ public:
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
+        nZerocoinHeaderVersion = 5; //Block headers must be this version once zerocoin is active
         nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zvpc to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
