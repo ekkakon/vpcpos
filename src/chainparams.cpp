@@ -157,7 +157,7 @@ public:
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
-        nBlockStakeModifierlV2 = 999999999;
+        nBlockStakeModifierlV2 = 565000;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -295,7 +295,7 @@ public:
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
-        nBlockStakeModifierlV2 = 999999999;
+        nBlockStakeModifierlV2 = 350000;
 
         // Public coin spend enforcement
         nPublicZCSpends = 1;
