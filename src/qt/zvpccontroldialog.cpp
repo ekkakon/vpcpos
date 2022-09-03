@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +8,7 @@
 #include "zvpc/accumulators.h"
 #include "main.h"
 #include "walletmodel.h"
+#include "guiutil.h"
 
 
 std::set<std::string> ZVpcControlDialog::setSelectedMints;
@@ -28,11 +29,34 @@ ZVpcControlDialog::ZVpcControlDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setMints.clear();
-    privacyDialog = (PrivacyDialog*)parent;
+
+    /* Open CSS when configured */
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
+
+    ui->frame->setProperty("cssClass", "container-dialog");
+
+    // Title
+    ui->labelTitle->setText(tr("Select zVPC Denominations to Spend"));
+    ui->labelTitle->setProperty("cssClass", "text-title-dialog");
+
+
+    // Label Style
+    ui->labelZVpc->setProperty("cssClass", "text-main-purple");
+    ui->labelZVpc_int->setProperty("cssClass", "text-main-purple");
+    ui->labelQuantity->setProperty("cssClass", "text-main-purple");
+    ui->labelQuantity_int->setProperty("cssClass", "text-main-purple");
+
+    ui->layoutAmount->setProperty("cssClass", "container-border-purple");
+    ui->layoutQuantity->setProperty("cssClass", "container-border-purple");
+
+    // Buttons
+
+    ui->btnEsc->setText("");
+    ui->btnEsc->setProperty("cssClass", "ic-close");
+    ui->pushButtonAll->setProperty("cssClass", "btn-check");
 
     // click on checkbox
     connect(ui->treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(updateSelection(QTreeWidgetItem*, int)));
-
     // push select/deselect all button
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
@@ -107,19 +131,6 @@ void ZVpcControlDialog::updateList()
         itemMint->setText(COLUMN_CONFIRMATIONS, QString::number(nConfirmations));
         itemMint->setData(COLUMN_CONFIRMATIONS, Qt::UserRole, QVariant((qlonglong) nConfirmations));
 
-        {
-            LOCK(pwalletMain->zvpcTracker->cs_spendcache);
-
-            CoinWitnessData *witnessData = pwalletMain->zvpcTracker->GetSpendCache(mint.hashStake);
-            if (witnessData->nHeightAccStart > 0  && witnessData->nHeightAccEnd > 0) {
-                int nPercent = std::max(0, std::min(100, (int)((double)(witnessData->nHeightAccEnd - witnessData->nHeightAccStart) / (double)(nBestHeight - witnessData->nHeightAccStart - 220) * 100)));
-                QString percent = QString::number(nPercent) + QString("%");
-                itemMint->setText(COLUMN_PRECOMPUTE, percent);
-            } else {
-                itemMint->setText(COLUMN_PRECOMPUTE, QString("0%"));
-            }
-        }
-
         // check for maturity
         // Always mature, public spends doesn't require any new accumulation.
         bool isMature = true;
@@ -140,7 +151,7 @@ void ZVpcControlDialog::updateList()
             if(nConfirmations < Params().Zerocoin_MintRequiredConfirmations())
                 strReason = strprintf("Needs %d more confirmations", Params().Zerocoin_MintRequiredConfirmations() - nConfirmations);
             else if (model->getEncryptionStatus() == WalletModel::EncryptionStatus::Locked)
-                strReason = "Your wallet is locked. Impossible to precompute or spend zVPC.";
+                strReason = "Your wallet is locked. Impossible to spend zVPC.";
             else if (!mint.isSeedCorrect)
                 strReason = "The zVPC seed used to mint this zVPC is not the same as currently hold in the wallet";
             else
@@ -192,7 +203,7 @@ void ZVpcControlDialog::updateLabels()
     ui->labelQuantity_int->setText(QString::number(setSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZVpcControlLabels(nAmount, setSelectedMints.size());
+    //privacyDialog->setZVpcControlLabels(nAmount, setSelectedMints.size());
 }
 
 std::vector<CMintMeta> ZVpcControlDialog::GetSelectedMints()

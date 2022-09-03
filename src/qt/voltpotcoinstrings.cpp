@@ -36,7 +36,7 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "running."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Change automatic finalized budget voting behavior. mode=auto: Vote for only "
-"exact finalized budget match to my generated budget. (std::string, default: auto)"),
+"exact finalized budget match to my generated budget. (string, default: auto)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Continuously rate-limit free transactions to <n>*1000 bytes per minute "
 "(default:%u)"),
@@ -62,6 +62,8 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Enable automatic wallet backups triggered after each zVPC minting (0-1, "
 "default: %u)"),
+QT_TRANSLATE_NOOP("voltpotcoin-core", ""
+"Enable cold staking functionality (0-1, default: %u). Disabled if staking=0"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Enable or disable staking functionality for VPC inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
@@ -166,9 +168,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Set maximum size of high-priority/low-fee transactions in bytes (default: %d)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
-"Set the number of included blocks to precompute per cycle. (minimum: %d) "
-"(maximum: %d) (default: %d)"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Set the number of script verification threads (%u to %d, 0 = auto, <0 = "
 "leave that many cores free, default: %d)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
@@ -226,6 +225,10 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Warning: -paytxfee is set very high! This is the transaction fee you will "
 "pay if you send a transaction."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
+"Warning: Peers are being disconnected due time differences. Please check "
+"that your computer's date and time are correct! If your clock is wrong VoltPotCoin "
+"Core will not work properly."),
+QT_TRANSLATE_NOOP("voltpotcoin-core", ""
 "Warning: Please check that your computer's date and time are correct! If "
 "your clock is wrong VoltPotCoin Core will not work properly."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", ""
@@ -273,7 +276,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Cannot downgrade wallet"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Cannot resolve -bind address: '%s'"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Cannot resolve -externalip address: '%s'"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Cannot resolve -whitebind address: '%s'"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Cannot write default address"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "CoinSpend: Accumulator witness does not verify"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "CoinSpend: failed check"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Connect only to the specified node(s)"),
@@ -297,7 +299,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Do not load the wallet and disable wallet
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Do you want to rebuild the block database now?"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Done loading"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Enable automatic Zerocoin minting (0-1, default: %u)"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Enable precomputation of zVPC spends and stakes (0-1, default %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Enable publish hash block in <address>"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Enable publish hash transaction (locked via SwiftX) in <address>"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Enable publish hash transaction in <address>"),
@@ -314,7 +315,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Error loading wallet.dat: Wallet corrupte
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error loading wallet.dat: Wallet requires newer version of VoltPotCoin Core"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error opening block database"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error reading from database, shutting down."),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Error recovering public key."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error writing zerocoinDB to disk"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Error: A fatal internal error occured, see debug.log for details"),
@@ -357,7 +357,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Invalid amount"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Invalid masternodeprivkey. Please see documenation."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Invalid netmask specified in -whitelist: '%s'"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Invalid port detected in masternode.conf"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Invalid private key."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Limit size of signature cache to <n> entries (default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Line: %d"),
@@ -379,7 +378,7 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Masternode options:"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Maximum per-connection receive buffer, <n>*1000 bytes (default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Maximum per-connection send buffer, <n>*1000 bytes (default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Mint did not make it into blockchain"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Need address because change is not exact"),
+QT_TRANSLATE_NOOP("voltpotcoin-core", "Need destination or change address because change is not exact"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Need to specify a port with -whitebind: '%s'"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Node relay options:"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Not enough file descriptors available."),
@@ -428,7 +427,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Set the number of threads to service RPC 
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Sets the DB_PRIVATE flag in the wallet db environment (default: %u)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Show all debugging options (usage: --help -help-debug)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Shrink debug.log file on client startup (default: 1 when no -debug)"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "Signing failed."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Signing timed out."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Signing transaction failed"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Specify configuration file (default: %s)"),
@@ -471,6 +469,7 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "Trying to spend an already spent serial #
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to bind to %s on this computer (bind returned error %s)"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to find transaction containing mint %s"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to find transaction containing mint, txHash: %s"),
+QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to generate initial key"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to sign spork message, wrong key?"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unable to start HTTP server. See debug log for details."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Unknown network specified in -onlynet: '%s'"),
@@ -498,7 +497,6 @@ QT_TRANSLATE_NOOP("voltpotcoin-core", "You need to rebuild the database using -r
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Zapping all transactions from wallet..."),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "ZeroMQ notification options:"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "Zerocoin options:"),
-QT_TRANSLATE_NOOP("voltpotcoin-core", "could not get lock on cs_spendcache"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "isValid(): Invalid -proxy address or hostname: '%s'"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "on startup"),
 QT_TRANSLATE_NOOP("voltpotcoin-core", "wallet.dat corrupt, salvage failed"),

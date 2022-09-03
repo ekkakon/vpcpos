@@ -1,21 +1,14 @@
-VoltPotCoin Core version *3.3.0* is now available from:  <https://github.com/voltpotcoin-project/voltpotcoin/releases>
+VoltPotCoin Core version *v4.0.2* is now available from:  <https://github.com/voltpotcoin-project/voltpotcoin/releases>
 
-This is a new major version release, including various bug fixes and performance improvements.
+This is a new revision version release, including various bug fixes and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github: <https://github.com/voltpotcoin-project/voltpotcoin/issues>
 
 
-Mandatory Update
+Recommended Update
 ==============
 
-VoltPotCoin Core v3.4.0 is a mandatory update for all users. This release contains new consensus rules and improvements that are not backwards compatible with older versions. Users will need to update their clients before enforcement of this update goes into effect.
-
-Update enforcement goes into effect at the following times:
-
-    Testnet: Tuesday, August 27, 2019 7:00:00 PM GMT
-    Mainnet: Friday, August 30, 2019 4:00:00 PM GMT
-
-Masternodes will need to be restarted once both the masternode daemon and the controller wallet have been upgraded.
+VoltPotCoin Core v4.0.2 is NOT a mandatory update, and user can choose to stay with v4.0.0/v4.0.1 if they wish. However, v4.0.2 does contain minor bug fixes and performance improvements to address feedback from the v4.0.0/v4.0.1 versions.
 
 How to Upgrade
 ==============
@@ -38,119 +31,63 @@ VoltPotCoin Core should also work on most other Unix-like systems but is not fre
 Notable Changes
 ==============
 
-## Internal (Core) Changes
+Bug Fixes
+--------------
 
-### Version 2 Stake Modifier
+#### Double counting of delegated values
 
-A new 256-bit modifier for the proof of stake protocol has been defined, `CBlockIndex::nStakeModifierV2`.
-It is computed at every block, by taking the hash of the modifier of previous block along with the coinstake input.
-To meet the protocol, the PoS kernel must comprise the modifier of the previous block.
+Fixed a bug where the values/amounts for cold staking delegations was being double counted in the UI's available/total balance calculation.
 
-Changeover enforcement of this new modifier is set to occur at block `1214000` for testnet and block `1967000` for mainnet.
+#### Incorrect sorting for transaction loading
 
-### Block index batch writing
+Fixed a bug where The 20,000 limit for loading wallet transactions was incorrectly sorting these transactions, resulting in the **first** 20,000 transactions to be loaded instead of the **most recent** 20,000 transactions.
 
-Block index writes are now done in a batch. This allows for less frequent disk access, meaning improved performances and less data corruption risks.
+#### No information shown for spent cold stake delegations
 
-### Eliminate needless key generation
+Fixed a bug where the transaction record for spent cold stake delegations was showing as "No information".
 
-The staking process has been improved to no longer request a new (unused) key from the keypool. This should reduce wallet file size bloat as well as slightly improve staking efficiency.
+GUI Changes
+--------------
 
-### Fix crash scenario at wallet startup
+#### Add latest block height to top bar
 
-A program crash bug that happens when the wallet.dat file contains a zc public spend transaction (input) and the user had removed the chain data has been fixed.
+The top bar's sync status button now shows the latest block height (number) when hovering over the button.
 
-## GUI Changes
+#### Coin Control copy functions
 
-### Removal of zero-fee transaction option
+The coin control screen now allows for copying the various values to the OS clipboard
 
-The long term viability of acceptable zero-fee transaction conditions is in need of review. As such, we are temporarily disabling the ability to create zero-fee transactions.
-
-### Show latest block hash and datadir information tab
-
-A QoL addition has been made to the Information tab of the UI's console window, which adds the display of both the current data directory and the latest block hash seen by the client.
-
-## RPC Changes
-
-### Require valid URL scheme when preparing/submitting a proposal
-
-The `preparebudget` and `submitbudget` RPC commands now require the inclusion of a canonical URL scheme as part of their `url` parameter. Strings that don't include either `http://` or `https://` will be rejected.
-
-The 64 character limit for the `url` field is inclusive of this change, so the use of a URL shortening service may be needed.
-
-## Testing Suite Changes
-
-### Functional testing readability
-
-Several changes have been introduced to the travis script in order to make the output more readable. Specifically it now lists tests left to run and prints the output of failing scripts.
-
-## Build System Changes
-
-### OpenSSL configure information
-
-When the configure step fails because of an unsupported OpenSSL (or other library), it now displays more information on using an override flag to compile anyways. The long term plan is to ensure that the consensus code doesn't depend on OpenSSL in any way and then remove this configure step and related override flag.
-
-*3.4.0* Change log
+*v4.0.2* Change log
 ==============
 
-Detailed release notes follow. This overview includes changes that affect behavior, not code moves, refactors and string updates. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
+Detailed release notes follow. For convenience in locating the code changes and accompanying discussion, both the pull request and git merge commit are mentioned.
 
-### Core Features
- - #983 `ac8cb7376d` [PoS] Stake Modifier V2 (random-zebra)
- - #958 `454c487424` [Staking] Modify miner and staking thread for efficiency (Cave Spectre)
- - #915 `9c5a300624` Modify GetNextWorkRequired to set Target Limit correctly (Cave Spectre)
- - #952 `7ab673f6fa` [Staking] Prevent potential negative out values during stake splitting (Cave Spectre)
- - #941 `0ac0116ae4` [Refactor] Move ThreadStakeMinter out of net.cpp (Fuzzbawls)
- - #932 `924ec4f6dd` [Node] Do all block index writes in a batch (Pieter Wuille)
-
-### Build System
- - #934 `92aa6c2daa` [Build] Bump master to 3.3.99 (pre-3.4) (Fuzzbawls)
- - #943 `918852cb90` [Travis] Show functional tests progress (warrows)
- - #957 `2c9f624455` [Build] Add info about '--with-unsupported-ssl' (Warrows)
-
-### P2P Protocol and Network Code
- - #987 `fa1dbab247` [Net] Protocol update enforcement for 70917 and new spork keys (Fuzzbawls)
+### Core
+- #1273 `d114eda990` [Core] Update checkpoints for first v7 block (Fuzzbawls)
 
 ### GUI
- - #933 `e47fe3d379` [Qt] Add blockhash + datadir to information tab (Mrs-X)
+- #1261 `c02cc4acdd` [Bug][GUI] Double counted delegated balance. (furszy)
+- #1267 `350184044d` [Qt][Bug] Load the most recent instead of the first transactions (Fuzzbawls)
+- #1263 `1d0c1bb81c` [GUI] P2CS transaction divided in two types for visual accuracy. (furszy)
+- #1266 `f659cbf1ef` [GUI] Quick minor GUI startup useful changes. (furszy)
+- #1269 `0771075668` [GUI] CoinControlDialog, every copy to clipboard action implemented. (furszy)
+- #1265 `da7c50eca1` [GUI] Connect P2CSUnlockOwner and P2CSUnlockStaker records to the model (random-zebra)
+- #1268 `912cf67847` [GUI] Display latest block number in the top bar (random-zebra)
+- #1279 `c09cd0d40f` [GUI] Transaction record cold staking fixes. (furszy)
 
-### RPC/REST
- - #950 `3d7e16e753` [RPC] require valid URL scheme on budget commands (Cave Spectre)
- - #964 `a03fa6236d` [Refactor] Combine parameter checking of budget commands (Cave Spectre)
- - #965 `b9ce433bd5` [RPC] Correct issues with budget commands (Cave Spectre)
+### Wallet Code
+- #1264 `1a12735df5` [Wallet] Don't add P2CS automatically to GetLockedCredit (random-zebra)
 
-### Wallet
- - #939 `37ad934ad8` [Wallet] Remove (explicitely) unused tx comparator (warrows)
- - #971 `bbeabc4d63` [Wallet][zVPC] zc public spend parse crash in wallet startup. (furszy)
- - #980 `8b81d8f6f9` [Wallet] Remove Bitcoin Core 0.8 block hardlinking (JSKitty)
- - #982 `a0a1af9f78` [Miner] Don't create new keys when generating PoS blocks (random-zebra)
+### Documentation
+- #1272 `d4a9475e40` [Trivial] Update copyright headers for 4.0.2 (Fuzzbawls)
 
-### Test Suites
- - #961 `2269f10fd9` [Trivial][Tests] Do not fail test when warnings are written to stderr (random-zebra)
- - #974 `f9d4ee0b15` [Tests] Add Spork functional test and update RegTest spork key (random-zebra)
- - #976 `12de5ec1dc` [Refactor] Fix stake age checks for regtest (random-zebra)
-
-### Miscellaneous
- - #947 `6ce55eec2d` [Scripts] Sync github-merge.py with upstream (Fuzzbawls)
- - #948 `4a2b4831a9` [Docs] Clean and re-structure the gitian-keys directory (Fuzzbawls)
- - #949 `9e4c3576af` [Refactor] Remove all "using namespace" statements (warrows)
- - #951 `fa40040f80` [Trivial] typo fixes (Cave Spectre)
- - #986 `fdd0cdb72f` [Doc] Release notes update (Fuzzbawls)
-
+### RPC Interface
+- #1274 `f5c3552c96` [RPC] Remove extra PoW rounds in 'generate' (random-zebra)
 
 ## Credits
 
 Thanks to everyone who directly contributed to this release:
-- Cave Spectre
-- Chun Kuan Lee
 - Fuzzbawls
-- Isidoro Ghezzi
-- JSKitty
-- MarcoFalke
-- Mrs-X
-- Pieter Wuille
-- Steven Roose
-- Warrows
 - furszy
 - random-zebra
 

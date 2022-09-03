@@ -1,7 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2011-2013 The PPCoin developers
+// Copyright (c) 2013-2014 The NovaCoin Developers
+// Copyright (c) 2014-2018 The BlackCoin Developers
+// Copyright (c) 2015-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -129,12 +132,6 @@ static const unsigned char REJECT_DUST = 0x41;
 static const unsigned char REJECT_INSUFFICIENTFEE = 0x42;
 static const unsigned char REJECT_CHECKPOINT = 0x43;
 
-/** zVPC precomputing variables
- * Set the number of included blocks to precompute per cycle. */
-static const int DEFAULT_PRECOMPUTE_LENGTH = 1000;
-static const int MIN_PRECOMPUTE_LENGTH = 500;
-static const int MAX_PRECOMPUTE_LENGTH = 2000;
-
 struct BlockHasher {
     size_t operator()(const uint256& hash) const { return hash.GetLow64(); }
 };
@@ -148,8 +145,12 @@ extern uint64_t nLastBlockTx;
 extern uint64_t nLastBlockSize;
 extern const std::string strMessageMagic;
 extern int64_t nTimeBestReceived;
-extern CWaitableCriticalSection csBestBlock;
-extern CConditionVariable cvBlockChange;
+
+// Best block section
+extern CWaitableCriticalSection g_best_block_mutex;
+extern std::condition_variable g_best_block_cv;
+extern uint256 g_best_block;
+
 extern bool fImporting;
 extern bool fReindex;
 extern int nScriptCheckThreads;
@@ -161,17 +162,13 @@ extern CFeeRate minRelayTxFee;
 extern bool fAlerts;
 extern int64_t nMaxTipAge;
 extern bool fVerifyingBlocks;
-extern bool fClearSpendCache;
 
 extern bool fLargeWorkForkFound;
 extern bool fLargeWorkInvalidChainFound;
 
-extern int64_t nLastCoinStakeSearchInterval;
-extern int64_t nLastCoinStakeSearchTime;
 extern int64_t nReserveBalance;
 
 extern std::map<uint256, int64_t> mapRejectedBlocks;
-extern std::map<unsigned int, unsigned int> mapHashedBlocks;
 extern std::map<uint256, int64_t> mapZerocoinspends; //txid, time received
 
 /** Best header we've seen so far (used for getheaders queries' starting points). */
@@ -266,7 +263,6 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
 bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransaction& tx, bool fLimitFree, bool* pfMissingInputs, bool fRejectInsaneFee = false, bool isDSTX = false);
 
 int GetInputAge(CTxIn& vin);
-int GetInputAgeIX(uint256 nTXHash, CTxIn& vin);
 int GetIXConfirmations(uint256 nTXHash);
 
 struct CNodeStateStats {
@@ -355,7 +351,7 @@ bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsVi
 void UpdateCoins(const CTransaction& tx, CValidationState& state, CCoinsViewCache& inputs, CTxUndo& txundo, int nHeight);
 
 /** Context-independent validity checks */
-bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fRejectBadUTXO, CValidationState& state, bool fFakeSerialAttack = false);
+bool CheckTransaction(const CTransaction& tx, bool fZerocoinActive, bool fRejectBadUTXO, CValidationState& state, bool fFakeSerialAttack = false, bool fColdStakingActive=false);
 bool CheckZerocoinMint(const uint256& txHash, const CTxOut& txout, CValidationState& state, bool fCheckOnly = false);
 bool CheckZerocoinSpend(const CTransaction& tx, bool fVerifySignature, CValidationState& state, bool fFakeSerialAttack = false);
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const libzerocoin::CoinSpend* spend, CBlockIndex* pindex, const uint256& hashBlock);
@@ -363,7 +359,7 @@ bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const lib
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx, CTransaction& tx);
 bool IsTransactionInChain(const uint256& txId, int& nHeightTx);
 bool IsBlockHashInChain(const uint256& hashBlock);
-bool ValidOutPoint(const COutPoint out, int nHeight);
+bool ValidOutPoint(const COutPoint& out, int nHeight);
 void AddWrappedSerialsInflation();
 void RecalculateZVPCSpent();
 void RecalculateZVPCMinted();
@@ -375,6 +371,8 @@ bool isBlockBetweenFakeSerialAttackRange(int nHeight);
 
 // Public coin spend
 bool CheckPublicCoinSpendEnforced(int blockHeight, bool isPublicSpend);
+int CurrentPublicCoinSpendVersion();
+bool CheckPublicCoinSpendVersion(int version);
 
 /**
  * Check if transaction will be final in the next block to be created.
@@ -461,7 +459,8 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex);
 bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex, CCoinsViewCache& coins, bool* pfClean = NULL);
 
 /** Reprocess a number of blocks to try and get on the correct chain again **/
-bool DisconnectBlocksAndReprocess(int blocks);
+bool DisconnectBlocks(int nBlocks);
+void ReprocessBlocks(int nBlocks);
 
 /** Apply the effects of this block (with given index) on the UTXO set represented by coins */
 bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pindex, CCoinsViewCache& coins, bool fJustCheck, bool fAlreadyChecked = false);

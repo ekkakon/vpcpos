@@ -658,3 +658,6 @@ TRANSLATIONS += src/qt/locale/voltpotcoin_bg.ts \
                 src/qt/locale/voltpotcoin_vi.ts \
                 src/qt/locale/voltpotcoin_zh_CN.ts \
                 src/qt/locale/voltpotcoin_zh_TW.ts
+
+DISTFILES += \
+    README.md

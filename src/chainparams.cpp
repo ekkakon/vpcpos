@@ -7,6 +7,7 @@
 
 #include "libzerocoin/Params.h"
 #include "chainparams.h"
+#include "consensus/merkle.h"
 #include "random.h"
 #include "util.h"
 #include "utilstrencodings.h"
@@ -99,12 +100,33 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
 bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
         const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
 {
-    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
+    // before stake modifier V2, the age required was 60 * 60 (1 hour). Not required for regtest
     if (!IsStakeModifierV2(contextHeight))
-        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
+        return NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + nStakeMinAge <= contextTime);
 
     // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
     return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
+int CChainParams::FutureBlockTimeDrift(const int nHeight) const
+{
+    if (IsTimeProtocolV2(nHeight))
+        // PoS (TimeV2): 14 seconds
+        return TimeSlotLength() - 1;
+
+    // PoS (TimeV1): 3 minutes
+    // PoW: 2 hours
+    return (nHeight > LAST_POW_BLOCK()) ? nFutureTimeDriftPoS : nFutureTimeDriftPoW;
+}
+
+bool CChainParams::IsValidBlockTimeStamp(const int64_t nTime, const int nHeight) const
+{
+    // Before time protocol V2, blocks can have arbitrary timestamps
+    if (!IsTimeProtocolV2(nHeight))
+        return true;
+
+    // Time protocol v2 requires time in slots
+    return (nTime % TimeSlotLength()) == 0;
 }
 
 class CMainParams : public CChainParams
@@ -126,6 +148,8 @@ public:
         vAlertPubKey = ParseHex("047e77c297991cff7d0ee1eaed3e50eb151c687104a775c0c766a135d76bb9b7dd2e73eb04c8b9bd92b9ac361469c659e22ea99bcf30ac2c3097d8582f46e335b3");
         nDefaultPort = 37572;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // VoltPotCoin starting difficulty is 1 / 2^12
+        bnProofOfStakeLimit = ~uint256(0) >> 24;
+        bnProofOfStakeLimit_V2 = ~uint256(0) >> 20; // 60/4 = 15 ==> use 2**4 higher limit
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
@@ -133,12 +157,17 @@ public:
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetSpacing = 90;
+        nTargetTimespan = 40 * 60;                      // 40 minutes
+        nTimeSlotLength = 15;                           // 15 seconds
+        nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 20;
+        nStakeMinAge = 60 * 60;                         // 1 hour
         nStakeMinDepth = 600;
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 9999999999 * COIN;
+        nMinColdStakingAmount = 1 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
@@ -158,8 +187,19 @@ public:
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 999999999;
+        nBIP65ActivationHeight = 0;
+        // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
+        nBlockTimeProtocolV2 = 999999999;
+
         // Public coin spend enforcement
         nPublicZCSpends = 1;
+
+        // New P2P messages signatures
+        nBlockEnforceNewMessageSignatures = nBlockTimeProtocolV2;
+
+        // Blocks v7
+        nBlockLastAccumulatorCheckpoint = 999999999;
+        nBlockV7StartHeight = nBlockTimeProtocolV2;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 0;
@@ -184,7 +224,7 @@ public:
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04749f0b72d8208d9eb7e5cca30fbb10650646b801e2057d7f91b572310adef3799a049789b4b54694e223a2b937772b79f0f6931bfeaedf14b001fed11de0d6fa") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
-        genesis.hashMerkleRoot = genesis.BuildMerkleTree();
+        genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
         genesis.nTime = 1623799585;
         genesis.nBits = 0x1e0ffff0;
@@ -203,10 +243,11 @@ public:
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 133);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 71);
+        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 63);     // starting with 'S'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 198);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
-        // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+        // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
@@ -271,11 +312,10 @@ public:
         pchMessageStart[3] = 0x86;
         vAlertPubKey = ParseHex("042921e162d8c017b5591148afaaf2773c0052a47f57553465b0e64266f39e1e6f09e83e550678f6a5cc9fd7cadf9f3d2ebbc6f94f786f5afc6811e334681f4471");
         nDefaultPort = 47572;
-        nEnforceBlockUpgradeMajority = 0; // 75%
-        nRejectBlockOutdatedMajority = 0; // 95%
-        nToCheckBlockUpgradeMajority = 0; // 4 days
+        nEnforceBlockUpgradeMajority = 4320; // 75%
+        nRejectBlockOutdatedMajority = 5472; // 95%
+        nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
-        nTargetSpacing = 5 * 60;
         nLastPOWBlock = 200;
         nVoltpotcoinBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915?
         nVoltpotcoinBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915?
@@ -296,9 +336,19 @@ public:
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
         nBlockStakeModifierlV2 = 999999999;
+        nBIP65ActivationHeight = 0;
+        // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
+        nBlockTimeProtocolV2 = 999999999;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 11;
+
+        // New P2P messages signatures
+        nBlockEnforceNewMessageSignatures = nBlockTimeProtocolV2;
+
+        // Blocks v7
+        nBlockLastAccumulatorCheckpoint = nPublicZCSpends - 10;
+        nBlockV7StartHeight = nBlockTimeProtocolV2;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
@@ -316,6 +366,7 @@ public:
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65);  // Testnet voltpotcoin addresses start with
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 66);  // Testnet voltpotcoin script addresses start with
+        base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);     // Testnet private keys start with
         // Testnet voltpotcoin BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
@@ -371,10 +422,10 @@ public:
         nRejectBlockOutdatedMajority = 0;
         nToCheckBlockUpgradeMajority = 0;
         nMinerThreads = 1;
-        nTargetSpacing = 1 * 60;        // VoltPotCoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 20;
+        nStakeMinAge = 0;
         nStakeMinDepth = 0;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -386,9 +437,21 @@ public:
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
-        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
+        nBlockStakeModifierlV2 = nLastPOWBlock + 1; // start with modifier V2 on testnet
+        nBlockTimeProtocolV2 = 999999999;
+
+        nMintRequiredConfirmations = 10;
+        nZerocoinRequiredStakeDepth = nMintRequiredConfirmations;
+
         // Public coin spend enforcement
-        nPublicZCSpends = 0;
+        nPublicZCSpends = 11;
+
+        // Blocks v7
+        nBlockV7StartHeight = nPublicZCSpends + 1;
+        nBlockLastAccumulatorCheckpoint = nPublicZCSpends - 10;
+
+        // New P2P messages signatures
+        nBlockEnforceNewMessageSignatures = 1;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = -1;
@@ -411,6 +474,13 @@ public:
         fMineBlocksOnDemand = true;
         fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
+
+        /* Spork Key for RegTest:
+        WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
+        private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
+        Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
+        */
+        strSporkPubKey = "043969b1b0e6f327de37f297a015d37e2235eaaeeb3933deecd8162c075cee0207b13537618bde640879606001a8136091c62ec272dd0133424a178704e6e75bb7";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
