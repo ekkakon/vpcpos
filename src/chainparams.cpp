@@ -386,8 +386,8 @@ public:
 
         nPoolMaxTransactions = 2;
         nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
-        strSporkKey = "0497e93083785c49f3c0b70406b5b9a34de003a64ad211ed0b9f7e16ed602e5390594ea53b2ae109e1ecef9973734c58dac184058e67320064bc1902ae3ba2141b";
-        strSporkKeyOld = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
+        strSporkPubKey = "0497e93083785c49f3c0b70406b5b9a34de003a64ad211ed0b9f7e16ed602e5390594ea53b2ae109e1ecef9973734c58dac184058e67320064bc1902ae3ba2141b";
+        strSporkPubKeyOld = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
         strObfuscationPoolDummyAddress = "THfnjKWcm9q6o3kFbxUzJm1YpJozxTsjgc";
         nStartMasternodePayments = 1623799585;
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
