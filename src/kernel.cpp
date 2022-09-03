@@ -392,14 +392,14 @@ bool ContextualCheckZerocoinStake(int nPreviousBlockHeight, CStakeInput* stake)
     if (nPreviousBlockHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s : zVPC stake block is less than allowed start height", __func__);
 
-    if (CZPivStake* zVPC = dynamic_cast<CZPivStake*>(stake)) {
+    if (CZVpcStake* zVPC = dynamic_cast<CZVpcStake*>(stake)) {
         CBlockIndex* pindexFrom = zVPC->GetIndexFrom();
         if (!pindexFrom)
             return error("%s : failed to get index associated with zVPC stake checksum", __func__);
 
         int depth = (nPreviousBlockHeight + 1) - pindexFrom->nHeight;
         if (depth < Params().Zerocoin_RequiredStakeDepth())
-            return error("%s : zPIV stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, nPreviousBlockHeight, pindexFrom->nHeight);
+            return error("%s : zVPC stake does not have required confirmation depth. Current height %d,  stakeInput height %d.", __func__, nPreviousBlockHeight, pindexFrom->nHeight);
 
         //The checksum needs to be the exact checksum from 200 blocks ago
         uint256 nCheckpoint200 = chainActive[nPreviousBlockHeight - Params().Zerocoin_RequiredStakeDepth()]->nAccumulatorCheckpoint;
@@ -427,7 +427,7 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         if (spend.getSpendType() != libzerocoin::SpendType::STAKE)
             return error("%s : spend is using the wrong SpendType (%d)", __func__, (int)spend.getSpendType());
 
-        stake = std::unique_ptr<CStakeInput>(new CZPivStake(spend));
+        stake = std::unique_ptr<CStakeInput>(new CZVpcStake(spend));
 
         if (!ContextualCheckZerocoinStake(nPreviousBlockHeight, stake.get()))
             return error("%s : staked zVPC fails context checks", __func__);
@@ -443,7 +443,7 @@ bool initStakeInput(const CBlock block, std::unique_ptr<CStakeInput>& stake, int
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&tx, 0)))
             return error("%s : VerifySignature failed on coinstake %s", __func__, tx.GetHash().ToString().c_str());
 
-        CPivStake* vpcInput = new CPivStake();
+        CVpcStake* vpcInput = new CVpcStake();
         vpcInput->SetInput(txPrev, txin.prevout.n);
         stake = std::unique_ptr<CStakeInput>(vpcInput);
     }

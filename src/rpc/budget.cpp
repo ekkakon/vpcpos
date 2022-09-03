@@ -81,7 +81,7 @@ void checkBudgetInputs(const UniValue& params, std::string &strProposalName, std
 
     address = params[4].get_str();
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PIVX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid VoltPotCoin address");
 
     nAmount = AmountFromValue(params[5]);
 }
@@ -143,7 +143,7 @@ UniValue preparebudget(const UniValue& params, bool fHelp)
     // }
 
     CWalletTx wtx;
-    if (!pwalletMain->GetBudgetSystemCollateralTX(wtx, budgetProposalBroadcast.GetHash(), useIX)) { // 100 VPC collateral for proposal
+    if (!pwalletMain->GetBudgetSystemCollateralTX(wtx, budgetProposalBroadcast.GetHash(), useIX)) { // 50 VPC collateral for proposal
         throw std::runtime_error("Error making collateral transaction for proposal. Please check your wallet balance.");
     }
 
@@ -159,7 +159,7 @@ UniValue submitbudget(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 7)
         throw std::runtime_error(
-            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"voltpotcoin-address\" monthy-payment \"fee-tx\"\n"
+            "submitbudget \"proposal-name\" \"url\" payment-count block-start \"voltpotcoin-address\" monthly-payment \"fee-tx\"\n"
             "\nSubmit proposal to the network\n"
 
             "\nArguments:\n"

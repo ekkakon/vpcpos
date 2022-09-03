@@ -2007,13 +2007,15 @@ int64_t GetBlockValue(int nHeight)
 
     int64_t nSubsidy = 0;
     if (nHeight == 0) {
-     nSubsidy = 746910 * COIN;
-    }
-    else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
-     nSubsidy = 10 * COIN;
-    }
-    else if (nHeight > Params().LAST_POW_BLOCK()) {
-     nSubsidy = 10 * COIN;
+        nSubsidy = 746910 * COIN;
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
+        nSubsidy = 10 * COIN;
+    } else if (nHeight > Params().LAST_POW_BLOCK()) {
+        nSubsidy = 10 * COIN;
+    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
+        nSubsidy = 10 * COIN;
+    } else {
+        nSubsidy = 10 * COIN;
     }
     return nSubsidy;
 }
@@ -2262,15 +2264,17 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight <= 250000) {
-        ret = blockValue * 0.4;
+    if (nHeight <= 1000) {
+    ret = blockValue ;
+    } else if (nHeight > 1000) {
+        ret = blockValue / (100 / 30);
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
-        //When zVPC is staked, masternode only gets 2 PIV
-        ret = 3 * COIN;
+        //When zVPC is staked, masternode only gets 4 VPC
+        ret = 6 * COIN;
         if (isZVPCStake)
-            ret = 2 * COIN;
+            ret = 4 * COIN;
     }
 
     return ret;
@@ -3358,7 +3362,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zVPCSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zVpcSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -4497,8 +4501,15 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
         return true;
     }
 
-    if (block.nBits != nBitsRequired)
+    if (block.nBits != nBitsRequired) {
+        // Voltpotcoin Specific reference to the block with the wrong threshold was used.
+        if ((block.nTime == (uint32_t) Params().VoltpotcoinBadBlockTime()) && (block.nBits == (uint32_t) Params().VoltpotcoinBadBlocknBits())) {
+            // accept VoltPotCoin block minted with incorrect proof of work threshold
+            return true;
+        }
+
         return error("%s : incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
+    }
 
     return true;
 }
@@ -4538,22 +4549,11 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
     if (pcheckpoint && nHeight < pcheckpoint->nHeight)
         return state.DoS(0, error("%s : forked chain older than last checkpoint (height %d)", __func__, nHeight));
 
-    // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 2 && CBlockIndex::IsSuperMajority(2, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=1 block", __func__),
-            REJECT_OBSOLETE, "bad-version");
-    }
-
-    // Reject block.nVersion=2 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 3 && CBlockIndex::IsSuperMajority(3, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=2 block", __func__),
-            REJECT_OBSOLETE, "bad-version");
-    }
-
-    // Reject block.nVersion=4 blocks when 95% (75% on testnet) of the network has upgraded:
-    if (block.nVersion < 5 && CBlockIndex::IsSuperMajority(5, pindexPrev, Params().RejectBlockOutdatedMajority())) {
-        return state.Invalid(error("%s : rejected nVersion=4 block", __func__),
-            REJECT_OBSOLETE, "bad-version");
+    // Reject block.nVersion=1, ..., CURRENT_VERSION-1 blocks when 95% (75% on testnet) of the network has upgraded:
+    for (int version = 2; version <= CBlockHeader::CURRENT_VERSION; version++) {
+        if (block.nVersion < version && CBlockIndex::IsSuperMajority(version, pindexPrev, Params().RejectBlockOutdatedMajority())) {
+            return state.Invalid(error("%s : rejected nVersion=%d block", __func__, block.nVersion), REJECT_OBSOLETE, "bad-version");
+        }
     }
 
     return true;
@@ -4872,8 +4872,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
             // Now that this loop if completed. Check if we have zVPC inputs.
             if(hasZVPCInputs){
-                for (const CTxIn& zVPCInput : zVPCInputs) {
-                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zVPCInput);
+                for (const CTxIn& zVpcInput : zVPCInputs) {
+                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zVpcInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4935,8 +4935,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zVPCInput : zVPCInputs) {
-                        libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zVPCInput);
+                for (const CTxIn& zVpcInput : zVPCInputs) {
+                        libzerocoin::CoinSpend spend = TxInToZerocoinSpend(zVpcInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, &spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                     stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zvpc");

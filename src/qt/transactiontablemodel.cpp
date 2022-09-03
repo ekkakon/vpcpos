@@ -365,7 +365,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
         return tr("Spent zVPC");
     case TransactionRecord::RecvFromZerocoinSpend:
         return tr("Received VPC from zVPC");
-    case TransactionRecord::ZerocoinSpend_Change_zPiv:
+    case TransactionRecord::ZerocoinSpend_Change_zVpc:
         return tr("Minted Change as zVPC from zVPC Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
         return tr("Converted zVPC to VPC");
@@ -423,7 +423,7 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord* wtx, b
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::ZerocoinMint:
-    case TransactionRecord::ZerocoinSpend_Change_zPiv:
+    case TransactionRecord::ZerocoinSpend_Change_zVpc:
         return tr("Anonymous (zVPC Transaction)");
     case TransactionRecord::StakeZVPC:
         return tr("Anonymous (zVPC Stake)");
@@ -738,13 +738,13 @@ static void ShowProgress(TransactionTableModel* ttm, const std::string& title, i
 void TransactionTableModel::subscribeToCoreSignals()
 {
     // Connect signals to wallet
-    wallet->NotifyTransactionChanged.connect(boost::bind(NotifyTransactionChanged, this, boost::placeholders::_1, boost::placeholders::_2, boost::placeholders::_3));
-    wallet->ShowProgress.connect(boost::bind(ShowProgress, this, boost::placeholders::_1, boost::placeholders::_2));
+    wallet->NotifyTransactionChanged.connect(boost::bind(NotifyTransactionChanged, this, _1, _2, _3));
+    wallet->ShowProgress.connect(boost::bind(ShowProgress, this, _1, _2));
 }
 
 void TransactionTableModel::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from wallet
-    wallet->NotifyTransactionChanged.disconnect(boost::bind(NotifyTransactionChanged, this, boost::placeholders::_1, boost::placeholders::_2, boost::placeholders::_3));
-    wallet->ShowProgress.disconnect(boost::bind(ShowProgress, this, boost::placeholders::_1, boost::placeholders::_2));
+    wallet->NotifyTransactionChanged.disconnect(boost::bind(NotifyTransactionChanged, this, _1, _2, _3));
+    wallet->ShowProgress.disconnect(boost::bind(ShowProgress, this, _1, _2));
 }

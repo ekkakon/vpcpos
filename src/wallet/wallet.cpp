@@ -1812,7 +1812,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             //add to our stake set
             nAmountSelected += out.tx->vout[out.i].nValue;
 
-            std::unique_ptr<CPivStake> input(new CPivStake());
+            std::unique_ptr<CVpcStake> input(new CVpcStake());
             input->SetInput((CTransaction) *out.tx, out.i);
             listInputs.emplace_back(std::move(input));
         }
@@ -1829,7 +1829,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             nTimeLastUpdate = GetAdjustedTime();
         }
 
-        set<CMintMeta> setMints = zvpcTracker->ListMints(true, true, fUpdate);
+        std::set<CMintMeta> setMints = zvpcTracker->ListMints(true, true, fUpdate);
         for (auto meta : setMints) {
             if (meta.hashStake == 0) {
                 CZerocoinMint mint;
@@ -1843,8 +1843,8 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             if (meta.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
             if (meta.nHeight < chainActive.Height() - Params().Zerocoin_RequiredStakeDepth()) {
-                std::unique_ptr<CZPivStake> input(new CZPivStake(meta.denom, meta.hashStake));
-                listInputs.emplace_back(std::move(input));
+                std::unique_ptr<CZVpcStake> input(new CZVpcStake(meta.denom, meta.hashStake));
+                std::listInputs.emplace_back(std::move(input));
             }
         }
     }
@@ -2041,7 +2041,7 @@ bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useI
     CAmount nFeeRet = 0;
     std::string strFail = "";
     std::vector<std::pair<CScript, CAmount> > vecSend;
-    vecSend.push_back(std::make_pair(scriptChange, BUDGET_FEE_TX_OLD)); // Old 100 VPC collateral
+    vecSend.push_back(std::make_pair(scriptChange, BUDGET_FEE_TX_OLD)); // Old 50 VPC collateral
 
     CCoinControl* coinControl = NULL;
     bool success = CreateTransaction(vecSend, tx, reservekey, nFeeRet, strFail, coinControl, ALL_COINS, useIX, (CAmount)0);
@@ -2443,7 +2443,7 @@ bool CWallet::CreateCoinStake(
 
             //Mark mints as spent
             if (stakeInput->IsZVPC()) {
-                CZPivStake* z = (CZPivStake*)stakeInput.get();
+                CZVpcStake* z = (CZVpcStake*)stakeInput.get();
                 if (!z->MarkSpent(this, txNew.GetHash()))
                     return error("%s: failed to mark mint as used\n", __func__);
             }
@@ -3834,7 +3834,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
     }
 
     //any change that is less than 0.0100000 will be ignored and given as an extra fee
-    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Piv
+    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Vpc
     CAmount nChange = nValueIn - nTotalValue; // Fee already accounted for in nTotalValue
     if (nChange > 1 * CENT && !isZCSpendChange) {
         // Fill a vout to ourself using the largest contributing address
@@ -4488,7 +4488,7 @@ std::string CWallet::GetUniqueWalletBackupName(bool fzvpcAuto) const
     return strprintf("wallet%s.dat%s", fzvpcAuto ? "-autozvpcbackup" : "", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
 }
 
-void CWallet::ZPivBackupWallet()
+void CWallet::ZVpcBackupWallet()
 {
     boost::filesystem::path backupDir = GetDataDir() / "backups";
     boost::filesystem::path backupPath;
@@ -4609,7 +4609,7 @@ std::string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, std::vector
 
     //Create a backup of the wallet
     if (fBackupMints)
-        ZPivBackupWallet();
+        ZVpcBackupWallet();
 
     return "";
 }
@@ -4631,7 +4631,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     }
 
     if (fMintChange && fBackupMints)
-        ZPivBackupWallet();
+        ZVpcBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {
