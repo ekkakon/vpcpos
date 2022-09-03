@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="img-empty-transactions.svg"
+   version="1.1"
+   viewBox="0 0 100 100"
+   height="100"
+   width="100"
+   id="ic_empty_transactions">
+  <metadata
+     id="metadata32">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="ic_empty_transactions"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="50"
+     inkscape:cx="62.220117"
+     inkscape:zoom="6.18"
+     showgrid="false"
+     id="namedview30"
+     inkscape:window-height="871"
+     inkscape:window-width="1337"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs12">
+    <style
+       id="style10"
+       type="text/css">
+            .cls-1{fill:#d6d6d6}.cls-2{fill:#666}.cls-3{fill:none}
+        </style>
+  </defs>
+  <g
+     id="g79">
+    <g
+       id="Group_9013"
+       data-name="Group 9013">
+      <path
+         id="Path_18972"
+         d="M 50,31 A 19,19 0 1 0 69,50 19.021,19.021 0 0 0 50,31 Z m 0,36 A 17,17 0 1 1 67,50 17.019,17.019 0 0 1 50,67 Z"
+         class="cls-2"
+         data-name="Path 18972" />
+      <path
+         id="Rectangle_4664"
+         d="M 0,0 H 2 V 4 H 0 Z"
+         class="cls-2"
+         data-name="Rectangle 4664"
+         transform="translate(83,56)" />
+      <path
+         id="Rectangle_4665"
+         d="M 0,0 H 2 V 8 H 0 Z"
+         class="cls-2"
+         data-name="Rectangle 4665"
+         transform="translate(83,44)" />
+      <path
+         id="Rectangle_4666"
+         d="M 0,0 H 2 V 8 H 0 Z"
+         class="cls-2"
+         data-name="Rectangle 4666"
+         transform="translate(15,48)" />
+      <path
+         id="Rectangle_4667"
+         d="M 0,0 H 2 V 4 H 0 Z"
+         class="cls-2"
+         data-name="Rectangle 4667"
+         transform="translate(15,40)" />
+      <path
+         id="Path_18973"
+         d="M 95.162,71 H 85 v -7 h -2 v 9 h 7.838 L 76,90.456 61.162,73 H 68 V 71 H 63.539 A 24.989,24.989 0 0 0 41.139,26.626 L 24,6.456 4.838,29 H 15 v 7 h 2 V 27 H 9.162 L 24,9.544 38.838,27 H 32 v 2 h 4.461 a 24.989,24.989 0 0 0 22.4,44.374 L 76,93.544 Z M 27,50 A 23,23 0 1 1 50,73 23.026,23.026 0 0 1 27,50 Z"
+         class="cls-2"
+         data-name="Path 18973" />
+    </g>
+    <path
+       id="Rectangle_4668"
+       d="M0 0h100v100H0z"
+       class="cls-3"
+       data-name="Rectangle 4668" />
+    <g
+       id="g65">
+      <path
+         id="Path_18970"
+         d="M 50,26 A 24,24 0 1 0 74,50 24,24 0 0 0 50,26 Z m 0,42 A 18,18 0 1 1 68,50 18,18 0 0 1 50,68 Z"
+         class="cls-1"
+         data-name="Path 18970" />
+      <text
+         id="text60"
+         y="54.692554"
+         x="35.436897"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33329999999999949px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#666666;fill-opacity:1;stroke:none;"
+         xml:space="preserve"><tspan
+           y="54.692554"
+           x="35.436897"
+           id="tspan58"
+           sodipodi:role="line">VPC</tspan></text>
+    </g>
+  </g>
+</svg>
