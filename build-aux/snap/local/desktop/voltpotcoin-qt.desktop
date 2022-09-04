@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=VoltPotCoin Core
+Comment=VoltPotCoin Core QT main network
+GenericName=VoltPotCoin Digital Currency QT client main network
+Exec=voltpotcoin-core.qt %u
+Terminal=false
+Type=Application
+Icon=${SNAP}/share/pixmaps/voltpotcoin.png
+MimeType=x-scheme-handler/voltpotcoin;
+Categories=X-Office;X-Finance;
+Keywords=internet;voltpotcoin;zvpc;vpc;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0

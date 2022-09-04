@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=VoltPotCoin Core Daemon SNAP
+Comment=testnet
+GenericName=VoltPotCoin Digital Currency Daemon Client testnet network
+Exec=voltpotcoin-core.daemon-testnet %u
+Terminal=true
+Type=Application
+Icon=${SNAP}/share/pixmaps/voltpotcoin_testnet.png
+MimeType=x-scheme-handler/vpc;
+Categories=X-Office;X-Finance;
+Keywords=internet;voltpotcoin;zvpc;core;wallet;daemon;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0
