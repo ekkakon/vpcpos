@@ -153,11 +153,11 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 575000; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
-        nBlockStakeModifierlV2 = 565000;
+        nBlockStakeModifierlV2 = 570000;
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -271,11 +271,11 @@ public:
         pchMessageStart[3] = 0x86;
         vAlertPubKey = ParseHex("042921e162d8c017b5591148afaaf2773c0052a47f57553465b0e64266f39e1e6f09e83e550678f6a5cc9fd7cadf9f3d2ebbc6f94f786f5afc6811e334681f4471");
         nDefaultPort = 47572;
-        nEnforceBlockUpgradeMajority = 0; // 75%
-        nRejectBlockOutdatedMajority = 0; // 95%
-        nToCheckBlockUpgradeMajority = 0; // 4 days
+        nEnforceBlockUpgradeMajority = 4320; // 75%
+        nRejectBlockOutdatedMajority = 5472; // 95%
+        nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
-        nTargetSpacing = 5 * 60;
+        nTargetSpacing = 1 * 60;
         nLastPOWBlock = 200;
         nVoltpotcoinBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915?
         nVoltpotcoinBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915?
@@ -292,11 +292,10 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 355000; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
         nBlockStakeModifierlV2 = 350000;
-
         // Public coin spend enforcement
         nPublicZCSpends = 1;
 
@@ -367,9 +366,9 @@ public:
         pchMessageStart[3] = 0x1b;
         nDefaultPort = 51476;
         nSubsidyHalvingInterval = 150;
-        nEnforceBlockUpgradeMajority = 0;
-        nRejectBlockOutdatedMajority = 0;
-        nToCheckBlockUpgradeMajority = 0;
+        nEnforceBlockUpgradeMajority = 750;
+        nRejectBlockOutdatedMajority = 950;
+        nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
         nTargetSpacing = 1 * 60;        // VoltPotCoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -411,6 +410,13 @@ public:
         fMineBlocksOnDemand = true;
         fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
+
+        /* Spork Key for RegTest:
+        WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
+        private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
+        Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
+        */
+        strSporkKey = "043969b1b0e6f327de37f297a015d37e2235eaaeeb3933deecd8162c075cee0207b13537618bde640879606001a8136091c62ec272dd0133424a178704e6e75bb7";
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
