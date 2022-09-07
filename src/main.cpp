@@ -2264,8 +2264,10 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight <= 250000) {
-    ret = blockValue / (100 / 40);
+    if (nHeight <= 1000) {
+        ret = blockValue ;
+    } else if (nHeight > 1000) {
+        ret = blockValue / (100 / 40);
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
