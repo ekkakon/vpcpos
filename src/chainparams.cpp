@@ -156,7 +156,7 @@ public:
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetSpacing = 90;
+        nTargetSpacing = 1 * 60;                        // 1 minute
         nTargetTimespan = 40 * 60;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
@@ -173,11 +173,11 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
-        nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 0;
-        nZerocoinStartTime = 1623799585;
+        nModifierUpdateBlock = 1;
+        nZerocoinStartHeight = 1;
+        nZerocoinStartTime = 1624830210;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 572000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
@@ -187,7 +187,7 @@ public:
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 570000;
-        nBIP65ActivationHeight = 0;
+        nBIP65ActivationHeight = 1;
         // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
         nBlockTimeProtocolV2 = 999999999;
 
@@ -322,10 +322,10 @@ public:
         nMaturity = 15;
         nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
-        nModifierUpdateBlock = 0;
+        nModifierUpdateBlock = 1;
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 0;
-        nZerocoinStartTime = 1623799585;
+        nZerocoinStartHeight = 1;
+        nZerocoinStartTime = 1624830210;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
@@ -432,11 +432,11 @@ public:
         nMaxMoneyOut = 43199500 * COIN;
         nZerocoinStartHeight = 300;
         nBlockZerocoinV2 = 0;
-        nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nZerocoinStartTime = 1624830210;
+        nBlockEnforceSerialRange = 1;               // Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999;  // Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 999999999;          // First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999;       // Last valid accumulator checkpoint
         nBlockStakeModifierlV2 = nLastPOWBlock + 1; // start with modifier V2 on testnet
         nBlockTimeProtocolV2 = 999999999;
 
