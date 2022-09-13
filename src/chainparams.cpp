@@ -359,7 +359,7 @@ public:
         genesis.nNonce = 0x1;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256(""));
+        assert(hashGenesisBlock == uint256("0"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
