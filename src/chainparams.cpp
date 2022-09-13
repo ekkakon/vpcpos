@@ -355,8 +355,8 @@ public:
         nSupplyBeforeFakeSerial = 0;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = ;
-        genesis.nNonce = ;
+        genesis.nTime = 0x1;
+        genesis.nNonce = 0x1;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256(""));
