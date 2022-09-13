@@ -359,7 +359,7 @@ public:
         genesis.nNonce = 21208033;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -377,7 +377,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
