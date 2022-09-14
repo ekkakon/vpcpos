@@ -360,6 +360,8 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
+        assert(genesis.hashMerkleRoot == uint256("0x17d4e3d9d8d8fb1d291fe8ca9b156e744f78227ac743b4f9e6b9efc60e955995"));
+
 
         vFixedSeeds.clear();
         vSeeds.clear();
