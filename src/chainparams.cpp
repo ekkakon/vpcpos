@@ -355,12 +355,12 @@ public:
         nSupplyBeforeFakeSerial = 0;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1663140111;
-        genesis.nNonce = 702955;
+        genesis.nTime = 1623799585;
+        genesis.nNonce = 1734255;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("00000b3dc354bbc99d564757c5dbffe534332ce90419852fb1c156400457dc7c"));
-        assert(genesis.hashMerkleRoot == uint256("937b8723b82b617c4dee7c45823037b8c7a0eb3bf6f274ba925be8c1d0e8741e"));
+        assert(hashGenesisBlock == uint256("0000001a0297e5d6b5eb5f9b7e54aedffbc0a1962444b4a84bab0b858825852c"));
+        assert(genesis.hashMerkleRoot == uint256("2f5ec0331fea3e2e07466524bd6eb91d40da0f4c0934a141ddae2067bca8a535"));
 
 
         vFixedSeeds.clear();
