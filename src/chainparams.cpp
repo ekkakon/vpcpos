@@ -359,7 +359,7 @@ public:
         genesis.nNonce = 1734255;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0000001a0297e5d6b5eb5f9b7e54aedffbc0a1962444b4a84bab0b858825852c"));
+        assert(hashGenesisBlock == uint256("0x00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
         assert(genesis.hashMerkleRoot == uint256("2f5ec0331fea3e2e07466524bd6eb91d40da0f4c0934a141ddae2067bca8a535"));
 
 
