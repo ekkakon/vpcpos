@@ -316,6 +316,7 @@ public:
         nRejectBlockOutdatedMajority = 5472; // 95%
         nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
+        nTargetSpacing = 1 * 60;
         nLastPOWBlock = 200;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #915?
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 201 per PR #915?
