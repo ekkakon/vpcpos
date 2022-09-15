@@ -81,22 +81,22 @@ private:
 private slots:
     void on_payTo_textChanged(const QString& address);
     void on_addressBookButton_clicked();
-//    void coinControlFeatureChanged(bool);
-// MINT disabled   void coinControlButtonClicked();
-//    void coinControlChangeChecked(int);
-//    void coinControlChangeEdited(const QString&);
-// MINT disabled    void coinControlUpdateLabels();
+    void coinControlFeatureChanged(bool);
+    void coinControlButtonClicked();
+    void coinControlChangeChecked(int);
+    void coinControlChangeEdited(const QString&);
+    void coinControlUpdateLabels();
 
-// MINT disabled    void coinControlClipboardQuantity();
-// MINT disabled    void coinControlClipboardAmount();
-//    void coinControlClipboardFee();
-//    void coinControlClipboardAfterFee();
-//    void coinControlClipboardBytes();
-//    void coinControlClipboardPriority();
-//    void coinControlClipboardLowOutput();
-//    void coinControlClipboardChange();
+    void coinControlClipboardQuantity();
+    void coinControlClipboardAmount();
+    void coinControlClipboardFee();
+    void coinControlClipboardAfterFee();
+    void coinControlClipboardBytes();
+    void coinControlClipboardPriority();
+    void coinControlClipboardLowOutput();
+    void coinControlClipboardChange();
 
-// MINT disabled    void on_pushButtonMintzVPC_clicked();
+    void on_pushButtonMintzVPC_clicked();
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
     void on_pushButtonSpendzVPC_clicked();
