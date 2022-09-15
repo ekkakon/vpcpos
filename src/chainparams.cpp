@@ -286,8 +286,8 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0;
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 999999999;
-        nZerocoinStartTime = 1665689075;
+        nZerocoinStartHeight = 0;
+        nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged

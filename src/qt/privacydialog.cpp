@@ -36,11 +36,11 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
 
     // "Spending 999999 zVPC ought to be enough for anybody." - Bill Gates, 2017
     ui->zVPCpayAmount->setValidator( new QDoubleValidator(0.0, 21000000.0, 20, this) );
-    ui->labelMintAmountValue->setValidator( new QIntValidator(0, 999999, this) );     // disable MINT
+    //ui->labelMintAmountValue->setValidator( new QIntValidator(0, 999999, this) );     // disable MINT
 
     // Default texts for (mini-) coincontrol
-    ui->labelCoinControlQuantity->setText (tr("Coins automatically selected"));       // disable MINT
-    ui->labelCoinControlAmount->setText (tr("Coins automatically selected"));         // disable MINT
+    //ui->labelCoinControlQuantity->setText (tr("Coins automatically selected"));       // disable MINT
+    //ui->labelCoinControlAmount->setText (tr("Coins automatically selected"));         // disable MINT
     ui->labelzVPCSyncStatus->setText("(" + tr("out of sync") + ")");
 
     // Sunken frame for minting messages
@@ -50,7 +50,7 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
     ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
 
     // Coin Control signals
-
+    /*                                                                            [disable MINT and coinControl]
     connect(ui->pushButtonCoinControl, SIGNAL(clicked()), this, SLOT(coinControlButtonClicked()));
 
     // Coin Control: clipboard actions
@@ -157,7 +157,8 @@ void PrivacyDialog::on_addressBookButton_clicked()
         ui->zVPCpayAmount->setFocus();
     }
 }
-
+/* disable MINT
+ *
 void PrivacyDialog::on_pushButtonMintzVPC_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
@@ -523,6 +524,8 @@ void PrivacyDialog::on_payTo_textChanged(const QString& address)
 {
     updateLabel(address);
 }
+
+/* DISABLE MINTs: no need for coinCointrol
 
 // Coin Control: copy label "Quantity" to clipboard
 void PrivacyDialog::coinControlClipboardQuantity()
