@@ -161,7 +161,7 @@ public:
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 570000;
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 1880000;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 0;
