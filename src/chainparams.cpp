@@ -140,12 +140,12 @@ public:
         nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
-        nBlockDoubleAccumulated = 1;
+        nBlockDoubleAccumulated = 570000;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 570100;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 1;
