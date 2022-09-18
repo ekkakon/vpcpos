@@ -148,7 +148,7 @@ public:
         nPublicZCSpends = 8;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 7;
+        nFakeSerialBlockheightEnd = 0;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
