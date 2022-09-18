@@ -140,7 +140,7 @@ public:
         nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
-        nBlockDoubleAccumulated = 1;
+        nBlockDoubleAccumulated = 0;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
 
