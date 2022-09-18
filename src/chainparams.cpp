@@ -133,23 +133,23 @@ public:
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 570400; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 1; //First block that bad serials emerged
+        nBlockEnforceSerialRange = 3; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 5; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 2; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
+        nBlockEnforceInvalidUTXO = 4; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
-        nBlockDoubleAccumulated = 0;
+        nBlockDoubleAccumulated = 6;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 8;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 2;
-        nSupplyBeforeFakeSerial = 568897;   // zerocoin supply at block nFakeSerialBlockheightEnd
+        nFakeSerialBlockheightEnd = 7;
+        nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
