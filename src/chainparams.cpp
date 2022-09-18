@@ -53,11 +53,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
+    (0, uint256("00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"))
+    (1, uint256("00000b0deed53c170138c2a72267c6c0e75f305e4b74412d8f6bb4f9cfc72920")) //first checkpoint
+;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1623799585, // * UNIX timestamp of last checkpoint block
-    0,    // * total number of transactions between genesis and last checkpoint
+    1624830210, // * UNIX timestamp of last checkpoint block
+    1,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
 };
@@ -145,11 +147,11 @@ public:
         nRejectOldSporkKey = 1527811200;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 8;
+        nPublicZCSpends = 1;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 0;
-        nSupplyBeforeFakeSerial = 1706691;   // zerocoin supply at block nFakeSerialBlockheightEnd
+        nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
