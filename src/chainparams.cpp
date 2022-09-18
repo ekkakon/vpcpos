@@ -131,24 +131,24 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 1;
+        nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 3; //Enforce serial range starting this block
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 570400; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 2; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 4; //Start enforcing the invalid UTXO's
+        nBlockFirstFraudulent = 1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
-        nBlockDoubleAccumulated = 5;
+        nBlockDoubleAccumulated = 1;
         nEnforceNewSporkKey = 1623799585;
         nRejectOldSporkKey = 1527811200;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 2;
+        nPublicZCSpends = 1;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 6;
+        nFakeSerialBlockheightEnd = 1;
         nSupplyBeforeFakeSerial = 568897;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
