@@ -130,9 +130,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // VoltPotCoin starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 8100; // 75%
-        nRejectBlockOutdatedMajority = 10260; // 95%
-        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nEnforceBlockUpgradeMajority = 0; // 75%
+        nRejectBlockOutdatedMajority = 0; // 95%
+        nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetSpacing = 90;
         nMaturity = 20;
@@ -147,24 +147,24 @@ public:
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 1;
+        nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 4000; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 571695; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 1; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 11000; //Start enforcing the invalid UTXO's
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 571710; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 572000; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 585000;
         // Public coin spend enforcement
-        nPublicZCSpends = 575000;
+        nPublicZCSpends = 1;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 571650;
+        nFakeSerialBlockheightEnd = 0;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
