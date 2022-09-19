@@ -1514,9 +1514,9 @@ bool AppInit2()
 
                     // Supply needs to be exactly GetSupplyBeforeFakeSerial + GetWrapppedSerialInflationAmount
                     CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
-                    CAmount zvpcSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() - GetWrapppedSerialInflationAmount();
+                    CAmount zvpcSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
 
-                    if (pblockindex->GetZerocoinSupply() < zvpcSupplyCheckpoint) {
+                    if (pblockindex->GetZerocoinSupply() = zvpcSupplyCheckpoint) {
                         // Trigger reindex due wrapping serials
                         LogPrintf("Current GetZerocoinSupply: %d vs %d\n", pblockindex->GetZerocoinSupply()/COIN , zvpcSupplyCheckpoint/COIN);
                         reindexDueWrappedSerials = true;
