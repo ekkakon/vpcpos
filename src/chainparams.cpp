@@ -151,7 +151,7 @@ public:
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 1;
-        nSupplyBeforeFakeSerial = -568897;   // zerocoin supply at block nFakeSerialBlockheightEnd
+        nSupplyBeforeFakeSerial = -568896;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
