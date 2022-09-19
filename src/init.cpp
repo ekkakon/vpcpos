@@ -1513,7 +1513,7 @@ bool AppInit2()
                 if(Params().NetworkID() == CBaseChainParams::MAIN && chainHeight > Params().Zerocoin_Block_EndFakeSerial()) {
 
                     // Supply needs to be exactly GetSupplyBeforeFakeSerial + GetWrapppedSerialInflationAmount
-                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() - 1];
+                    CBlockIndex* pblockindex = chainActive[Params().Zerocoin_Block_EndFakeSerial() + 1];
                     CAmount zvpcSupplyCheckpoint = Params().GetSupplyBeforeFakeSerial() + GetWrapppedSerialInflationAmount();
 
                     if (pblockindex->GetZerocoinSupply() < zvpcSupplyCheckpoint) {
