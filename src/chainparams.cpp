@@ -147,10 +147,10 @@ public:
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
         nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 1;
+        nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585;
         nBlockEnforceSerialRange = 4000; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 572000; //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 573200; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 11000; //Start enforcing the invalid UTXO's
