@@ -152,7 +152,7 @@ public:
         nBlockEnforceSerialRange = 4000; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 572000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
+        nBlockLastGoodCheckpoint = 572500; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 11000; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 572500;
