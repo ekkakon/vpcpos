@@ -146,16 +146,16 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
-        nModifierUpdateBlock = 1;
+        nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 0;
         nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 4000; //Enforce serial range starting this block
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 1; //First block that bad serials emerged
+        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 11000; //Start enforcing the invalid UTXO's
+        nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 573000;
+        nBlockZerocoinV2 = 573090;
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
@@ -164,7 +164,7 @@ public:
         nPublicZCSpends = 999999999;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 571650;
+        nFakeSerialBlockheightEnd = 999999999;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
