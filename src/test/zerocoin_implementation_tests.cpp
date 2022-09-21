@@ -129,7 +129,7 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
     for (const CTxOut& out : tx.vout) {
         txTemp.vout.push_back(out);
     }
-    //    uint256 hashTxOut = txTemp.GetHash();
+        uint256 hashTxOut = txTemp.GetHash();
 
     bool fValidated = false;
     std::set<CBigNum> serials;
@@ -163,25 +163,25 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         }
 
         //make sure the txout has not changed
-//        if (newSpend.getTxOutHash() != hashTxOut) {
-//            strError = "Zerocoinspend does not use the same txout that was used in the SoK";
-//            return false;
-//        }
+        if (newSpend.getTxOutHash() != hashTxOut) {
+            strError = "Zerocoinspend does not use the same txout that was used in the SoK";
+            return false;
+        }
 
-//        //see if we have record of the accumulator used in the spend tx
-//        CBigNum bnAccumulatorValue = 0;
-//        if (!GetAccumulatorValueFromChecksum(newSpend.getAccumulatorChecksum(), true, bnAccumulatorValue)) {
-//            strError = "Zerocoinspend could not find accumulator associated with checksum";
-//            return false;
-//        }
+        //see if we have record of the accumulator used in the spend tx
+        CBigNum bnAccumulatorValue = 0;
+        if (!GetAccumulatorValueFromChecksum(newSpend.getAccumulatorChecksum(), true, bnAccumulatorValue)) {
+            strError = "Zerocoinspend could not find accumulator associated with checksum";
+            return false;
+        }
 
- //       libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
+        libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
 
-//        //Check that the coin is on the accumulator
-//        if (!newSpend.Verify(accumulator)) {
-//            strError = "CheckZerocoinSpend(): zerocoin spend did not verify";
-//            return false;
-//        }
+        //Check that the coin is on the accumulator
+        if (!newSpend.Verify(accumulator)) {
+            strError = "CheckZerocoinSpend(): zerocoin spend did not verify";
+            return false;
+        }
 
         if (serials.count(newSpend.getCoinSerialNumber())) {
             strError = "Zerocoinspend serial is used twice in the same tx";
@@ -190,8 +190,8 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         serials.insert(newSpend.getCoinSerialNumber());
 
         //cannot check this without database
-       // if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
-       //     return state.DoS(100, error("Zerocoinspend is already known"));
+        if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
+            return state.DoS(100, error("Zerocoinspend is already known"));
 
         //make sure that there is no over redemption of coins
         nTotalRedeemed += libzerocoin::ZerocoinDenominationToAmount(newSpend.getDenomination());
@@ -255,7 +255,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
 
     //Get the checksum of the accumulator we use for the spend and also add it to our checksum map
     uint32_t nChecksum = GetChecksum(accumulator.getValue());
-    //AddAccumulatorChecksum(nChecksum, accumulator.getValue(), true);
+    AddAccumulatorChecksum(nChecksum, accumulator.getValue(), true);
     libzerocoin::CoinSpend coinSpend(Params().Zerocoin_Params(true), Params().Zerocoin_Params(false), privateCoin, accumulator, nChecksum, witness, 0, libzerocoin::SpendType::SPEND);
     std::cout << coinSpend.ToString() << std::endl;
     BOOST_CHECK_MESSAGE(coinSpend.Verify(accumulator), "Coinspend construction failed to create valid proof");
@@ -356,7 +356,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
 
     //Get the checksum of the accumulator we use for the spend and also add it to our checksum map
     uint32_t nChecksum_v2 = GetChecksum(accumulator_v2.getValue());
-    //AddAccumulatorChecksum(nChecksum_v2, accumulator_v2.getValue(), true);
+    AddAccumulatorChecksum(nChecksum_v2, accumulator_v2.getValue(), true);
     uint256 ptxHash = CBigNum::randKBitBignum(256).getuint256();
     libzerocoin::CoinSpend coinSpend_v2(Params().Zerocoin_Params(false), Params().Zerocoin_Params(false), privateCoin_v2, accumulator_v2, nChecksum_v2, witness_v2, ptxHash, libzerocoin::SpendType::SPEND);
 
