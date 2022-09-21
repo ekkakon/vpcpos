@@ -190,8 +190,8 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         serials.insert(newSpend.getCoinSerialNumber());
 
         //cannot check this without database
-        if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
-            return state.DoS(100, error("Zerocoinspend is already known"));
+ //       if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
+ //           return state.DoS(100, error("Zerocoinspend is already known"));
 
         //make sure that there is no over redemption of coins
         nTotalRedeemed += libzerocoin::ZerocoinDenominationToAmount(newSpend.getDenomination());
