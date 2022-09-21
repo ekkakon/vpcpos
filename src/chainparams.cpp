@@ -147,7 +147,7 @@ public:
         nRejectOldSporkKey = 1527811200;
 
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 1003;
 
         // Fake Serial Attack
         nFakeSerialBlockheightEnd = 1002;
