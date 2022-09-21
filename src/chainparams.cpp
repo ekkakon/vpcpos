@@ -53,8 +53,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"))
-    (1, uint256("00000b0deed53c170138c2a72267c6c0e75f305e4b74412d8f6bb4f9cfc72920")) //first checkpoint
-;
+    (1, uint256("00000b0deed53c170138c2a72267c6c0e75f305e4b74412d8f6bb4f9cfc72920")); //first checkpoint
+
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1624830210, // * UNIX timestamp of last checkpoint block
@@ -146,25 +146,25 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
-        nModifierUpdateBlock = 0;
-        nZerocoinStartHeight = 0;
-        nZerocoinStartTime = 1623799585;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
+        nModifierUpdateBlock = 1002;
+        nZerocoinStartHeight = 1002;
+        nZerocoinStartTime = 1625302057;
+        nBlockEnforceSerialRange = 1010; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 1050; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 1003; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 1002; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 1020; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 572000; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 999999999;
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
-        nBlockStakeModifierlV2 = 585000;
+        nBlockStakeModifierlV2 = 999999999;
         // Public coin spend enforcement
-        nPublicZCSpends = 1;
+        nPublicZCSpends = 999999999;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 0;
+        nFakeSerialBlockheightEnd = 2000;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
