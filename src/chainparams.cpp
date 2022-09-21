@@ -150,7 +150,7 @@ public:
         nZerocoinStartHeight = 1002;
         nZerocoinStartTime = 1625302057;
         nBlockEnforceSerialRange = 1010; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 1050; //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 573120; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1003; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 1002; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 1020; //Start enforcing the invalid UTXO's
@@ -164,7 +164,7 @@ public:
         nPublicZCSpends = 999999999;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 575000;
+        nFakeSerialBlockheightEnd = 573100;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
