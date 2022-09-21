@@ -56,7 +56,7 @@ std::string rawTxRand1 = "9fc222b16be09eb88affbdfbcc02d1c8b28f5e843c72eb06c89dd7
 std::string rawTxSerial1 = "b87754b165892c0f9634e3d03780ede24824125249cb8dfd4ad2c0be055cbead";
 
 std::string rawTx2 = "01000000018c52504b2822c39dd7f4bd93e30562dc9d246e0b0dd4ee401ec2c24e9378be12000000006b483045022100e2628dbcd284dd4858e2c2d8e2d2d31eb222773b3026d39c79c489f5daf4ae2302200e0b1cb9a6d534dc86ea33afb8153a5a4c7cd4fb497c889fb991fbac8bf86802012103836a4868020f52f2ab9e5ec3634d2cd38794677fab47ae7a7128ea8102972ae0ffffffff022c0f0d8f000000001976a914e2e8e36a1a35da051341775315b1168494921acd88ac00e1f5050000000086c10280004c809d49caa17c3f1fb8bc93eabf54462c8ad1717ab646c8130ca0863ca5613f34751445cd7bde8ef1dd833645c7c205dd9b36171dc25209f46b04a34b5e06caa655eea9bd95b46f7d03ae60a97961dd6632c1050090ec1b6748199f0721eeec0822dd288c663020dd88ecda7c8abf8a409fa5c500c4188e52bfbe2ca77ce7b2700700000000";
-std::string rawTxpub2 = "770b2e77ca72cbebf528e18c400c5a59f408abf8a7cdaec88dd2030668c28dd2208ecee21079f1948671bec900005c13266dd6179a960ae037d6fb495bda9ee55a6ca065e4ba3046bf40952c21d17369bdd05c2c7453683ddf18ede7bcd447571343f61a53c86a00c13c846b67a71d18a2c4654bfea93bcb81f3f7ca1ca499d";
+std::string rawTxpub2 = "770b2e77ca72cbebf528e18c400c5a59f408abf8a7cdaec88dd2030668c28dd2208ecee21079f1948671bec900005c13266dd6179a960ae037d6fb495bda9ee55a6ca065e4ba3046bf40952c21d17369bdd05c2c7453683ddf18ede7bcd451475343f61a53c86a00c13c846b67a71d18a2c4654bfea93bcb81f3f7ca1ca499d";
 std::string rawTxRand2 = "23040b1d889ca4a41cf50b88a380f3f3acffac750e221a268fedf700f063a886";
 std::string rawTxSerial2 = "37393797cb39e5f22bdc4fba8108edb5ea497ba0d22aba0781e58a8555df285c";
 
@@ -129,7 +129,7 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
     for (const CTxOut& out : tx.vout) {
         txTemp.vout.push_back(out);
     }
-        uint256 hashTxOut = txTemp.GetHash();
+    //    uint256 hashTxOut = txTemp.GetHash();
 
     bool fValidated = false;
     std::set<CBigNum> serials;
@@ -163,25 +163,25 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         }
 
         //make sure the txout has not changed
-        if (newSpend.getTxOutHash() != hashTxOut) {
-            strError = "Zerocoinspend does not use the same txout that was used in the SoK";
-            return false;
-        }
+//        if (newSpend.getTxOutHash() != hashTxOut) {
+//            strError = "Zerocoinspend does not use the same txout that was used in the SoK";
+//            return false;
+//        }
 
-        //see if we have record of the accumulator used in the spend tx
-        CBigNum bnAccumulatorValue = 0;
-        if (!GetAccumulatorValueFromChecksum(newSpend.getAccumulatorChecksum(), true, bnAccumulatorValue)) {
-            strError = "Zerocoinspend could not find accumulator associated with checksum";
-            return false;
-        }
+//        //see if we have record of the accumulator used in the spend tx
+//        CBigNum bnAccumulatorValue = 0;
+//        if (!GetAccumulatorValueFromChecksum(newSpend.getAccumulatorChecksum(), true, bnAccumulatorValue)) {
+//            strError = "Zerocoinspend could not find accumulator associated with checksum";
+//            return false;
+//        }
 
-        libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
+ //       libzerocoin::Accumulator accumulator(Params().Zerocoin_Params(true), newSpend.getDenomination(), bnAccumulatorValue);
 
-        //Check that the coin is on the accumulator
-        if (!newSpend.Verify(accumulator)) {
-            strError = "CheckZerocoinSpend(): zerocoin spend did not verify";
-            return false;
-        }
+//        //Check that the coin is on the accumulator
+//        if (!newSpend.Verify(accumulator)) {
+//            strError = "CheckZerocoinSpend(): zerocoin spend did not verify";
+//            return false;
+//        }
 
         if (serials.count(newSpend.getCoinSerialNumber())) {
             strError = "Zerocoinspend serial is used twice in the same tx";
@@ -190,8 +190,8 @@ bool CheckZerocoinSpendNoDB(const CTransaction tx, std::string& strError)
         serials.insert(newSpend.getCoinSerialNumber());
 
         //cannot check this without database
- //       if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
- //           return state.DoS(100, error("Zerocoinspend is already known"));
+       // if(!IsZerocoinSpendUnknown(newSpend, tx.GetHash(), state))
+       //     return state.DoS(100, error("Zerocoinspend is already known"));
 
         //make sure that there is no over redemption of coins
         nTotalRedeemed += libzerocoin::ZerocoinDenominationToAmount(newSpend.getDenomination());
@@ -255,7 +255,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
 
     //Get the checksum of the accumulator we use for the spend and also add it to our checksum map
     uint32_t nChecksum = GetChecksum(accumulator.getValue());
-    AddAccumulatorChecksum(nChecksum, accumulator.getValue(), true);
+    //AddAccumulatorChecksum(nChecksum, accumulator.getValue(), true);
     libzerocoin::CoinSpend coinSpend(Params().Zerocoin_Params(true), Params().Zerocoin_Params(false), privateCoin, accumulator, nChecksum, witness, 0, libzerocoin::SpendType::SPEND);
     std::cout << coinSpend.ToString() << std::endl;
     BOOST_CHECK_MESSAGE(coinSpend.Verify(accumulator), "Coinspend construction failed to create valid proof");
@@ -356,7 +356,7 @@ BOOST_AUTO_TEST_CASE(checkzerocoinspend_test)
 
     //Get the checksum of the accumulator we use for the spend and also add it to our checksum map
     uint32_t nChecksum_v2 = GetChecksum(accumulator_v2.getValue());
-    AddAccumulatorChecksum(nChecksum_v2, accumulator_v2.getValue(), true);
+    //AddAccumulatorChecksum(nChecksum_v2, accumulator_v2.getValue(), true);
     uint256 ptxHash = CBigNum::randKBitBignum(256).getuint256();
     libzerocoin::CoinSpend coinSpend_v2(Params().Zerocoin_Params(false), Params().Zerocoin_Params(false), privateCoin_v2, accumulator_v2, nChecksum_v2, witness_v2, ptxHash, libzerocoin::SpendType::SPEND);
 
