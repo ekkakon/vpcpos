@@ -2918,7 +2918,7 @@ bool RecalculateVPCSupply(int nHeightStart)
     CBlockIndex* pindex = chainActive[nHeightStart];
     CAmount nSupplyPrev = pindex->pprev->nMoneySupply;
     if (nHeightStart == Params().Zerocoin_StartHeight())
-        nSupplyPrev = CAmount(0);
+        nSupplyPrev = CAmount(756900);
 
     uiInterface.ShowProgress(_("Recalculating VPC supply..."), 0);
     while (true) {
