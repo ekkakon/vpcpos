@@ -132,10 +132,10 @@ public:
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 1000;
-        nModifierUpdateBlock = 1;
-        nZerocoinStartHeight = 1;
-        nZerocoinStartTime = 1624830210;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nModifierUpdateBlock = 1002;
+        nZerocoinStartHeight = 1002;
+        nZerocoinStartTime = 1625302057;
+        nBlockEnforceSerialRange = 999999999; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
@@ -150,7 +150,7 @@ public:
         nPublicZCSpends = 1;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 0;
+        nFakeSerialBlockheightEnd = 1002;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
