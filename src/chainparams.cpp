@@ -146,14 +146,14 @@ public:
         nLastPOWBlock = 1000;
         nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #1001
         nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 259201 per PR #1001
-        nModifierUpdateBlock = 1002;
-        nZerocoinStartHeight = 1002;
-        nZerocoinStartTime = 1625302057;
-        nBlockEnforceSerialRange = 1010; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 573120; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 1003; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 1002; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 1020; //Start enforcing the invalid UTXO's
+        nModifierUpdateBlock = 0;
+        nZerocoinStartHeight = 0;
+        nZerocoinStartTime = 1623799585;
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
         nBlockDoubleAccumulated = 999999999;
@@ -161,10 +161,10 @@ public:
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 999999999;
         // Public coin spend enforcement
-        nPublicZCSpends = 999999999;
+        nPublicZCSpends = 1;
 
         // Fake Serial Attack
-        nFakeSerialBlockheightEnd = 573100;
+        nFakeSerialBlockheightEnd = 0;
         nSupplyBeforeFakeSerial = 0;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
