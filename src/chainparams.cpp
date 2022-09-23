@@ -134,6 +134,7 @@ public:
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
+        nTargetTimespan = 9 * 60;
         nTargetSpacing = 90;
         nMaturity = 20;
         nStakeMinDepth = 600;
