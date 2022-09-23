@@ -130,9 +130,9 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // VoltPotCoin starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 0; // 75%
-        nRejectBlockOutdatedMajority = 0; // 95%
-        nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nEnforceBlockUpgradeMajority = 8100; // 75%
+        nRejectBlockOutdatedMajority = 10260; // 95%
+        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // VoltPotCoin: 1 day
         nTargetSpacing = 1 * 60; // VoltPotCoin: 1 minute
