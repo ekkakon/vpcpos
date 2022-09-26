@@ -2267,10 +2267,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight <= 1000) {
-    ret = blockValue ;
-    } else if (nHeight > 1000) {
-        ret = blockValue / (100 / 30);
+    if (nHeight <= 250000) {
+        ret = blockValue * 0.4;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
     } else {
@@ -2937,7 +2935,7 @@ bool RecalculateVPCSupply(int nHeightStart)
     CBlockIndex* pindex = chainActive[nHeightStart];
     CAmount nSupplyPrev = pindex->pprev->nMoneySupply;
     if (nHeightStart == Params().Zerocoin_StartHeight())
-        nSupplyPrev = CAmount(5449796547496199);
+        nSupplyPrev = CAmount(0);
 
     uiInterface.ShowProgress(_("Recalculating VPC supply..."), 0);
     while (true) {

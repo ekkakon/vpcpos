@@ -53,11 +53,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"));
+    (0, uint256("00000de223beb94717ed29f523c8c54ee087b814856bf7e88e8c1ce38350e4af"))
+    (1, uint256("00000b0deed53c170138c2a72267c6c0e75f305e4b74412d8f6bb4f9cfc72920")); //first checkpoint
+
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1623799585, // * UNIX timestamp of last checkpoint block
-    0,    // * total number of transactions between genesis and last checkpoint
+    1624830210, // * UNIX timestamp of last checkpoint block
+    1,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
 };
@@ -152,11 +154,11 @@ public:
         bnProofOfStakeLimit_V2 = ~uint256(0) >> 20; // 60/4 = 15 ==> use 2**4 higher limit
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 8100; // 75%
-        nRejectBlockOutdatedMajority = 10260; // 95%
-        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nEnforceBlockUpgradeMajority = 0; // 75%
+        nRejectBlockOutdatedMajority = 0; // 95%
+        nToCheckBlockUpgradeMajority = 0; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetSpacing = 60;                        // 1 minute
+        nTargetSpacing = 1 * 60;                        // 1 minute
         nTargetTimespan = 40 * 60;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
@@ -179,14 +181,14 @@ public:
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 575000; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockZerocoinV2 = 0;
         nBlockDoubleAccumulated = 999999999;
         nEnforceNewSporkKey = 1623799585; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
-        nBlockStakeModifierlV2 = 570000;
+        nBlockStakeModifierlV2 = 999999999;
         nBIP65ActivationHeight = 1;
         // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
         nBlockTimeProtocolV2 = 999999999;
@@ -318,8 +320,8 @@ public:
         nMinerThreads = 0;
         nTargetSpacing = 1 * 60;
         nLastPOWBlock = 200;
-        nVoltpotcoinBadBlockTime = 1625302044; // Skip nBit validation of Block 259201 per PR #915?
-        nVoltpotcoinBadBlocknBits = 0x1d065bba; // Skip nBit validation of Block 201 per PR #915?
+        nVoltpotcoinBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915?
+        nVoltpotcoinBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915?
         nMaturity = 15;
         nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
