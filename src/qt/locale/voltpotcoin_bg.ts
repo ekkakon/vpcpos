@@ -3125,7 +3125,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Не намираме достатъчно Обфускационно деноминирани средства за този превод.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 VPC.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 20000 VPC.</source>
         <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 VPC.</translation>
     </message>
     <message>
