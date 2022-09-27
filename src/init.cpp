@@ -1963,7 +1963,7 @@ bool AppInit2()
        1VPC+1000 == (.1VPC+100)*10
        10VPC+10000 == (1VPC+1000)*10
     */
-    obfuScationDenominations.push_back((20000 * COIN) + 10000000);
+    obfuScationDenominations.push_back((10000 * COIN) + 10000000);
     obfuScationDenominations.push_back((1000 * COIN) + 1000000);
     obfuScationDenominations.push_back((100 * COIN) + 100000);
     obfuScationDenominations.push_back((10 * COIN) + 10000);
